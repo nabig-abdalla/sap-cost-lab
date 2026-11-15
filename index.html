@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</title>
-<meta name="description" content="مسار عربي مجاني من 8 دروس تفاعلية في تكاليف مصانع حقن البلاستيك على SAP S/4HANA مربوط بمنهج CMA: شاشات SAP، تمارين تُصحَّح فوراً، ومتابعة تقدم. إعداد نابغ عبدالله">
+<title>محاسبة التكاليف الصناعية في SAP S/4HANA</title>
+<meta name="description" content="منصة عربية عملية في محاسبة التكاليف الصناعية على SAP S/4HANA: 11 درساً بحالات من الصناعات الغذائية والكيميائية والمعدنية والبلاستيكية والتجميع، مربوطة بمنهج CMA. إعداد نابغ عبدالله">
 <meta name="author" content="نابغ عبدالله">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
-<meta property="og:title" content="منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA">
-<meta property="og:description" content="مسار عربي مجاني من 8 دروس تفاعلية في تكاليف مصانع حقن البلاستيك على SAP S/4HANA مربوط بمنهج CMA: شاشات SAP، تمارين تُصحَّح فوراً، ومتابعة تقدم. إعداد نابغ عبدالله">
+<meta property="og:title" content="محاسبة التكاليف الصناعية في SAP S/4HANA">
+<meta property="og:description" content="منصة عربية عملية في محاسبة التكاليف الصناعية على SAP S/4HANA: 11 درساً بحالات من الصناعات الغذائية والكيميائية والمعدنية والبلاستيكية والتجميع، مربوطة بمنهج CMA. إعداد نابغ عبدالله">
 <meta property="og:url" content="https://nabig-abdalla.github.io/sap-cost-lab/">
-<meta property="og:image" content="https://nabig-abdalla.github.io/sap-cost-lab/og.png?v=5">
+<meta property="og:image" content="https://nabig-abdalla.github.io/sap-cost-lab/og.png?v=6">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 <meta name="twitter:card" content="summary_large_image">
@@ -154,7 +154,7 @@ main{min-width:0;padding-block:20px 110px;padding-left:max(16px,env(safe-area-in
 
 /* lesson header */
 .lhead{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;border-top:4px solid var(--accent)}
-.lprog{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.lprog{display:grid;gap:4px}
 .lprog a{height:6px;border-radius:99px;background:var(--none-soft)}
 .lprog a.ok{background:var(--ok)}.lprog a.prog{background:var(--prog)}.lprog a.rev{background:var(--rev)}
 .lprog a.cur{outline:2px solid var(--accent);outline-offset:2px}
@@ -174,6 +174,26 @@ main{min-width:0;padding-block:20px 110px;padding-left:max(16px,env(safe-area-in
 .lab.miss{background:transparent;color:var(--bad);border:1px dashed var(--bad)}
 .lab.sim{background:var(--sap-bar);color:var(--sap-key)}
 .lab.exp{background:var(--hero);color:var(--gold)}
+
+ol.cyc{margin:4px 0 10px;padding-inline-start:22px;display:flex;flex-direction:column;gap:6px}
+.hero .ind{font-size:.78rem;padding:2px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.3);color:var(--hero-ink)}
+.ind2{font-size:.76rem;padding:2px 10px;border-radius:99px;background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.terms{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.term{display:inline-flex;gap:6px;align-items:baseline;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2);text-decoration:none;color:var(--ink);font-size:.82rem}
+.term:hover{border-color:var(--accent)}
+.term b{font-weight:600}
+.ensent{border:1px solid var(--line);border-inline-start:3px solid var(--accent);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;background:var(--surface-2);align-items:flex-start}
+.en-l{direction:ltr;text-align:left;font-family:var(--f-body);font-weight:600;font-size:.95rem;align-self:stretch}
+.verify{display:flex;flex-direction:column;gap:6px;border:1px dashed var(--bad);border-radius:8px;padding:10px 12px;align-items:flex-start}
+.lab.cma{background:var(--prog-soft);color:var(--prog)}
+.ex.multi td:first-child{width:auto}
+.cx .tbl table{min-width:620px}
+.cx{min-width:0}
+.lhead .en,.titem .en,.prose .en,.terms .en,.situ .en,.ensent .en,.goals .en{white-space:normal;overflow-wrap:anywhere}
+.term{flex-wrap:wrap;max-width:100%}
+.lhead .sec-h>div{min-width:0}
+.lhead h1{overflow-wrap:anywhere}
+.ex.multi td.n,.ex.multi th{white-space:nowrap}
 .card.exp{border-inline-start:3px solid var(--gold);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
 .card.mine{border-color:var(--note);background:linear-gradient(var(--note-soft),var(--note-soft)) top/100% 3px no-repeat,var(--surface)}
 .card.miss{border:1px dashed var(--bad)}
@@ -340,7 +360,7 @@ footer.foot .val{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;us
 <header class="top">
   <a class="brand" href="#home">
     <div class="mark" aria-hidden="true">CO</div>
-    <div style="min-width:0"><b>منصة التكاليف وفق SAP</b><small>إعداد نابغ عبدالله · خبير التكاليف الصناعية</small></div>
+    <div style="min-width:0"><b>التكاليف الصناعية في SAP</b><small>إعداد نابغ عبدالله · خبير التكاليف الصناعية</small></div>
   </a>
   <span id="store" class="store" title="مكان حفظ بياناتك">جارٍ التحميل</span>
 </header>
@@ -357,18 +377,13 @@ footer.foot .val{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;us
 const AUTHOR={name:"نابغ عبدالله",title:"خبير التكاليف الصناعية",phone:"0502083782",phoneIntl:"+966 50 208 3782",wa:"https://wa.me/966502083782",email:"nabigabdalla@gmail.com"};
 
 /* ============ CONTENT ============ */
-const LEVELS={1:"الوحدة 1 · الأساس",2:"الوحدة 2 · التشغيل",3:"الوحدة 3 · التقييم",4:"الوحدة 4 · التحليل والتطبيق"};
-const LEVEL_NAME={1:"الأساس",2:"التشغيل",3:"التقييم",4:"التحليل والتطبيق"};
-const LEVEL_SHORT={1:"أساسي",2:"تشغيلي",3:"متوسط",4:"متقدم"};
+const APP_NAME="محاسبة التكاليف الصناعية في SAP S/4HANA";
+const LEVELS={"1":"الوحدة 1 · البيانات والأساس","2":"الوحدة 2 · التخطيط والتكلفة المعيارية","3":"الوحدة 3 · تنفيذ الإنتاج","4":"الوحدة 4 · الرقابة والقرار"};
+const LEVEL_NAME={"1":"البيانات والأساس","2":"التخطيط والتكلفة المعيارية","3":"تنفيذ الإنتاج","4":"الرقابة والقرار"};
+const LEVEL_SHORT={"1":"البيانات","2":"التخطيط","3":"التنفيذ","4":"الرقابة"};
 const T=(ar,en)=>`<b>${ar}</b> <span class="en">${en}</span>`;
 const C=c=>`<code class="tc">${c}</code>`;
 const M=c=>`<code class="tc mv">${c}</code>`;
-
-/* SAP screen simulation builders: f(label,value,hl) ; table(cols,rows) */
-const f=(l,v,hl)=>`<div class="fld"><label>${l}</label><div class="v${hl?" hl":""}">${v}</div></div>`;
-const grp=(title,inner)=>`<div class="grpb"><span class="gt">${title}</span>${inner}</div>`;
-const flds=(...x)=>`<div class="flds">${x.join("")}</div>`;
-const tbl=(cols,rows,cls=[])=>`<div class="tblw"><table><thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${rows.map((r,i)=>`<tr class="${cls[i]||""}">${r.map((c,k)=>`<td class="${typeof c==="number"||/^-?[\d,]+\.\d+$|^-?[\d,]+$/.test(c)?"r":""}">${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 function screen(s){
   return `<div class="sap" role="img" aria-label="محاكاة تعليمية لشاشة ${s.tcode}">
    <div class="tb"><b>${s.title}</b></div>
@@ -376,379 +391,2595 @@ function screen(s){
    ${s.tabs?`<div class="tabsr">${s.tabs.map((t,i)=>`<span class="${i===(s.tabOn||0)?"on":""}">${t}</span>`).join("")}</div>`:""}
    <div class="body">${s.body}</div></div>`;
 }
-
+/* Lesson data. Each lesson: situation → concept → SAP application → exercise → interpretation */
 const TOPICS=[
-{id:"intro",level:1,title:"خريطة دورة التكلفة",en:"Cost Flow Overview",
- goals:["تتبع دورة التكلفة كاملة على منتج حقن واحد","تعرف أين تُسجَّل قيود المالية والتكاليف في S/4HANA","تميز حركات المخزون الأساسية على أمر الإنتاج"],
- tcodes:["MM03","CS03","CA03","CR03","CK13N","CO03"],
- explain:[
-  `في SAP S/4HANA تُسجَّل القيود المالية وقيود التكاليف في دفتر واحد هو ${T("دفتر اليومية الموحد","Universal Journal")} وجدوله ACDOCA، لذلك أصبحت ${T("عناصر التكلفة","Cost Elements")} حسابات أستاذ عام تُعرَّف في ${C("FS00")} مع تحديد ${T("فئة عنصر التكلفة","Cost Element Category")}`,
-  `دورة التكلفة في مصنع الحقن تمر بهذا التسلسل: بيانات أساسية (المادة، ${T("قائمة المواد","BOM")}، ${T("مسار التصنيع","Routing")}، ${T("مركز العمل","Work Center")} المربوط بمركز تكلفة) ثم ${T("تقدير التكلفة المعيارية","Standard Cost Estimate")} ثم أمر الإنتاج، فصرف الخام والتأكيد واستلام المنتج، ثم التحميل غير المباشر وحساب الانحرافات والتسوية`,
-  `كل درس يأخذ حلقة من هذه السلسلة ويطبقها على المنتج نفسه، فترتبط الأرقام من الدرس الأول إلى تحليل الانحرافات`
- ],
- example:{title:"المنتج المستخدم في كل الدروس",rows:[["المنتج","حاوية PP سعة 500 مل · FG-0500"],["القالب","4 تجاويف (4-cavity mold)"],["زمن الدورة","36 ثانية للطلقة"],["وزن القطعة الصافي","200 غرام"],["سعر كيلو الراتنج PP (معياري)","6.50 ر.س"],["ماكينة الحقن","مركز العمل INJ-01 · مركز التكلفة 4110"]]},
- screen:{tcode:"MM03",title:"Display Material FG-0500 (Finished Product)",menu:"Logistics › Materials Management › Material Master › Material › Display",tabs:["MRP 1","Work Scheduling","Costing 1","Costing 2","Accounting 1"],tabOn:4,
-  body:flds(f("Material","FG-0500"),f("Plant","1000"))+grp("General Valuation Data",flds(f("Base Unit of Measure","PC"),f("Valuation Class","7920"),f("Currency","SAR"),f("Price Determ.","2 <small>Transaction-Based</small>")))+grp("Prices and values",flds(f("Price control","S",1),f("Price Unit","1,000"),f("Standard price","1,932.08",1),f("Moving price","0.00"),f("Total Stock","0 PC"),f("Total Value","0.00"))),
-  notes:["<b>Price control</b> = S يعني أن المخزون يُقيَّم بالسعر المعياري","<b>Price Unit</b> = 1,000 فالسعر المعروض لكل 1,000 حاوية","<b>Valuation Class</b> يحدد حسابات المخزون في المالية"]},
- steps:[
-  [`اعرض بيانات المادة وتبويبات Costing وAccounting`,"MM03"],
-  [`اعرض قائمة المواد وتحقق من كمية الراتنج ونسبة هالك المكوّن`,"CS03"],
-  [`اعرض مسار التصنيع: زمن الماكينة وزمن العمالة لكل عملية`,"CA03"],
-  [`اعرض مركز العمل وتبويب Costing لمعرفة مركز التكلفة وأنواع الأنشطة`,"CR03"],
-  [`اعرض تقدير التكلفة المعيارية للمادة`,"CK13N"],
-  [`اعرض أمر إنتاج قائم وتتبع تكاليفه المخططة والفعلية`,"CO03"]
- ],
- stepsNote:"استخدم معاملات العرض فقط إن كنت على نظام تشغيلي، والتطبيق الكامل في نظام تدريب (Sandbox / IDES)",
- questions:[
-  {id:"intro-q1",type:"mcq",prompt:"في SAP S/4HANA، أين تُسجَّل البنود الفعلية للمالية والتكاليف معاً؟",
-   options:[["ACDOCA (Universal Journal)",null],["COEP","COEP كان جدول بنود التكاليف الفعلية في ECC، وفي S/4HANA انتقلت هذه البنود إلى ACDOCA"],["BSEG","BSEG يحفظ بنود المستند المحاسبي، ولا يجمع بنود التكاليف"],["MSEG","MSEG خاص ببنود حركات المخزون"]],
-   correct:0,tags:[null,"خلط بين جداول ECC وS/4HANA","خلط بين جداول المالية والتكاليف","خلط بين جداول المخزون والتكاليف"],
-   solution:"في S/4HANA يحفظ ACDOCA كل بند قيد في سطر واحد يحمل حقول المالية والتكاليف والأصول والمخزون معاً، لذلك يتطابق الأستاذ العام مع تقارير التكاليف دون تسوية بينهما"},
-  {id:"intro-q2",type:"mcq",prompt:"أي حركة مخزنية تصرف الراتنج من المخزن إلى أمر الإنتاج؟",
-   options:[["261",null],["101","101 حركة استلام المنتج التام من الأمر إلى المخزن"],["201","201 صرف على مركز تكلفة، فلا تصل التكلفة إلى أمر الإنتاج"],["311","311 تحويل بين مواقع التخزين ولا تنشئ تكلفة على الأمر"]],
-   correct:0,tags:[null,"خلط بين حركات الصرف والاستلام","صرف على مركز تكلفة بدل الأمر","خلط بين التحويل والصرف"],
-   solution:"الحركة 261 تصرف المادة على أمر الإنتاج وتحمّله بقيمتها، وعكسها 262"}
- ],
- missing:["قراءة ACDOCA عملياً عبر تقارير Fiori مثل Trial Balance وCost Center Actuals"]
-},
-{id:"cost-centers",level:1,title:"مراكز التكلفة",en:"Cost Centers",
- goals:["تحسب سعر النشاط المخطط لماكينة حقن","تفهم ربط مركز العمل بمركز التكلفة وأنواع الأنشطة","تقرأ رصيد التحميل الناقص أو الزائد"],
- tcodes:["KS01","KL01","KP26","KSPI","CR03","KSB1","S_ALR_87013611"],
- fiori:"Manage Cost Centers",
- explain:[
-  `${T("مركز التكلفة","Cost Center")} وحدة مسؤولية تُجمَع عليها التكاليف، يُنشأ بـ ${C("KS01")} ويُربط بـ ${T("الهرمية القياسية","Standard Hierarchy")}. في مصنع الحقن غالباً يكون لكل خط أو مجموعة ماكينات مركز إنتاجي، ومراكز خدمية للصيانة والقوالب والجودة`,
-  `${T("نوع النشاط","Activity Type")} يقيس ما يقدمه المركز، مثل ساعة الماكينة وساعة العمالة، ويُنشأ بـ ${C("KL01")}. يُخطَّط ${T("سعر النشاط","Activity Price")} في ${C("KP26")}، وأبسط طريقة لفهمه: التكاليف المخططة للمركز مقسومة على الطاقة المخططة بالساعات، ويحسبه النظام بـ ${C("KSPI")}`,
-  `يربط ${T("مركز العمل","Work Center")} الماكينة بمركز التكلفة وأنواع الأنشطة في تبويب Costing، فعند تأكيد أمر الإنتاج تُحمَّل الساعات المؤكدة × سعر النشاط على الأمر وتُدائن المركز. الفرق بين التكاليف الفعلية للمركز وما حُمِّل منه هو ${T("التحميل الناقص أو الزائد","Under / Over Absorption")}`
- ],
- example:{title:"مركز 4110 · خط الحقن 1 · شهر واحد",rows:[["إهلاك الماكينة والقالب (مخطط)","30,000"],["كهرباء (مخطط)","42,000"],["صيانة (مخطط)","8,000"],["عمالة غير مباشرة (مخطط)","16,000"],["إجمالي التكاليف المخططة","96,000",1],["الطاقة المخططة","600 ساعة ماكينة"],["التكاليف الفعلية للشهر","101,500"],["الساعات المؤكدة فعلياً على الأوامر","580 ساعة"]],note:"المبالغ بالريال السعودي"},
- screen:{tcode:"KP26",title:"Change Activity Type/Price Planning: Overview Screen",menu:"Accounting › Controlling › Cost Center Accounting › Planning › Activity Output/Prices › Change",
-  body:flds(f("Version","0 <small>Plan/Act - Version</small>"),f("From Period","1"),f("To Period","1"),f("Fiscal Year","2026"),f("Cost Center","4110 <small>Injection Line 1</small>"),f("Activity Type","*"))+
-   tbl(["Cost Ctr","ActTyp","Plan Activity","Unit","Capacity","Fixed Price","Variable Price","Price Unit","P","Alloc. Cost Elem"],[["4110","MACH","600","H","600","160.00","0.00","1","1","943000"],["4110","LAB","600","H","600","40.00","0.00","1","1","943100"]],["hl",""]),
-  notes:["<b>Version 0</b> هي نسخة الخطة المرتبطة بالفعلي","<b>P</b> مؤشر السعر: 1 يعني أن السعر يُحسب من التخطيط عبر KSPI","<b>Alloc. Cost Elem</b> عنصر تكلفة ثانوي فئة 43 يحمل التحميل على الأمر","أرقام عناصر التكلفة هنا للتوضيح، تختلف في نظامك"]},
- steps:[
-  [`اعرض المركز وتحقق من فئته (Category) والهرمية التي ينتمي لها`,"KS03"],
-  [`اعرض نوع النشاط ووحدته (H) وفئة احتسابه`,"KL03"],
-  [`راجع السعر المخطط للنشاط في الفترة المطلوبة`,"KP26"],
-  [`افتح مركز العمل في تبويب Costing وتأكد من ربط مركز التكلفة وأنواع الأنشطة`,"CR03"],
-  [`استخرج بنود التكاليف الفعلية للمركز`,"KSB1"],
-  [`قارن المخطط بالفعلي وراجع رصيد المركز بعد التحميل`,"S_ALR_87013611"]
- ],
- questions:[
-  {id:"cc-q1",type:"num",prompt:"احسب سعر ساعة الماكينة المخطط لمركز 4110",unit:"ر.س / ساعة",answer:160,tol:0.5,
-   wrongs:[[165.52,0.5,"استخدام الساعات الفعلية بدل الطاقة المخططة","سعر النشاط المخطط يُحسب على الطاقة المخططة 600 ساعة، والساعات الفعلية تظهر لاحقاً عند التحميل"],
-           [169.17,0.5,"استخدام التكاليف الفعلية في السعر المخطط","السعر المخطط يُبنى على التكاليف المخططة 96,000، والتكاليف الفعلية تُقارن به بعد الإقفال"]],
-   solution:"96,000 ÷ 600 = 160 ر.س لكل ساعة ماكينة"},
-  {id:"cc-q2",type:"num",prompt:"بعد تحميل الساعات المؤكدة على الأوامر، كم رصيد المركز غير المحمَّل؟ أدخل المبلغ موجباً",unit:"ر.س",answer:8700,tol:1,
-   wrongs:[[5500,1,"مقارنة الفعلي بالمخطط بدل المحمَّل","5,500 فرق الإنفاق بين الفعلي والمخطط، والمطلوب الفرق بين الفعلي وما حُمِّل على الأوامر"],
-           [92800,1,"إدخال المبلغ المحمَّل بدل الرصيد","92,800 هو ما حُمِّل على الأوامر، والمطلوب ما بقي على المركز"]],
-   solution:"المحمَّل = 580 × 160 = 92,800 · الرصيد = 101,500 − 92,800 = 8,700 ر.س تحميل ناقص (Under-absorbed)"}
- ],
- missing:["توزيع تكاليف المراكز الخدمية (الصيانة، القوالب) على مراكز الإنتاج: Assessment وDistribution","حساب سعر النشاط الفعلي KSII"]
-},
-{id:"production-orders",level:2,title:"أوامر الإنتاج",en:"Production Orders",
- goals:["تتبع حياة أمر الإنتاج من الإنشاء إلى التسوية","تقرأ شاشة التأكيد: الكمية السليمة والهالك والساعات","تميز الحركات 261 و262 و101 على الأمر"],
- tcodes:["CO01","CO03","MIGO","CO11N","CO14","MB51","KKBC_ORD"],
- fiori:"Manage Production Orders · Confirm Production Operation",
- explain:[
-  `${T("أمر الإنتاج","Production Order")} هو ${T("مجمّع التكلفة","Cost Object")} لدفعة إنتاج واحدة. يُنشأ بـ ${C("CO01")} من المادة والكمية والتاريخ، فيقرأ قائمة المواد ومسار التصنيع ويحسب التكاليف المخططة`,
-  `بعد ${T("الإصدار","Release")} يُصرف الراتنج بالحركة ${M("261")} فيتحمّله الأمر، ويُسجَّل ${T("التأكيد","Confirmation")} بـ ${C("CO11N")} بالكمية السليمة <span class="en">Yield</span> والهالك <span class="en">Scrap</span> وساعات الماكينة والعمالة. استلام المنتج بالحركة ${M("101")} يدائن الأمر بالتكلفة المعيارية`,
-  `ما يبقى على الأمر في نهاية الفترة يُعامَل كإنتاج تحت التشغيل إن لم يكتمل، أو كانحراف إن وصل لحالة ${T("التسليم","DLV")} أو ${T("الإقفال الفني","TECO")}، ثم يُسوّى بـ ${C("KO88")}`
- ],
- example:{title:"أمر إنتاج للحاوية 500 مل",rows:[["رقم الأمر (مثال)","1000456"],["الكمية المخططة","1,000 قطعة"],["المعيار الصافي","200 غرام للقطعة"],["الراتنج المصروف بالحركة 261","210 كغ"],["الكمية السليمة المؤكدة","950 قطعة"],["الهالك المؤكد","50 قطعة"],["ساعات الماكينة والعمالة المؤكدة","2.6 ساعة لكل منهما"]]},
- screen:{tcode:"CO11N",title:"Enter Time Ticket for Production Order",menu:"Logistics › Production › Shop Floor Control › Confirmation › Enter › For Operation › Time Ticket",
-  body:grp("Confirmation",flds(f("Order","1000456"),f("Oper./Activity","0010"),f("Sequence","0"),f("Plant","1000"),f("Work Center","INJ-01")))+
-   `<div class="radio"><span>Partial confirmation</span><span class="on">Final confirmation</span><span>Automatic final confirmation</span></div>`+
-   grp("Quantities",flds(f("Yield to Confirm","950 PC",1),f("Scrap","50 PC",1),f("Rework","0 PC"),f("Reason for Var.","")))+
-   grp("Activities",flds(f("Setup","0.00 H"),f("Machine","2.6 H",1),f("Labor","2.6 H",1)))+
-   grp("Dates",flds(f("Posting Date","15.11.2026")))+`<div class="btns"><span>Goods Movements</span><span>Actual Data</span><span>Save</span></div>`,
-  notes:["<b>Yield to Confirm</b> الكمية السليمة، وعليها تُحسب التكلفة المستهدفة","<b>Scrap</b> الهالك المؤكد للعملية","<b>Machine / Labor</b> الساعات التي تُضرب في سعر النشاط من KP26","<b>Goods Movements</b> يعرض حركات الصرف الآلي (Backflush) والاستلام المرتبطة بالتأكيد"]},
- steps:[
-  [`اعرض الأمر وحالته (CRTD / REL / DLV / TECO)`,"CO03"],
-  [`من داخل الأمر: Goto ثم Costs ثم Analysis لمقارنة المخطط بالفعلي`,"CO03"],
-  [`راجع كل حركات المواد على رقم الأمر، وابحث عن 261 و262 و531`,"MB51"],
-  [`راجع التأكيدات: الكمية السليمة والهالك والساعات لكل عملية`,"CO14"],
-  [`تحقق من استلام المنتج بالحركة 101 وكميته`,"MB51"],
-  [`حلل تكاليف الأمر حسب عنصر التكلفة`,"KKBC_ORD"]
- ],
- questions:[
-  {id:"po-q1",type:"num",prompt:"كم الكمية المعيارية المسموح بها من الراتنج للإنتاج السليم الفعلي، على أساس الوزن الصافي فقط؟",unit:"كغ",answer:190,tol:0.05,
-   wrongs:[[200,0.05,"استخدام الكمية المخططة بدل الإنتاج الفعلي","الكمية المسموح بها تُحسب على الإنتاج السليم الفعلي 950 قطعة، والكمية المخططة 1,000 لا تصلح للمقارنة"],
-           [20,0.05,"إدخال الفرق بدل الكمية المسموح بها","20 كغ هو الفرق، والمطلوب الكمية المسموح بها"]],
-   solution:"950 × 0.200 كغ = 190 كغ · الفرق عن المصروف 210 − 190 = 20 كغ"},
-  {id:"po-q2",type:"mcq",prompt:"رجع 8 كغ راتنج سليم من الخط إلى المخزن. أي حركة تسجله على الأمر نفسه؟",
-   options:[["262",null],["102","102 تعكس استلام المنتج التام، وليس صرف الخام"],["202","202 تعكس صرفاً على مركز تكلفة"],["531","531 استلام منتج ثانوي من الأمر، مثل المطحون"]],
-   correct:0,tags:[null,"خلط بين عكس الاستلام وعكس الصرف","خلط بين الأمر ومركز التكلفة","خلط بين المرتجع والمنتج الثانوي"],
-   solution:"262 تعكس الحركة 261 وتخفض تكلفة الأمر. إذا لم تُسجَّل، تظهر الكمية الراجعة كانحراف كمية رغم أنها في المخزن"}
- ],
- missing:["أنواع الأوامر ومفاتيح التحكم (Control Key) والاستلام الآلي عند التأكيد","حساب الإنتاج تحت التشغيل KKAX في نهاية الفترة"]
-},
-{id:"product-costing",level:2,title:"حساب تكلفة المنتج",en:"Product Costing",
- goals:["تبني تقدير تكلفة من BOM وRouting","تحسب زمن الماكينة للقطعة في الحقن","تقرأ تفصيل التقدير حسب فئات البنود"],
- tcodes:["CK11N","CK13N","CK40N","CS03","CA03"],
- explain:[
-  `${T("تقدير تكلفة المنتج","Product Cost Estimate")} يُبنى بـ ${C("CK11N")} من ${T("هيكل الكميات","Quantity Structure")}: قائمة المواد تعطي كمية الراتنج مع ${T("نسبة هالك المكوّن","Component Scrap")}، ومسار التصنيع يعطي زمن الماكينة والعمالة فيُضرب في سعر النشاط، ثم تُضاف التكاليف غير المباشرة عبر ${T("ورقة التكاليف","Costing Sheet")}`,
-  `${T("متغير التكاليف","Costing Variant")} مثل PPC1 يحدد مصدر الأسعار وتاريخ التقييم. النتيجة تُعرض حسب ${T("مكوّنات التكلفة","Cost Components")}: مواد، ماكينة، عمالة، غير مباشر. للمنتجات الكثيرة يُستخدم ${T("تشغيل التكاليف","Costing Run")} بـ ${C("CK40N")}`,
-  `في الحقن، زمن الماكينة لكل قطعة = زمن الدورة ÷ عدد التجاويف، لذلك أي تغيير في القالب أو الدورة يغيّر تكلفة القطعة مباشرة`
- ],
- example:{title:"مدخلات التقدير لكل 1,000 قطعة (بدون ماستر باتش وتغليف للتبسيط)",rows:[["الراتنج الصافي","200 كغ"],["هالك المكوّن في BOM","2%"],["سعر الراتنج المعياري","6.50 ر.س / كغ"],["زمن الدورة / التجاويف","36 ث / 4 تجاويف"],["سعر ساعة الماكينة","160 ر.س"],["سعر ساعة العمالة (عامل واحد للماكينة)","40 ر.س"],["التحميل غير المباشر","8% على تكلفة المواد"]]},
- screen:{tcode:"CK11N",title:"Create Material Cost Estimate with Quantity Structure",menu:"Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Cost Estimate with Quantity Structure › Create",tabs:["Costing Data","Dates","Qty Struct."],tabOn:0,
-  body:flds(f("Material","FG-0500"),f("Plant","1000"),f("Costing Variant","PPC1 <small>Standard Cost Est. (Mat.)</small>"),f("Costing Version","1"),f("Costing Lot Size","1,000 PC",1),f("Transfer Control",""))+
-   `<div class="gt" style="font-size:.74rem;color:var(--sap-key);font-weight:600">Itemization</div>`+
-   tbl(["Item","I","Resource","Cost Element","Total Value","Quantity","Un"],[["1","M","1000 RES-PP","500100","1,326.00","204.000","KG"],["2","E","4110 MACH","943000","400.00","2.500","H"],["3","E","4110 LAB","943100","100.00","2.500","H"],["4","G","","655100","106.08","",""],["","","","","1,932.08","",""]],["hl","","","","tot"]),
-  notes:["<b>I</b> فئة البند: M مادة، E نشاط داخلي، G تحميل غير مباشر","<b>Quantity 204.000 KG</b> تشمل هالك المكوّن 2%","<b>Costing Lot Size</b> كمية التقدير، والتكلفة المستهدفة تُحسب نسبةً منها"]},
- steps:[
-  [`احسب كمية الراتنج الإجمالية: الصافي × (1 + نسبة هالك المكوّن)`,null],
-  [`احسب عدد الطلقات: الكمية ÷ التجاويف، ثم الساعات: الطلقات × زمن الدورة ÷ 3600`,null],
-  [`اضرب الساعات في سعر الماكينة وسعر العمالة`,null],
-  [`أضف نسبة التحميل غير المباشر على تكلفة المواد`,null],
-  [`قارن نتيجتك بتقدير النظام في عرض التفصيل Itemization`,"CK13N"]
- ],
- questions:[
-  {id:"pc-q1",type:"num",prompt:"احسب التكلفة المعيارية لكل 1,000 حاوية",unit:"ر.س",answer:1932.08,tol:0.6,
-   wrongs:[[1904,0.6,"تجاهل نسبة هالك المكوّن","كمية الراتنج المعيارية 204 كغ بعد إضافة 2% هالك، وليست 200 كغ"],
-           [1826,0.6,"إغفال التكاليف غير المباشرة","أضف 8% من تكلفة المواد = 106.08"],
-           [1832.08,0.6,"إغفال تكلفة العمالة","زمن العمالة 2.5 ساعة × 40 = 100"]],
-   solution:"راتنج 204 × 6.50 = 1,326 · طلقات 250 × 36 ث = 2.5 ساعة · ماكينة 400 · عمالة 100 · غير مباشر 106.08 · الإجمالي 1,932.08 ر.س، أي 1.932 للقطعة"},
-  {id:"pc-q2",type:"mcq",prompt:"أي معاملة تنشئ تقدير تكلفة لمادة واحدة مع هيكل الكميات؟",
-   options:[["CK11N",null],["CK24","CK24 تعلّم التقدير وتحرره كسعر معياري، ولا تنشئه"],["KP26","KP26 لتخطيط أسعار الأنشطة"],["KKS2","KKS2 لحساب انحرافات أمر واحد"]],
-   correct:0,tags:[null,"خلط بين إنشاء التقدير وتحريره","خلط بين أسعار الأنشطة وتقدير المنتج","خلط بين التقدير وحساب الانحرافات"],
-   solution:"CK11N ينشئ التقدير، وCK13N يعرضه، وCK24 يحرره ليصبح السعر المعياري"}
- ],
- missing:["إعداد ورقة التكاليف KZS2 وهيكل مكوّنات التكلفة OKTZ","القوالب العائلية (Family Molds) والمنتجات المشتركة Co-products"]
-},
-{id:"standard-cost",level:3,title:"التكلفة المعيارية",en:"Standard Cost",
- goals:["تفهم تعليم السعر المعياري وتحريره","تميز بين مؤشري السعر S وV","تحسب فرق سعر الشراء وأين يُرحَّل"],
- tcodes:["CK24","MM03","MIGO","MIRO","CKM3N"],
- explain:[
-  `تقدير التكلفة يصبح ${T("سعراً معيارياً","Standard Price")} بعد ${T("التعليم والتحرير","Mark & Release")} بـ ${C("CK24")}، فيُحفظ في تبويب Accounting 1 للمادة مع ${T("مؤشر التحكم في السعر","Price Control")} S. التعليم يضع السعر المستقبلي ولا يغيّر قيمة المخزون، والتحرير يجعله السعر الحالي ويعيد تقييم المخزون، ويُسمح به مرة واحدة لكل فترة. المنتجات المصنعة تكون عادةً S، والخامات المشتراة S أو V حسب سياسة الشركة`,
-  `مع S يُقيَّم المخزون بسعر ثابت، وأي فرق بين سعر الشراء والمعياري يذهب إلى ${T("حساب فروق الأسعار","Price Difference Account")}. أما مع V ${T("المتوسط المتحرك","Moving Average")} فيدخل الفرق في قيمة المخزون ما دامت الكمية متوفرة`,
-  `في S/4HANA يعمل ${T("دفتر المواد","Material Ledger")} للتقييم في كل نظام، ويمكن عرض أسعار المادة وفروقها في ${C("CKM3N")}`
- ],
- example:{title:"شراء راتنج PP بمؤشر سعر S",rows:[["السعر المعياري","6.50 ر.س / كغ"],["الكمية المشتراة","10,000 كغ"],["سعر الفاتورة","6.80 ر.س / كغ"]]},
- screen:{tcode:"CK24",title:"Price Update",menu:"Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Price Update",
-  body:grp("Price Update for Standard Price",`<div class="radio"><span class="on">Mark</span><span>Release</span></div>`+flds(f("Posting Period/Year","01 / 2027",1),f("Company Code","1000")))+
-   grp("Selection",flds(f("Plant","1000"),f("Material","FG-0500")))+grp("Processing Options",`<div class="radio"><span class="on">Test Run</span><span>Background Processing</span><span>Log</span></div>`)+
-   `<div class="btns"><span>Marking Allowance</span><span>Execute</span></div>`+
-   tbl(["Material","Plant","Cost Estimate","Current Std Price","Price Unit","Costing Status"],[["FG-0500","1000","1,932.08","1,904.00","1,000","KA"]],["hl"]),
-  notes:["<b>Marking Allowance</b> يسمح بتعليم الأسعار لفترة محددة قبل التحرير","<b>Mark</b> يضع التقدير كسعر مستقبلي، و<b>Release</b> يجعله السعر المعياري الحالي ويعيد تقييم المخزون","حالة التقدير: <b>KA</b> محسوب دون أخطاء، تصبح <b>VO</b> بعد التعليم ثم <b>FR</b> بعد التحرير","التحرير مرة واحدة لكل فترة، وفي فترة مفتوحة فقط","شغّل <b>Test Run</b> أولاً دائماً، والسعر الحالي في الجدول افتراضي للمقارنة"]},
- steps:[
-  [`تحقق من مؤشر السعر والسعر المعياري في تبويب Accounting 1`,"MM03"],
-  [`راجع قيد الاستلام: المخزون بالمعياري والفرق إلى حساب فروق الأسعار`,"MIGO"],
-  [`راجع قيد الفاتورة وحساب فروق الأسعار`,"MIRO"],
-  [`اعرض تاريخ أسعار المادة وفروقها`,"CKM3N"],
-  [`راجع سجل التعليم والتحرير للفترة`,"CK24"]
- ],
- questions:[
-  {id:"sc-q1",type:"num",prompt:"كم فرق السعر المرحَّل لحساب فروق الأسعار؟ أدخل المبلغ موجباً",unit:"ر.س",answer:3000,tol:1,
-   wrongs:[[68000,1,"إدخال قيمة الفاتورة بدل الفرق","68,000 قيمة الفاتورة، والمطلوب الفرق عن المعياري"],
-           [0.3,0.01,"إدخال فرق الكيلو بدل الإجمالي","0.30 فرق الكيلو الواحد، اضربه في الكمية"]],
-   solution:"(6.80 − 6.50) × 10,000 = 3,000 ر.س فرق غير ملائم، والمخزون يبقى بقيمة 65,000"},
-  {id:"sc-q2",type:"mcq",prompt:"متى تتغير قيمة مخزون مادة بمؤشر سعر S؟",
-   options:[["عند تحرير سعر معياري جديد",null],["عند كل فاتورة شراء","فرق الفاتورة يذهب لحساب فروق الأسعار ولا يغيّر سعر المخزون"],["عند كل استلام من أمر إنتاج","الاستلام يتم بالسعر المعياري نفسه"],["عند التأكيد في CO11N","التأكيد يحمّل الأنشطة على الأمر ولا يقيّم المخزون"]],
-   correct:0,tags:[null,"خلط بين S وV","خلط بين الاستلام وإعادة التقييم","خلط بين التأكيد والتقييم"],
-   solution:"مع S يتغير تقييم المخزون عند تحرير معيار جديد (إعادة تقييم الرصيد) أو عند إعادة التقييم من Actual Costing إن كانت مفعلة"}
- ],
- missing:["سياسة تحرير المعيار السنوي والمعيار المعدّل خلال السنة","التكاليف المختلطة Mixed Costing"]
-},
-{id:"actual-cost",level:3,title:"التكلفة الفعلية",en:"Actual Cost",
- goals:["تجمع التكلفة الفعلية على أمر الإنتاج","تفهم الفرق بين التحميل بالسعر المخطط والفعلي للنشاط","تقرأ تحليل تكاليف الأمر حسب عنصر التكلفة"],
- tcodes:["KGI2","CO43","KSII","CON2","KKBC_ORD","CKMLCP"],
- explain:[
-  `${T("التكلفة الفعلية","Actual Cost")} على أمر الإنتاج تتكون من: المواد المصروفة فعلاً × سعر المادة (المعياري إن كانت S)، والساعات المؤكدة × ${T("سعر النشاط المخطط","Plan Activity Price")}، والتحميل غير المباشر الذي يُرحَّل بـ ${C("KGI2")} لأمر واحد أو ${C("CO43")} جماعياً`,
-  `إن أردت تحميل الأنشطة بالسعر الفعلي، يُحسب السعر الفعلي بـ ${C("KSII")} ثم يُعاد تقييم الأوامر به بـ ${C("CON2")}، وهذا اختياري ويعتمد على إعداد النظام`,
-  `التكلفة الفعلية الكاملة للمخزون والمبيعات تأتي من ${T("التكاليف الفعلية في دفتر المواد","Actual Costing")} عبر ${C("CKMLCP")}، وهو موضوع ناقص في هذا المسار`
- ],
- example:{title:"فعليات الأمر 1000456 (950 قطعة سليمة)",rows:[["راتنج مصروف","210 كغ × 6.50"],["ساعات ماكينة مؤكدة","2.6 × 160"],["ساعات عمالة مؤكدة","2.6 × 40"],["تحميل غير مباشر","8% على المواد"]]},
- screen:{tcode:"CO03",title:"Display Production Order: Cost Analysis",menu:"CO03 › Goto › Costs › Analysis",
-  body:flds(f("Order","1000456"),f("Material","FG-0500"),f("Plant","1000"),f("Status","REL CNF DLV PRC"))+
-   tbl(["Cost Elem.","Cost Element (Text)","Origin","Total plan","Total act.","P/A var","P/A var(%)"],
-    [["500100","Raw Material Consumption","1000/RES-PP","1,326.00","1,365.00","39.00","2.94"],["943000","Machine Hours","4110/MACH","400.00","416.00","16.00","4.00"],["943100","Labor Hours","4110/LAB","100.00","104.00","4.00","4.00"],["655100","Overhead Material","","106.08","109.20","3.12","2.94"],["895000","Factory Output Production","1000/FG-0500","-1,932.08","-1,835.48","96.60","-5.00"],["","Total","","0.00","158.72","158.72",""]],
-    ["hl","","","","","tot"]),
-  notes:["<b>Total plan</b> للكمية المخططة 1,000، و<b>Total act.</b> للفعلي","سطر <b>895000</b> هو دائن الاستلام بالسعر المعياري × 950","الرصيد 158.72 يبقى على الأمر حتى حساب الانحراف والتسوية","مقارنة المخطط بالفعلي هنا تختلف عن الانحراف المستهدف، لأن المخطط مبني على 1,000 قطعة","<b>CNF</b> مؤكد نهائياً، <b>DLV</b> مُسلَّم بالكامل، <b>PRC</b> محسوب التكلفة المسبقة"]},
- steps:[
-  [`تحقق أن كل الصرف والتأكيدات مسجلة قبل الإقفال`,"MB51"],
-  [`رحّل التحميل غير المباشر على الأمر`,"KGI2"],
-  [`اعرض تكاليف الأمر الفعلية حسب عنصر التكلفة`,"KKBC_ORD"],
-  [`قارن الساعات الفعلية بالمخططة لكل عملية`,"CO03"],
-  [`إن كانت الشركة تحمّل بالسعر الفعلي: احسبه ثم أعد تقييم الأوامر`,"CON2"]
- ],
- questions:[
-  {id:"ac-q1",type:"num",prompt:"احسب إجمالي التكلفة الفعلية على الأمر قبل دائن الاستلام",unit:"ر.س",answer:1994.2,tol:0.6,
-   wrongs:[[1885,0.6,"إغفال التحميل غير المباشر","أضف 8% من المواد = 109.20"],
-           [1890.2,0.6,"إغفال تكلفة العمالة","العمالة 2.6 × 40 = 104"],[158.72,0.6,"إدخال رصيد الأمر بدل إجمالي التكلفة","158.72 هو الرصيد بعد دائن الاستلام، والمطلوب إجمالي المدين"]],
-   solution:"راتنج 1,365 + ماكينة 416 + عمالة 104 + غير مباشر 109.20 = 1,994.20 ر.س"},
-  {id:"ac-q2",type:"mcq",prompt:"بأي سعر تُحمَّل الساعات المؤكدة على الأمر في الإعداد الافتراضي؟",
-   options:[["السعر المخطط للنشاط",null],["السعر الفعلي المحسوب آلياً مع كل تأكيد","السعر الفعلي يُحسب في نهاية الفترة بـ KSII، ولا يُحسب مع كل تأكيد"],["سعر يُدخله المستخدم في شاشة التأكيد","شاشة التأكيد تسجل الكميات والساعات، والسعر يأتي من تخطيط النشاط"],["متوسط آخر ثلاثة أشهر","لا يوجد متوسط آلي بهذا الشكل"]],
-   correct:0,tags:[null,"خلط بين السعر المخطط والفعلي للنشاط","خلط بين الكمية والسعر في التأكيد","افتراض طريقة تسعير غير موجودة"],
-   solution:"التحميل الفوري يتم بالسعر المخطط من KP26، والفرق يبقى على مركز التكلفة كتحميل ناقص أو زائد"}
- ],
- missing:["Actual Costing في Material Ledger وتشغيل CKMLCP","ترحيل تكاليف الإنتاج حسب الحدث Event-Based Production Cost Posting"]
-},
-{id:"variance",level:4,title:"تحليل الانحرافات",en:"Variance Analysis",
- goals:["تحسب التكلفة المستهدفة للإنتاج الفعلي","تحسب الانحراف الإجمالي وتقسمه لفئاته","تربط كل انحراف بالمستند المصدر في SAP"],
- tcodes:["KKS2","KKS1","KKS1H","KKBC_ORD","KO88","CO88"],
- fiori:"Production Cost Analysis",
- explain:[
-  `${T("التكلفة المستهدفة","Target Cost")} = التكلفة المعيارية × الكمية السليمة المستلمة ÷ كمية التقدير. ${T("الانحراف الإجمالي","Total Variance")} = التكلفة الفعلية − المبلغ الذي دُوئن به الأمر عند الاستلام`,
-  `${C("KKS2")} يحسب الانحرافات لأمر واحد و${C("KKS1")} جماعياً، وفي أنظمة S/4HANA تتوفر أيضاً ${C("KKS1H")} لأوامر الإنتاج على ${T("نسخة التكلفة المستهدفة","Target Cost Version 0")}. جانب المدخلات يضم: ${T("فرق سعر المدخلات","Input Price")}، ${T("فرق استخدام الموارد","Resource-Usage")}، ${T("فرق كمية المدخلات","Input Quantity")}، و${T("المتبقي","Remaining Input")} الذي يجمع البنود بلا كميات مثل التحميل غير المباشر، ويُضاف إليها ${T("انحراف الهالك","Scrap Variance")} إذا فُعّل في إعدادات الانحراف. ولا تُحسب انحرافات لأمر ليس له ${T("مفتاح انحراف","Variance Key")}`,
-  `جانب المخرجات يضم ${T("فرق سعر المخرجات","Output Price")}، ${T("فرق حجم الدفعة","Lot Size")}، و${T("فرق السعر المختلط","Mixed-Price")}. بعد الحساب يُسوّى الأمر بـ ${C("KO88")} فتذهب الانحرافات إلى المالية وتحليل الربحية`
- ],
- example:{title:"الأمر 1000456: معيار مقابل فعلي",rows:[["التكلفة المعيارية لكل 1,000","1,932.08"],["الكمية السليمة المستلمة","950"],["التكلفة الفعلية على الأمر","1,994.20"],["كمية الراتنج في المعيار لكل 1,000","204 كغ (شاملة هالك 2%)"]],note:"المبالغ بالريال السعودي، مع افتراض أن مفتاح الانحراف لا يفصل انحراف الهالك"},
- screen:{tcode:"KKS2",title:"Variance Calculation: Production/Process Orders",menu:"Accounting › Controlling › Product Cost Controlling › Cost Object Controlling › Product Cost by Order › Period-End Closing › Single Functions › Variances › Individual Processing",
-  body:flds(f("Order","1000456"),f("Period","11"),f("Fiscal Year","2026"))+
-   grp("Parameters",`<div class="radio"><span>All target cost versions</span><span class="on">Selected target cost versions: 0</span></div>`)+
-   grp("Processing Options",`<div class="radio"><span>Background Processing</span><span class="on">Test Run</span><span class="on">Detail List</span></div>`)+
-   tbl(["Order","Material","Target costs","Control costs","Allocated actual costs","Variance"],[["1000456","FG-0500","1,835.48","1,994.20","1,835.48","158.72"]],["hl"])+
-   tbl(["Variance category","Amount"],[["Input price variance","0.00"],["Resource-usage variance","0.00"],["Input quantity variance","150.30"],["Remaining input variance","8.42"],["Mixed-price variance","0.00"],["Output price variance","0.00"],["Lot size variance","0.00"],["Remaining variance","0.00"],["Total","158.72"]],["","","hl","hl","","","","","tot"]),
-  notes:["<b>Control costs</b> التكلفة الفعلية ناقص WIP والهالك، وهنا تساوي الفعلي لأن الأمر مكتمل","<b>Allocated actual costs</b> المبلغ الذي دُوئن به الأمر عند الاستلام","<b>Input quantity</b> 150.30 = راتنج 105.30 + ماكينة 36 + عمالة 9","<b>Remaining input</b> 8.42 فرق التحميل غير المباشر، لأنه مرحَّل بلا كمية","شغّل <b>Test Run</b> قبل الحفظ ثم سوِّ بـ KO88"]},
- steps:[
-  [`تأكد أن الأمر في حالة DLV أو TECO، وإلا ستُحسب WIP بدل الانحراف`,"CO03"],
-  [`احسب الانحرافات للأمر في وضع الاختبار`,"KKS2"],
-  [`افتح تفصيل الانحراف حسب الفئة وعنصر التكلفة`,"KKS2"],
-  [`ارجع للمستندات المصدر: حركات المواد والتأكيدات لكل انحراف كبير`,"MB51"],
-  [`سوِّ الأمر بعد مراجعة الانحرافات`,"KO88"]
- ],
- questions:[
-  {id:"va-q1",type:"num",prompt:"احسب الانحراف الإجمالي على الأمر. أدخل المبلغ موجباً",unit:"ر.س",answer:158.72,tol:0.6,
-   wrongs:[[62.12,0.6,"المقارنة بتكلفة الكمية المخططة بدل المستهدفة","التكلفة المستهدفة تُحسب على 950 قطعة: 1,932.08 × 0.95 = 1,835.48"]],
-   solution:"المستهدف 1,932.08 × 950 ÷ 1,000 = 1,835.48 · الانحراف 1,994.20 − 1,835.48 = 158.72 ر.س غير ملائم"},
-  {id:"va-q2",type:"num",prompt:"احسب انحراف كمية الراتنج (Input Quantity Variance)",unit:"ر.س",answer:105.3,tol:0.3,
-   wrongs:[[130,0.3,"تجاهل نسبة هالك المكوّن في الكمية المستهدفة","الكمية المستهدفة 204 × 0.95 = 193.8 كغ، وليست 190"],
-           [65,0.3,"المقارنة بالكمية المخططة للأمر","المقارنة تكون بالكمية المستهدفة للإنتاج الفعلي، لا بالكمية المخططة 200 كغ"]],
-   solution:"(210 − 193.8) × 6.50 = 105.30 ر.س. لاحظ أن المعيار يسمح بهالك 2%، فالانحراف الحقيقي 16.2 كغ وليس 20"}
- ],
- missing:["إعداد مفتاح الانحرافات وفئاتها في Customizing","تسوية الانحرافات إلى تحليل الربحية Margin Analysis"]
-},
-{id:"factory",level:4,title:"تطبيقات عملية على المصنع",en:"Injection Molding Cases",
- goals:["تحلل أثر التجويف المغلق على ساعات الماكينة","تعالج المطحون كمنتج ثانوي","تعرف أثر هالك بدء التشغيل على فرق حجم الدفعة"],
- tcodes:["CS02","CS03","CO11N","MB51","KKS2"],
- explain:[
-  `${T("المطحون","Regrind")}: إذا عُرّف في قائمة المواد كـ ${T("منتج ثانوي","By-product")} بكمية سالبة، يُستلم على الأمر بالحركة ${M("531")} فيخفض تكلفته. إن طُحن وأُعيد للخط دون تسجيل، يظهر الراتنج المصروف أكبر من الحقيقي`,
-  `${T("التجويف المغلق","Blocked Cavity")}: إغلاق تجويف في قالب 4 تجاويف يرفع زمن الماكينة للقطعة بنسبة الثلث، فيظهر في فرق كمية المدخلات للأنشطة دون أي خطأ في المواد`,
-  `${T("هالك بدء التشغيل وتغيير اللون","Start-up / Color-change Scrap")}: يمكن تعريفه في بند BOM كـ ${T("كمية ثابتة","Fixed Quantity")} لكل أمر مهما كان حجمه، فيولّد ${T("فرق حجم الدفعة","Lot Size Variance")} عندما يختلف حجم الأمر عن كمية التقدير`
- ],
- example:{title:"الأمر 1000456 مع تجويف مغلق طوال التشغيل",rows:[["الكمية السليمة","950 قطعة"],["التجاويف العاملة","3 من 4"],["زمن الدورة","36 ثانية"],["سعر ساعة الماكينة","160 ر.س"]]},
- screen:{tcode:"CS03",title:"Display material BOM: General Item Overview",menu:"Logistics › Production › Master Data › Bills of Material › Bill of Material › Material BOM › Display",tabs:["Material","Document","General","All"],tabOn:3,
-  body:flds(f("Material","FG-0500"),f("Plant","1000"),f("BOM Usage","1 <small>Production</small>"),f("Base Quantity","1,000 PC"))+
-   tbl(["Item","ICt","Component","Component description","Quantity","Un","Fixed Qty","Comp. Scrap (%)"],[["0010","L","RES-PP","Polypropylene resin","200.000","KG","","2.00"],["0020","L","RES-PP","Start-up purge","1.500","KG","X",""],["0030","L","RGR-PP","PP regrind (by-product)","-3.000","KG","",""]],["","hl","hl"]),
-  notes:["<b>ICt = L</b> بند مخزني","<b>Fixed Qty</b> الكمية لا تتغير بحجم الأمر، مناسبة لهالك بدء التشغيل","<b>Quantity سالبة</b> تجعل البند منتجاً ثانوياً يُستلم بالحركة 531","<b>Comp. Scrap (%)</b> تظهر في تفاصيل البند؛ جُمعت هنا للتوضيح. هذا BOM توضيحي ويختلف عن مثال حساب التكلفة"]},
- steps:[
-  [`راجع ملاحظات التأكيد وسجل توقف القالب للأمر`,"CO14"],
-  [`احسب عدد الطلقات بالتجاويف العاملة فعلاً`,null],
-  [`قارن ساعات الماكينة المستهدفة بالمؤكدة في تحليل الانحراف`,"KKS2"],
-  [`ابحث عن حركات 531 للمطحون في الفترة`,"MB51"],
-  [`إن تكرر هالك التشغيل، اقترح كمية ثابتة في BOM بعد موافقة الإنتاج`,"CS02"]
- ],
- stepsNote:"تعديل BOM يغيّر التكلفة المعيارية القادمة، فلا تنفذه إلا في نظام التدريب أو بعد اعتماد الإنتاج",
- questions:[
-  {id:"fa-q1",type:"num",prompt:"كم ساعة ماكينة يحتاج الأمر لإنتاج 950 قطعة سليمة بثلاثة تجاويف؟ قرّب لرقمين عشريين",unit:"ساعة",answer:3.17,tol:0.011,
-   wrongs:[[2.38,0.011,"استخدام عدد التجاويف الأصلي","مع تجويف مغلق تنتج الطلقة 3 قطع فقط"]],
-   solution:"950 ÷ 3 = 316.67 أي 317 طلقة × 36 ث = 11,412 ث = 3.17 ساعة مقابل 2.375 ساعة مستهدفة، أي 0.795 ساعة × 160 = 127.20 ر.س انحراف ماكينة"},
-  {id:"fa-q2",type:"mcq",prompt:"أي حركة تستلم المطحون كمنتج ثانوي على الأمر؟",
-   options:[["531",null],["101","101 لاستلام المنتج الرئيسي"],["261","261 صرف وليست استلاماً"],["551","551 إتلاف من المخزن على مركز تكلفة"]],
-   correct:0,tags:[null,"خلط بين المنتج الرئيسي والثانوي","خلط بين الصرف والاستلام","خلط بين الإتلاف والمنتج الثانوي"],
-   solution:"531 تستلم المنتج الثانوي المعرَّف في BOM بكمية سالبة، فتُدائن الأمر بقيمته"}
- ],
- missing:["التصنيع المتكرر Repetitive Manufacturing ومجمّع تكلفة المنتج KKF6N","توزيع الكهرباء على الماكينات حسب kWh"]
-}
+ {
+  "id": "intro",
+  "level": 1,
+  "title": "دورة التكلفة في المنشآت الصناعية",
+  "en": "Manufacturing Cost Flow",
+  "industry": "جميع الصناعات",
+  "mfg": "عام لكل طرق التصنيع",
+  "goals": [
+   "تتبع الرقم من مستند المصنع إلى تقرير تكلفة الإنتاج",
+   "تشرح دور Universal Journal وجدول ACDOCA",
+   "تميز Primary Cost من Secondary Cost"
+  ],
+  "terms": [
+   "Master Data",
+   "Standard Cost Estimate",
+   "Goods Issue",
+   "Confirmation",
+   "Goods Receipt",
+   "Variance Analysis",
+   "Settlement",
+   "Universal Journal",
+   "Primary Cost",
+   "Secondary Cost"
+  ],
+  "situation": {
+   "text": "أمر إنتاج انتهى هذا الشهر، وتقرير التكلفة يُظهر عليه رصيداً لم يُسوَّ بعد. مدير المصنع يسأل: من أين جاء هذا الرقم، ومتى سيظهر في القوائم المالية؟",
+   "decision": "تتبع مسار التكلفة من المخزن والماكينة إلى أمر الإنتاج ثم إلى الحسابات"
+  },
+  "conceptTitle": "دورة التكلفة في المنشآت الصناعية",
+  "concept": [
+   "<b>كيف تنتقل تكلفة المواد والتشغيل من المصنع إلى تقرير تكلفة الإنتاج؟</b> في كل مصنع، غذائياً كان أو كيميائياً أو معدنياً أو بلاستيكياً، تمر التكلفة بالمراحل نفسها في SAP S/4HANA:",
+   "<ol class=\"cyc\">\n     <li><b>إعداد البيانات الأساسية</b> <span class=\"en\">Master Data</span>: المادة، و<b>قائمة المواد</b> <span class=\"en\">Bill of Materials (BOM)</span>، و<b>مسار التصنيع</b> <span class=\"en\">Routing</span>، و<b>مركز العمل</b> <span class=\"en\">Work Center</span> المربوط بمركز تكلفة</li>\n     <li><b>تقدير التكلفة المعيارية وإصدارها</b> <span class=\"en\">Standard Cost Estimate and Release</span>: يصبح سعر المنتج الذي يُقيَّم به المخزون</li>\n     <li><b>صرف المواد</b> <span class=\"en\">Goods Issue</span>: تُحمَّل كمية المواد الفعلية على الأمر</li>\n     <li><b>تأكيد الإنتاج</b> <span class=\"en\">Confirmation</span>: تُسجَّل الكمية السليمة والهالك والساعات، فتُحمَّل تكلفة التشغيل</li>\n     <li><b>استلام المنتج</b> <span class=\"en\">Goods Receipt</span>: يُدائن الأمر بالتكلفة المعيارية للكمية المستلمة</li>\n     <li><b>تحليل الانحرافات</b> <span class=\"en\">Variance Analysis</span>: مقارنة الفعلي بالمستهدف وتفسير الفرق</li>\n     <li><b>التسوية</b> <span class=\"en\">Settlement</span>: نقل رصيد الأمر إلى المالية وتحليل الربحية</li>\n    </ol>",
+   "<b>دفتر اليومية الموحد</b> <span class=\"en\">Universal Journal</span> يجمع بيانات الترحيل الفعلية من المالية <span class=\"en\">FI</span> ومحاسبة التكاليف <span class=\"en\">CO</span> في جدول واحد هو ACDOCA. كل بند فيه يحمل حساب الأستاذ العام ومعه كائن التكلفة، مثل مركز التكلفة أو أمر الإنتاج، فيتطابق الأستاذ العام مع تقارير التكاليف دون تسوية بينهما",
+   "الفرق بين نوعي حسابات التكلفة يظهر في مثالين من المصنع نفسه: فاتورة الكهرباء تُسجَّل على مركز التكلفة بحساب <b>تكلفة أولية</b> <span class=\"en\">Primary Cost</span>، لأنها تكلفة قادمة من خارج المنشأة عبر المالية. أما تحميل ساعات الماكينة من مركز التكلفة إلى أمر الإنتاج فيتم بحساب <b>تكلفة ثانوية</b> <span class=\"en\">Secondary Cost</span>، لأنه نقل داخلي يدين الأمر ويدائن المركز دون أن يغيّر إجمالي المصروفات",
+   "تُعرَّف هذه الحسابات في SAP GUI على أنظمة S/4HANA on-premise وPrivate Cloud بالمعاملة <code class=\"tc\">FS00</code>، باختيار <b>نوع الحساب</b> <span class=\"en\">G/L Account Type</span>: <span class=\"en\">Primary Costs or Revenue</span> أو <span class=\"en\">Secondary Costs</span>. وفي واجهة Fiori، ومنها S/4HANA Cloud Public Edition، يُستخدم تطبيق <span class=\"en\">Manage G/L Account Master Data</span>",
+   "توقيت التحميل غير المباشر والانحرافات والتسوية يعتمد على سيناريو النظام. في <b>المعالجة الدورية</b> <span class=\"en\">Period-End Processing</span> تُشغَّل في نهاية الشهر بالترتيب: التحميل غير المباشر، ثم <b>الإنتاج تحت التشغيل</b> <span class=\"en\">WIP</span>، ثم الانحرافات، ثم التسوية. وفي <b>المعالجة المرتبطة بالأحداث</b> <span class=\"en\">Event-Based Production Cost Posting</span> تُحسب وتُرحَّل مع كل حدث: صرف المواد، والتأكيد، والاستلام، والإقفال الفني. هذا السيناريو هو الافتراضي في S/4HANA Cloud Public Edition منذ الإصدار 2105، وتوفره في غيره يعتمد على الإصدار والإعداد",
+   "<b>يتناول كل درس مرحلة من دورة التكلفة الصناعية، وتتنوع الحالات التطبيقية بحسب طبيعة التصنيع. يتتبع المتدرب الرقم من مستنده في المصنع إلى ظهوره في SAP، ثم يفسّر أثره على تكلفة الإنتاج.</b>"
+  ],
+  "example": {
+   "title": "تتبع أمر واحد من المستند إلى SAP · مصنع بلاستيك · أمر 1000456",
+   "cols": [
+    "المرحلة",
+    "المستند في المصنع",
+    "في SAP",
+    "المبلغ (ر.س)"
+   ],
+   "rows": [
+    [
+     "صرف الخام",
+     "سند صرف 210 كغ × 6.50",
+     "MIGO 261 · مدين الأمر",
+     "1,365.00"
+    ],
+    [
+     "تشغيل الماكينة",
+     "بطاقة وقت 2.6 ساعة × 160",
+     "CO11N · تحميل نشاط",
+     "416.00"
+    ],
+    [
+     "العمالة",
+     "بطاقة وقت 2.6 ساعة × 40",
+     "CO11N · تحميل نشاط",
+     "104.00"
+    ],
+    [
+     "غير مباشر",
+     "8% من المواد",
+     "KGI2 · Overhead",
+     "109.20"
+    ],
+    [
+     "استلام المنتج",
+     "سند استلام 950 قطعة × 1.93208",
+     "MIGO 101 · دائن الأمر",
+     "-1,835.48"
+    ],
+    [
+     "الرصيد",
+     "",
+     "KKS2 ثم KO88",
+     "158.72"
+    ]
+   ],
+   "total": 5,
+   "basis": "أساس المقارنة: دائن الاستلام محسوب بالسعر المعياري للكمية السليمة الفعلية"
+  },
+  "screen": {
+   "tcode": "MM03",
+   "title": "Display Material FG-0500 (Finished Product)",
+   "menu": "Logistics › Materials Management › Material Master › Material › Display",
+   "tabs": [
+    "MRP 1",
+    "Work Scheduling",
+    "Costing 1",
+    "Costing 2",
+    "Accounting 1"
+   ],
+   "tabOn": 4,
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Material</label><div class=\"v\">FG-0500</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div></div><div class=\"grpb\"><span class=\"gt\">General Valuation Data</span><div class=\"flds\"><div class=\"fld\"><label>Base Unit of Measure</label><div class=\"v\">PC</div></div><div class=\"fld\"><label>Valuation Class</label><div class=\"v\">7920</div></div><div class=\"fld\"><label>Currency</label><div class=\"v\">SAR</div></div><div class=\"fld\"><label>Price Determ.</label><div class=\"v\">2 <small>Transaction-Based</small></div></div></div></div><div class=\"grpb\"><span class=\"gt\">Prices and values</span><div class=\"flds\"><div class=\"fld\"><label>Price control</label><div class=\"v hl\">S</div></div><div class=\"fld\"><label>Price Unit</label><div class=\"v\">1,000</div></div><div class=\"fld\"><label>Standard price</label><div class=\"v hl\">1,932.08</div></div><div class=\"fld\"><label>Moving price</label><div class=\"v\">0.00</div></div><div class=\"fld\"><label>Total Stock</label><div class=\"v\">0 PC</div></div><div class=\"fld\"><label>Total Value</label><div class=\"v\">0.00</div></div></div></div>",
+   "notes": [
+    "<b>Price control</b> = S يعني أن المخزون يُقيَّم بالسعر المعياري",
+    "<b>Price Unit</b> = 1,000 فالسعر المعروض لكل 1,000 حاوية",
+    "<b>Valuation Class</b> يحدد حسابات المخزون في المالية"
+   ]
+  },
+  "steps": [
+   [
+    "اعرض بيانات المادة وتبويبات Costing وAccounting",
+    "MM03"
+   ],
+   [
+    "اعرض قائمة المواد وتحقق من كمية الراتنج ونسبة هالك المكوّن",
+    "CS03"
+   ],
+   [
+    "اعرض مسار التصنيع: زمن الماكينة وزمن العمالة لكل عملية",
+    "CA03"
+   ],
+   [
+    "اعرض مركز العمل وتبويب Costing لمعرفة مركز التكلفة وأنواع الأنشطة",
+    "CR03"
+   ],
+   [
+    "اعرض تقدير التكلفة المعيارية للمادة",
+    "CK13N"
+   ],
+   [
+    "اعرض أمر إنتاج قائم وتتبع تكاليفه المخططة والفعلية",
+    "CO03"
+   ]
+  ],
+  "stepsNote": "استخدم معاملات العرض فقط إن كنت على نظام تشغيلي، والتطبيق الكامل في نظام تدريب (Sandbox / IDES)",
+  "questions": [
+   {
+    "id": "intro-q1",
+    "type": "mcq",
+    "prompt": "في SAP S/4HANA، أين تُسجَّل البنود الفعلية للمالية والتكاليف معاً؟",
+    "options": [
+     [
+      "ACDOCA (Universal Journal)",
+      null
+     ],
+     [
+      "COEP",
+      "COEP كان جدول بنود التكاليف الفعلية في ECC، وفي S/4HANA انتقلت هذه البنود إلى ACDOCA"
+     ],
+     [
+      "BSEG",
+      "BSEG يحفظ بنود المستند المحاسبي، ولا يجمع بنود التكاليف"
+     ],
+     [
+      "MSEG",
+      "MSEG خاص ببنود حركات المخزون"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين جداول ECC وS/4HANA",
+     "خلط بين جداول المالية والتكاليف",
+     "خلط بين جداول المخزون والتكاليف"
+    ],
+    "solution": "في S/4HANA يحفظ ACDOCA كل بند قيد في سطر واحد يحمل حقول المالية والتكاليف والأصول والمخزون معاً، لذلك يتطابق الأستاذ العام مع تقارير التكاليف دون تسوية بينهما"
+   },
+   {
+    "id": "intro-q2",
+    "type": "mcq",
+    "prompt": "أي حركة مخزنية تصرف الراتنج من المخزن إلى أمر الإنتاج؟",
+    "options": [
+     [
+      "261",
+      null
+     ],
+     [
+      "101",
+      "101 حركة استلام المنتج التام من الأمر إلى المخزن"
+     ],
+     [
+      "201",
+      "201 صرف على مركز تكلفة، فلا تصل التكلفة إلى أمر الإنتاج"
+     ],
+     [
+      "311",
+      "311 تحويل بين مواقع التخزين ولا تنشئ تكلفة على الأمر"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين حركات الصرف والاستلام",
+     "صرف على مركز تكلفة بدل الأمر",
+     "خلط بين التحويل والصرف"
+    ],
+    "solution": "الحركة 261 تصرف المادة على أمر الإنتاج وتحمّله بقيمتها، وعكسها 262"
+   },
+   {
+    "id": "intro-q3",
+    "type": "mcq",
+    "prompt": "تحميل 2.6 ساعة ماكينة من مركز التكلفة 4110 إلى أمر الإنتاج يُرحَّل بأي نوع من حسابات التكلفة؟",
+    "options": [
+     [
+      "Secondary Cost (Category 43)",
+      null
+     ],
+     [
+      "Primary Cost",
+      "التكلفة الأولية تأتي من المالية، مثل فاتورة أو راتب، والتحميل هنا نقل داخلي"
+     ],
+     [
+      "حساب ميزانية Balance Sheet Account",
+      "التحميل لا يمس الميزانية، فهو بين مركز التكلفة والأمر"
+     ],
+     [
+      "حساب إيرادات",
+      "لا توجد إيرادات في هذا القيد"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين التكلفة الأولية والثانوية",
+     "خلط بين حسابات الميزانية والتكلفة",
+     "خلط بين الإيراد والتكلفة"
+    ],
+    "solution": "تحميل النشاط يدين أمر الإنتاج ويدائن مركز التكلفة بحساب تكلفة ثانوية فئة 43، ولا يغيّر إجمالي المصروفات"
+   }
+  ],
+  "interpret": {
+   "text": "الرصيد 158.72 هو الفرق بين ما تحمّله الأمر فعلياً وما دُوئن به بالسعر المعياري. يبقى على الأمر حتى حساب الانحراف، ثم تنقله التسوية إلى المالية",
+   "en": "The order absorbed 1,994.20 SAR of actual costs, while the goods receipt credited it at the standard cost of 1,835.48 SAR.",
+   "ar": "تحمّل الأمر تكاليف فعلية 1,994.20 ر.س، بينما دائنه الاستلام بالتكلفة المعيارية 1,835.48 ر.س",
+   "docs": [
+    "حركات المواد على الأمر MB51: الحركات 261 و262 و531",
+    "التأكيدات CO14: الكمية السليمة والهالك والساعات",
+    "مستند الاستلام 101 وكميته",
+    "تحليل تكاليف الأمر KKBC_ORD حسب عنصر التكلفة"
+   ]
+  },
+  "missing": [
+   "قراءة ACDOCA عملياً عبر تقارير Fiori مثل Trial Balance وCost Center Actuals"
+  ],
+  "tcodes": [
+   "MM03",
+   "CS03",
+   "CA03",
+   "CR03",
+   "CK13N",
+   "CO03",
+   "FS00"
+  ],
+  "fiori": "Manage G/L Account Master Data"
+ },
+ {
+  "id": "master-data",
+  "level": 1,
+  "title": "بيانات التصنيع",
+  "en": "Manufacturing Master Data",
+  "industry": "صناعات غذائية · مصنع بسكويت",
+  "mfg": "تصنيع منفصل بالدفعات",
+  "goals": [
+   "تعرف البيانات الأساسية التي يُبنى عليها حساب التكلفة",
+   "تفهم دور Production Version في اختيار BOM والمسار",
+   "تقيس أثر نسخة إنتاج خاطئة على التكلفة"
+  ],
+  "terms": [
+   "Master Data",
+   "Bill of Materials (BOM)",
+   "Routing",
+   "Work Center",
+   "Production Version",
+   "Master Recipe",
+   "Resource"
+  ],
+  "situation": {
+   "text": "مصنع بسكويت يملك خطين للإنتاج ووصفتين للدقيق. تقرير الشهر أظهر تكلفة الكرتون أعلى من المعيار، رغم أن أسعار الخامات لم تتغير",
+   "decision": "التحقق من أن الأوامر نُفذت بنفس البيانات الأساسية التي بُني عليها المعيار"
+  },
+  "concept": [
+   "<b>البيانات الأساسية</b> <span class=\"en\">Master Data</span> هي المصدر الذي يقرأ منه النظام الكميات والأوقات. <b>قائمة المواد</b> <span class=\"en\">Bill of Materials (BOM)</span> تحدد المواد وكمياتها لكمية أساس، و<b>مسار التصنيع</b> <span class=\"en\">Routing</span> يحدد العمليات وأوقاتها، و<b>مركز العمل</b> <span class=\"en\">Work Center</span> يحدد مكان التنفيذ ويربطه بمركز التكلفة وأنواع الأنشطة",
+   "في التصنيع بالعمليات تُستخدم <b>الوصفة الرئيسية</b> <span class=\"en\">Master Recipe</span> بدل مسار التصنيع، و<b>المورد</b> <span class=\"en\">Resource</span> بدل مركز العمل. الفكرة المحاسبية واحدة: كمية معيارية ووقت معياري لكل كمية أساس",
+   "<b>نسخة الإنتاج</b> <span class=\"en\">Production Version</span> تربط BOM بديلة بمسار أو وصفة محددة لفترة صلاحية وحجم دفعة. تقدير التكلفة يختار نسخة، والأمر يختار نسخة، وإذا اختلفتا ظهر الفرق كانحراف رغم أن التشغيل نفسه قد يكون سليماً"
+  ],
+  "example": {
+   "title": "تكلفة 1,000 كرتون بنسختي إنتاج (للتبسيط: الدقيق ووقت الخط فقط)",
+   "cols": [
+    "البند",
+    "النسخة 0001 · الخط 1",
+    "النسخة 0002 · الخط 2"
+   ],
+   "rows": [
+    [
+     "كمية الدقيق",
+     "1,200 كغ",
+     "1,260 كغ"
+    ],
+    [
+     "سعر الدقيق",
+     "2.10 ر.س/كغ",
+     "2.10 ر.س/كغ"
+    ],
+    [
+     "تكلفة الدقيق",
+     "2,520.00",
+     "2,646.00"
+    ],
+    [
+     "وقت الخط",
+     "2.0 ساعة",
+     "2.5 ساعة"
+    ],
+    [
+     "سعر ساعة الخط",
+     "300 ر.س",
+     "300 ر.س"
+    ],
+    [
+     "تكلفة الخط",
+     "600.00",
+     "750.00"
+    ],
+    [
+     "الإجمالي لكل 1,000 كرتون",
+     "3,120.00",
+     "3,396.00"
+    ]
+   ],
+   "total": 6,
+   "basis": "أساس المقارنة: تقدير التكلفة المعيارية بُني على النسخة 0001"
+  },
+  "screen": {
+   "tcode": "C223",
+   "title": "Production Versions: Mass Processing",
+   "menu": "Logistics › Production › Master Data › Production Versions",
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Plant</label><div class=\"v\">1100</div></div><div class=\"fld\"><label>Material</label><div class=\"v\">FG-B200</div></div></div><div class=\"tblw\"><table><thead><tr><th>Version</th><th>Text</th><th>Valid from</th><th>Valid to</th><th>Lot size from</th><th>Lot size to</th><th>TLType</th><th>Group</th><th>GrC</th><th>Alt BOM</th><th>Usage</th></tr></thead><tbody><tr class=\"hl\"><td class=\"r\">0001</td><td class=\"\">Line 1 · new recipe</td><td class=\"\">01.01.2026</td><td class=\"\">31.12.9999</td><td class=\"r\">1</td><td class=\"r\">99,999</td><td class=\"\">N</td><td class=\"r\">50001200</td><td class=\"r\">1</td><td class=\"r\">1</td><td class=\"r\">1</td></tr><tr class=\"\"><td class=\"r\">0002</td><td class=\"\">Line 2 · old recipe</td><td class=\"\">01.01.2025</td><td class=\"\">31.12.9999</td><td class=\"r\">1</td><td class=\"r\">99,999</td><td class=\"\">N</td><td class=\"r\">50001200</td><td class=\"r\">2</td><td class=\"r\">2</td><td class=\"r\">1</td></tr></tbody></table></div>",
+   "notes": [
+    "<b>Version</b> رقم نسخة الإنتاج، ويظهر في رأس أمر الإنتاج",
+    "<b>TLType N</b> مسار تصنيع، وفي التصنيع بالعمليات يكون <b>2</b> وصفة رئيسية",
+    "<b>Alt BOM</b> قائمة المواد البديلة، و<b>GrC</b> عداد المسار داخل المجموعة",
+    "النسختان صالحتان في الفترة نفسها، لذلك قد يختار المخطط أو النظام أياً منهما"
+   ]
+  },
+  "steps": [
+   [
+    "اعرض النسخ الصالحة للمادة وفترات صلاحيتها",
+    "C223"
+   ],
+   [
+    "اعرض قائمة المواد البديلة وقارن كمية الدقيق",
+    "CS03"
+   ],
+   [
+    "اعرض المسار وأوقات الخط لكل عداد",
+    "CA03"
+   ],
+   [
+    "في تقدير التكلفة، افتح Qty Struct. لمعرفة النسخة المستخدمة",
+    "CK13N"
+   ],
+   [
+    "في رأس الأمر، تحقق من نسخة الإنتاج التي نُفذ بها",
+    "CO03"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "md-q1",
+    "type": "num",
+    "prompt": "إذا نُفذ أمر 1,000 كرتون بالنسخة 0002 بينما المعيار مبني على 0001، كم يزيد التكلفة؟",
+    "unit": "ر.س",
+    "answer": 276,
+    "tol": 0.5,
+    "wrongs": [
+     [
+      126,
+      0.5,
+      "حساب فرق المواد فقط",
+      "أضف فرق وقت الخط: 0.5 ساعة × 300 = 150"
+     ],
+     [
+      150,
+      0.5,
+      "حساب فرق وقت الخط فقط",
+      "أضف فرق الدقيق: 60 كغ × 2.10 = 126"
+     ],
+     [
+      3396,
+      0.5,
+      "إدخال تكلفة النسخة 0002 بدل الفرق",
+      "المطلوب الفرق بين النسختين"
+     ]
+    ],
+    "solution": "الدقيق (1,260 − 1,200) × 2.10 = 126 · الخط (2.5 − 2.0) × 300 = 150 · الفرق 276 ر.س لكل 1,000 كرتون"
+   },
+   {
+    "id": "md-q2",
+    "type": "mcq",
+    "prompt": "أي كائن يربط قائمة مواد بديلة بمسار تصنيع محدد لمادة في مصنع؟",
+    "options": [
+     [
+      "Production Version",
+      null
+     ],
+     [
+      "Work Center",
+      "مركز العمل مكان تنفيذ العملية، ولا يختار قائمة المواد"
+     ],
+     [
+      "Costing Variant",
+      "متغير التكاليف يحدد مصدر الأسعار وتواريخ التقييم"
+     ],
+     [
+      "Material Type",
+      "نوع المادة يحدد خصائص المادة العامة، مثل التقييم والمشتريات"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين مركز العمل ونسخة الإنتاج",
+     "خلط بين بيانات الكميات وبيانات التسعير",
+     "خلط بين نوع المادة ونسخة الإنتاج"
+    ],
+    "solution": "نسخة الإنتاج Production Version تجمع BOM البديلة والمسار أو الوصفة لفترة صلاحية وحجم دفعة"
+   }
+  ],
+  "interpret": {
+   "text": "الفرق 276 ر.س لكل 1,000 كرتون ناتج عن اختيار البيانات وليس عن أداء الخط. علاجه توحيد النسخة أو إقفال النسخة القديمة، لا الضغط على فريق الإنتاج",
+   "en": "The cost estimate was based on production version 0001, but the order was executed with version 0002.",
+   "ar": "تقدير التكلفة بُني على نسخة الإنتاج 0001، بينما نُفذ الأمر بالنسخة 0002",
+   "docs": [
+    "رأس أمر الإنتاج CO03: نسخة الإنتاج المستخدمة",
+    "هيكل الكميات في تقدير التكلفة CK13N",
+    "قائمة المواد البديلة CS03 ومسار التصنيع CA03",
+    "سجل النسخ وفترات صلاحيتها C223"
+   ]
+  },
+  "missing": [
+   "تحويل قائمة المواد الهندسية EBOM إلى قائمة تصنيع MBOM",
+   "إدارة التغييرات الهندسية وأثرها على المعيار"
+  ],
+  "tcodes": [
+   "MM03",
+   "C223",
+   "CS03",
+   "CA03",
+   "CR03",
+   "CK13N"
+  ]
+ },
+ {
+  "id": "cost-centers",
+  "level": 1,
+  "title": "مراكز التكلفة والتحميل",
+  "en": "Cost Centers & Activity Allocation",
+  "industry": "صناعات معدنية · خط كبس",
+  "mfg": "تصنيع منفصل",
+  "goals": [
+   "تحسب Activity Rate لخط إنتاج",
+   "تميز Primary Cost من Secondary Cost في القيود",
+   "تقرأ رصيد المركز بعد Activity Allocation"
+  ],
+  "terms": [
+   "Cost Center",
+   "Cost Element",
+   "Primary Cost",
+   "Secondary Cost",
+   "Activity Type",
+   "Activity Rate",
+   "Activity Allocation",
+   "Manufacturing Overhead"
+  ],
+  "situation": {
+   "text": "مصنع تشكيل معادن يحمّل تكلفة خط الكبس على الأوامر بسعر ساعة ثابت. في نهاية الشهر بقي على مركز الخط رصيد لم يُحمَّل على أي منتج",
+   "decision": "تحديد سبب الرصيد: إنفاق أعلى من الخطة، أم ساعات أقل من الطاقة، أم الاثنان"
+  },
+  "concept": [
+   "<b>مركز التكلفة</b> <span class=\"en\">Cost Center</span> وحدة مسؤولية تُجمع عليها التكاليف. تصل إليه <b>التكاليف الأولية</b> <span class=\"en\">Primary Costs</span> من المالية، مثل الإهلاك والكهرباء والصيانة، مسجلة على <b>حسابات التكلفة</b> <span class=\"en\">Cost Elements</span>",
+   "<b>نوع النشاط</b> <span class=\"en\">Activity Type</span> يقيس ما يقدمه المركز، مثل ساعة الماكينة. <b>سعر النشاط</b> <span class=\"en\">Activity Rate</span> = التكاليف المخططة ÷ الطاقة المخططة، ويُخطط في <code class=\"tc\">KP26</code> ويحسبه النظام بـ <code class=\"tc\">KSPI</code>",
+   "عند تأكيد الإنتاج يتم <b>تحميل النشاط</b> <span class=\"en\">Activity Allocation</span>: الساعات المؤكدة × السعر، بحساب <b>تكلفة ثانوية</b> <span class=\"en\">Secondary Cost</span> يدين الأمر ويدائن المركز. ما يتبقى على المركز بعد التحميل هو التحميل الناقص أو الزائد <span class=\"en\">Under / Over Absorption</span>، وهو جزء من <b>التكاليف الصناعية غير المباشرة</b> <span class=\"en\">Manufacturing Overhead</span> الذي لم يصل للمنتجات"
+  ],
+  "example": {
+   "title": "مركز 4110 · خط الكبس 1 · شهر واحد",
+   "rows": [
+    [
+     "إهلاك الماكينة والقالب (مخطط)",
+     "30,000"
+    ],
+    [
+     "كهرباء (مخطط)",
+     "42,000"
+    ],
+    [
+     "صيانة (مخطط)",
+     "8,000"
+    ],
+    [
+     "عمالة غير مباشرة (مخطط)",
+     "16,000"
+    ],
+    [
+     "إجمالي التكاليف المخططة",
+     "96,000",
+     1
+    ],
+    [
+     "الطاقة المخططة",
+     "600 ساعة ماكينة"
+    ],
+    [
+     "التكاليف الفعلية للشهر",
+     "101,500"
+    ],
+    [
+     "الساعات المؤكدة فعلياً على الأوامر",
+     "580 ساعة"
+    ]
+   ],
+   "note": "المبالغ بالريال السعودي",
+   "basis": "أساس المقارنة: الطاقة المخططة 600 ساعة والسعر المخطط"
+  },
+  "exampleTitle": "مركز 4110 · خط الكبس 1 · شهر واحد",
+  "screen": {
+   "tcode": "KP26",
+   "title": "Change Activity Type/Price Planning: Overview Screen",
+   "menu": "Accounting › Controlling › Cost Center Accounting › Planning › Activity Output/Prices › Change",
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Version</label><div class=\"v\">0 <small>Plan/Act - Version</small></div></div><div class=\"fld\"><label>From Period</label><div class=\"v\">1</div></div><div class=\"fld\"><label>To Period</label><div class=\"v\">1</div></div><div class=\"fld\"><label>Fiscal Year</label><div class=\"v\">2026</div></div><div class=\"fld\"><label>Cost Center</label><div class=\"v\">4110 <small>Press Line 1</small></div></div><div class=\"fld\"><label>Activity Type</label><div class=\"v\">*</div></div></div><div class=\"tblw\"><table><thead><tr><th>Cost Ctr</th><th>ActTyp</th><th>Plan Activity</th><th>Unit</th><th>Capacity</th><th>Fixed Price</th><th>Variable Price</th><th>Price Unit</th><th>P</th><th>Alloc. Cost Elem</th></tr></thead><tbody><tr class=\"hl\"><td class=\"r\">4110</td><td class=\"\">MACH</td><td class=\"r\">600</td><td class=\"\">H</td><td class=\"r\">600</td><td class=\"r\">160.00</td><td class=\"r\">0.00</td><td class=\"r\">1</td><td class=\"r\">1</td><td class=\"r\">943000</td></tr><tr class=\"\"><td class=\"r\">4110</td><td class=\"\">LAB</td><td class=\"r\">600</td><td class=\"\">H</td><td class=\"r\">600</td><td class=\"r\">40.00</td><td class=\"r\">0.00</td><td class=\"r\">1</td><td class=\"r\">1</td><td class=\"r\">943100</td></tr></tbody></table></div>",
+   "notes": [
+    "<b>Version 0</b> هي نسخة الخطة المرتبطة بالفعلي",
+    "<b>P</b> مؤشر السعر: 1 يعني أن السعر يُحسب من التخطيط عبر KSPI",
+    "<b>Alloc. Cost Elem</b> عنصر تكلفة ثانوي فئة 43 يحمل التحميل على الأمر",
+    "أرقام عناصر التكلفة هنا للتوضيح، تختلف في نظامك"
+   ]
+  },
+  "steps": [
+   [
+    "اعرض المركز وتحقق من فئته (Category) والهرمية التي ينتمي لها",
+    "KS03"
+   ],
+   [
+    "اعرض نوع النشاط ووحدته (H) وفئة احتسابه",
+    "KL03"
+   ],
+   [
+    "راجع السعر المخطط للنشاط في الفترة المطلوبة",
+    "KP26"
+   ],
+   [
+    "افتح مركز العمل في تبويب Costing وتأكد من ربط مركز التكلفة وأنواع الأنشطة",
+    "CR03"
+   ],
+   [
+    "استخرج بنود التكاليف الفعلية للمركز",
+    "KSB1"
+   ],
+   [
+    "قارن المخطط بالفعلي وراجع رصيد المركز بعد التحميل",
+    "S_ALR_87013611"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "cc-q1",
+    "type": "num",
+    "prompt": "احسب سعر ساعة الماكينة المخطط لمركز 4110",
+    "unit": "ر.س / ساعة",
+    "answer": 160,
+    "tol": 0.5,
+    "wrongs": [
+     [
+      165.52,
+      0.5,
+      "استخدام الساعات الفعلية بدل الطاقة المخططة",
+      "سعر النشاط المخطط يُحسب على الطاقة المخططة 600 ساعة، والساعات الفعلية تظهر لاحقاً عند التحميل"
+     ],
+     [
+      169.17,
+      0.5,
+      "استخدام التكاليف الفعلية في السعر المخطط",
+      "السعر المخطط يُبنى على التكاليف المخططة 96,000، والتكاليف الفعلية تُقارن به بعد الإقفال"
+     ]
+    ],
+    "solution": "96,000 ÷ 600 = 160 ر.س لكل ساعة ماكينة"
+   },
+   {
+    "id": "cc-q2",
+    "type": "num",
+    "prompt": "بعد تحميل الساعات المؤكدة على الأوامر، كم رصيد المركز غير المحمَّل؟ أدخل المبلغ موجباً",
+    "unit": "ر.س",
+    "answer": 8700,
+    "tol": 1,
+    "wrongs": [
+     [
+      5500,
+      1,
+      "مقارنة الفعلي بالمخطط بدل المحمَّل",
+      "5,500 فرق الإنفاق بين الفعلي والمخطط، والمطلوب الفرق بين الفعلي وما حُمِّل على الأوامر"
+     ],
+     [
+      92800,
+      1,
+      "إدخال المبلغ المحمَّل بدل الرصيد",
+      "92,800 هو ما حُمِّل على الأوامر، والمطلوب ما بقي على المركز"
+     ]
+    ],
+    "solution": "المحمَّل = 580 × 160 = 92,800 · الرصيد = 101,500 − 92,800 = 8,700 ر.س تحميل ناقص (Under-absorbed)"
+   },
+   {
+    "id": "cc-q3",
+    "type": "mcq",
+    "prompt": "فاتورة كهرباء الشهر مسجلة على مركز التكلفة 4110. بأي نوع من حسابات التكلفة تُرحَّل؟",
+    "options": [
+     [
+      "Primary Cost (G/L Account Type: Primary Costs or Revenue)",
+      null
+     ],
+     [
+      "Secondary Cost (Category 43)",
+      "الفئة 43 لتحميل الأنشطة الداخلية، والفاتورة تكلفة خارجية"
+     ],
+     [
+      "Statistical Key Figure",
+      "المؤشر الإحصائي كمية مثل عدد العاملين، وليس قيداً مالياً"
+     ],
+     [
+      "Balance Sheet Account",
+      "الكهرباء مصروف تشغيل يصل لمركز التكلفة"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين التكلفة الأولية والثانوية",
+     "خلط بين المؤشر الإحصائي والتكلفة",
+     "خلط بين المصروف وحساب الميزانية"
+    ],
+    "solution": "الفاتورة تأتي من المالية فتُرحَّل على حساب تكلفة أولية، ويحمل البند مركز التكلفة 4110 في ACDOCA"
+   }
+  ],
+  "interpret": {
+   "text": "رصيد 8,700 له سببان: الإنفاق الفعلي 101,500 أعلى من الخطة بـ 5,500، والساعات المحمَّلة 580 أقل من الطاقة بـ 20 ساعة × 160 = 3,200. فصل السببين يحدد من يتابع: الإنفاق مسؤولية مدير المركز، والطاقة مسؤولية التخطيط",
+   "en": "Cost center 4110 remains under-absorbed by 8,700 SAR: spending exceeded plan by 5,500 SAR and confirmed hours fell 20 hours short of planned capacity.",
+   "ar": "بقي على مركز 4110 تحميل ناقص 8,700 ر.س: الإنفاق تجاوز الخطة بـ 5,500 ر.س، والساعات المؤكدة نقصت 20 ساعة عن الطاقة المخططة",
+   "docs": [
+    "بنود التكاليف الفعلية للمركز KSB1",
+    "تقرير المخطط والفعلي S_ALR_87013611",
+    "تخطيط النشاط والسعر KP26",
+    "التأكيدات على الأوامر في الفترة CO14"
+   ]
+  },
+  "missing": [
+   "توزيع تكاليف المراكز الخدمية (الصيانة، القوالب) على مراكز الإنتاج: Assessment وDistribution",
+   "حساب سعر النشاط الفعلي KSII"
+  ],
+  "tcodes": [
+   "KS01",
+   "KL01",
+   "KP26",
+   "KSPI",
+   "CR03",
+   "KSB1",
+   "S_ALR_87013611"
+  ],
+  "fiori": "Manage Cost Centers"
+ },
+ {
+  "id": "product-costing",
+  "level": 2,
+  "title": "حساب تكلفة المنتج",
+  "en": "Product Costing",
+  "industry": "صناعات بلاستيكية · حقن",
+  "mfg": "تصنيع منفصل",
+  "goals": [
+   "تبني Standard Cost Estimate من BOM والمسار",
+   "تقرأ Cost Component Split",
+   "تميز Planned وTarget وStandard وActual Cost"
+  ],
+  "terms": [
+   "Product Costing",
+   "Standard Cost Estimate",
+   "Cost Component Split",
+   "Planned Cost",
+   "Target Cost",
+   "Actual Cost"
+  ],
+  "situation": {
+   "text": "مصنع حقن بلاستيك يطلب سعر بيع لحاوية جديدة، والمبيعات تحتاج تكلفة القطعة قبل أول أمر إنتاج",
+   "decision": "بناء التكلفة المعيارية، ثم معرفة أي رقم يُستخدم في التسعير وأيها في الرقابة"
+  },
+  "concept": [
+   "<b>حساب تكلفة المنتج</b> <span class=\"en\">Product Costing</span> يبني <b>تقدير التكلفة المعيارية</b> <span class=\"en\">Standard Cost Estimate</span> بـ <code class=\"tc\">CK11N</code> من هيكل الكميات: BOM تعطي المواد مع نسبة الهالك، والمسار يعطي الأوقات × أسعار الأنشطة، ثم يُضاف التحميل غير المباشر عبر ورقة التكاليف",
+   "النتيجة تُعرض في <b>تفصيل مكوّنات التكلفة</b> <span class=\"en\">Cost Component Split</span>: مواد، ماكينة، عمالة، غير مباشر. هذا التفصيل هو ما تحتاجه الإدارة لتعرف أين تتركز تكلفة المنتج",
+   "أربعة أرقام تظهر على أمر الإنتاج نفسه، ولكل منها أساس واستخدام:"
+  ],
+  "conceptExtra": "<div class=\"tbl\"><table><thead><tr><th>الرقم</th><th>الأساس</th><th>القيمة في المثال</th><th>متى تستخدمه</th></tr></thead><tbody><tr class=\"\"><td><span class=\"en\">Standard Cost</span> التكلفة المعيارية</td><td>تقدير التكلفة المحرر لكمية التقدير</td><td>1,932.08 لكل 1,000</td><td>تقييم المخزون ودائن الاستلام والتسعير</td></tr><tr class=\"\"><td><span class=\"en\">Planned Cost</span> التكلفة المخططة</td><td>الكمية المخططة للأمر عند إنشائه</td><td>1,932.08 لأمر 1,000 قطعة</td><td>قبل التنفيذ: الاحتياج والميزانية</td></tr><tr class=\"\"><td><span class=\"en\">Target Cost</span> التكلفة المستهدفة</td><td>المعيار × الكمية السليمة الفعلية</td><td>1,835.48 لـ 950 قطعة</td><td>تحليل الانحراف بعد التنفيذ</td></tr><tr class=\"\"><td><span class=\"en\">Actual Cost</span> التكلفة الفعلية</td><td>المستندات المرحّلة على الأمر</td><td>1,994.20</td><td>المقارنة بالمستهدفة وتفسير الفرق</td></tr></tbody></table></div>",
+  "example": {
+   "title": "مدخلات التقدير لكل 1,000 قطعة (بدون ماستر باتش وتغليف للتبسيط)",
+   "rows": [
+    [
+     "الراتنج الصافي",
+     "200 كغ"
+    ],
+    [
+     "هالك المكوّن في BOM",
+     "2%"
+    ],
+    [
+     "سعر الراتنج المعياري",
+     "6.50 ر.س / كغ"
+    ],
+    [
+     "زمن الدورة / التجاويف",
+     "36 ث / 4 تجاويف"
+    ],
+    [
+     "سعر ساعة الماكينة",
+     "160 ر.س"
+    ],
+    [
+     "سعر ساعة العمالة (عامل واحد للماكينة)",
+     "40 ر.س"
+    ],
+    [
+     "التحميل غير المباشر",
+     "8% على تكلفة المواد"
+    ]
+   ],
+   "basis": "أساس المقارنة: كمية التقدير 1,000 قطعة وأسعار الأنشطة المخططة"
+  },
+  "screen": {
+   "tcode": "CK11N",
+   "title": "Create Material Cost Estimate with Quantity Structure",
+   "menu": "Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Cost Estimate with Quantity Structure › Create",
+   "tabs": [
+    "Costing Data",
+    "Dates",
+    "Qty Struct."
+   ],
+   "tabOn": 0,
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Material</label><div class=\"v\">FG-0500</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div><div class=\"fld\"><label>Costing Variant</label><div class=\"v\">PPC1 <small>Standard Cost Est. (Mat.)</small></div></div><div class=\"fld\"><label>Costing Version</label><div class=\"v\">1</div></div><div class=\"fld\"><label>Costing Lot Size</label><div class=\"v hl\">1,000 PC</div></div><div class=\"fld\"><label>Transfer Control</label><div class=\"v\"></div></div></div><div class=\"gt\" style=\"font-size:.74rem;color:var(--sap-key);font-weight:600\">Itemization</div><div class=\"tblw\"><table><thead><tr><th>Item</th><th>I</th><th>Resource</th><th>Cost Element</th><th>Total Value</th><th>Quantity</th><th>Un</th></tr></thead><tbody><tr class=\"hl\"><td class=\"r\">1</td><td class=\"\">M</td><td class=\"\">1000 RES-PP</td><td class=\"r\">500100</td><td class=\"r\">1,326.00</td><td class=\"r\">204.000</td><td class=\"\">KG</td></tr><tr class=\"\"><td class=\"r\">2</td><td class=\"\">E</td><td class=\"\">4110 MACH</td><td class=\"r\">943000</td><td class=\"r\">400.00</td><td class=\"r\">2.500</td><td class=\"\">H</td></tr><tr class=\"\"><td class=\"r\">3</td><td class=\"\">E</td><td class=\"\">4110 LAB</td><td class=\"r\">943100</td><td class=\"r\">100.00</td><td class=\"r\">2.500</td><td class=\"\">H</td></tr><tr class=\"\"><td class=\"r\">4</td><td class=\"\">G</td><td class=\"\"></td><td class=\"r\">655100</td><td class=\"r\">106.08</td><td class=\"\"></td><td class=\"\"></td></tr><tr class=\"tot\"><td class=\"\"></td><td class=\"\"></td><td class=\"\"></td><td class=\"\"></td><td class=\"r\">1,932.08</td><td class=\"\"></td><td class=\"\"></td></tr></tbody></table></div>",
+   "notes": [
+    "<b>I</b> فئة البند: M مادة، E نشاط داخلي، G تحميل غير مباشر",
+    "<b>Quantity 204.000 KG</b> تشمل هالك المكوّن 2%",
+    "<b>Costing Lot Size</b> كمية التقدير، والتكلفة المستهدفة تُحسب نسبةً منها"
+   ]
+  },
+  "steps": [
+   [
+    "احسب كمية الراتنج الإجمالية: الصافي × (1 + نسبة هالك المكوّن)",
+    null
+   ],
+   [
+    "احسب عدد الطلقات: الكمية ÷ التجاويف، ثم الساعات: الطلقات × زمن الدورة ÷ 3600",
+    null
+   ],
+   [
+    "اضرب الساعات في سعر الماكينة وسعر العمالة",
+    null
+   ],
+   [
+    "أضف نسبة التحميل غير المباشر على تكلفة المواد",
+    null
+   ],
+   [
+    "قارن نتيجتك بتقدير النظام في عرض التفصيل Itemization",
+    "CK13N"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "pc-q1",
+    "type": "num",
+    "prompt": "احسب التكلفة المعيارية لكل 1,000 حاوية",
+    "unit": "ر.س",
+    "answer": 1932.08,
+    "tol": 0.6,
+    "wrongs": [
+     [
+      1904,
+      0.6,
+      "تجاهل نسبة هالك المكوّن",
+      "كمية الراتنج المعيارية 204 كغ بعد إضافة 2% هالك، وليست 200 كغ"
+     ],
+     [
+      1826,
+      0.6,
+      "إغفال التكاليف غير المباشرة",
+      "أضف 8% من تكلفة المواد = 106.08"
+     ],
+     [
+      1832.08,
+      0.6,
+      "إغفال تكلفة العمالة",
+      "زمن العمالة 2.5 ساعة × 40 = 100"
+     ]
+    ],
+    "solution": "راتنج 204 × 6.50 = 1,326 · طلقات 250 × 36 ث = 2.5 ساعة · ماكينة 400 · عمالة 100 · غير مباشر 106.08 · الإجمالي 1,932.08 ر.س، أي 1.932 للقطعة"
+   },
+   {
+    "id": "pc-q2",
+    "type": "mcq",
+    "prompt": "أي معاملة تنشئ تقدير تكلفة لمادة واحدة مع هيكل الكميات؟",
+    "options": [
+     [
+      "CK11N",
+      null
+     ],
+     [
+      "CK24",
+      "CK24 تعلّم التقدير وتحرره كسعر معياري، ولا تنشئه"
+     ],
+     [
+      "KP26",
+      "KP26 لتخطيط أسعار الأنشطة"
+     ],
+     [
+      "KKS2",
+      "KKS2 لحساب انحرافات أمر واحد"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين إنشاء التقدير وتحريره",
+     "خلط بين أسعار الأنشطة وتقدير المنتج",
+     "خلط بين التقدير وحساب الانحرافات"
+    ],
+    "solution": "CK11N ينشئ التقدير، وCK13N يعرضه، وCK24 يحرره ليصبح السعر المعياري"
+   },
+   {
+    "id": "pc-q3",
+    "type": "mcq",
+    "prompt": "أمر خُطط لـ 1,000 قطعة وأنتج 950 سليمة بتكلفة فعلية 1,994.20. بأي رقم تقارن الفعلي لتحليل الانحراف؟",
+    "options": [
+     [
+      "Target Cost = 1,835.48",
+      null
+     ],
+     [
+      "Planned Cost = 1,932.08",
+      "التكلفة المخططة مبنية على 1,000 قطعة، والإنتاج الفعلي 950"
+     ],
+     [
+      "Standard Cost لكل 1,000 = 1,932.08",
+      "هذا سعر المعيار لكمية التقدير، ويُحوَّل للكمية الفعلية أولاً"
+     ],
+     [
+      "Actual Cost للأمر السابق",
+      "المقارنة بأمر آخر لا تقيس الكفاءة مقابل المعيار"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "المقارنة بالتكلفة المخططة بدل المستهدفة",
+     "خلط بين سعر المعيار والتكلفة المستهدفة",
+     "المقارنة بفترة سابقة بدل المعيار"
+    ],
+    "solution": "التكلفة المستهدفة = 1,932.08 × 950 ÷ 1,000 = 1,835.48، وهي أساس الانحراف في نسخة التكلفة المستهدفة 0"
+   }
+  ],
+  "interpret": {
+   "text": "سعر الحاوية المعياري 1.932 ر.س، ثلثاه تقريباً مواد. أي خطأ في وزن القطعة أو نسبة الهالك يغيّر السعر أكثر من أي بند آخر",
+   "en": "Materials account for about 69% of the standard cost, so part weight and scrap allowance drive the price.",
+   "ar": "المواد تمثل نحو 69% من التكلفة المعيارية، فوزن القطعة ونسبة الهالك هما محرك السعر",
+   "docs": [
+    "تقدير التكلفة وتفصيله CK13N",
+    "قائمة المواد ونسبة هالك المكوّن CS03",
+    "زمن الدورة وعدد التجاويف في المسار CA03",
+    "أسعار الأنشطة KP26 وورقة التكاليف"
+   ]
+  },
+  "missing": [
+   "إعداد ورقة التكاليف KZS2 وهيكل مكوّنات التكلفة OKTZ",
+   "القوالب العائلية (Family Molds) والمنتجات المشتركة Co-products"
+  ],
+  "tcodes": [
+   "CK11N",
+   "CK13N",
+   "CK40N",
+   "CS03",
+   "CA03"
+  ]
+ },
+ {
+  "id": "standard-cost",
+  "level": 2,
+  "title": "التكلفة المعيارية وإصدارها",
+  "en": "Standard Cost & Release",
+  "industry": "صناعات كيميائية · منظفات",
+  "mfg": "تصنيع بالعمليات",
+  "goals": [
+   "تفهم تعليم السعر المعياري وإصداره",
+   "تميز بين مؤشري السعر S وV",
+   "تحسب فرق سعر الشراء وأين يُرحَّل"
+  ],
+  "terms": [
+   "Standard Cost Estimate",
+   "Price Control",
+   "Mark and Release",
+   "Price Difference",
+   "Material Ledger"
+  ],
+  "situation": {
+   "text": "مصنع منظفات اشترى مادة خام بسعر أعلى من المعيار. المشتريات تسأل: هل سيظهر الفرق على أوامر الإنتاج أم في مكان آخر؟",
+   "decision": "تحديد مكان ظهور فرق السعر، ومتى يلزم إصدار معيار جديد"
+  },
+  "concept": [
+   "تقدير التكلفة يصبح <b>سعراً معيارياً</b> <span class=\"en\">Standard Price</span> بعد <b>التعليم والتحرير</b> <span class=\"en\">Mark & Release</span> بـ <code class=\"tc\">CK24</code>، فيُحفظ في تبويب Accounting 1 للمادة مع <b>مؤشر التحكم في السعر</b> <span class=\"en\">Price Control</span> S. التعليم يضع السعر المستقبلي ولا يغيّر قيمة المخزون، والتحرير يجعله السعر الحالي ويعيد تقييم المخزون، ويُسمح به مرة واحدة لكل فترة. المنتجات المصنعة تكون عادةً S، والخامات المشتراة S أو V حسب سياسة الشركة",
+   "مع S يُقيَّم المخزون بسعر ثابت، وأي فرق بين سعر الشراء والمعياري يذهب إلى <b>حساب فروق الأسعار</b> <span class=\"en\">Price Difference Account</span>. أما مع V <b>المتوسط المتحرك</b> <span class=\"en\">Moving Average</span> فيدخل الفرق في قيمة المخزون ما دامت الكمية متوفرة",
+   "في S/4HANA يعمل <b>دفتر المواد</b> <span class=\"en\">Material Ledger</span> للتقييم في كل نظام، ويمكن عرض أسعار المادة وفروقها في <code class=\"tc\">CKM3N</code>"
+  ],
+  "example": {
+   "title": "شراء مادة خام LABSA بمؤشر سعر S",
+   "rows": [
+    [
+     "السعر المعياري",
+     "6.50 ر.س / كغ"
+    ],
+    [
+     "الكمية المشتراة",
+     "10,000 كغ"
+    ],
+    [
+     "سعر الفاتورة",
+     "6.80 ر.س / كغ"
+    ]
+   ],
+   "basis": "أساس المقارنة: السعر المعياري المحرر في بيانات المادة"
+  },
+  "screen": {
+   "tcode": "CK24",
+   "title": "Price Update",
+   "menu": "Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Price Update",
+   "body": "<div class=\"grpb\"><span class=\"gt\">Price Update for Standard Price</span><div class=\"radio\"><span class=\"on\">Mark</span><span>Release</span></div><div class=\"flds\"><div class=\"fld\"><label>Posting Period/Year</label><div class=\"v hl\">01 / 2027</div></div><div class=\"fld\"><label>Company Code</label><div class=\"v\">1000</div></div></div></div><div class=\"grpb\"><span class=\"gt\">Selection</span><div class=\"flds\"><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div><div class=\"fld\"><label>Material</label><div class=\"v\">DET-5L</div></div></div></div><div class=\"grpb\"><span class=\"gt\">Processing Options</span><div class=\"radio\"><span class=\"on\">Test Run</span><span>Background Processing</span><span>Log</span></div></div><div class=\"btns\"><span>Marking Allowance</span><span>Execute</span></div><div class=\"tblw\"><table><thead><tr><th>Material</th><th>Plant</th><th>Cost Estimate</th><th>Current Std Price</th><th>Price Unit</th><th>Costing Status</th></tr></thead><tbody><tr class=\"hl\"><td class=\"\">DET-5L</td><td class=\"r\">1000</td><td class=\"r\">1,840.00</td><td class=\"r\">1,795.00</td><td class=\"r\">100</td><td class=\"\">KA</td></tr></tbody></table></div>",
+   "notes": [
+    "<b>Marking Allowance</b> يسمح بتعليم الأسعار لفترة محددة قبل التحرير",
+    "<b>Mark</b> يضع التقدير كسعر مستقبلي، و<b>Release</b> يجعله السعر المعياري الحالي ويعيد تقييم المخزون",
+    "حالة التقدير: <b>KA</b> محسوب دون أخطاء، تصبح <b>VO</b> بعد التعليم ثم <b>FR</b> بعد التحرير",
+    "التحرير مرة واحدة لكل فترة، وفي فترة مفتوحة فقط",
+    "شغّل <b>Test Run</b> أولاً دائماً، والسعر الحالي في الجدول افتراضي للمقارنة"
+   ]
+  },
+  "steps": [
+   [
+    "تحقق من مؤشر السعر والسعر المعياري في تبويب Accounting 1",
+    "MM03"
+   ],
+   [
+    "راجع قيد الاستلام: المخزون بالمعياري والفرق إلى حساب فروق الأسعار",
+    "MIGO"
+   ],
+   [
+    "راجع قيد الفاتورة وحساب فروق الأسعار",
+    "MIRO"
+   ],
+   [
+    "اعرض تاريخ أسعار المادة وفروقها",
+    "CKM3N"
+   ],
+   [
+    "راجع سجل التعليم والتحرير للفترة",
+    "CK24"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "sc-q1",
+    "type": "num",
+    "prompt": "كم فرق السعر المرحَّل لحساب فروق الأسعار؟ أدخل المبلغ موجباً",
+    "unit": "ر.س",
+    "answer": 3000,
+    "tol": 1,
+    "wrongs": [
+     [
+      68000,
+      1,
+      "إدخال قيمة الفاتورة بدل الفرق",
+      "68,000 قيمة الفاتورة، والمطلوب الفرق عن المعياري"
+     ],
+     [
+      0.3,
+      0.01,
+      "إدخال فرق الكيلو بدل الإجمالي",
+      "0.30 فرق الكيلو الواحد، اضربه في الكمية"
+     ]
+    ],
+    "solution": "(6.80 − 6.50) × 10,000 = 3,000 ر.س فرق غير ملائم، والمخزون يبقى بقيمة 65,000"
+   },
+   {
+    "id": "sc-q2",
+    "type": "mcq",
+    "prompt": "متى تتغير قيمة مخزون مادة بمؤشر سعر S؟",
+    "options": [
+     [
+      "عند تحرير سعر معياري جديد",
+      null
+     ],
+     [
+      "عند كل فاتورة شراء",
+      "فرق الفاتورة يذهب لحساب فروق الأسعار ولا يغيّر سعر المخزون"
+     ],
+     [
+      "عند كل استلام من أمر إنتاج",
+      "الاستلام يتم بالسعر المعياري نفسه"
+     ],
+     [
+      "عند التأكيد في CO11N",
+      "التأكيد يحمّل الأنشطة على الأمر ولا يقيّم المخزون"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين S وV",
+     "خلط بين الاستلام وإعادة التقييم",
+     "خلط بين التأكيد والتقييم"
+    ],
+    "solution": "مع S يتغير تقييم المخزون عند تحرير معيار جديد (إعادة تقييم الرصيد) أو عند إعادة التقييم من Actual Costing إن كانت مفعلة"
+   }
+  ],
+  "interpret": {
+   "text": "فرق 3,000 ر.س يظهر في حساب فروق الأسعار عند الاستلام والفاتورة، ولا يصل لأوامر الإنتاج لأن الخام يُصرف بالسعر المعياري. لذلك يُحلَّل أداء المشتريات منفصلاً عن أداء المصنع",
+   "en": "The purchase price exceeded the standard by 0.30 SAR/kg, creating an unfavorable price difference of 3,000 SAR.",
+   "ar": "سعر الشراء تجاوز المعيار بـ 0.30 ر.س للكيلو، فنتج فرق سعر غير ملائم 3,000 ر.س",
+   "docs": [
+    "أمر الشراء وسعره ME23N",
+    "مستند الاستلام MIGO وقيده",
+    "الفاتورة MIRO وحساب فروق الأسعار",
+    "تاريخ أسعار المادة CKM3N"
+   ]
+  },
+  "missing": [
+   "سياسة تحرير المعيار السنوي والمعيار المعدّل خلال السنة",
+   "التكاليف المختلطة Mixed Costing"
+  ],
+  "tcodes": [
+   "CK24",
+   "MM03",
+   "MIGO",
+   "MIRO",
+   "CKM3N",
+   "ME23N"
+  ]
+ },
+ {
+  "id": "production-orders",
+  "level": 3,
+  "title": "تنفيذ الإنتاج بأوامر الإنتاج",
+  "en": "Production Orders",
+  "industry": "صناعات بلاستيكية · حقن",
+  "mfg": "تصنيع منفصل",
+  "goals": [
+   "تتبع أمر الإنتاج من الإنشاء إلى التسوية",
+   "تقرأ Confirmation: Yield وScrap والساعات",
+   "تميز الحركات 261 و262 و101 على الأمر"
+  ],
+  "terms": [
+   "Production Order",
+   "Goods Issue",
+   "Confirmation",
+   "Goods Receipt",
+   "Yield",
+   "Scrap"
+  ],
+  "situation": {
+   "text": "أمر إنتاج استهلك 210 كغ راتنج وأنتج 950 قطعة سليمة، والمعيار 200 غرام للقطعة. مدير الإنتاج يقول إن الخط عمل بشكل طبيعي",
+   "decision": "تحديد هل الزيادة استهلاك فعلي أم حركة مخزنية لم تُسجَّل"
+  },
+  "concept": [
+   "<b>أمر الإنتاج</b> <span class=\"en\">Production Order</span> هو <b>مجمّع التكلفة</b> <span class=\"en\">Cost Object</span> لدفعة إنتاج واحدة. يُنشأ بـ <code class=\"tc\">CO01</code> من المادة والكمية والتاريخ، فيقرأ قائمة المواد ومسار التصنيع ويحسب التكاليف المخططة",
+   "بعد <b>الإصدار</b> <span class=\"en\">Release</span> يُصرف الراتنج بالحركة <code class=\"tc mv\">261</code> فيتحمّله الأمر، ويُسجَّل <b>التأكيد</b> <span class=\"en\">Confirmation</span> بـ <code class=\"tc\">CO11N</code> بالكمية السليمة <span class=\"en\">Yield</span> والهالك <span class=\"en\">Scrap</span> وساعات الماكينة والعمالة. استلام المنتج بالحركة <code class=\"tc mv\">101</code> يدائن الأمر بالتكلفة المعيارية",
+   "ما يبقى على الأمر في نهاية الفترة يُعامَل كإنتاج تحت التشغيل إن لم يكتمل، أو كانحراف إن وصل لحالة <b>التسليم</b> <span class=\"en\">DLV</span> أو <b>الإقفال الفني</b> <span class=\"en\">TECO</span>، ثم يُسوّى بـ <code class=\"tc\">KO88</code>"
+  ],
+  "example": {
+   "title": "أمر إنتاج للحاوية 500 مل",
+   "rows": [
+    [
+     "رقم الأمر (مثال)",
+     "1000456"
+    ],
+    [
+     "الكمية المخططة",
+     "1,000 قطعة"
+    ],
+    [
+     "المعيار الصافي",
+     "200 غرام للقطعة"
+    ],
+    [
+     "الراتنج المصروف بالحركة 261",
+     "210 كغ"
+    ],
+    [
+     "الكمية السليمة المؤكدة",
+     "950 قطعة"
+    ],
+    [
+     "الهالك المؤكد",
+     "50 قطعة"
+    ],
+    [
+     "ساعات الماكينة والعمالة المؤكدة",
+     "2.6 ساعة لكل منهما"
+    ]
+   ],
+   "basis": "أساس المقارنة: الكمية المسموح بها للإنتاج السليم الفعلي"
+  },
+  "screen": {
+   "tcode": "CO11N",
+   "title": "Enter Time Ticket for Production Order",
+   "menu": "Logistics › Production › Shop Floor Control › Confirmation › Enter › For Operation › Time Ticket",
+   "body": "<div class=\"grpb\"><span class=\"gt\">Confirmation</span><div class=\"flds\"><div class=\"fld\"><label>Order</label><div class=\"v\">1000456</div></div><div class=\"fld\"><label>Oper./Activity</label><div class=\"v\">0010</div></div><div class=\"fld\"><label>Sequence</label><div class=\"v\">0</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div><div class=\"fld\"><label>Work Center</label><div class=\"v\">INJ-01</div></div></div></div><div class=\"radio\"><span>Partial confirmation</span><span class=\"on\">Final confirmation</span><span>Automatic final confirmation</span></div><div class=\"grpb\"><span class=\"gt\">Quantities</span><div class=\"flds\"><div class=\"fld\"><label>Yield to Confirm</label><div class=\"v hl\">950 PC</div></div><div class=\"fld\"><label>Scrap</label><div class=\"v hl\">50 PC</div></div><div class=\"fld\"><label>Rework</label><div class=\"v\">0 PC</div></div><div class=\"fld\"><label>Reason for Var.</label><div class=\"v\"></div></div></div></div><div class=\"grpb\"><span class=\"gt\">Activities</span><div class=\"flds\"><div class=\"fld\"><label>Setup</label><div class=\"v\">0.00 H</div></div><div class=\"fld\"><label>Machine</label><div class=\"v hl\">2.6 H</div></div><div class=\"fld\"><label>Labor</label><div class=\"v hl\">2.6 H</div></div></div></div><div class=\"grpb\"><span class=\"gt\">Dates</span><div class=\"flds\"><div class=\"fld\"><label>Posting Date</label><div class=\"v\">15.11.2026</div></div></div></div><div class=\"btns\"><span>Goods Movements</span><span>Actual Data</span><span>Save</span></div>",
+   "notes": [
+    "<b>Yield to Confirm</b> الكمية السليمة، وعليها تُحسب التكلفة المستهدفة",
+    "<b>Scrap</b> الهالك المؤكد للعملية",
+    "<b>Machine / Labor</b> الساعات التي تُضرب في سعر النشاط من KP26",
+    "<b>Goods Movements</b> يعرض حركات الصرف الآلي (Backflush) والاستلام المرتبطة بالتأكيد"
+   ]
+  },
+  "steps": [
+   [
+    "اعرض الأمر وحالته (CRTD / REL / DLV / TECO)",
+    "CO03"
+   ],
+   [
+    "من داخل الأمر: Goto ثم Costs ثم Analysis لمقارنة المخطط بالفعلي",
+    "CO03"
+   ],
+   [
+    "راجع كل حركات المواد على رقم الأمر، وابحث عن 261 و262 و531",
+    "MB51"
+   ],
+   [
+    "راجع التأكيدات: الكمية السليمة والهالك والساعات لكل عملية",
+    "CO14"
+   ],
+   [
+    "تحقق من استلام المنتج بالحركة 101 وكميته",
+    "MB51"
+   ],
+   [
+    "حلل تكاليف الأمر حسب عنصر التكلفة",
+    "KKBC_ORD"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "po-q1",
+    "type": "num",
+    "prompt": "كم الكمية المعيارية المسموح بها من الراتنج للإنتاج السليم الفعلي، على أساس الوزن الصافي فقط؟",
+    "unit": "كغ",
+    "answer": 190,
+    "tol": 0.05,
+    "wrongs": [
+     [
+      200,
+      0.05,
+      "استخدام الكمية المخططة بدل الإنتاج الفعلي",
+      "الكمية المسموح بها تُحسب على الإنتاج السليم الفعلي 950 قطعة، والكمية المخططة 1,000 لا تصلح للمقارنة"
+     ],
+     [
+      20,
+      0.05,
+      "إدخال الفرق بدل الكمية المسموح بها",
+      "20 كغ هو الفرق، والمطلوب الكمية المسموح بها"
+     ]
+    ],
+    "solution": "950 × 0.200 كغ = 190 كغ · الفرق عن المصروف 210 − 190 = 20 كغ"
+   },
+   {
+    "id": "po-q2",
+    "type": "mcq",
+    "prompt": "رجع 8 كغ راتنج سليم من الخط إلى المخزن. أي حركة تسجله على الأمر نفسه؟",
+    "options": [
+     [
+      "262",
+      null
+     ],
+     [
+      "102",
+      "102 تعكس استلام المنتج التام، وليس صرف الخام"
+     ],
+     [
+      "202",
+      "202 تعكس صرفاً على مركز تكلفة"
+     ],
+     [
+      "531",
+      "531 استلام منتج ثانوي من الأمر، مثل المطحون"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين عكس الاستلام وعكس الصرف",
+     "خلط بين الأمر ومركز التكلفة",
+     "خلط بين المرتجع والمنتج الثانوي"
+    ],
+    "solution": "262 تعكس الحركة 261 وتخفض تكلفة الأمر. إذا لم تُسجَّل، تظهر الكمية الراجعة كانحراف كمية رغم أنها في المخزن"
+   }
+  ],
+  "interpret": {
+   "text": "20 كغ فوق الوزن الصافي، منها 3.8 كغ مسموح بها كهالك معياري. قبل اعتبار الباقي هدراً، راجع المرتجعات والمطحون والصرف على أوامر أخرى",
+   "en": "Actual material consumption exceeded the standard quantity allowed for the actual output.",
+   "ar": "استهلاك المواد الفعلي تجاوز الكمية المعيارية المسموح بها للإنتاج الفعلي",
+   "docs": [
+    "حركات المواد على الأمر MB51: 261 و262 و531",
+    "تأكيدات الهالك CO14",
+    "سجلات وزن الهالك في الخط",
+    "قائمة المواد ونسبة الهالك CS03"
+   ]
+  },
+  "missing": [
+   "أنواع الأوامر ومفاتيح التحكم (Control Key) والاستلام الآلي عند التأكيد",
+   "حساب الإنتاج تحت التشغيل KKAX في نهاية الفترة"
+  ],
+  "tcodes": [
+   "CO01",
+   "CO03",
+   "MIGO",
+   "CO11N",
+   "CO14",
+   "MB51",
+   "KKBC_ORD"
+  ],
+  "fiori": "Manage Production Orders · Confirm Production Operation"
+ },
+ {
+  "id": "process-orders",
+  "level": 3,
+  "title": "التصنيع بالعمليات والدفعات",
+  "en": "Process Orders & Batch Production",
+  "industry": "صناعات غذائية · مصنع عصائر",
+  "mfg": "تصنيع بالعمليات والدفعات",
+  "goals": [
+   "تفهم أمر العملية Process Order ومكوناته",
+   "تحسب أثر انخفاض المردود Yield على التكلفة",
+   "تربط المردود بالمستندات في SAP"
+  ],
+  "terms": [
+   "Process Order",
+   "Master Recipe",
+   "Resource",
+   "Yield",
+   "Goods Issue",
+   "Input Quantity Variance"
+  ],
+  "situation": {
+   "text": "مصنع عصائر يخلط مركّزاً وسكراً وماء في دفعات. المردود المعياري 95%، لكن دفعة هذا الأسبوع أعطت كمية أقل من المتوقع",
+   "decision": "تفسير انخفاض المردود، وتقدير أثره على تكلفة المواد"
+  },
+  "concept": [
+   "في الصناعات الغذائية والكيميائية والدوائية يُستخدم <b>أمر العملية</b> <span class=\"en\">Process Order</span> بدل أمر الإنتاج. يُنشأ بـ <code class=\"tc\">COR1</code> ويقرأ <b>الوصفة الرئيسية</b> <span class=\"en\">Master Recipe</span> المنشأة بـ <code class=\"tc\">C201</code>، وتُنفذ مراحله على <b>موارد</b> <span class=\"en\">Resources</span> تُنشأ بـ <code class=\"tc\">CRC1</code>",
+   "<b>المردود</b> <span class=\"en\">Yield</span> هو نسبة الإنتاج السليم إلى المدخلات. انخفاضه يعني أن كمية أكبر من المواد استُخدمت لكل كيلو منتج، فيظهر <b>انحراف كمية المدخلات</b> <span class=\"en\">Input Quantity Variance</span> على المواد عند حساب الانحراف",
+   "المنطق المحاسبي هو نفسه في أوامر الإنتاج: صرف المواد يحمّل الأمر، والتأكيد يحمّل الأنشطة، والاستلام يدائنه بالمعيار. الفرق في البيانات: وصفة وموارد ومراحل بدل مسار ومراكز عمل وعمليات، وفي التتبع بالدفعة <span class=\"en\">Batch</span>"
+  ],
+  "example": {
+   "title": "دفعة عصير · أمر عملية 7000815",
+   "rows": [
+    [
+     "المدخلات الفعلية (خليط)",
+     "10,000 كغ"
+    ],
+    [
+     "المردود المعياري",
+     "95%"
+    ],
+    [
+     "الإنتاج المتوقع",
+     "9,500 كغ"
+    ],
+    [
+     "الإنتاج السليم الفعلي",
+     "9,120 كغ"
+    ],
+    [
+     "تكلفة الخليط المعيارية",
+     "1.20 ر.س / كغ"
+    ]
+   ],
+   "basis": "أساس المقارنة: المدخلات المسموح بها = الإنتاج الفعلي ÷ المردود المعياري"
+  },
+  "screen": {
+   "tcode": "COR3",
+   "title": "Display Process Order",
+   "menu": "Logistics › Production - Process › Process Order › Process Order › Display",
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Process Order</label><div class=\"v\">7000815</div></div><div class=\"fld\"><label>Order Type</label><div class=\"v\">PI01</div></div><div class=\"fld\"><label>Material</label><div class=\"v\">FG-J1000</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1200</div></div><div class=\"fld\"><label>Status</label><div class=\"v\">REL CNF DLV</div></div><div class=\"fld\"><label>Production Version</label><div class=\"v\">0001</div></div></div><div class=\"grpb\"><span class=\"gt\">Quantities</span><div class=\"flds\"><div class=\"fld\"><label>Total Quantity</label><div class=\"v\">9,500 KG</div></div><div class=\"fld\"><label>Delivered</label><div class=\"v hl\">9,120 KG</div></div><div class=\"fld\"><label>Unit</label><div class=\"v\">KG</div></div></div></div><div class=\"grpb\"><span class=\"gt\">Master Recipe</span><div class=\"flds\"><div class=\"fld\"><label>Group</label><div class=\"v\">60000120</div></div><div class=\"fld\"><label>Group Counter</label><div class=\"v\">1</div></div></div></div>",
+   "notes": [
+    "<b>Total Quantity</b> الكمية المخططة للأمر، و<b>Delivered</b> الكمية المستلمة فعلياً",
+    "<b>Production Version</b> تربط الأمر بالوصفة الرئيسية وقائمة المواد",
+    "تأكيد المراحل يتم بـ COR6N، ومتابعة الأوامر بـ COOISPI"
+   ]
+  },
+  "steps": [
+   [
+    "اعرض الأمر وكمياته المخططة والمستلمة",
+    "COR3"
+   ],
+   [
+    "راجع تأكيدات المراحل والكميات",
+    "COR6N"
+   ],
+   [
+    "راجع صرف المواد بالدفعة على الأمر",
+    "MB51"
+   ],
+   [
+    "قارن الوصفة الرئيسية بالكميات الفعلية",
+    "C203"
+   ],
+   [
+    "احسب الانحرافات وراجع انحراف كمية المواد",
+    "KKS2"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "pr-q1",
+    "type": "num",
+    "prompt": "كم كيلو نقص الإنتاج السليم عن المتوقع حسب المردود المعياري؟",
+    "unit": "كغ",
+    "answer": 380,
+    "tol": 0.5,
+    "wrongs": [
+     [
+      880,
+      0.5,
+      "المقارنة بالمدخلات بدل الإنتاج المتوقع",
+      "الإنتاج المتوقع 10,000 × 95% = 9,500 كغ"
+     ],
+     [
+      500,
+      0.5,
+      "إدخال الفاقد المعياري بدل النقص",
+      "500 كغ فاقد مسموح به، والمطلوب النقص عن المتوقع"
+     ]
+    ],
+    "solution": "المتوقع 10,000 × 95% = 9,500 كغ · الفعلي 9,120 · النقص 380 كغ"
+   },
+   {
+    "id": "pr-q2",
+    "type": "num",
+    "prompt": "احسب انحراف كمية المدخلات بالسعر المعياري",
+    "unit": "ر.س",
+    "answer": 480,
+    "tol": 0.6,
+    "wrongs": [
+     [
+      456,
+      0.6,
+      "تسعير نقص الإنتاج بدل المدخلات الزائدة",
+      "احسب المدخلات المسموح بها: 9,120 ÷ 0.95 = 9,600 كغ"
+     ],
+     [
+      600,
+      0.6,
+      "المقارنة بالمدخلات المعيارية للإنتاج المتوقع",
+      "الانحراف يُقاس على الإنتاج الفعلي 9,120 وليس المتوقع"
+     ]
+    ],
+    "solution": "المسموح 9,120 ÷ 0.95 = 9,600 كغ · الزائد 10,000 − 9,600 = 400 كغ × 1.20 = 480 ر.س غير ملائم"
+   },
+   {
+    "id": "pr-q3",
+    "type": "mcq",
+    "prompt": "أي معاملة تنشئ أمر عملية في التصنيع بالعمليات؟",
+    "options": [
+     [
+      "COR1",
+      null
+     ],
+     [
+      "CO01",
+      "CO01 تنشئ أمر إنتاج في التصنيع المنفصل"
+     ],
+     [
+      "C201",
+      "C201 تنشئ وصفة رئيسية، وهي بيانات أساسية"
+     ],
+     [
+      "CRC1",
+      "CRC1 تنشئ مورداً، وهو مقابل مركز العمل"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين أمر الإنتاج وأمر العملية",
+     "خلط بين البيانات الأساسية والأمر",
+     "خلط بين المورد والأمر"
+    ],
+    "solution": "COR1 تنشئ أمر العملية، وCOR3 تعرضه، وCOR6N لتأكيد مراحله"
+   }
+  ],
+  "interpret": {
+   "text": "المردود الفعلي 91.2% بدل 95%. كل نقطة مردود في دفعة 10,000 كغ تعني نحو 126 ر.س مواد إضافية. الأسباب المعتادة: فاقد في الخطوط والتنظيف، أو قراءة ميزان غير دقيقة، أو مواصفات مدخلات مختلفة",
+   "en": "Actual yield was 91.2%, below the standard yield of 95%, which increased material cost per kilogram.",
+   "ar": "المردود الفعلي 91.2%، أقل من المعياري 95%، فارتفعت تكلفة المواد لكل كيلو",
+   "docs": [
+    "تأكيدات مراحل الأمر COR6N",
+    "حركات صرف المواد بالدفعة MB51",
+    "سجلات الدفعة ونتائج المختبر",
+    "الوصفة الرئيسية والمردود المعياري C203"
+   ]
+  },
+  "missing": [
+   "المنتجات المشتركة Co-products وتوزيع التكلفة بينها",
+   "التكاليف الفعلية بالدفعة في Material Ledger"
+  ],
+  "tcodes": [
+   "COR1",
+   "COR3",
+   "COR6N",
+   "C201",
+   "C203",
+   "CRC1",
+   "MB51",
+   "COOISPI"
+  ]
+ },
+ {
+  "id": "peo",
+  "level": 3,
+  "title": "التجميع المعقد في PEO",
+  "en": "Production Engineering & Operations (PEO)",
+  "industry": "معدات صناعية · تجميع معقد",
+  "mfg": "تجميع منخفض الحجم بتغييرات هندسية",
+  "goals": [
+   "تعرف متى يُستخدم PEO",
+   "تفهم ما يتغير في بيانات التصنيع والتأكيد",
+   "تحسب انحراف ساعات التجميع على مستوى أنشطة العملية"
+  ],
+  "terms": [
+   "Production Engineering and Operations (PEO)",
+   "Shop Floor Order",
+   "Shop Floor Routing",
+   "Operation Activity",
+   "Production Version",
+   "Labor Efficiency Variance"
+  ],
+  "situation": {
+   "text": "مصنع يجمّع ضواغط هواء صناعية بأرقام تسلسلية، وكل وحدة تمر بعشرات الخطوات اليدوية. التعديلات الهندسية متكررة، والإدارة تريد معرفة ساعات كل وحدة بدقة",
+   "decision": "اختيار طريقة التنفيذ المناسبة في SAP، وتفسير زيادة ساعات التجميع"
+  },
+  "concept": [
+   "<b>هندسة الإنتاج وعملياته</b> <span class=\"en\">SAP S/4HANA Manufacturing for Production Engineering and Operations (PEO)</span> موجّه للتصنيع منخفض الحجم عالي التعقيد الذي يتغير كثيراً ويعتمد على العمل اليدوي، مثل التجميع المعقد والتصنيع حسب الطلب الهندسي <span class=\"en\">Engineer-to-Order</span>، ومنه صناعة الطائرات والمعدات الثقيلة",
+   "ما يتغير في بيانات التصنيع: قائمة مواد تصنيعية <span class=\"en\">MBOM</span> ومسار ورشة <span class=\"en\">Shop Floor Routing</span> يُداران بالإصدارات، ويضاف تحت العملية مستوى <b>نشاط العملية</b> <span class=\"en\">Operation Activity</span> يحمل تعليمات العمل والمكونات والفحوص. ويُنفذ الإنتاج بـ <b>أمر ورشة</b> <span class=\"en\">Shop Floor Order</span>، وهو نسخة موسعة من أمر الإنتاج مرتبطة بـ <b>نسخة إنتاج</b> <span class=\"en\">Production Version</span> محددة",
+   "ما يتغير في التأكيد: يتم على مستوى نشاط العملية، أو الرقم التسلسلي مع نشاط العملية للوحدات المتسلسلة، بدل مستوى الأمر أو العملية فقط. لذلك تصبح الساعات والمكونات قابلة للتتبع لكل وحدة"
+  ],
+  "conceptExtra": "<div class=\"tbl\"><table><thead><tr><th>البند</th><th>أمر الإنتاج التقليدي</th><th>أمر ورشة PEO</th></tr></thead><tbody><tr class=\"\"><td>بيانات التصنيع</td><td>BOM ومسار</td><td>MBOM ومسار ورشة بإصدارات</td></tr><tr class=\"\"><td>مستوى التنفيذ</td><td>العملية</td><td>نشاط العملية داخل العملية</td></tr><tr class=\"\"><td>التأكيد</td><td>الأمر أو العملية</td><td>نشاط العملية أو الرقم التسلسلي</td></tr><tr class=\"\"><td>تعديل الأمر</td><td>تعديل واسع للمكونات والعمليات</td><td>تعديل محدود، والإضافة عبر التغيير الهندسي</td></tr></tbody></table></div>",
+  "conceptNote": "تجميع التكلفة: بما أن أمر الورشة امتداد لأمر الإنتاج، فالمتوقع أن تُجمع التكلفة عليه كأمر إنتاج في Product Cost by Order، مع تفصيل أدق للكميات والساعات. لم أجد هذا موثقاً بنص صريح في مصادر SAP التي راجعتها، فتحقق منه في إعداد نظامك",
+  "example": {
+   "title": "ضاغط CMP-75 · رقم تسلسلي SN-0142 · العملية 0020 تجميع",
+   "cols": [
+    "نشاط العملية",
+    "ساعات معيارية",
+    "ساعات مؤكدة",
+    "الفرق"
+   ],
+   "rows": [
+    [
+     "0020-01 تركيب المحرك",
+     "4.0",
+     "4.5",
+     "0.5"
+    ],
+    [
+     "0020-02 توصيل الأنابيب",
+     "6.0",
+     "7.0",
+     "1.0"
+    ],
+    [
+     "0020-03 الفحص النهائي",
+     "2.0",
+     "2.0",
+     "0.0"
+    ],
+    [
+     "الإجمالي",
+     "12.0",
+     "13.5",
+     "1.5"
+    ]
+   ],
+   "total": 3,
+   "basis": "أساس المقارنة: الساعات المعيارية في مسار الورشة × سعر ساعة العمالة 120 ر.س"
+  },
+  "screen": null,
+  "steps": [
+   [
+    "حدد هل السيناريو تجميع معقد بتغييرات متكررة ووحدات متسلسلة، فإن لم يكن فأمر الإنتاج التقليدي يكفي",
+    null
+   ],
+   [
+    "راجع نسخة الإنتاج ومسار الورشة المستخدم في الأمر",
+    null
+   ],
+   [
+    "تابع تأكيدات أنشطة العملية لكل رقم تسلسلي",
+    null
+   ],
+   [
+    "احسب الانحراف على الأمر كأي أمر إنتاج",
+    "KKS2"
+   ],
+   [
+    "راجع سجلات التغيير الهندسي التي أثرت على الوحدة",
+    null
+   ]
+  ],
+  "stepsNote": "أسماء تطبيقات PEO وشاشاتها تختلف حسب الإصدار، لذلك لم تُعرض محاكاة شاشة لهذا الدرس",
+  "questions": [
+   {
+    "id": "peo-q1",
+    "type": "num",
+    "prompt": "احسب انحراف كفاءة العمالة للوحدة SN-0142 بسعر 120 ر.س للساعة",
+    "unit": "ر.س",
+    "answer": 180,
+    "tol": 0.5,
+    "wrongs": [
+     [
+      1620,
+      0.5,
+      "إدخال تكلفة الساعات الفعلية بدل الانحراف",
+      "المطلوب الفرق: 1.5 ساعة × 120"
+     ],
+     [
+      1.5,
+      0.01,
+      "إدخال الساعات بدل القيمة",
+      "اضرب فرق الساعات في سعر الساعة"
+     ]
+    ],
+    "solution": "(13.5 − 12.0) × 120 = 180 ر.س غير ملائم، معظمه في نشاط توصيل الأنابيب"
+   },
+   {
+    "id": "peo-q2",
+    "type": "mcq",
+    "prompt": "أي سيناريو يناسب PEO أكثر من أمر الإنتاج التقليدي؟",
+    "options": [
+     [
+      "تجميع معدات منخفض الحجم بوحدات متسلسلة وتغييرات هندسية متكررة",
+      null
+     ],
+     [
+      "إنتاج عصير بكميات كبيرة بالدفعات",
+      "هذا تصنيع بالعمليات بأوامر عملية"
+     ],
+     [
+      "تعبئة منظفات في عبوات بخط مستمر",
+      "إنتاج متكرر عالي الحجم لا يحتاج تتبع أنشطة العملية لكل وحدة"
+     ],
+     [
+      "حقن قطع بلاستيك بسيطة بقالب ثابت",
+      "أمر الإنتاج التقليدي أو التصنيع المتكرر يكفي"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين التجميع المعقد والتصنيع بالعمليات",
+     "خلط بين الإنتاج المتكرر والتجميع المعقد",
+     "اختيار حل معقد لمنتج بسيط"
+    ],
+    "solution": "PEO موجّه للتصنيع منخفض الحجم عالي التعقيد كثير التغيير، مع تأكيد على مستوى نشاط العملية والرقم التسلسلي"
+   }
+  ],
+  "interpret": {
+   "text": "الانحراف 180 ر.س يتركز في توصيل الأنابيب. التأكيد على مستوى نشاط العملية هو ما أظهر مكانه، ولو كان التأكيد على مستوى الأمر لظهر الرقم دون سببه",
+   "en": "Confirmed assembly hours exceeded the standard by 1.5 hours, mainly in the piping activity.",
+   "ar": "ساعات التجميع المؤكدة تجاوزت المعيار بـ 1.5 ساعة، معظمها في نشاط توصيل الأنابيب",
+   "docs": [
+    "تأكيدات أنشطة العملية للرقم التسلسلي",
+    "نسخة مسار الورشة المستخدمة في الأمر",
+    "سجلات التغيير الهندسي للوحدة",
+    "تقارير عدم المطابقة أو إعادة العمل"
+   ]
+  },
+  "missing": [
+   "إعداد PEO وتفعيله للمصنع",
+   "ربط تكلفة الوحدة المتسلسلة بتحليل الربحية"
+  ],
+  "tcodes": []
+ },
+ {
+  "id": "actual-cost",
+  "level": 4,
+  "title": "التكلفة الفعلية والإقفال",
+  "en": "Actual Cost & Period-End Closing",
+  "industry": "صناعات بلاستيكية · حقن",
+  "mfg": "تصنيع منفصل",
+  "goals": [
+   "تجمع Actual Cost على الأمر",
+   "تفهم توقيت Manufacturing Overhead وWIP",
+   "تميز المعالجة الدورية من المرتبطة بالأحداث"
+  ],
+  "terms": [
+   "Actual Cost",
+   "Manufacturing Overhead",
+   "Work in Process (WIP)",
+   "Settlement",
+   "Event-Based Production Cost Posting"
+  ],
+  "situation": {
+   "text": "المراجع الداخلي لاحظ أن انحرافات أوامر الشهر الماضي أقل من المعتاد، ثم اكتشف أن التحميل غير المباشر لم يُرحَّل قبل حساب الانحراف",
+   "decision": "ترتيب خطوات الإقفال، وحساب التكلفة الفعلية الصحيحة للأمر"
+  },
+  "concept": [
+   "<b>التكلفة الفعلية</b> <span class=\"en\">Actual Cost</span> على أمر الإنتاج تتكون من: المواد المصروفة فعلاً × سعر المادة (المعياري إن كانت S)، والساعات المؤكدة × <b>سعر النشاط المخطط</b> <span class=\"en\">Plan Activity Price</span>، والتحميل غير المباشر الذي يُرحَّل بـ <code class=\"tc\">KGI2</code> لأمر واحد أو <code class=\"tc\">CO43</code> جماعياً",
+   "إن أردت تحميل الأنشطة بالسعر الفعلي، يُحسب السعر الفعلي بـ <code class=\"tc\">KSII</code> ثم يُعاد تقييم الأوامر به بـ <code class=\"tc\">CON2</code>، وهذا اختياري ويعتمد على إعداد النظام",
+   "التكلفة الفعلية الكاملة للمخزون والمبيعات تأتي من <b>التكاليف الفعلية في دفتر المواد</b> <span class=\"en\">Actual Costing</span> عبر <code class=\"tc\">CKMLCP</code>، وهو موضوع ناقص في هذا المسار",
+   "ترتيب الإقفال الدوري مهم: التحميل غير المباشر <code class=\"tc\">KGI2</code>، ثم <b>الإنتاج تحت التشغيل</b> <span class=\"en\">Work in Process (WIP)</span> للأوامر غير المكتملة <code class=\"tc\">KKAX</code>، ثم الانحرافات للأوامر المكتملة <code class=\"tc\">KKS2</code>، ثم <b>التسوية</b> <span class=\"en\">Settlement</span> <code class=\"tc\">KO88</code>. في المعالجة المرتبطة بالأحداث تُرحَّل هذه القيم مع كل حدث، ويُتابع ذلك في تطبيق <span class=\"en\">Analyze Production Costs - Event-Based</span>"
+  ],
+  "example": {
+   "title": "فعليات الأمر 1000456 (950 قطعة سليمة)",
+   "rows": [
+    [
+     "راتنج مصروف",
+     "210 كغ × 6.50"
+    ],
+    [
+     "ساعات ماكينة مؤكدة",
+     "2.6 × 160"
+    ],
+    [
+     "ساعات عمالة مؤكدة",
+     "2.6 × 40"
+    ],
+    [
+     "تحميل غير مباشر",
+     "8% على المواد"
+    ]
+   ],
+   "basis": "أساس المقارنة: الكميات المصروفة والساعات المؤكدة بالأسعار المعيارية والمخططة"
+  },
+  "screen": {
+   "tcode": "CO03",
+   "title": "Display Production Order: Cost Analysis",
+   "menu": "CO03 › Goto › Costs › Analysis",
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Order</label><div class=\"v\">1000456</div></div><div class=\"fld\"><label>Material</label><div class=\"v\">FG-0500</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div><div class=\"fld\"><label>Status</label><div class=\"v\">REL CNF DLV PRC</div></div></div><div class=\"tblw\"><table><thead><tr><th>Cost Elem.</th><th>Cost Element (Text)</th><th>Origin</th><th>Total plan</th><th>Total act.</th><th>P/A var</th><th>P/A var(%)</th></tr></thead><tbody><tr class=\"hl\"><td class=\"r\">500100</td><td class=\"\">Raw Material Consumption</td><td class=\"\">1000/RES-PP</td><td class=\"r\">1,326.00</td><td class=\"r\">1,365.00</td><td class=\"r\">39.00</td><td class=\"r\">2.94</td></tr><tr class=\"\"><td class=\"r\">943000</td><td class=\"\">Machine Hours</td><td class=\"\">4110/MACH</td><td class=\"r\">400.00</td><td class=\"r\">416.00</td><td class=\"r\">16.00</td><td class=\"r\">4.00</td></tr><tr class=\"\"><td class=\"r\">943100</td><td class=\"\">Labor Hours</td><td class=\"\">4110/LAB</td><td class=\"r\">100.00</td><td class=\"r\">104.00</td><td class=\"r\">4.00</td><td class=\"r\">4.00</td></tr><tr class=\"\"><td class=\"r\">655100</td><td class=\"\">Overhead Material</td><td class=\"\"></td><td class=\"r\">106.08</td><td class=\"r\">109.20</td><td class=\"r\">3.12</td><td class=\"r\">2.94</td></tr><tr class=\"\"><td class=\"r\">895000</td><td class=\"\">Factory Output Production</td><td class=\"\">1000/FG-0500</td><td class=\"r\">-1,932.08</td><td class=\"r\">-1,835.48</td><td class=\"r\">96.60</td><td class=\"r\">-5.00</td></tr><tr class=\"tot\"><td class=\"\"></td><td class=\"\">Total</td><td class=\"\"></td><td class=\"r\">0.00</td><td class=\"r\">158.72</td><td class=\"r\">158.72</td><td class=\"\"></td></tr></tbody></table></div>",
+   "notes": [
+    "<b>Total plan</b> للكمية المخططة 1,000، و<b>Total act.</b> للفعلي",
+    "سطر <b>895000</b> هو دائن الاستلام بالسعر المعياري × 950",
+    "الرصيد 158.72 يبقى على الأمر حتى حساب الانحراف والتسوية",
+    "مقارنة المخطط بالفعلي هنا تختلف عن الانحراف المستهدف، لأن المخطط مبني على 1,000 قطعة",
+    "<b>CNF</b> مؤكد نهائياً، <b>DLV</b> مُسلَّم بالكامل، <b>PRC</b> محسوب التكلفة المسبقة"
+   ]
+  },
+  "steps": [
+   [
+    "تحقق أن كل الصرف والتأكيدات مسجلة قبل الإقفال",
+    "MB51"
+   ],
+   [
+    "رحّل التحميل غير المباشر على الأمر",
+    "KGI2"
+   ],
+   [
+    "اعرض تكاليف الأمر الفعلية حسب عنصر التكلفة",
+    "KKBC_ORD"
+   ],
+   [
+    "قارن الساعات الفعلية بالمخططة لكل عملية",
+    "CO03"
+   ],
+   [
+    "إن كانت الشركة تحمّل بالسعر الفعلي: احسبه ثم أعد تقييم الأوامر",
+    "CON2"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "ac-q1",
+    "type": "num",
+    "prompt": "احسب إجمالي التكلفة الفعلية على الأمر قبل دائن الاستلام",
+    "unit": "ر.س",
+    "answer": 1994.2,
+    "tol": 0.6,
+    "wrongs": [
+     [
+      1885,
+      0.6,
+      "إغفال التحميل غير المباشر",
+      "أضف 8% من المواد = 109.20"
+     ],
+     [
+      1890.2,
+      0.6,
+      "إغفال تكلفة العمالة",
+      "العمالة 2.6 × 40 = 104"
+     ],
+     [
+      158.72,
+      0.6,
+      "إدخال رصيد الأمر بدل إجمالي التكلفة",
+      "158.72 هو الرصيد بعد دائن الاستلام، والمطلوب إجمالي المدين"
+     ]
+    ],
+    "solution": "راتنج 1,365 + ماكينة 416 + عمالة 104 + غير مباشر 109.20 = 1,994.20 ر.س"
+   },
+   {
+    "id": "ac-q2",
+    "type": "mcq",
+    "prompt": "بأي سعر تُحمَّل الساعات المؤكدة على الأمر في الإعداد الافتراضي؟",
+    "options": [
+     [
+      "السعر المخطط للنشاط",
+      null
+     ],
+     [
+      "السعر الفعلي المحسوب آلياً مع كل تأكيد",
+      "السعر الفعلي يُحسب في نهاية الفترة بـ KSII، ولا يُحسب مع كل تأكيد"
+     ],
+     [
+      "سعر يُدخله المستخدم في شاشة التأكيد",
+      "شاشة التأكيد تسجل الكميات والساعات، والسعر يأتي من تخطيط النشاط"
+     ],
+     [
+      "متوسط آخر ثلاثة أشهر",
+      "لا يوجد متوسط آلي بهذا الشكل"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين السعر المخطط والفعلي للنشاط",
+     "خلط بين الكمية والسعر في التأكيد",
+     "افتراض طريقة تسعير غير موجودة"
+    ],
+    "solution": "التحميل الفوري يتم بالسعر المخطط من KP26، والفرق يبقى على مركز التكلفة كتحميل ناقص أو زائد"
+   }
+  ],
+  "interpret": {
+   "text": "إغفال التحميل غير المباشر 109.20 يجعل الانحراف 49.52 بدل 158.72، فيبدو الأمر أكفأ مما هو. الترتيب الصحيح للإقفال جزء من دقة التقرير",
+   "en": "Overhead must be posted before variance calculation; otherwise variances are understated.",
+   "ar": "يجب ترحيل التحميل غير المباشر قبل حساب الانحرافات، وإلا ظهرت أقل من حقيقتها",
+   "docs": [
+    "سجل ترحيل التحميل غير المباشر KGI2 أو CO43",
+    "ورقة التكاليف المستخدمة في الأمر",
+    "تحليل تكاليف الأمر KKBC_ORD",
+    "حالة الأمر CO03: DLV أو TECO"
+   ]
+  },
+  "missing": [
+   "Actual Costing في Material Ledger وتشغيل CKMLCP",
+   "ترحيل تكاليف الإنتاج حسب الحدث Event-Based Production Cost Posting"
+  ],
+  "tcodes": [
+   "KGI2",
+   "CO43",
+   "KSII",
+   "CON2",
+   "KKBC_ORD",
+   "CKMLCP",
+   "KKAX",
+   "KO88"
+  ],
+  "fiori": "Analyze Production Costs - Event-Based"
+ },
+ {
+  "id": "variance",
+  "level": 4,
+  "title": "تحليل الانحرافات",
+  "en": "Variance Analysis",
+  "industry": "صناعات بلاستيكية · حقن",
+  "mfg": "تصنيع منفصل",
+  "goals": [
+   "تحسب Target Cost للإنتاج الفعلي",
+   "تقسم الانحراف إلى فئاته الرسمية في SAP",
+   "تربط فئات SAP بمفاهيم CMA وتعرف حدودها"
+  ],
+  "terms": [
+   "Variance Analysis",
+   "Target Cost",
+   "Input Quantity Variance",
+   "Input Price Variance",
+   "Remaining Input Variance",
+   "Material Usage Variance",
+   "Labor Efficiency Variance"
+  ],
+  "situation": {
+   "text": "تقرير الشهر يُظهر انحرافاً غير ملائم على أمر الحاويات. المدير المالي يريد تفسيراً بلغة يفهمها مدير الإنتاج ومراجع CMA معاً",
+   "decision": "تقسيم الانحراف إلى فئاته، وربط كل فئة بسببها التشغيلي"
+  },
+  "concept": [
+   "<b>التكلفة المستهدفة</b> <span class=\"en\">Target Cost</span> = التكلفة المعيارية × الكمية السليمة المستلمة ÷ كمية التقدير. <b>الانحراف الإجمالي</b> <span class=\"en\">Total Variance</span> = التكلفة الفعلية − المبلغ الذي دُوئن به الأمر عند الاستلام",
+   "<code class=\"tc\">KKS2</code> يحسب الانحرافات لأمر واحد و<code class=\"tc\">KKS1</code> جماعياً، وفي أنظمة S/4HANA تتوفر أيضاً <code class=\"tc\">KKS1H</code> لأوامر الإنتاج على <b>نسخة التكلفة المستهدفة</b> <span class=\"en\">Target Cost Version 0</span>. جانب المدخلات يضم: <b>فرق سعر المدخلات</b> <span class=\"en\">Input Price</span>، <b>فرق استخدام الموارد</b> <span class=\"en\">Resource-Usage</span>، <b>فرق كمية المدخلات</b> <span class=\"en\">Input Quantity</span>، و<b>المتبقي</b> <span class=\"en\">Remaining Input</span> الذي يجمع البنود بلا كميات مثل التحميل غير المباشر، ويُضاف إليها <b>انحراف الهالك</b> <span class=\"en\">Scrap Variance</span> إذا فُعّل في إعدادات الانحراف. ولا تُحسب انحرافات لأمر ليس له <b>مفتاح انحراف</b> <span class=\"en\">Variance Key</span>",
+   "جانب المخرجات يضم <b>فرق سعر المخرجات</b> <span class=\"en\">Output Price</span>، <b>فرق حجم الدفعة</b> <span class=\"en\">Lot Size</span>، و<b>فرق السعر المختلط</b> <span class=\"en\">Mixed-Price</span>. بعد الحساب يُسوّى الأمر بـ <code class=\"tc\">KO88</code> فتذهب الانحرافات إلى المالية وتحليل الربحية"
+  ],
+  "conceptExtra": "<p class=\"small\"><b>ربط مفاهيم CMA بفئات SAP:</b> العلاقة تقريبية، فالأسماء الرسمية في SAP تختلف عن مصطلحات منهج CMA وحدودها مختلفة</p><div class=\"tbl\"><table><thead><tr><th>مفهوم CMA</th><th>فئة SAP الرسمية</th><th>العلاقة</th><th>الحدود</th></tr></thead><tbody><tr class=\"\"><td><span class=\"en\">Material Usage Variance</span> انحراف استخدام المواد</td><td>Input Quantity Variance (مواد)</td><td>(الكمية الفعلية − المستهدفة) × السعر المعياري</td><td>SAP قد يفصل الهالك في Scrap Variance حسب الإعداد</td></tr><tr class=\"\"><td><span class=\"en\">Labor Efficiency Variance</span> انحراف كفاءة العمالة</td><td>Input Quantity Variance (أنشطة)</td><td>(الساعات الفعلية − المستهدفة) × سعر النشاط</td><td>سعر النشاط قد يشمل تكاليف غير العمالة المباشرة</td></tr><tr class=\"\"><td><span class=\"en\">Materials Price Variance</span> انحراف سعر المواد</td><td>Input Price Variance</td><td>اختلاف سعر المدخلات عن سعر التقدير</td><td>مع السعر S يظهر فرق الشراء غالباً في حساب فروق الأسعار عند الاستلام، لا على الأمر</td></tr><tr class=\"\"><td><span class=\"en\">Variable Overhead Variances</span> انحرافات غير المباشر المتغير</td><td>Remaining Input Variance</td><td>التحميل بنسبة بلا كمية يظهر في المتبقي</td><td>SAP لا يفصل الإنفاق عن الكفاءة على الأمر؛ الإنفاق يبقى على مركز التكلفة</td></tr><tr class=\"\"><td><span class=\"en\">Production Volume Variance</span> انحراف حجم الإنتاج</td><td>Lot Size Variance / رصيد مركز التكلفة</td><td>أثر التكاليف الثابتة عند اختلاف الحجم</td><td>ليست مكافئة تماماً؛ جزء منها يبقى على المركز</td></tr></tbody></table></div>",
+  "example": {
+   "title": "الأمر 1000456: معيار مقابل فعلي",
+   "rows": [
+    [
+     "التكلفة المعيارية لكل 1,000",
+     "1,932.08"
+    ],
+    [
+     "الكمية السليمة المستلمة",
+     "950"
+    ],
+    [
+     "التكلفة الفعلية على الأمر",
+     "1,994.20"
+    ],
+    [
+     "كمية الراتنج في المعيار لكل 1,000",
+     "204 كغ (شاملة هالك 2%)"
+    ]
+   ],
+   "note": "المبالغ بالريال السعودي، مع افتراض أن مفتاح الانحراف لا يفصل انحراف الهالك",
+   "basis": "أساس المقارنة: التكلفة المستهدفة للكمية السليمة المستلمة"
+  },
+  "screen": {
+   "tcode": "KKS2",
+   "title": "Variance Calculation: Production/Process Orders",
+   "menu": "Accounting › Controlling › Product Cost Controlling › Cost Object Controlling › Product Cost by Order › Period-End Closing › Single Functions › Variances › Individual Processing",
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Order</label><div class=\"v\">1000456</div></div><div class=\"fld\"><label>Period</label><div class=\"v\">11</div></div><div class=\"fld\"><label>Fiscal Year</label><div class=\"v\">2026</div></div></div><div class=\"grpb\"><span class=\"gt\">Parameters</span><div class=\"radio\"><span>All target cost versions</span><span class=\"on\">Selected target cost versions: 0</span></div></div><div class=\"grpb\"><span class=\"gt\">Processing Options</span><div class=\"radio\"><span>Background Processing</span><span class=\"on\">Test Run</span><span class=\"on\">Detail List</span></div></div><div class=\"tblw\"><table><thead><tr><th>Order</th><th>Material</th><th>Target costs</th><th>Control costs</th><th>Allocated actual costs</th><th>Variance</th></tr></thead><tbody><tr class=\"hl\"><td class=\"r\">1000456</td><td class=\"\">FG-0500</td><td class=\"r\">1,835.48</td><td class=\"r\">1,994.20</td><td class=\"r\">1,835.48</td><td class=\"r\">158.72</td></tr></tbody></table></div><div class=\"tblw\"><table><thead><tr><th>Variance category</th><th>Amount</th></tr></thead><tbody><tr class=\"\"><td class=\"\">Input price variance</td><td class=\"r\">0.00</td></tr><tr class=\"\"><td class=\"\">Resource-usage variance</td><td class=\"r\">0.00</td></tr><tr class=\"hl\"><td class=\"\">Input quantity variance</td><td class=\"r\">150.30</td></tr><tr class=\"hl\"><td class=\"\">Remaining input variance</td><td class=\"r\">8.42</td></tr><tr class=\"\"><td class=\"\">Mixed-price variance</td><td class=\"r\">0.00</td></tr><tr class=\"\"><td class=\"\">Output price variance</td><td class=\"r\">0.00</td></tr><tr class=\"\"><td class=\"\">Lot size variance</td><td class=\"r\">0.00</td></tr><tr class=\"\"><td class=\"\">Remaining variance</td><td class=\"r\">0.00</td></tr><tr class=\"tot\"><td class=\"\">Total</td><td class=\"r\">158.72</td></tr></tbody></table></div>",
+   "notes": [
+    "<b>Control costs</b> التكلفة الفعلية ناقص WIP والهالك، وهنا تساوي الفعلي لأن الأمر مكتمل",
+    "<b>Allocated actual costs</b> المبلغ الذي دُوئن به الأمر عند الاستلام",
+    "<b>Input quantity</b> 150.30 = راتنج 105.30 + ماكينة 36 + عمالة 9",
+    "<b>Remaining input</b> 8.42 فرق التحميل غير المباشر، لأنه مرحَّل بلا كمية",
+    "شغّل <b>Test Run</b> قبل الحفظ ثم سوِّ بـ KO88"
+   ]
+  },
+  "steps": [
+   [
+    "تأكد أن الأمر في حالة DLV أو TECO، وإلا ستُحسب WIP بدل الانحراف",
+    "CO03"
+   ],
+   [
+    "احسب الانحرافات للأمر في وضع الاختبار",
+    "KKS2"
+   ],
+   [
+    "افتح تفصيل الانحراف حسب الفئة وعنصر التكلفة",
+    "KKS2"
+   ],
+   [
+    "ارجع للمستندات المصدر: حركات المواد والتأكيدات لكل انحراف كبير",
+    "MB51"
+   ],
+   [
+    "سوِّ الأمر بعد مراجعة الانحرافات",
+    "KO88"
+   ]
+  ],
+  "questions": [
+   {
+    "id": "va-q1",
+    "type": "num",
+    "prompt": "احسب الانحراف الإجمالي على الأمر. أدخل المبلغ موجباً",
+    "unit": "ر.س",
+    "answer": 158.72,
+    "tol": 0.6,
+    "wrongs": [
+     [
+      62.12,
+      0.6,
+      "المقارنة بتكلفة الكمية المخططة بدل المستهدفة",
+      "التكلفة المستهدفة تُحسب على 950 قطعة: 1,932.08 × 0.95 = 1,835.48"
+     ]
+    ],
+    "solution": "المستهدف 1,932.08 × 950 ÷ 1,000 = 1,835.48 · الانحراف 1,994.20 − 1,835.48 = 158.72 ر.س غير ملائم"
+   },
+   {
+    "id": "va-q2",
+    "type": "num",
+    "prompt": "احسب انحراف كمية الراتنج (Input Quantity Variance)",
+    "unit": "ر.س",
+    "answer": 105.3,
+    "tol": 0.3,
+    "wrongs": [
+     [
+      130,
+      0.3,
+      "تجاهل نسبة هالك المكوّن في الكمية المستهدفة",
+      "الكمية المستهدفة 204 × 0.95 = 193.8 كغ، وليست 190"
+     ],
+     [
+      65,
+      0.3,
+      "المقارنة بالكمية المخططة للأمر",
+      "المقارنة تكون بالكمية المستهدفة للإنتاج الفعلي، لا بالكمية المخططة 200 كغ"
+     ]
+    ],
+    "solution": "(210 − 193.8) × 6.50 = 105.30 ر.س. لاحظ أن المعيار يسمح بهالك 2%، فالانحراف الحقيقي 16.2 كغ وليس 20"
+   }
+  ],
+  "interpret": {
+   "text": "من 158.72 ر.س، يأتي 105.30 من كمية الراتنج، و45 من ساعات الماكينة والعمالة، و8.42 من التحميل غير المباشر. البداية تكون بالراتنج لأنه الأكبر قيمة",
+   "en": "The unfavorable variance of 158.72 SAR is mainly an input quantity variance on resin and machine hours.",
+   "ar": "الانحراف غير الملائم 158.72 ر.س هو أساساً انحراف كمية مدخلات على الراتنج وساعات الماكينة",
+   "docs": [
+    "قائمة تفصيل الانحراف KKS2",
+    "حركات المواد على الأمر MB51",
+    "التأكيدات والساعات CO14",
+    "تقدير التكلفة CK13N للمقارنة"
+   ]
+  },
+  "missing": [
+   "إعداد مفتاح الانحرافات وفئاتها في Customizing",
+   "تسوية الانحرافات إلى تحليل الربحية Margin Analysis"
+  ],
+  "tcodes": [
+   "KKS2",
+   "KKS1",
+   "KKS1H",
+   "KKBC_ORD",
+   "KO88",
+   "CO88"
+  ],
+  "fiori": "Production Cost Analysis"
+ },
+ {
+  "id": "factory",
+  "level": 4,
+  "title": "تفسير الانحراف واتخاذ القرار",
+  "en": "Root Cause & Corrective Action",
+  "industry": "متعدد الصناعات: بلاستيك · معادن · أغذية",
+  "mfg": "منفصل وبالعمليات",
+  "goals": [
+   "تحدد Cost Driver وراء الانحراف",
+   "تطبق Root Cause Analysis بالمستندات",
+   "تقترح Corrective Action قابلاً للمتابعة"
+  ],
+  "terms": [
+   "Cost Driver",
+   "Root Cause Analysis",
+   "Corrective Action",
+   "Material Usage Variance",
+   "Labor Efficiency Variance",
+   "By-product"
+  ],
+  "situation": {
+   "text": "لجنة التكاليف الشهرية تراجع ثلاثة انحرافات: ساعات ماكينة حقن أعلى، وخردة معادن أكثر في خط الكبس، ومردود أقل في خط العصير. المطلوب لكل حالة سبب جذري وإجراء",
+   "decision": "تحويل رقم الانحراف إلى سبب وإجراء ومسؤول"
+  },
+  "concept": [
+   "<b>محرك التكلفة</b> <span class=\"en\">Cost Driver</span> هو العامل الذي يغيّر التكلفة: ساعات الماكينة، أو عدد التشغيلات، أو وزن الهالك. <b>تحليل السبب الجذري</b> <span class=\"en\">Root Cause Analysis</span> يبدأ من فئة الانحراف، ثم المستند، ثم الحدث في المصنع",
+   "<b>الإجراء التصحيحي</b> <span class=\"en\">Corrective Action</span> يجب أن يكون محدداً بمسؤول وتاريخ ومؤشر متابعة. إذا كان السبب دائماً، يُحدَّث المعيار. وإذا كان مؤقتاً، يُعالج في التشغيل ويبقى المعيار",
+   "<b>المطحون</b> <span class=\"en\">Regrind</span>: إذا عُرّف في قائمة المواد كـ <b>منتج ثانوي</b> <span class=\"en\">By-product</span> بكمية سالبة، يُستلم على الأمر بالحركة <code class=\"tc mv\">531</code> فيخفض تكلفته. إن طُحن وأُعيد للخط دون تسجيل، يظهر الراتنج المصروف أكبر من الحقيقي",
+   "<b>التجويف المغلق</b> <span class=\"en\">Blocked Cavity</span>: إغلاق تجويف في قالب 4 تجاويف يرفع زمن الماكينة للقطعة بنسبة الثلث، فيظهر في فرق كمية المدخلات للأنشطة دون أي خطأ في المواد",
+   "<b>هالك بدء التشغيل وتغيير اللون</b> <span class=\"en\">Start-up / Color-change Scrap</span>: يمكن تعريفه في بند BOM كـ <b>كمية ثابتة</b> <span class=\"en\">Fixed Quantity</span> لكل أمر مهما كان حجمه، فيولّد <b>فرق حجم الدفعة</b> <span class=\"en\">Lot Size Variance</span> عندما يختلف حجم الأمر عن كمية التقدير"
+  ],
+  "conceptExtra": "<div class=\"tbl\"><table><thead><tr><th>الصناعة</th><th>الانحراف</th><th>محرك التكلفة</th><th>السبب الجذري المحتمل</th><th>الإجراء</th></tr></thead><tbody><tr class=\"\"><td>بلاستيك</td><td>ساعات ماكينة أعلى</td><td>زمن الدورة وعدد التجاويف</td><td>تجويف مغلق في القالب</td><td>إصلاح القالب، وتحديث المسار إن استمر</td></tr><tr class=\"\"><td>معادن</td><td>خردة أعلى</td><td>وزن الخردة لكل طن</td><td>ضبط القالب بعد التغيير</td><td>قائمة فحص لتغيير القالب</td></tr><tr class=\"\"><td>أغذية</td><td>مردود أقل</td><td>فاقد الخلط والتنظيف</td><td>تنظيف بين دفعات مختلفة</td><td>ترتيب الدفعات حسب النكهة</td></tr></tbody></table></div>",
+  "example": {
+   "title": "الأمر 1000456 مع تجويف مغلق طوال التشغيل",
+   "rows": [
+    [
+     "الكمية السليمة",
+     "950 قطعة"
+    ],
+    [
+     "التجاويف العاملة",
+     "3 من 4"
+    ],
+    [
+     "زمن الدورة",
+     "36 ثانية"
+    ],
+    [
+     "سعر ساعة الماكينة",
+     "160 ر.س"
+    ]
+   ],
+   "basis": "أساس المقارنة: الساعات المستهدفة بقالب 4 تجاويف"
+  },
+  "screen": {
+   "tcode": "CS03",
+   "title": "Display material BOM: General Item Overview",
+   "menu": "Logistics › Production › Master Data › Bills of Material › Bill of Material › Material BOM › Display",
+   "tabs": [
+    "Material",
+    "Document",
+    "General",
+    "All"
+   ],
+   "tabOn": 3,
+   "body": "<div class=\"flds\"><div class=\"fld\"><label>Material</label><div class=\"v\">FG-0500</div></div><div class=\"fld\"><label>Plant</label><div class=\"v\">1000</div></div><div class=\"fld\"><label>BOM Usage</label><div class=\"v\">1 <small>Production</small></div></div><div class=\"fld\"><label>Base Quantity</label><div class=\"v\">1,000 PC</div></div></div><div class=\"tblw\"><table><thead><tr><th>Item</th><th>ICt</th><th>Component</th><th>Component description</th><th>Quantity</th><th>Un</th><th>Fixed Qty</th><th>Comp. Scrap (%)</th></tr></thead><tbody><tr class=\"\"><td class=\"r\">0010</td><td class=\"\">L</td><td class=\"\">RES-PP</td><td class=\"\">Polypropylene resin</td><td class=\"r\">200.000</td><td class=\"\">KG</td><td class=\"\"></td><td class=\"r\">2.00</td></tr><tr class=\"hl\"><td class=\"r\">0020</td><td class=\"\">L</td><td class=\"\">RES-PP</td><td class=\"\">Start-up purge</td><td class=\"r\">1.500</td><td class=\"\">KG</td><td class=\"\">X</td><td class=\"\"></td></tr><tr class=\"hl\"><td class=\"r\">0030</td><td class=\"\">L</td><td class=\"\">RGR-PP</td><td class=\"\">PP regrind (by-product)</td><td class=\"r\">-3.000</td><td class=\"\">KG</td><td class=\"\"></td><td class=\"\"></td></tr></tbody></table></div>",
+   "notes": [
+    "<b>ICt = L</b> بند مخزني",
+    "<b>Fixed Qty</b> الكمية لا تتغير بحجم الأمر، مناسبة لهالك بدء التشغيل",
+    "<b>Quantity سالبة</b> تجعل البند منتجاً ثانوياً يُستلم بالحركة 531",
+    "<b>Comp. Scrap (%)</b> تظهر في تفاصيل البند؛ جُمعت هنا للتوضيح. هذا BOM توضيحي ويختلف عن مثال حساب التكلفة"
+   ]
+  },
+  "steps": [
+   [
+    "راجع ملاحظات التأكيد وسجل توقف القالب للأمر",
+    "CO14"
+   ],
+   [
+    "احسب عدد الطلقات بالتجاويف العاملة فعلاً",
+    null
+   ],
+   [
+    "قارن ساعات الماكينة المستهدفة بالمؤكدة في تحليل الانحراف",
+    "KKS2"
+   ],
+   [
+    "ابحث عن حركات 531 للمطحون في الفترة",
+    "MB51"
+   ],
+   [
+    "إن تكرر هالك التشغيل، اقترح كمية ثابتة في BOM بعد موافقة الإنتاج",
+    "CS02"
+   ]
+  ],
+  "stepsNote": "تعديل BOM يغيّر التكلفة المعيارية القادمة، فلا تنفذه إلا في نظام التدريب أو بعد اعتماد الإنتاج",
+  "questions": [
+   {
+    "id": "fa-q1",
+    "type": "num",
+    "prompt": "كم ساعة ماكينة يحتاج الأمر لإنتاج 950 قطعة سليمة بثلاثة تجاويف؟ قرّب لرقمين عشريين",
+    "unit": "ساعة",
+    "answer": 3.17,
+    "tol": 0.011,
+    "wrongs": [
+     [
+      2.38,
+      0.011,
+      "استخدام عدد التجاويف الأصلي",
+      "مع تجويف مغلق تنتج الطلقة 3 قطع فقط"
+     ]
+    ],
+    "solution": "950 ÷ 3 = 316.67 أي 317 طلقة × 36 ث = 11,412 ث = 3.17 ساعة مقابل 2.375 ساعة مستهدفة، أي 0.795 ساعة × 160 = 127.20 ر.س انحراف ماكينة"
+   },
+   {
+    "id": "fa-q2",
+    "type": "mcq",
+    "prompt": "أي حركة تستلم المطحون كمنتج ثانوي على الأمر؟",
+    "options": [
+     [
+      "531",
+      null
+     ],
+     [
+      "101",
+      "101 لاستلام المنتج الرئيسي"
+     ],
+     [
+      "261",
+      "261 صرف وليست استلاماً"
+     ],
+     [
+      "551",
+      "551 إتلاف من المخزن على مركز تكلفة"
+     ]
+    ],
+    "correct": 0,
+    "tags": [
+     null,
+     "خلط بين المنتج الرئيسي والثانوي",
+     "خلط بين الصرف والاستلام",
+     "خلط بين الإتلاف والمنتج الثانوي"
+    ],
+    "solution": "531 تستلم المنتج الثانوي المعرَّف في BOM بكمية سالبة، فتُدائن الأمر بقيمته"
+   }
+  ],
+  "interpret": {
+   "text": "تجويف مغلق رفع ساعات الماكينة 0.795 ساعة على الأمر، أي 127.20 ر.س. الإجراء: إصلاح القالب خلال الأسبوع، وإن تكرر الإغلاق يُحدَّث المسار والمعيار",
+   "en": "Root cause: one blocked cavity extended machine time. Corrective action: repair the mold and update the routing if the condition persists.",
+   "ar": "السبب الجذري: تجويف مغلق أطال وقت الماكينة. الإجراء التصحيحي: إصلاح القالب، وتحديث المسار إن استمرت الحالة",
+   "docs": [
+    "إشعارات الصيانة للقالب IW23",
+    "التأكيدات مع أسباب التوقف CO14",
+    "المسار وزمن الدورة CA03",
+    "تفصيل الانحراف KKS2"
+   ]
+  },
+  "missing": [
+   "التصنيع المتكرر Repetitive Manufacturing ومجمّع تكلفة المنتج KKF6N",
+   "توزيع الكهرباء على الماكينات حسب kWh"
+  ],
+  "tcodes": [
+   "CS02",
+   "CS03",
+   "CO11N",
+   "MB51",
+   "KKS2",
+   "CA03",
+   "IW23"
+  ]
+ }
 ];
 const TMAP=Object.fromEntries(TOPICS.map(t=>[t.id,t]));
+const NT=TOPICS.length;
 const PRACTICE={
- "intro":["تأكد أن نسخة الإنتاج Production Version في الأمر هي نفسها المستخدمة في تقدير التكلفة، وإلا قارنت أمراً بمعيار مختلف","وحدة الشراء بالطن ووحدة الصرف بالكيلو مصدر شائع لأرقام غير منطقية، راجع معامل التحويل في بيانات المادة أولاً"],
- "cost-centers":["الكهرباء أكبر بند في مراكز الحقن، وتوزيعها بالتساوي بين الماكينات يرفع تكلفة المنتجات الصغيرة ويخفض الكبيرة","راجع رصيد المراكز الإنتاجية كل شهر قبل الإقفال، فالرصيد الكبير المتكرر يعني أن سعر النشاط أو الطاقة المخططة غير واقعي"],
- "production-orders":["أقفل الأوامر المنتهية فنياً TECO كل شهر، لأن الأمر المفتوح يحوّل الانحراف إلى WIP ويؤخر ظهوره","قارن الهالك المؤكد بالقطعة مع وزن الهالك الفعلي على الميزان، فالفرق بينهما فاقد تشغيل لا يظهر في التأكيد"],
- "product-costing":["حدّث زمن الدورة في Routing عند تغيير القالب أو نقله لماكينة أخرى، فهو أكثر رقم يغيّر تكلفة القطعة","خذ وزن القطعة من قياس فعلي لعينة إنتاج، لا من رسم التصميم"],
- "standard-cost":["سعر الراتنج يتقلب مع أسعار البتروكيماويات، فحلّل فرق سعر الشراء منفصلاً عن انحرافات الإنتاج حتى لا يختلط أداء المشتريات بأداء المصنع","وثّق تاريخ ومصدر كل سعر استُخدم في المعيار، لأن المراجعة تسأل عنه عند كل تحرير"],
- "actual-cost":["رحّل التحميل غير المباشر قبل حساب الانحرافات، وإلا ظهر الانحراف أقل من حقيقته","راجع الأوامر التي عليها صرف مواد بلا تأكيد إنتاج، فهي غالباً صرف لأمر خاطئ"],
- "variance":["ابدأ بأكبر انحراف بالقيمة لا بالنسبة المئوية، فالنسبة الكبيرة على مبلغ صغير لا تستحق الوقت نفسه","انحراف كمية الراتنج في الحقن له ثلاثة أسباب متكررة: مرتجع خام لم يُسجّل بالحركة 262، أو مطحون لم يُستلم بالحركة 531، أو صرف على أمر غير صحيح"],
- "factory":["اطلب من الإنتاج تسجيل سبب الهالك ووقت تغيير القالب في التأكيد، فبدونها لا يمكن تفسير الانحراف","افصل هالك بدء التشغيل عن هالك الإنتاج المستمر، فالأول يعالجه التخطيط وحجم الدفعة والثاني تعالجه الجودة والصيانة"]
+ "intro": [
+  "قبل أي تحليل، تأكد أن كل مستندات الشهر مرحّلة: الصرف والتأكيد والاستلام، لأن أي مستند متأخر يغيّر الرصيد",
+  "اطلب من فريق المخازن والإنتاج استخدام رقم الأمر في كل مستند، فهو الرابط الوحيد بين المصنع وSAP"
+ ],
+ "master-data": [
+  "أقفل نسخ الإنتاج القديمة بدل حذفها، فالحذف يفقدك أثر الأوامر السابقة",
+  "عند تغيير وصفة أو خط، حدّث نسخة الإنتاج وتقدير التكلفة في الفترة نفسها"
+ ],
+ "cost-centers": [
+  "الطاقة أكبر بند في الصناعات كثيفة الاستهلاك، وتوزيعها بالتساوي بين الخطوط يشوّه تكلفة المنتجات",
+  "راجع رصيد المراكز الإنتاجية كل شهر قبل الإقفال، فالرصيد الكبير المتكرر يعني سعر نشاط أو طاقة غير واقعية"
+ ],
+ "product-costing": [
+  "خذ الأوزان والأوقات من قياس فعلي لعينة إنتاج، لا من التصميم أو كتالوج المورد",
+  "راجع تفصيل المكونات قبل اعتماد السعر، فخطأ واحد في وحدة القياس يضاعف التكلفة"
+ ],
+ "standard-cost": [
+  "أسعار الخامات تتقلب، فحلّل فرق الشراء منفصلاً عن انحرافات الإنتاج حتى لا يختلط أداء المشتريات بأداء المصنع",
+  "وثّق تاريخ ومصدر كل سعر في المعيار، لأن المراجعة تسأل عنه عند كل إصدار"
+ ],
+ "production-orders": [
+  "أقفل الأوامر المنتهية فنياً TECO كل شهر، فالأمر المفتوح يحوّل الانحراف إلى WIP ويؤخر ظهوره",
+  "قارن الهالك المؤكد بوزن الهالك على الميزان، فالفرق فاقد لا يظهر في التأكيد"
+ ],
+ "process-orders": [
+  "سجّل كميات المدخلات بالوزن الفعلي للدفعة، لا بالكمية المخططة في الوصفة",
+  "افصل فاقد التنظيف بين الدفعات عن فاقد التشغيل، فلكل منهما علاج مختلف"
+ ],
+ "peo": [
+  "لا تختر PEO لمنتج بسيط عالي الحجم، فتكلفة إدارة البيانات أعلى من فائدة التتبع",
+  "اربط كل تغيير هندسي بتاريخ نفاذه، حتى تعرف أي وحدة تأثرت به في تحليل التكلفة"
+ ],
+ "actual-cost": [
+  "ثبّت تقويم إقفال شهري بترتيب الخطوات ومسؤول كل خطوة",
+  "راجع الأوامر التي عليها صرف مواد بلا تأكيد إنتاج، فهي غالباً صرف لأمر خاطئ"
+ ],
+ "variance": [
+  "ابدأ بأكبر انحراف بالقيمة لا بالنسبة المئوية",
+  "انحراف كمية المواد له ثلاثة أسباب متكررة: مرتجع لم يُسجّل 262، أو منتج ثانوي لم يُستلم 531، أو صرف على أمر غير صحيح"
+ ],
+ "factory": [
+  "اطلب من الإنتاج تسجيل سبب الهالك والتوقف في التأكيد، فبدونها لا يمكن تفسير الانحراف",
+  "تابع الإجراء التصحيحي في الشهر التالي برقم واضح، مثل ساعات الماكينة لكل 1,000 قطعة"
+ ]
 };
 const CMA={
- "intro":"Cost Management · Costing systems: أنظمة التكاليف وتدفق التكلفة",
- "cost-centers":"Cost Management · Overhead costs: توزيع تكاليف أقسام الخدمة، والتحميل الناقص والزائد",
- "production-orders":"Cost Management · Costing systems: نظام تكاليف الأوامر Job Order Costing",
- "product-costing":"Cost Management · Overhead costs: معدلات التحميل المحددة مسبقاً",
- "standard-cost":"Cost Management · Measurement concepts: التكلفة المعيارية Standard Costing",
- "actual-cost":"Cost Management · Measurement concepts: التكلفة الفعلية والعادية Actual vs Normal Costing",
- "variance":"Performance Management · Cost and variance measures: انحرافات السعر والكفاءة للمواد والعمالة والتكاليف غير المباشرة",
- "factory":"Cost Management: الهالك العادي وغير العادي في تكاليف الأوامر، وتكاليف المنتجات الثانوية By-products"
+ "intro": "Cost Management · Costing systems: تدفق التكاليف في أنظمة التكاليف",
+ "master-data": "تمهيد لـ Cost Management: لا يقابله موضوع مباشر في المنهج، لكنه مصدر الكميات المعيارية",
+ "cost-centers": "Cost Management · Overhead costs: توزيع تكاليف أقسام الخدمة، والتحميل الناقص والزائد",
+ "product-costing": "Cost Management · Measurement concepts: التكلفة المعيارية والعادية والفعلية",
+ "standard-cost": "Cost Management · Measurement concepts: Standard Costing وانحراف سعر الشراء",
+ "production-orders": "Cost Management · Costing systems: نظام تكاليف الأوامر Job Order Costing",
+ "process-orders": "Cost Management · Costing systems: نظام تكاليف المراحل Process Costing",
+ "peo": "Cost Management · Costing systems: تكاليف الأوامر للمنتجات المعقدة",
+ "actual-cost": "Cost Management · Measurement concepts: Actual vs Normal Costing، والتحميل الناقص والزائد",
+ "variance": "Performance Management · Cost and variance measures: انحرافات السعر والكفاءة",
+ "factory": "Performance Management: تحليل الانحرافات واتخاذ الإجراء، وCost Management: الهالك والمنتجات الثانوية"
 };
 const MISSING_GLOBAL=[
- {id:"m-ml",title:"Material Ledger وActual Costing",en:"CKMLCP",why:"للوصول للتكلفة الفعلية الكاملة للمخزون والمبيعات"},
- {id:"m-wip",title:"الإنتاج تحت التشغيل وترحيل التكاليف حسب الحدث",en:"KKAX · Event-Based Posting",why:"لأوامر الحقن الممتدة بين فترتين"},
- {id:"m-rem",title:"التصنيع المتكرر ومجمّع تكلفة المنتج",en:"REM · KKF6N",why:"شائع في خطوط الحقن عالية التكرار"},
- {id:"m-sheet",title:"إعداد ورقة التكاليف ومكوّنات التكلفة",en:"KZS2 · OKTZ",why:"تحدد طريقة تحميل غير المباشر وعرض التكلفة"},
- {id:"m-copa",title:"تحليل الربحية",en:"Margin Analysis",why:"أين تنتهي الانحرافات بعد التسوية"},
- {id:"m-family",title:"القوالب العائلية والمنتجات المشتركة",en:"Co-products",why:"قالب واحد ينتج قطعاً مختلفة في الطلقة نفسها"}
+ {
+  "id": "m-ml",
+  "title": "Material Ledger وActual Costing",
+  "en": "CKMLCP",
+  "why": "للوصول للتكلفة الفعلية الكاملة للمخزون والمبيعات"
+ },
+ {
+  "id": "m-wip",
+  "title": "حساب الإنتاج تحت التشغيل بالتفصيل",
+  "en": "KKAX · Results Analysis",
+  "why": "للأوامر الممتدة بين فترتين"
+ },
+ {
+  "id": "m-rem",
+  "title": "التصنيع المتكرر ومجمّع تكلفة المنتج",
+  "en": "REM · KKF6N",
+  "why": "شائع في الخطوط عالية التكرار"
+ },
+ {
+  "id": "m-sheet",
+  "title": "إعداد ورقة التكاليف ومكوّنات التكلفة",
+  "en": "KZS2 · OKTZ",
+  "why": "تحدد طريقة تحميل غير المباشر وعرض التكلفة"
+ },
+ {
+  "id": "m-copa",
+  "title": "تحليل الربحية",
+  "en": "Margin Analysis",
+  "why": "أين تنتهي الانحرافات بعد التسوية"
+ },
+ {
+  "id": "m-family",
+  "title": "المنتجات المشتركة وتوزيع التكلفة",
+  "en": "Co-products",
+  "why": "عملية واحدة تنتج أكثر من منتج رئيسي"
+ }
 ];
-/* glossary: [arabic, english, sap code, definition, topic] */
+/* [arabic, english, sap code, practical meaning, lesson] */
 const GLOSSARY=[
- ["دفتر اليومية الموحد","Universal Journal","ACDOCA","جدول واحد في S/4HANA يجمع بنود المالية والتكاليف والأصول والمخزون","intro"],
- ["عنصر التكلفة","Cost Element","FS00","حساب أستاذ عام يحمل فئة عنصر تكلفة، فيظهر في محاسبة التكاليف","intro"],
- ["عنصر تكلفة أولي","Primary Cost Element","Category 1","يمثل تكاليف قادمة من المالية مثل استهلاك الخام والكهرباء","intro"],
- ["عنصر تكلفة ثانوي","Secondary Cost Element","Category 41 / 42 / 43","للتحميل الداخلي: 41 تحميل غير مباشر، 42 توزيع Assessment، 43 تحميل الأنشطة","intro"],
- ["منطقة التحكم","Controlling Area","OKKP","الوحدة التنظيمية التي تُدار فيها محاسبة التكاليف","intro"],
- ["مستوى التقييم","Valuation Area","Plant","المستوى الذي تُقيَّم عليه المادة، وهو المصنع في أغلب الأنظمة","intro"],
- ["مركز التكلفة","Cost Center","KS01 · KS03","وحدة مسؤولية تُجمَع عليها التكاليف","cost-centers"],
- ["فئة مركز التكلفة","Cost Center Category","KS01","تصنيف المركز، مثل F لمراكز الإنتاج","cost-centers"],
- ["الهرمية القياسية","Standard Hierarchy","OKEON","الشجرة التي يجب أن ينتمي إليها كل مركز تكلفة","cost-centers"],
- ["نوع النشاط","Activity Type","KL01","وحدة قياس مخرجات المركز، مثل ساعة الماكينة","cost-centers"],
- ["تخطيط سعر النشاط","Activity Price Planning","KP26","إدخال الكمية المخططة وسعر النشاط لكل فترة","cost-centers"],
- ["حساب سعر الخطة","Plan Price Calculation","KSPI","يحسب سعر النشاط من التكاليف المخططة ÷ الكمية المخططة","cost-centers"],
- ["سعر النشاط الفعلي","Actual Price Calculation","KSII","يحسب السعر الفعلي للنشاط في نهاية الفترة","cost-centers"],
- ["التوزيع","Assessment","KSU5","توزيع تكاليف مراكز الخدمة على مراكز أخرى بعنصر ثانوي فئة 42","cost-centers"],
- ["التحميل الناقص / الزائد","Under / Over Absorption","S_ALR_87013611","الفرق بين تكاليف المركز الفعلية وما حُمِّل منه","cost-centers"],
- ["مركز العمل","Work Center","CR01 · CR03","الماكينة أو الخط، ويربط العمليات بمركز التكلفة وأنواع الأنشطة","cost-centers"],
- ["أمر الإنتاج","Production Order","CO01 · CO02 · CO03","مجمّع تكلفة لدفعة إنتاج واحدة","production-orders"],
- ["الإصدار","Release (REL)","CO02","حالة تسمح بصرف المواد والتأكيد على الأمر","production-orders"],
- ["التأكيد","Confirmation","CO11N · CO14","تسجيل الكمية السليمة والهالك والساعات لعملية","production-orders"],
- ["الكمية السليمة","Yield","CO11N","الإنتاج المقبول، وعليه تُحسب التكلفة المستهدفة","production-orders"],
- ["الهالك","Scrap","CO11N","الإنتاج المرفوض المسجل في التأكيد","production-orders"],
- ["صرف على الأمر","Goods Issue to Order","MIGO · 261","يحمّل الأمر بقيمة المادة المصروفة، وعكسه 262","production-orders"],
- ["استلام من الأمر","Goods Receipt from Order","MIGO · 101","يدائن الأمر بالتكلفة المعيارية للكمية المستلمة","production-orders"],
- ["تقرير حركات المواد","Material Documents List","MB51","يعرض حركات المخزون حسب الأمر أو المادة أو التاريخ","production-orders"],
- ["الإقفال الفني","Technically Completed (TECO)","CO02","إنهاء الأمر تشغيلياً، فتُحسب له انحرافات بدل WIP","production-orders"],
- ["التسوية","Settlement","KO88 · CO88","نقل رصيد الأمر إلى المالية وتحليل الربحية","production-orders"],
- ["تقدير التكلفة","Cost Estimate","CK11N · CK13N","حساب تكلفة المنتج من هيكل الكميات","product-costing"],
- ["هيكل الكميات","Quantity Structure","BOM + Routing","كميات المواد وأوقات العمليات التي يُبنى عليها التقدير","product-costing"],
- ["متغير التكاليف","Costing Variant","PPC1 · OKKN","يحدد مصدر الأسعار وتواريخ التقييم","product-costing"],
- ["كمية التقدير","Costing Lot Size","MM03 · Costing 1","الكمية التي يُحسب عليها التقدير","product-costing"],
- ["هالك المكوّن","Component Scrap","CS02","نسبة تُضاف لكمية المكوّن في BOM","product-costing"],
- ["ورقة التكاليف","Costing Sheet","KZS2","قواعد حساب التحميل غير المباشر","product-costing"],
- ["هيكل مكوّنات التكلفة","Cost Component Structure","OKTZ","تجميع التكلفة في مكوّنات: مواد، ماكينة، عمالة، غير مباشر","product-costing"],
- ["تشغيل التكاليف","Costing Run","CK40N","حساب وتعليم وتحرير تقديرات منتجات كثيرة","product-costing"],
- ["السعر المعياري","Standard Price","MM03 · Accounting 1","السعر الثابت الذي يُقيَّم به المخزون مع مؤشر S","standard-cost"],
- ["مؤشر التحكم في السعر","Price Control","S / V","S سعر معياري، V متوسط متحرك","standard-cost"],
- ["تحديث السعر","Price Update","CK24","تعليم التقدير ثم تحريره كسعر معياري","standard-cost"],
- ["فروق الأسعار","Price Differences","OBYC · PRD","الحساب الذي يستقبل فرق الشراء أو الإنتاج لمواد S","standard-cost"],
- ["دفتر المواد","Material Ledger","CKM3N","سجل تقييم المادة وفروقها في S/4HANA","standard-cost"],
- ["التحميل غير المباشر","Overhead Calculation","KGI2 · CO43","ترحيل التكاليف غير المباشرة على الأمر حسب ورقة التكاليف","actual-cost"],
- ["إعادة التقييم بالسعر الفعلي","Revaluation at Actual Prices","CON2","إعادة تسعير الأنشطة على الأوامر بالسعر الفعلي","actual-cost"],
- ["تحليل تكاليف الأمر","Order Cost Analysis","KKBC_ORD","مقارنة المخطط والفعلي للأمر حسب عنصر التكلفة","actual-cost"],
- ["الإنتاج تحت التشغيل","Work in Process (WIP)","KKAX · KKAO","قيمة الأوامر غير المكتملة في نهاية الفترة","actual-cost"],
- ["التكاليف الفعلية","Actual Costing","CKMLCP","حساب السعر الفعلي الدوري للمواد في دفتر المواد","actual-cost"],
- ["التكلفة المستهدفة","Target Costs","KKS2 · Version 0","التكلفة المعيارية للكمية السليمة الفعلية","variance"],
- ["مفتاح الانحراف","Variance Key","OKV1","يحدد طريقة حساب الانحرافات للأمر","variance"],
- ["فرق سعر المدخلات","Input Price Variance","KKS2","اختلاف سعر المدخلات الفعلي عن المعياري","variance"],
- ["فرق كمية المدخلات","Input Quantity Variance","KKS2","اختلاف الكمية الفعلية للمواد والأنشطة عن المستهدفة","variance"],
- ["فرق استخدام الموارد","Resource-Usage Variance","KKS2","استخدام مادة أو نشاط مختلف عن المخطط","variance"],
- ["المتبقي من المدخلات","Remaining Input Variance","KKS2","ما لا يُصنف في فئة أخرى، مثل البنود بلا كمية","variance"],
- ["فرق حجم الدفعة","Lot Size Variance","KKS2","أثر التكاليف الثابتة عند اختلاف حجم الأمر عن كمية التقدير","variance"],
- ["فرق سعر المخرجات","Output Price Variance","KKS2","اختلاف تقييم الاستلام عن السعر المعياري","variance"],
- ["المنتج الثانوي","By-product","531","مادة تُستلم من الأمر وتخفض تكلفته، مثل المطحون","factory"],
- ["الكمية الثابتة","Fixed Quantity","CS02","كمية مكوّن لا تتغير بحجم الأمر","factory"],
- ["التصنيع المتكرر","Repetitive Manufacturing","KKF6N","إنتاج متكرر بمجمّع تكلفة للمنتج بدل أمر لكل دفعة","factory"],
- ["أداة الإنتاج","Production Resource/Tool (PRT)","CF01","قد يُعرَّف القالب كأداة إنتاج مرتبطة بالعملية","factory"],
- ["زمن الدورة","Cycle Time","CA02 · Standard Values","زمن الطلقة الواحدة، ويُدخل كقيمة معيارية في العملية","factory"]
+ [
+  "دفتر اليومية الموحد",
+  "Universal Journal",
+  "ACDOCA",
+  "جدول واحد لبنود FI وCO الفعلية، فيتطابق الأستاذ العام مع تقارير التكاليف",
+  "intro"
+ ],
+ [
+  "البيانات الأساسية",
+  "Master Data",
+  "MM03 · CS03 · CA03",
+  "البيانات الثابتة التي يقرأ منها النظام الكميات والأوقات والأسعار",
+  "master-data"
+ ],
+ [
+  "قائمة المواد",
+  "Bill of Materials",
+  "BOM · CS03",
+  "المواد وكمياتها لكمية أساس، ومنها نسبة الهالك",
+  "master-data"
+ ],
+ [
+  "مسار التصنيع",
+  "Routing",
+  "CA03",
+  "العمليات وأوقاتها المعيارية ومراكز العمل",
+  "master-data"
+ ],
+ [
+  "مركز العمل",
+  "Work Center",
+  "CR03",
+  "مكان تنفيذ العملية، ويربطها بمركز التكلفة وأنواع الأنشطة",
+  "master-data"
+ ],
+ [
+  "نسخة الإنتاج",
+  "Production Version",
+  "C223",
+  "تربط BOM بديلة بمسار أو وصفة لفترة صلاحية وحجم دفعة",
+  "master-data"
+ ],
+ [
+  "الوصفة الرئيسية",
+  "Master Recipe",
+  "C201 · C203",
+  "مقابل المسار في التصنيع بالعمليات، وتشمل المراحل والمردود",
+  "process-orders"
+ ],
+ [
+  "المورد",
+  "Resource",
+  "CRC1",
+  "مقابل مركز العمل في التصنيع بالعمليات",
+  "process-orders"
+ ],
+ [
+  "مركز التكلفة",
+  "Cost Center",
+  "KS01 · KS03",
+  "وحدة مسؤولية تُجمع عليها التكاليف",
+  "cost-centers"
+ ],
+ [
+  "حساب التكلفة",
+  "Cost Element",
+  "FS00",
+  "حساب أستاذ عام يحمل نوع التكلفة، فيظهر في محاسبة التكاليف",
+  "cost-centers"
+ ],
+ [
+  "التكلفة الأولية",
+  "Primary Cost",
+  "G/L Type: Primary Costs or Revenue",
+  "تكلفة قادمة من المالية مثل الفواتير والرواتب والإهلاك",
+  "cost-centers"
+ ],
+ [
+  "التكلفة الثانوية",
+  "Secondary Cost",
+  "Category 41 · 42 · 43",
+  "تحميل داخلي: 41 غير مباشر، 42 توزيع، 43 أنشطة",
+  "cost-centers"
+ ],
+ [
+  "نوع النشاط",
+  "Activity Type",
+  "KL01",
+  "وحدة قياس ما يقدمه المركز، مثل ساعة الماكينة",
+  "cost-centers"
+ ],
+ [
+  "سعر النشاط",
+  "Activity Rate",
+  "KP26 · KSPI",
+  "التكاليف المخططة ÷ الطاقة المخططة",
+  "cost-centers"
+ ],
+ [
+  "تحميل النشاط",
+  "Activity Allocation",
+  "CO11N",
+  "الساعات المؤكدة × السعر، يدين الأمر ويدائن المركز",
+  "cost-centers"
+ ],
+ [
+  "التكاليف الصناعية غير المباشرة",
+  "Manufacturing Overhead",
+  "KGI2 · CO43",
+  "تكاليف لا ترتبط بأمر بعينه، تُحمَّل بنسبة أو أساس",
+  "cost-centers"
+ ],
+ [
+  "حساب تكلفة المنتج",
+  "Product Costing",
+  "CO-PC",
+  "حساب وتحليل تكلفة المنتجات في SAP",
+  "product-costing"
+ ],
+ [
+  "تقدير التكلفة المعيارية",
+  "Standard Cost Estimate",
+  "CK11N · CK13N",
+  "تكلفة المنتج من هيكل الكميات والأسعار",
+  "product-costing"
+ ],
+ [
+  "تفصيل مكوّنات التكلفة",
+  "Cost Component Split",
+  "CK13N · OKTZ",
+  "توزيع التكلفة على مواد وماكينة وعمالة وغير مباشر",
+  "product-costing"
+ ],
+ [
+  "التكلفة المخططة",
+  "Planned Cost",
+  "CO03",
+  "تكلفة الأمر لكميته المخططة عند إنشائه",
+  "product-costing"
+ ],
+ [
+  "التكلفة المستهدفة",
+  "Target Cost",
+  "KKS2 · Version 0",
+  "المعيار × الكمية السليمة الفعلية، أساس الانحراف",
+  "product-costing"
+ ],
+ [
+  "التكلفة الفعلية",
+  "Actual Cost",
+  "KKBC_ORD",
+  "ما رُحّل على الأمر من مستندات فعلية",
+  "actual-cost"
+ ],
+ [
+  "مؤشر التحكم في السعر",
+  "Price Control",
+  "S / V",
+  "S سعر معياري ثابت، V متوسط متحرك",
+  "standard-cost"
+ ],
+ [
+  "التعليم والإصدار",
+  "Mark and Release",
+  "CK24",
+  "تعليم التقدير كسعر مستقبلي ثم إصداره كسعر حالي",
+  "standard-cost"
+ ],
+ [
+  "فروق الأسعار",
+  "Price Difference",
+  "OBYC · PRD",
+  "الحساب الذي يستقبل فرق الشراء لمواد السعر S",
+  "standard-cost"
+ ],
+ [
+  "دفتر المواد",
+  "Material Ledger",
+  "CKM3N",
+  "سجل تقييم المادة وفروقها في S/4HANA",
+  "standard-cost"
+ ],
+ [
+  "أمر الإنتاج",
+  "Production Order",
+  "CO01 · CO03",
+  "مجمّع التكلفة لدفعة في التصنيع المنفصل",
+  "production-orders"
+ ],
+ [
+  "أمر العملية",
+  "Process Order",
+  "COR1 · COR3",
+  "مجمّع التكلفة لدفعة في التصنيع بالعمليات",
+  "process-orders"
+ ],
+ [
+  "صرف المواد",
+  "Goods Issue",
+  "MIGO · 261",
+  "يحمّل الأمر بقيمة المواد، وعكسه 262",
+  "production-orders"
+ ],
+ [
+  "تأكيد الإنتاج",
+  "Confirmation",
+  "CO11N · COR6N",
+  "تسجيل الكمية السليمة والهالك والساعات",
+  "production-orders"
+ ],
+ [
+  "استلام المنتج",
+  "Goods Receipt",
+  "MIGO · 101",
+  "يدائن الأمر بالتكلفة المعيارية للكمية المستلمة",
+  "production-orders"
+ ],
+ [
+  "الكمية السليمة / المردود",
+  "Yield",
+  "CO11N · COR6N",
+  "الإنتاج المقبول، وفي العمليات نسبته إلى المدخلات",
+  "process-orders"
+ ],
+ [
+  "الهالك",
+  "Scrap",
+  "CO11N",
+  "الإنتاج المرفوض المسجل في التأكيد",
+  "production-orders"
+ ],
+ [
+  "أمر ورشة",
+  "Shop Floor Order",
+  "PEO",
+  "أمر إنتاج موسّع بنسخ بيانات وأنشطة عملية",
+  "peo"
+ ],
+ [
+  "مسار الورشة",
+  "Shop Floor Routing",
+  "PEO",
+  "مسار يُدار بالإصدارات ويضم أنشطة العملية",
+  "peo"
+ ],
+ [
+  "نشاط العملية",
+  "Operation Activity",
+  "PEO",
+  "مهمة تنفيذية داخل العملية، والتأكيد يتم عليها",
+  "peo"
+ ],
+ [
+  "تحليل الانحرافات",
+  "Variance Analysis",
+  "KKS2 · KKS1",
+  "مقارنة الفعلي بالمستهدف وتقسيم الفرق لفئات",
+  "variance"
+ ],
+ [
+  "انحراف كمية المدخلات",
+  "Input Quantity Variance",
+  "KKS2",
+  "(الكمية الفعلية − المستهدفة) × السعر المعياري",
+  "variance"
+ ],
+ [
+  "انحراف سعر المدخلات",
+  "Input Price Variance",
+  "KKS2",
+  "اختلاف سعر المدخلات على الأمر عن سعر التقدير",
+  "variance"
+ ],
+ [
+  "المتبقي من المدخلات",
+  "Remaining Input Variance",
+  "KKS2",
+  "انحراف البنود بلا كمية، مثل التحميل غير المباشر",
+  "variance"
+ ],
+ [
+  "الإنتاج تحت التشغيل",
+  "Work in Process (WIP)",
+  "KKAX · KKAO",
+  "قيمة الأوامر غير المكتملة في نهاية الفترة",
+  "actual-cost"
+ ],
+ [
+  "التسوية",
+  "Settlement",
+  "KO88 · CO88",
+  "نقل رصيد الأمر إلى المالية وتحليل الربحية",
+  "actual-cost"
+ ],
+ [
+  "الترحيل المرتبط بالأحداث",
+  "Event-Based Production Cost Posting",
+  "Analyze Production Costs - Event-Based",
+  "ترحيل التحميل وWIP والانحرافات مع كل حدث",
+  "actual-cost"
+ ],
+ [
+  "انحراف استخدام المواد",
+  "Material Usage Variance",
+  "CMA ≈ Input Quantity Variance",
+  "مصطلح تقارير يقابل انحراف كمية المواد في SAP",
+  "variance"
+ ],
+ [
+  "انحراف كفاءة العمالة",
+  "Labor Efficiency Variance",
+  "CMA ≈ Input Quantity Variance",
+  "مصطلح تقارير يقابل انحراف كمية الأنشطة",
+  "variance"
+ ],
+ [
+  "محرك التكلفة",
+  "Cost Driver",
+  "—",
+  "العامل الذي يغيّر التكلفة، مثل الساعات أو عدد التشغيلات",
+  "factory"
+ ],
+ [
+  "تحليل السبب الجذري",
+  "Root Cause Analysis",
+  "—",
+  "تتبع الانحراف من الفئة إلى المستند إلى الحدث",
+  "factory"
+ ],
+ [
+  "الإجراء التصحيحي",
+  "Corrective Action",
+  "—",
+  "إجراء بمسؤول وتاريخ ومؤشر متابعة",
+  "factory"
+ ],
+ [
+  "المنتج الثانوي",
+  "By-product",
+  "531",
+  "مادة تُستلم من الأمر وتخفض تكلفته، مثل المطحون",
+  "factory"
+ ]
 ];
 const SOURCES=[
- ["SAP Learning · Cost Object Controlling in SAP S/4HANA: Performing Variance Calculation","https://learning.sap.com/courses/cost-object-controlling-in-sap-s-4hana/performing-variance-calculation","نسخ التكلفة المستهدفة، فئات الانحراف، مفتاح الانحراف"],
- ["SAP Help Portal · Variance Categories","https://help.sap.com/saphelp_erp60_sp/helpdata/en/25/9142530fafff4fe10000000a44176d/content.htm","فئات الانحراف وانحراف الهالك"],
- ["SAP Learning · Product Cost Planning in SAP S/4HANA: Understanding Mark and Release","https://learning.sap.com/courses/product-cost-planning-in-sap-s-4hana/understanding-mark-and-release","حالات التقدير KA وVO وFR، والتحرير مرة لكل فترة"],
- ["SAP Help Portal · Input Side Variances","https://help.sap.com/doc/2e11d553088f4308e10000000a174cb4/3.6/en-US/280bf8516599a160e10000000a44176d.html","تعريف فرق المتبقي من المدخلات"],
- ["SAP Help Portal · Variance Calculation with KKS1H","https://help.sap.com/saphelp_sfin100/helpdata/en/b7/518f53797b590de10000000a44176d/content.htm","حساب الانحرافات لأوامر الإنتاج في الأنظمة المبنية على HANA"],
- ["IMA · CMA Certification","https://www.imanet.org/IMA-Certifications/CMA-Certification","أقسام منهج CMA Part 1 المستخدمة في ربط الدروس"]
+ [
+  "SAP Learning · Cost Object Controlling in SAP S/4HANA: Performing Variance Calculation",
+  "https://learning.sap.com/courses/cost-object-controlling-in-sap-s-4hana/performing-variance-calculation",
+  "نسخ التكلفة المستهدفة، فئات الانحراف، مفتاح الانحراف"
+ ],
+ [
+  "SAP Help Portal · Variance Categories",
+  "https://help.sap.com/saphelp_erp60_sp/helpdata/en/25/9142530fafff4fe10000000a44176d/content.htm",
+  "فئات الانحراف وانحراف الهالك"
+ ],
+ [
+  "SAP Learning · Product Cost Planning in SAP S/4HANA: Understanding Mark and Release",
+  "https://learning.sap.com/courses/product-cost-planning-in-sap-s-4hana/understanding-mark-and-release",
+  "حالات التقدير KA وVO وFR، والتحرير مرة لكل فترة"
+ ],
+ [
+  "SAP Help Portal · Input Side Variances",
+  "https://help.sap.com/doc/2e11d553088f4308e10000000a174cb4/3.6/en-US/280bf8516599a160e10000000a44176d.html",
+  "تعريف فرق المتبقي من المدخلات"
+ ],
+ [
+  "SAP Help Portal · Variance Calculation with KKS1H",
+  "https://help.sap.com/saphelp_sfin100/helpdata/en/b7/518f53797b590de10000000a44176d/content.htm",
+  "حساب الانحرافات لأوامر الإنتاج في الأنظمة المبنية على HANA"
+ ],
+ [
+  "IMA · CMA Certification",
+  "https://www.imanet.org/IMA-Certifications/CMA-Certification",
+  "أقسام منهج CMA Part 1 المستخدمة في ربط الدروس"
+ ],
+ [
+  "SAP Learning · Key Features of SAP S/4HANA Manufacturing for PEO",
+  "https://learning.sap.com/learning-journeys/exploring-sap-s-4hana-manufacturing-for-production-engineering-and-operations-peo/identifying-key-features-of-sap-s-4hana-manufacturing-for-production-engineering-and-operations",
+  "حالات استخدام PEO وبياناته"
+ ],
+ [
+  "SAP Learning · Understanding Shop Floor Orders in SAP S/4HANA PEO",
+  "https://learning.sap.com/courses/s-4hana-peo-foundational-setup-and-basic-processes/understanding-shop-floor-orders-in-sap-s-4hana-peo",
+  "أمر الورشة ومستوى التأكيد"
+ ],
+ [
+  "SAP Community · Transition to Event-Based Production Accounting",
+  "https://blogs.sap.com/t5/enterprise-resource-planning-blogs-by-sap/transition-to-event-based-production-accounting-in-sap-s-4hana-cloud/ba-p/13577714",
+  "المعالجة الدورية والمرتبطة بالأحداث"
+ ],
+ [
+  "SAP Help Portal · Manage G/L Account Master Data",
+  "https://help.sap.com/doc/3e37f3538e39b277e10000000a44538d/3.7/en-US/1279a753b9cfdb72e10000000a4450e5.html",
+  "تعريف الحسابات في Fiori"
+ ]
 ];
+
 const STATUS={ok:"متقن",prog:"قيد الدراسة",rev:"يحتاج مراجعة",none:"لم يبدأ"};
 
 /* ============ STATE & STORAGE ============ */
@@ -888,92 +3119,182 @@ const IC={
  guide:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17.5v.01"/></svg>'
 };
 const PAGES=["home","guide","glossary","dashboard","plan","lessons","log","reports","links"];
-function renderNav(route){
-  const st=Object.fromEntries(TOPICS.map(t=>[t.id,topicStatus(t.id).status]));
-  const done=Object.values(st).filter(s=>s==="ok").length;
-  const a=(h,label,pre="",post="")=>`<a href="#${h}" class="${route===h?"on":""}">${pre}<span>${label}</span>${post}</a>`;
-  document.getElementById("side").innerHTML=
-   `${a("home","الصفحة الرئيسية")}${a("guide","دليل الاستخدام")}${a("glossary","مصطلحات SAP")}
-    <div class="grp">الدروس</div>
-    <div class="prog"><span>${done} من 8 دروس متقنة</span><div class="bar" style="height:6px"><i class="ok" style="width:${done/8*100}%"></i></div></div>
-    ${TOPICS.map((t,i)=>a(t.id,t.title,`<span class="ln">${i+1}</span>`,`<span class="dot ${st[t.id]}"></span>`)).join("")}
-    <div class="grp">متابعتي</div>${a("dashboard","لوحة التقدم")}${a("plan","خطة التدريب")}${a("log","سجل الأسئلة والأخطاء")}${a("reports","التقارير والتصدير")}${a("links","الربط مع Notion وAnki")}`;
-  const isLesson=route==="lessons"||TMAP[route];
-  const tb=(h,l,i,on)=>`<a href="#${h}" class="${on?"on":""}">${IC[i]}<span>${l}</span></a>`;
-  document.getElementById("tabs").innerHTML=tb("home","الرئيسية","home",route==="home"||route==="plan")+tb("lessons","الدروس","book",isLesson)+tb("glossary","المصطلحات","gloss",route==="glossary")+tb("dashboard","تقدمي","dash",["dashboard","log","reports","links"].includes(route))+tb("guide","الدليل","guide",route==="guide");
-}
-
 /* ============ SHARED BITS ============ */
 const chip=s=>`<span class="chip ${s}">${STATUS[s]}</span>`;
-const lab={ref:'<span class="lab ref">مرجعي · سلوك SAP القياسي</span>',sample:'<span class="lab sample">أرقام مثال تدريبي</span>',mine:'<span class="lab mine">ملاحظتي الشخصية</span>',miss:'<span class="lab miss">ناقص</span>',sim:'<span class="lab sim">محاكاة تعليمية لشاشة SAP</span>'};
+const lab={ref:'<span class="lab ref">مرجعي · سلوك SAP القياسي</span>',sample:'<span class="lab sample">مثال تدريبي</span>',mine:'<span class="lab mine">ملاحظتي الشخصية</span>',miss:'<span class="lab miss">ناقص</span>',sim:'<span class="lab sim">محاكاة تعليمية لشاشة SAP</span>'};
 function legend(){return `<div class="legend">${lab.ref}<span>مبني على السلوك القياسي، وقد يختلف حسب إعداد نظامك</span></div>
  <div class="legend">${lab.sim}<span>أسماء الحقول كما في SAP GUI، والقيم من المثال</span></div>
  <div class="legend">${lab.sample}<span>أرقام تعليمية، ليست بيانات مصنعك</span></div>
  <div class="legend">${lab.mine}<span>ما تكتبه أنت فقط</span></div>
  <div class="legend"><span class="lab exp">خبرة عملية</span><span>ملاحظات من التطبيق الفعلي في المصانع</span></div>
+ <div class="legend"><span class="lab miss">يحتاج تحقق في نظامك</span><span>معلومة لم تُوثَّق بنص صريح في المصادر المراجَعة</span></div>
  <div class="legend">${lab.miss}<span>موضوع لم يُكتب محتواه بعد</span></div>`}
 function contactHTML(){
   return `<div class="contact">
    <div class="ci"><span class="k">الجوال</span><span class="val" id="c-phone">${AUTHOR.phone}</span><button class="btn sm noprint" data-act="copy" data-v="${AUTHOR.phone}">نسخ</button><a class="btn sm noprint" href="${AUTHOR.wa}" target="_blank" rel="noopener">واتساب</a></div>
    <div class="ci"><span class="k">الإيميل</span><span class="val" id="c-mail">${AUTHOR.email}</span><button class="btn sm noprint" data-act="copy" data-v="${AUTHOR.email}">نسخ</button></div></div>`;
 }
+/* ============ VIEWS ============ */
+function renderNav(route){
+  const st=Object.fromEntries(TOPICS.map(t=>[t.id,topicStatus(t.id).status]));
+  const done=Object.values(st).filter(s=>s==="ok").length;
+  const a=(h,label,pre="",post="")=>`<a href="#${h}" class="${route===h?"on":""}">${pre}<span>${label}</span>${post}</a>`;
+  document.getElementById("side").innerHTML=
+   `${a("home","الصفحة الرئيسية")}${a("guide","طريقة الاستخدام")}${a("glossary","قاموس المصطلحات")}
+    <div class="prog"><span>${done} من ${NT} دروس متقنة</span><div class="bar" style="height:6px"><i class="ok" style="width:${done/NT*100}%"></i></div></div>
+    ${[1,2,3,4].map(l=>`<div class="grp">${LEVELS[l]}</div>`+TOPICS.map((t,i)=>t.level===l?a(t.id,t.title,`<span class="ln">${i+1}</span>`,`<span class="dot ${st[t.id]}"></span>`):"").join("")).join("")}
+    <div class="grp">متابعتي</div>${a("dashboard","لوحة التقدم")}${a("plan","خطة التدريب")}${a("log","سجل الأسئلة والأخطاء")}${a("reports","التقارير والتصدير")}${a("links","الربط مع Notion وAnki")}`;
+  const isLesson=route==="lessons"||TMAP[route];
+  const tb=(h,l,i,on)=>`<a href="#${h}" class="${on?"on":""}">${IC[i]}<span>${l}</span></a>`;
+  document.getElementById("tabs").innerHTML=tb("home","الرئيسية","home",route==="home"||route==="plan")+tb("lessons","الدروس","book",isLesson)+tb("glossary","المصطلحات","gloss",route==="glossary")+tb("dashboard","تقدمي","dash",["dashboard","log","reports","links"].includes(route))+tb("guide","الدليل","guide",route==="guide");
+}
 function authorCard(){
   return `<div class="card"><div class="author"><div class="avatar" aria-hidden="true">ن ع</div><div>
    <div><span class="small muted">إعداد</span><h2>${AUTHOR.name}</h2><span class="muted">${AUTHOR.title}</span></div>
-   <p class="small">محاسب تكاليف في بيئة تصنيع البلاستيك، متخصص في التكلفة المعيارية وتحليل الانحرافات وتقارير التكاليف. بنى هذه المنصة لربط معادلات التكاليف ببيانات الإنتاج الفعلية في SAP</p>
+   <p class="small">محاسب تكاليف بخبرة في التصنيع البلاستيكي والغذائي، متخصص في التكلفة المعيارية وتحليل الانحرافات وتقارير التكاليف. بنى هذه المنصة لربط معادلات التكاليف ببيانات الإنتاج في SAP</p>
    ${contactHTML()}</div></div></div>`;
 }
-function sourcesHTML(){return `<p>أُعدّ المحتوى وفق خبرة عملية في مجال التكاليف الصناعية بمصانع البلاستيك، وروجعت النقاط الأساسية على هذه المصادر:</p><ul>${SOURCES.map(x=>`<li><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a><span class="small muted"> · ${x[2]}</span></li>`).join("")}</ul><p class="small muted">المنصة محتوى تعليمي مستقل، ليست تدريباً رسمياً من SAP ولا منهجاً معتمداً من IMA. الشاشات محاكاة تعليمية، والأرقام مثال تدريبي، وإعدادات نظامك قد تختلف</p>`}
-function footHTML(){return `<footer class="foot"><span>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}، ${AUTHOR.title}</span><span><span class="val">${AUTHOR.phone}</span> · <span class="val">${AUTHOR.email}</span></span><span>وفق خبرة عملية في مجال التكاليف الصناعية · محتوى مستقل غير تابع لـ SAP أو IMA</span></footer>`}
-
-/* ============ VIEWS ============ */
+function sourcesHTML(){return `<p>أُعدّ المحتوى وفق خبرة عملية في مجال التكاليف الصناعية، وروجعت النقاط الفنية على هذه المصادر الرسمية:</p><ul>${SOURCES.map(x=>`<li><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a><span class="small muted"> · ${x[2]}</span></li>`).join("")}</ul><p class="small muted">المنصة محتوى تعليمي مستقل، ليست تدريباً رسمياً من SAP ولا منهجاً معتمداً من IMA. الشاشات محاكاة تعليمية، والأرقام أمثلة تدريبية، وأسماء التطبيقات والشاشات قد تختلف حسب إصدار النظام وإعداده</p>`}
+function footHTML(){return `<footer class="foot"><span>${APP_NAME} · إعداد ${AUTHOR.name}، ${AUTHOR.title}</span><span><span class="val">${AUTHOR.phone}</span> · <span class="val">${AUTHOR.email}</span></span><span>وفق خبرة عملية في مجال التكاليف الصناعية · محتوى مستقل غير تابع لـ SAP أو IMA</span></footer>`}
+const INDUSTRIES=["غذائية","كيميائية","معدنية","بلاستيكية","تجميع معدات"];
 function vHome(){
   const ss=TOPICS.map(t=>topicStatus(t.id));const done=ss.filter(s=>s.status==="ok").length;
   const next=TOPICS[ss.findIndex(s=>s.status!=="ok")]||TOPICS[0];const started=ss.some(s=>s.status!=="none");
   return `<div class="wrap">
    <section class="hero">
-    <span class="eyebrow">مسار تدريبي عملي · SAP S/4HANA CO-PC · مربوط بمنهج CMA Part 1 · 4 وحدات · 8 دروس</span>
-    <h1>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</h1>
-    <p class="lede">تدريب تطبيقي على محاسبة تكاليف مصانع حقن البلاستيك داخل SAP: من مركز التكلفة وأمر الإنتاج إلى التكلفة المعيارية والفعلية وتحليل الانحرافات، على منتج واحد ترافقه أرقامه من أول درس إلى آخره</p>
+    <span class="eyebrow">SAP S/4HANA · CO-PC · مربوط بمنهج CMA Part 1 · ${NT} درساً في 4 وحدات</span>
+    <h1>${APP_NAME}</h1>
+    <p class="lede">منصة عربية عملية لطلاب المحاسبة ودارسي CMA ومحاسبي التكاليف: تفهم فيها دورة التكلفة الصناعية، وتطبقها في SAP، وتشرح نتائجها بالمصطلحات الإنجليزية المستخدمة في العمل والتقارير والمقابلات</p>
+    <div class="row">${INDUSTRIES.map(x=>`<span class="ind">${x}</span>`).join("")}</div>
     <div class="byline"><div class="avatar" aria-hidden="true">ن ع</div><div><span>إعداد</span><b>${AUTHOR.name}</b><span>${AUTHOR.title}</span></div></div>
-    <div class="meter"><span>${started?`تقدمك: ${done} من 8 دروس متقنة`:"لم تبدأ بعد، وتقدمك يُحسب من إجاباتك فقط"}</span><div class="track"><div class="fill" style="width:${done/8*100}%"></div></div></div>
-    <div class="row"><a class="btn gold" href="#${next.id}">${started?"تابع: "+next.title:"ابدأ الدرس الأول"}</a><a class="btn" href="#guide">دليل الاستخدام</a></div>
+    <div class="meter"><span>${started?`تقدمك: ${done} من ${NT} دروس متقنة`:"لم تبدأ بعد، وتقدمك يُحسب من إجاباتك فقط"}</span><div class="track"><div class="fill" style="width:${done/NT*100}%"></div></div></div>
+    <div class="row"><a class="btn gold" href="#${next.id}">${started?"تابع: "+next.title:"ابدأ الدرس الأول"}</a><a class="btn" href="#guide">طريقة الاستخدام</a></div>
    </section>
    <div class="card"><h2>كيف يسير كل درس</h2>
-    <div class="flow"><div><b>الشرح</b>المفهوم بالعربية مع مصطلح SAP</div><div><b>المثال</b>أرقام من مصنع حقن</div><div><b>شاشة SAP</b>الحقول كما تراها في النظام</div><div><b>التطبيق</b>خطوات بالمعاملات</div><div><b>الاختبار</b>تصحيح فوري ونوع الخطأ</div></div></div>
-   <div><h2 style="margin-bottom:10px">محتوى المسار</h2><div class="modules">
+    <div class="flow"><div><b>موقف صناعي</b>مشكلة من مصنع وقرار مطلوب</div><div><b>مفهوم محاسبي</b>بالعربية مع المصطلح الإنجليزي</div><div><b>تطبيق في SAP</b>أرقام وشاشة ومعاملات</div><div><b>تمرين</b>تصحيح فوري ونوع الخطأ</div><div><b>تفسير النتيجة</b>جملة مهنية والمستندات اللازمة</div></div></div>
+   <div><h2 style="margin-bottom:10px">محتوى المسار: دورة التكلفة من البيانات إلى القرار</h2><div class="modules">
     ${[1,2,3,4].map(l=>`<div class="module"><div class="mh"><span class="mn">${l}</span><div><span class="small muted">الوحدة ${l}</span><h3>${LEVEL_NAME[l]}</h3></div></div>
-     <ul>${TOPICS.filter(t=>t.level===l).map(t=>`<li><a href="#${t.id}"><span class="dot ${topicStatus(t.id).status}" style="margin:0"></span>${t.title} <span class="en">${t.en}</span></a></li>`).join("")}</ul></div>`).join("")}
+     <ul>${TOPICS.filter(t=>t.level===l).map(t=>`<li><a href="#${t.id}"><span class="dot ${topicStatus(t.id).status}" style="margin:0"></span><span>${t.title}<span class="small muted" style="display:block">${t.industry}</span></span></a></li>`).join("")}</ul></div>`).join("")}
    </div></div>
    <div class="card"><div class="sec-h"><h2>لمن هذه المنصة</h2></div>
-    <p>طلاب المحاسبة، ومحاسبو التكاليف، والعاملون في المصانع، ودارسو CMA الذين يريدون رؤية معادلات التكاليف داخل بيانات الإنتاج الفعلية في SAP</p>
-    <div class="row"><a class="btn" href="#glossary">مصطلحات SAP (${GLOSSARY.length} مصطلحاً)</a><a class="btn" href="#plan">خطة التدريب</a><a class="btn" href="#dashboard">لوحة تقدمي</a></div></div>
+    <p>طلاب المحاسبة، ودارسو CMA، ومحاسبو التكاليف في أي بيئة صناعية: إنتاج بالقطع والتجميع، أو تصنيع بالعمليات والدفعات</p>
+    <div class="row"><a class="btn" href="#glossary">قاموس المصطلحات (${GLOSSARY.length})</a><a class="btn" href="#plan">خطة التدريب</a><a class="btn" href="#dashboard">لوحة تقدمي</a></div></div>
    <div class="card"><h2>منهجية الإعداد</h2>${sourcesHTML()}</div>
    ${authorCard()}
    ${footHTML()}
   </div>`;
 }
-
 function vGuide(){
   const sec=(n,title,body)=>`<div class="card"><div class="guide-sec"><div class="no">${n}</div><div><h2>${title}</h2>${body}</div></div></div>`;
-  return `<div class="wrap"><div><span class="eyebrow">ابدأ من هنا</span><h1>دليل الاستخدام</h1><p class="lede">كل ما تحتاجه لتستفيد من المنصة في عشر دقائق</p></div>
-  ${sec(1,"ابدأ بالترتيب",`<ol><li>افتح <a href="#plan">خطة التدريب</a> واختر الوحدة التي تناسبك. المبتدئ يبدأ من الوحدة 1</li><li>ادخل الدرس واضغط «بدأت دراسة هذا الدرس» ليظهر في تقدمك</li><li>اقرأ الشرح، ثم المثال، ثم شاشة SAP، ثم خطوات التطبيق</li><li>أجب عن سؤالي الاختبار، واقرأ التصحيح ونوع الخطأ</li><li>اكتب ملاحظاتك، وأضف أي سؤال تريد البحث عنه</li></ol>`)}
-  ${sec(2,"مكوّنات الدرس",`<ul><li><b>أهداف الدرس</b>: ما يجب أن تتقنه في نهايته</li><li><b>ربط CMA</b>: موضوع منهج CMA Part 1 الذي يطبقه الدرس</li><li><b>الشرح</b>: المفهوم بالعربية مع المصطلح الإنجليزي ورمز المعاملة</li><li><b>مثال صناعي</b>: أرقام حاوية PP من مصنع حقن، تتصل بين الدروس</li><li><b>شاشة SAP</b>: محاكاة للشاشة بأسماء الحقول الحقيقية، والحقول المهمة مظللة</li><li><b>خطوات التطبيق</b>: المعاملات بالترتيب، طبّقها في نظام تدريب أو بمعاملات العرض</li><li><b>من الواقع العملي</b>: ملاحظات من تطبيق التكاليف في مصانع الحقن</li><li><b>اختبر فهمك</b>: سؤال حسابي وسؤال اختيار، يُصححان فوراً</li></ul>`)}
-  ${sec(3,"الإجابة والتصحيح",`<ul><li>اكتب الرقم بدون فواصل أو بها، وتُقبل الأرقام العربية ٠١٢٣</li><li>عند الخطأ يظهر <b>نوع الخطأ</b>، مثل «تجاهل نسبة هالك المكوّن»، مع توجيه للتصحيح</li><li>كل محاولة تُسجل بتاريخها، والأخطاء تُجمع حسب النوع في <a href="#log">السجل</a></li><li>يمكنك إعادة المحاولة متى شئت</li></ul>`)}
-  ${sec(4,"معنى الحالات",`<div class="row">${chip("none")}<span class="small">لا محاولة ولا بداية دراسة</span></div><div class="row">${chip("prog")}<span class="small">بدأت أو أجبت عن بعض الأسئلة</span></div><div class="row">${chip("rev")}<span class="small">آخر إجابة خاطئة، أو صحّحت بعد خطأ ولم تُعد الحل في يوم لاحق، أو حددته بنفسك</span></div><div class="row">${chip("ok")}<span class="small">كل الأسئلة صحيحة من أول مرة، أو صحيحة مرتين متتاليتين في يوم لاحق لآخر خطأ</span></div>`)}
-  ${sec(5,"الشارات على المحتوى",legend())}
-  ${sec(6,"المتابعة والتقارير",`<ul><li><a href="#dashboard">لوحة التقدم</a>: عدد الدروس في كل حالة، مع فلاتر بالدرس والوحدة والحالة والتاريخ</li><li><a href="#log">السجل</a>: الأخطاء المتكررة، وكل المحاولات، وأسئلتك</li><li><a href="#reports">التقارير</a>: تصدير Excel، وتقرير HTML تفتحه وتطبعه، ونسخة احتياطية</li></ul>`)}
-  ${sec(7,"أين يُحفظ تقدمك",`<ul><li>تقدمك يُحفظ في متصفحك على هذا الجهاز فقط، ولا يصل لأي خادم ولا يراه معد المنصة</li><li>مسح بيانات المتصفح يمسح التقدم، فصدّر نسخة احتياطية بين فترة وأخرى</li><li>صدّر نسخة احتياطية من <a href="#reports">التقارير</a> لتنقل تقدمك لجهاز آخر</li></ul>`)}
-  ${sec(8,"Notion وAnki",`<p>المنصة لا تتصل بأي حساب لك. من صفحة <a href="#links">الربط</a> تجهز ملف بطاقات لـ Anki أو صفحة Markdown لـ Notion، تراجعه ثم تؤكد إنشاءه وتستورده بنفسك</p>`)}
-  ${sec(9,"منهجية الإعداد والمصادر",sourcesHTML())}
-  ${sec(10,"تواصل مع المعد",`<p>للاستفسار أو اقتراح درس جديد:</p><p><b>${AUTHOR.name}</b> · ${AUTHOR.title}</p>${contactHTML()}`)}
+  return `<div class="wrap"><div><span class="eyebrow">ابدأ من هنا</span><h1>طريقة الاستخدام</h1><p class="lede">كل ما تحتاجه لتستفيد من المنصة في عشر دقائق</p></div>
+  ${sec(1,"ابدأ بالترتيب",`<ol><li>افتح <a href="#plan">خطة التدريب</a>. الدروس مرتبة حسب دورة التكلفة: البيانات، ثم التخطيط، ثم التنفيذ، ثم الرقابة والقرار</li><li>اضغط «بدأت دراسة هذا الدرس» ليظهر في تقدمك</li><li>اقرأ الدرس بأقسامه الخمسة بالترتيب</li><li>أجب عن التمرين، واقرأ التصحيح ونوع الخطأ</li><li>اكتب المستندات التي تحتاجها للتحقق في قسم تفسير النتيجة، ثم قارنها بالإجابة النموذجية</li></ol>`)}
+  ${sec(2,"أقسام الدرس",`<ul><li><b>موقف صناعي</b>: مشكلة من مصنع، مع الصناعة وطريقة التصنيع والقرار المطلوب</li><li><b>مفهوم محاسبي</b>: الفكرة بالعربية مع المصطلح الإنجليزي عند أول ظهور، ومصطلحات الدرس</li><li><b>تطبيق في SAP</b>: الأرقام بالكميات والوحدات والأسعار وأساس المقارنة، ثم محاكاة الشاشة وخطوات المعاملات</li><li><b>تمرين</b>: أسئلة حساب واختيار تُصحَّح فوراً</li><li><b>تفسير النتيجة</b>: ما يعنيه الرقم، وجملة مهنية بالإنجليزية تصلح لتقرير أو اجتماع، وسؤال عن المستندات المطلوبة للتحقق</li><li><b>ربط CMA</b> و<b>من الواقع العملي</b> و<b>ملاحظاتي</b> في نهاية كل درس</li></ul>`)}
+  ${sec(3,"المصطلحات الإنجليزية",`<ul><li>يظهر المصطلح بالعربية ثم بالإنجليزية عند أول ظهور، ثم يُستخدم داخل الحساب والتمرين</li><li>كل مصطلح في «مصطلحات الدرس» يفتح تعريفه في <a href="#glossary">القاموس</a></li><li>الجملة المهنية في كل درس تدرّبك على شرح النتيجة لمدير الإنتاج أو في مقابلة عمل</li></ul>`)}
+  ${sec(4,"الإجابة والتصحيح",`<ul><li>اكتب الرقم بدون فواصل أو بها، وتُقبل الأرقام العربية ٠١٢٣</li><li>عند الخطأ يظهر <b>نوع الخطأ</b> مع توجيه للتصحيح</li><li>كل محاولة تُسجَّل بتاريخها، والأخطاء تُجمع حسب النوع في <a href="#log">السجل</a></li></ul>`)}
+  ${sec(5,"معنى الحالات",`<div class="row">${chip("none")}<span class="small">لا محاولة ولا بداية دراسة</span></div><div class="row">${chip("prog")}<span class="small">بدأت أو أجبت عن بعض الأسئلة</span></div><div class="row">${chip("rev")}<span class="small">آخر إجابة خاطئة، أو صحّحت بعد خطأ ولم تُعد الحل في يوم لاحق، أو حددته بنفسك</span></div><div class="row">${chip("ok")}<span class="small">كل الأسئلة صحيحة من أول مرة، أو صحيحة مرتين متتاليتين في يوم لاحق لآخر خطأ</span></div>`)}
+  ${sec(6,"الشارات على المحتوى",legend())}
+  ${sec(7,"المتابعة والتقارير",`<ul><li><a href="#dashboard">لوحة التقدم</a>: الدروس حسب الحالة، مع فلاتر بالدرس والوحدة والحالة والتاريخ</li><li><a href="#log">السجل</a>: الأخطاء المتكررة، وكل المحاولات، وأسئلتك</li><li><a href="#reports">التقارير</a>: Excel، وتقرير HTML للطباعة، ونسخة احتياطية</li></ul>`)}
+  ${sec(8,"أين يُحفظ تقدمك",inClaude()?`<ul><li>عند ظهور «محفوظ في حسابك» أعلى الصفحة، فتقدمك خاص بك ولا يراه غيرك ولا معد المنصة</li><li>عند ظهور «محفوظ محلياً»، يبقى التقدم في هذا المتصفح فقط، فصدّر نسخة احتياطية من <a href="#reports">التقارير</a></li></ul>`:`<ul><li>تقدمك يُحفظ في متصفحك على هذا الجهاز فقط، ولا يصل لأي خادم ولا يراه معد المنصة</li><li>مسح بيانات المتصفح يمسح التقدم، فصدّر نسخة احتياطية من <a href="#reports">التقارير</a> بين فترة وأخرى</li></ul>`)}
+  ${sec(9,"Notion وAnki",`<p>المنصة لا تتصل بأي حساب لك. من صفحة <a href="#links">الربط</a> تجهز ملف بطاقات لـ Anki يضم أسئلة الدروس والمصطلحات، أو صفحة Markdown لـ Notion، تراجعه ثم تؤكد إنشاءه وتستورده بنفسك</p>`)}
+  ${sec(10,"منهجية الإعداد والمصادر",sourcesHTML())}
+  ${sec(11,"تواصل مع المعد",`<p>للاستفسار أو اقتراح درس جديد:</p><p><b>${AUTHOR.name}</b> · ${AUTHOR.title}</p>${contactHTML()}`)}
   ${footHTML()}</div>`;
+}
+function inClaude(){return !!(window.claude&&window.claude.use)}
+function vLessons(){
+  return `<div class="wrap"><div><h1>الدروس</h1><p class="lede">${NT} درساً تتبع دورة التكلفة الصناعية، بحالات من صناعات مختلفة. كل درس: موقف صناعي، مفهوم محاسبي، تطبيق في SAP، تمرين، تفسير النتيجة</p></div>
+  <div class="card">${legend()}</div>
+  ${[1,2,3,4].map(l=>`<div class="card"><h2>${LEVELS[l]}</h2><div class="tlist">${TOPICS.filter(t=>t.level===l).map(t=>{const s=topicStatus(t.id);return `<a class="titem" href="#${t.id}"><div class="row"><b>الدرس ${TOPICS.indexOf(t)+1}: ${t.title}</b>${chip(s.status)}</div><span class="meta"><span class="en">${t.en}</span> · ${t.industry}</span><span class="row">${t.tcodes.slice(0,4).map(C).join("")}</span></a>`}).join("")}</div></div>`).join("")}
+  ${footHTML()}</div>`;
+}
+const GL_BY_EN=Object.fromEntries(GLOSSARY.map(g=>[g[1].toLowerCase(),g]));
+function termChips(t){
+  return `<div class="terms">${t.terms.map(en=>{const g=GL_BY_EN[en.toLowerCase()]||GL_BY_EN[en.replace(/ \(.*\)$/,"").toLowerCase()];return `<a class="term" href="#glossary" data-term="${esc(en)}">${g?`<b>${g[0]}</b>`:""}<span class="en">${en}</span></a>`}).join("")}</div>`;
+}
+function exampleHTML(ex){
+  if(ex.cols)return `<div class="tbl"><table class="ex multi"><thead><tr>${ex.cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${ex.rows.map((r,i)=>`<tr class="${i===ex.total?"total":""}">${r.map((c,k)=>`<td class="${k?"n":""}">${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  return `<div class="tbl"><table class="ex"><tbody>${ex.rows.map(r=>`<tr class="${r[2]?"total":""}"><td>${r[0]}</td><td class="n">${r[1]}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function vTopic(t){
+  const s=topicStatus(t.id), p=tp(t.id); const idx=TOPICS.indexOf(t); const prev=TOPICS[idx-1], next=TOPICS[idx+1];
+  const myQ=S.questions.filter(q=>q.topic===t.id);
+  const sts=TOPICS.map(x=>topicStatus(x.id).status);
+  const sh=(n,title,id,tag)=>`<div class="sec-h" id="${id}"><div class="stg"><i>${n}</i><h2>${title}</h2></div>${tag||""}</div>`;
+  const it=t.interpret;
+  return `<div class="wrap">
+  <div class="lhead">
+   <div class="eyebrow"><a href="#lessons">الدروس</a><span>·</span><span>${LEVELS[t.level]}</span><span>·</span><span>الدرس ${idx+1} من ${NT}</span></div>
+   <div class="sec-h"><div><h1>${t.title}</h1><span class="en" style="font-size:.95rem">${t.en}</span></div><div class="row">${chip(s.status)}${p.startedAt?`<span class="small muted">بدأت ${fmtDate(p.startedAt)}</span>`:`<button class="btn sm pri" data-act="start" data-t="${t.id}">بدأت دراسة هذا الدرس</button>`}</div></div>
+   <div class="lprog" style="grid-template-columns:repeat(${NT},1fr)" aria-label="تقدم المسار">${TOPICS.map((x,i)=>`<a href="#${x.id}" class="${sts[i]}${x.id===t.id?" cur":""}" title="${x.title}"></a>`).join("")}</div>
+   <div class="goals"><b class="small">أهداف الدرس</b><ul class="small">${t.goals.map(g=>`<li>${g}</li>`).join("")}</ul></div>
+   <nav class="jump noprint" aria-label="أقسام الدرس"><a href="#" data-jump="s-sit">موقف صناعي</a><a href="#" data-jump="s-con">مفهوم محاسبي</a><a href="#" data-jump="s-sap">تطبيق في SAP</a><a href="#" data-jump="s-quiz">تمرين</a><a href="#" data-jump="s-int">تفسير النتيجة</a></nav>
+  </div>
+
+  <section class="card sit">${sh(1,"موقف صناعي","s-sit",`<span class="lab sample">حالة تدريبية</span>`)}
+   <div class="row"><span class="ind2">${t.industry}</span><span class="ind2">${t.mfg}</span></div>
+   <p>${t.situation.text}</p>
+   <p class="small"><b>القرار المطلوب:</b> ${t.situation.decision}</p></section>
+
+  <section class="card">${sh(2,t.conceptTitle||"مفهوم محاسبي","s-con",lab.ref)}
+   <div class="prose">${t.concept.map(x=>/^<ol/.test(x)?x:`<p>${x}</p>`).join("")}</div>
+   ${t.conceptExtra?`<div class="cx">${t.conceptExtra}</div>`:""}
+   ${t.conceptNote?`<div class="verify"><span class="lab miss">يحتاج تحقق في نظامك</span><span class="small">${t.conceptNote}</span></div>`:""}
+   <div><b class="small">مصطلحات الدرس</b>${termChips(t)}</div></section>
+
+  <section class="card">${sh(3,"تطبيق في SAP","s-sap",lab.sample)}
+   <h3 class="muted" style="font-weight:500">${t.example.title}</h3>
+   ${exampleHTML(t.example)}
+   ${t.example.basis?`<p class="small"><b>${t.example.basis.split(":")[0]}:</b>${t.example.basis.split(":").slice(1).join(":")}</p>`:""}${t.example.note?`<p class="small muted">${t.example.note}</p>`:""}
+   ${t.screen?`<div class="sec-h" style="margin-top:6px"><h3>الشاشة في SAP</h3>${lab.sim}</div>${screen(t.screen)}
+   <div class="sapnote"><b class="small">اقرأ الشاشة</b><ul class="small">${t.screen.notes.map(n=>`<li>${n}</li>`).join("")}</ul><span class="small muted">المسار في القائمة: <span class="en" style="white-space:normal">${t.screen.menu}</span></span></div>`:""}
+   <div class="sec-h" style="margin-top:6px"><h3>خطوات التطبيق</h3>${lab.ref}</div>
+   <div class="row">${t.tcodes.map(C).join("")}</div>
+   ${t.fiori?`<span class="small muted">تطبيق Fiori المقابل: <span class="en" style="white-space:normal">${t.fiori}</span></span>`:""}
+   <ol class="steps">${t.steps.map(([x,c])=>`<li><div>${x}${c?` <span style="white-space:nowrap">${C(c)}</span>`:""}</div></li>`).join("")}</ol>
+   ${t.stepsNote?`<p class="small" style="color:var(--rev)">${t.stepsNote}</p>`:`<p class="small muted">طبّق في نظام تدريب، أو بمعاملات العرض فقط على النظام التشغيلي</p>`}</section>
+
+  <section class="card">${sh(4,"تمرين","s-quiz",`<span class="small muted">كل إجابة تُسجَّل في سجلك</span>`)}
+   ${t.questions.map((q,i)=>questionHTML(t,q,i)).join("")}
+   <div class="mast ${s.status}"><div class="sec-h"><b>مستوى الإتقان</b>${chip(s.status)}</div><span class="small">${s.reason}</span>${masteryAdvice(t,s)}</div>
+  </section>
+
+  <section class="card">${sh(5,"تفسير النتيجة","s-int","")}
+   <p>${it.text}</p>
+   <div class="ensent"><span class="small muted">جملة مهنية لتقرير أو نقاش مع مدير الإنتاج</span><p class="en-l">${it.en}</p><p class="small">${it.ar}</p><button class="btn sm noprint" data-act="copy" data-v="${esc(it.en)}">نسخ الجملة</button></div>
+   <div class="field"><label for="docs-${t.id}"><b>ما المستندات التي تحتاجها للتحقق من سبب الفرق؟</b> اكتب إجابتك ثم قارنها</label><textarea id="docs-${t.id}" data-docs="${t.id}" style="min-height:70px" placeholder="مثال: حركات المواد على الأمر…">${esc(p.docs||"")}</textarea></div>
+   <details class="sol"><summary>الإجابة النموذجية</summary><div><ul style="margin:0;padding-inline-start:18px">${it.docs.map(d=>`<li>${d}</li>`).join("")}</ul></div></details>
+   <div class="small"><span class="lab cma">ربط CMA Part 1</span> ${CMA[t.id]}</div>
+  </section>
+
+  <section class="card exp"><div class="sec-h"><h2>من الواقع العملي</h2><span class="lab exp">خبرة عملية</span></div><ul class="small" style="margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:6px">${PRACTICE[t.id].map(x=>`<li>${x}</li>`).join("")}</ul></section>
+
+  <section class="card mine"><div class="sec-h" id="s-notes"><h2>ملاحظاتي</h2>${lab.mine}</div>
+   <div class="field"><label for="notes-${t.id}">ما فهمته، وما يختلف في نظام منشأتك</label><textarea id="notes-${t.id}" data-notes="${t.id}" placeholder="لم تكتب ملاحظات بعد">${esc(p.notes||"")}</textarea></div>
+   <label class="row small"><input type="checkbox" id="rev-${t.id}" data-review="${t.id}" ${p.review?"checked":""}> أريد مراجعة هذا الدرس لاحقاً</label>
+   <div class="field"><label for="myq-${t.id}">سؤال أريد البحث عن إجابته</label><div class="ans"><input type="text" id="myq-${t.id}" style="direction:rtl;text-align:right;font-family:var(--f-body)" placeholder="اكتب سؤالك"><button class="btn" data-act="addq" data-t="${t.id}">أضف للسجل</button></div></div>
+   ${myQ.length?`<div class="small">${myQ.map(q=>`<div>${q.status==="done"?"✓":"○"} ${esc(q.text)}</div>`).join("")}</div>`:""}
+  </section>
+
+  <section class="card mine"><div class="sec-h"><h2>مصادر مذاكرتي</h2>${lab.mine}</div>
+   <div class="grid2">
+    <div class="field"><label for="notion-${t.id}">رابط صفحة Notion</label><input type="url" class="ltr" id="notion-${t.id}" data-link="notion" data-t="${t.id}" value="${esc(p.notion||"")}" placeholder="https://www.notion.so/..."></div>
+    <div class="field"><label for="anki-${t.id}">اسم مجموعة Anki</label><input type="text" id="anki-${t.id}" data-link="anki" data-t="${t.id}" value="${esc(p.anki||"")}" placeholder="SAP::CO::${t.en.replace(/[^A-Za-z]/g,"")}"></div>
+   </div>
+   <div class="field"><label for="files-${t.id}">ملفات المذاكرة</label><input type="text" id="files-${t.id}" data-link="files" data-t="${t.id}" value="${esc(p.files||"")}" placeholder="اسم الملف أو مكانه"></div>
+   ${/^https:\/\//.test(p.notion||"")?`<a class="btn sm" href="${esc(p.notion)}" target="_blank" rel="noopener">فتح صفحة Notion</a>`:""}
+  </section>
+
+  <section class="card miss"><div class="sec-h"><h2>ناقص في هذا الدرس</h2>${lab.miss}</div><ul class="small" style="margin:0;padding-inline-start:18px">${t.missing.map(m=>`<li>${m}</li>`).join("")}</ul></section>
+
+  <div class="pager noprint">${prev?`<a class="btn" href="#${prev.id}">→ ${prev.title}</a>`:"<span></span>"}${next?`<a class="btn pri" href="#${next.id}">الدرس التالي: ${next.title} ←</a>`:`<a class="btn pri" href="#dashboard">أنهيت المسار، اعرض تقدمك</a>`}</div>
+  ${footHTML()}
+  </div>`;
 }
 
 function vGlossary(){
   const q=G.q.trim().toLowerCase();
   const list=GLOSSARY.filter(g=>(G.topic==="all"||g[4]===G.topic)&&(!q||g.slice(0,4).join(" ").toLowerCase().includes(q)));
-  return `<div class="wrap"><div><span class="eyebrow">مرجع سريع</span><h1>مصطلحات SAP</h1><p class="lede">${GLOSSARY.length} مصطلحاً بالعربية والإنجليزية مع رمز المعاملة أو الجدول، مرتبة حسب الدروس</p></div>
+  return `<div class="wrap"><div><span class="eyebrow">مرجع سريع</span><h1>قاموس المصطلحات</h1><p class="lede">${GLOSSARY.length} مصطلحاً: العربي والإنجليزي والاختصار أو رمز SAP، ومعناه العملي، والدرس الذي يطبّقه</p></div>
   <div class="card noprint"><div class="grid2"><div class="field"><label for="g-q">ابحث</label><input type="search" id="g-q" value="${esc(G.q)}" placeholder="مثال: Scrap أو الهالك أو KKS2"></div>
    <div class="field"><label for="g-topic">الدرس</label><select id="g-topic"><option value="all">كل الدروس</option>${TOPICS.map(t=>`<option value="${t.id}"${G.topic===t.id?" selected":""}>${t.title}</option>`).join("")}</select></div></div></div>
   <div id="g-list">${glossList(list)}</div>
@@ -997,15 +3318,15 @@ function vDashboard(){
    <div class="sec-h"><div><h1>لوحة التقدم</h1><p class="lede">ما أتقنته وما تدرسه وما يحتاج مراجعة، محسوباً من إجاباتك المسجلة فقط</p></div><div class="row noprint"><a class="btn" href="#log">السجل</a><a class="btn" href="#reports">التقارير</a></div></div>
    ${migrateBanner()}
    <div class="stats">
-    <div class="stat ok"><b>${cnt.ok}<small class="muted" style="font-size:.9rem"> من 8</small></b><span>${STATUS.ok}</span></div>
+    <div class="stat ok"><b>${cnt.ok}<small class="muted" style="font-size:.9rem"> من ${NT}</small></b><span>${STATUS.ok}</span></div>
     <div class="stat prog"><b>${cnt.prog}</b><span>${STATUS.prog}</span></div>
     <div class="stat rev"><b>${cnt.rev}</b><span>${STATUS.rev}</span></div>
     <div class="stat none"><b>${cnt.none}</b><span>${STATUS.none}</span></div>
    </div>
-   <div class="bar" role="img" aria-label="توزيع الدروس حسب الحالة">${["ok","prog","rev"].map(k=>cnt[k]?`<i class="${k}" style="width:${cnt[k]/8*100}%"></i>`:"").join("")}</div>
+   <div class="bar" role="img" aria-label="توزيع الدروس حسب الحالة">${["ok","prog","rev"].map(k=>cnt[k]?`<i class="${k}" style="width:${cnt[k]/NT*100}%"></i>`:"").join("")}</div>
    ${noData?`<div class="empty">لا توجد بيانات بعد. لم يُفترض لك أي مستوى، وكل الدروس تبدأ «لم يبدأ». اقرأ <a href="#guide">دليل الاستخدام</a> أو ابدأ من <a href="#plan">خطة التدريب</a></div>`:""}
    ${filtersHTML()}
-   <div class="card"><div class="sec-h"><h2>الدروس</h2><span class="small muted">${shown.length} من 8</span></div>
+   <div class="card"><div class="sec-h"><h2>الدروس</h2><span class="small muted">${shown.length} من ${NT}</span></div>
    ${shown.length?`<div class="tbl"><table><thead><tr><th>الدرس</th><th>الوحدة</th><th>الحالة</th><th>المحاولات</th><th>الصحيحة</th><th>آخر نشاط</th></tr></thead><tbody>
    ${shown.map(({t,s})=>`<tr><td><a href="#${t.id}">${t.title}</a><div class="small muted">${s.reason}</div></td><td>${t.level}</td><td>${chip(s.status)}</td><td class="n">${s.attempts}</td><td class="n">${s.attempts?Math.round(s.correct/s.attempts*100)+"%":"—"}</td><td class="n">${fmtDate(s.lastAct)}</td></tr>`).join("")}
    </tbody></table></div>`:`<div class="empty">لا توجد دروس تطابق الفلاتر</div>`}</div>
@@ -1048,72 +3369,6 @@ function missingList(){
    <div class="row" style="margin-top:6px"><div class="field" style="flex:1 1 220px"><label for="mm-${m.id}">مصدري لهذا الموضوع <span class="lab mine">ملاحظتي</span></label><input type="text" id="mm-${m.id}" data-missing="${m.id}" value="${esc(p.note||"")}" placeholder="رابط Notion أو اسم ملف أو كتاب"></div></div></div></div>`}).join("");
 }
 
-function vLessons(){
-  return `<div class="wrap"><div><h1>الدروس</h1><p class="lede">ثمانية دروس على منتج حقن واحد. كل درس فيه شرح ومثال وشاشة SAP وخطوات تطبيق وسؤالان يُصححان فوراً</p></div>
-  <div class="card">${legend()}</div>
-  ${[1,2,3,4].map(l=>`<div class="card"><h2>${LEVELS[l]}</h2><div class="tlist">${TOPICS.filter(t=>t.level===l).map(t=>{const s=topicStatus(t.id);return `<a class="titem" href="#${t.id}"><div class="row"><b>الدرس ${TOPICS.indexOf(t)+1}: ${t.title}</b>${chip(s.status)}</div><span class="meta"><span class="en">${t.en}</span></span><span class="row">${t.tcodes.slice(0,4).map(C).join("")}</span></a>`}).join("")}</div></div>`).join("")}
-  ${footHTML()}</div>`;
-}
-
-function vTopic(t){
-  const s=topicStatus(t.id), p=tp(t.id); const idx=TOPICS.indexOf(t); const prev=TOPICS[idx-1], next=TOPICS[idx+1];
-  const myQ=S.questions.filter(q=>q.topic===t.id);
-  const sts=TOPICS.map(x=>topicStatus(x.id).status);
-  const sh=(n,title,id,tag)=>`<div class="sec-h" id="${id}"><div class="stg"><i>${n}</i><h2>${title}</h2></div>${tag||""}</div>`;
-  return `<div class="wrap">
-  <div class="lhead">
-   <div class="eyebrow"><a href="#lessons">الدروس</a><span>·</span><span>${LEVELS[t.level]}</span><span>·</span><span>الدرس ${idx+1} من 8</span></div>
-   <div class="sec-h"><div><h1>${t.title}</h1><span class="en" style="font-size:.95rem">${t.en}</span></div><div class="row">${chip(s.status)}${p.startedAt?`<span class="small muted">بدأت ${fmtDate(p.startedAt)}</span>`:`<button class="btn sm pri" data-act="start" data-t="${t.id}">بدأت دراسة هذا الدرس</button>`}</div></div>
-   <div class="lprog" aria-label="تقدم المسار">${TOPICS.map((x,i)=>`<a href="#${x.id}" class="${sts[i]}${x.id===t.id?" cur":""}" title="${x.title}"></a>`).join("")}</div>
-   <div class="goals"><b class="small">أهداف الدرس</b><ul class="small">${t.goals.map(g=>`<li>${g}</li>`).join("")}</ul></div>
-   <div class="row">${t.tcodes.map(C).join("")}</div>
-   <div class="small"><span class="lab sample" style="background:var(--prog-soft);color:var(--prog)">ربط CMA Part 1</span> ${CMA[t.id]}</div>
-   ${t.fiori?`<span class="small muted">تطبيق Fiori المقابل: <span class="en" style="white-space:normal">${t.fiori}</span></span>`:""}
-   <nav class="jump noprint" aria-label="أقسام الدرس"><a href="#" data-jump="s-exp">الشرح</a><a href="#" data-jump="s-ex">المثال</a><a href="#" data-jump="s-sap">شاشة SAP</a><a href="#" data-jump="s-steps">التطبيق</a><a href="#" data-jump="s-quiz">الاختبار</a><a href="#" data-jump="s-notes">ملاحظاتي</a></nav>
-  </div>
-
-  <section class="card">${sh(1,"الشرح","s-exp",lab.ref)}<div class="prose">${t.explain.map(x=>`<p>${x}</p>`).join("")}</div></section>
-
-  <section class="card">${sh(2,"مثال صناعي","s-ex",lab.sample)}<h3 class="muted" style="font-weight:500">${t.example.title}</h3>
-   <div class="tbl"><table class="ex"><tbody>${t.example.rows.map(r=>`<tr class="${r[2]?"total":""}"><td>${r[0]}</td><td class="n">${r[1]}</td></tr>`).join("")}</tbody></table></div>${t.example.note?`<p class="small muted">${t.example.note}</p>`:""}</section>
-
-  <section class="card">${sh(3,"شاشة SAP",`s-sap`,lab.sim)}
-   ${screen(t.screen)}
-   <div class="sapnote"><b class="small">اقرأ الشاشة</b><ul class="small">${t.screen.notes.map(n=>`<li>${n}</li>`).join("")}</ul><span class="small muted">المسار في القائمة: <span class="en" style="white-space:normal">${t.screen.menu}</span></span></div></section>
-
-  <section class="card">${sh(4,"خطوات التطبيق","s-steps",lab.ref)}
-   <ol class="steps">${t.steps.map(([x,c])=>`<li><div>${x}${c?` <span style="white-space:nowrap">${C(c)}</span>`:""}</div></li>`).join("")}</ol>
-   ${t.stepsNote?`<p class="small" style="color:var(--rev)">${t.stepsNote}</p>`:`<p class="small muted">طبّق في نظام تدريب، أو بمعاملات العرض فقط على النظام التشغيلي</p>`}</section>
-
-  <section class="card exp"><div class="sec-h"><h2>من الواقع العملي</h2><span class="lab exp">خبرة عملية</span></div><ul class="small" style="margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:6px">${PRACTICE[t.id].map(x=>`<li>${x}</li>`).join("")}</ul></section>
-
-  <section class="card">${sh(5,"اختبر فهمك","s-quiz",`<span class="small muted">كل إجابة تُسجَّل في سجلك</span>`)}
-   ${t.questions.map((q,i)=>questionHTML(t,q,i)).join("")}
-   <div class="mast ${s.status}"><div class="sec-h"><b>مستوى الإتقان</b>${chip(s.status)}</div><span class="small">${s.reason}</span>${masteryAdvice(t,s)}</div>
-  </section>
-
-  <section class="card mine"><div class="sec-h" id="s-notes"><h2>ملاحظاتي</h2>${lab.mine}</div>
-   <div class="field"><label for="notes-${t.id}">ما فهمته، وما يختلف في نظام مصنعك</label><textarea id="notes-${t.id}" data-notes="${t.id}" placeholder="لم تكتب ملاحظات بعد">${esc(p.notes||"")}</textarea></div>
-   <label class="row small"><input type="checkbox" id="rev-${t.id}" data-review="${t.id}" ${p.review?"checked":""}> أريد مراجعة هذا الدرس لاحقاً</label>
-   <div class="field"><label for="myq-${t.id}">سؤال أريد البحث عن إجابته</label><div class="ans"><input type="text" id="myq-${t.id}" style="direction:rtl;text-align:right;font-family:var(--f-body)" placeholder="مثال: كيف يظهر المطحون في تقرير الأمر عندنا؟"><button class="btn" data-act="addq" data-t="${t.id}">أضف للسجل</button></div></div>
-   ${myQ.length?`<div class="small">${myQ.map(q=>`<div>${q.status==="done"?"✓":"○"} ${esc(q.text)}</div>`).join("")}</div>`:""}
-  </section>
-
-  <section class="card mine"><div class="sec-h"><h2>مصادر مذاكرتي</h2>${lab.mine}</div>
-   <div class="grid2">
-    <div class="field"><label for="notion-${t.id}">رابط صفحة Notion</label><input type="url" class="ltr" id="notion-${t.id}" data-link="notion" data-t="${t.id}" value="${esc(p.notion||"")}" placeholder="https://www.notion.so/..."></div>
-    <div class="field"><label for="anki-${t.id}">اسم مجموعة Anki</label><input type="text" id="anki-${t.id}" data-link="anki" data-t="${t.id}" value="${esc(p.anki||"")}" placeholder="SAP::CO::${t.en.replace(/\s/g,"")}"></div>
-   </div>
-   <div class="field"><label for="files-${t.id}">ملفات المذاكرة</label><input type="text" id="files-${t.id}" data-link="files" data-t="${t.id}" value="${esc(p.files||"")}" placeholder="اسم الملف أو مكانه، مثال: CMA Part 1 · الفصل 4"></div>
-   ${/^https:\/\//.test(p.notion||"")?`<a class="btn sm" href="${esc(p.notion)}" target="_blank" rel="noopener">فتح صفحة Notion</a>`:""}
-  </section>
-
-  <section class="card miss"><div class="sec-h"><h2>ناقص في هذا الدرس</h2>${lab.miss}</div><ul class="small" style="margin:0;padding-inline-start:18px">${t.missing.map(m=>`<li>${m}</li>`).join("")}</ul></section>
-
-  <div class="pager noprint">${prev?`<a class="btn" href="#${prev.id}">→ ${prev.title}</a>`:"<span></span>"}${next?`<a class="btn pri" href="#${next.id}">الدرس التالي: ${next.title} ←</a>`:`<a class="btn pri" href="#dashboard">أنهيت المسار، اعرض تقدمك</a>`}</div>
-  ${footHTML()}
-  </div>`;
-}
 function questionHTML(t,q,i){
   const qs=qStats(t.id,q.id); const last=qs.last;
   let body;
@@ -1208,7 +3463,7 @@ async function offer(filename,data){
   const dl=await getDownloads();
   if(!dl){
     try{const types={xlsx:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",html:"text/html;charset=utf-8",json:"application/json;charset=utf-8",txt:"text/plain;charset=utf-8",md:"text/markdown;charset=utf-8"};
-      const blob=data instanceof Blob?new Blob([data],{type:types[filename.split(".").pop()]||""}):new Blob([data],{type:types[filename.split(".").pop()]||"text/plain;charset=utf-8"});
+      const blob=new Blob([data],{type:types[filename.split(".").pop()]||"text/plain;charset=utf-8"});
       const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);toast("نُزّل الملف إلى جهازك")}
     catch(e){toast("تعذر تنزيل الملف")}
     return}
@@ -1220,7 +3475,7 @@ async function doXLSX(){
   const {topics,att,errs,qs}=exportRows();
   const wb=X.utils.book_new();
   const add=(name,aoa,cols)=>{const ws=X.utils.aoa_to_sheet(aoa);ws["!cols"]=cols.map(w=>({wch:w}));X.utils.book_append_sheet(wb,ws,name)};
-  add("ملخص",[["تقرير منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA"],["إعداد",AUTHOR.name+" · "+AUTHOR.title],["تاريخ التقرير",dayKey(todayISO())],["الفلاتر",filterLabel()],[],["الحالة","عدد الدروس"],...Object.entries(STATUS).map(([k,v])=>[v,topics.filter(r=>r.s.status===k).length]),[],["ملاحظة","الأرقام محسوبة من الإجابات المسجلة فقط"]],[28,44]);
+  add("ملخص",[["تقرير "+APP_NAME],["إعداد",AUTHOR.name+" · "+AUTHOR.title],["تاريخ التقرير",dayKey(todayISO())],["الفلاتر",filterLabel()],[],["الحالة","عدد الدروس"],...Object.entries(STATUS).map(([k,v])=>[v,topics.filter(r=>r.s.status===k).length]),[],["ملاحظة","الأرقام محسوبة من الإجابات المسجلة فقط"]],[28,44]);
   add("الدروس",[["الدرس","Topic","الوحدة","الحالة","سبب الحالة","المحاولات","الصحيحة","نسبة الصحة","آخر نشاط","مراجعة يدوية","ملاحظاتي (شخصية)","Notion","Anki","ملفات"],
     ...topics.map(({t,s,p})=>[t.title,t.en,LEVELS[t.level],STATUS[s.status],s.reason,s.attempts,s.correct,s.attempts?+(s.correct/s.attempts).toFixed(3):"",s.lastAct?dayKey(s.lastAct):"",p.review?"نعم":"",p.notes||"",p.notion||"",p.anki||"",p.files||""])],[26,22,22,14,40,10,10,10,12,10,40,30,20,24]);
   add("المحاولات",[["التاريخ","الدرس","السؤال","نوع السؤال","إجابتك","النتيجة","نوع الخطأ"],...att.map(a=>{const q=findQ(a.topic,a.q);return [dayKey(a.at),TMAP[a.topic].title,q?q.prompt:a.q,q?.type==="mcq"?"اختيار":"حساب",q&&q.type==="mcq"?q.options[+a.answer]?.[0]:(isNaN(+a.answer)?a.answer:+a.answer),a.correct?"صحيحة":"خاطئة",a.tag||""]})],[12,24,50,10,20,10,36]);
@@ -1236,14 +3491,14 @@ function reportHTML(){
   const {topics,att,errs,qs}=exportRows();
   const css=`body{font-family:Tahoma,Arial,sans-serif;direction:rtl;color:#13212B;margin:24px;font-size:12px}h1{font-size:20px;margin:0 0 4px}h2{font-size:14px;margin:22px 0 8px;border-bottom:2px solid #0B6670;padding-bottom:4px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #C9D3D8;padding:6px 8px;text-align:right;vertical-align:top}th{background:#EEF3F4}.m{color:#56676F}.ltr{direction:ltr;unicode-bidi:isolate}footer{margin-top:24px;border-top:1px solid #C9D3D8;padding-top:8px;color:#56676F;font-size:11px}@page{size:A4;margin:14mm}@media print{body{margin:0}h2{break-after:avoid}tr{break-inside:avoid}}`;
   const tr=a=>"<tr>"+a.map(x=>`<td>${esc(x)}</td>`).join("")+"</tr>";
-  return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>تقرير منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</title><style>${css}</style></head><body>
-  <h1>تقرير التدريب · منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</h1><p class="m">تاريخ التقرير ${dayKey(todayISO())} · ${esc(filterLabel())} · الأرقام من الإجابات المسجلة فقط</p>
+  return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>تقرير ${APP_NAME}</title><style>${css}</style></head><body>
+  <h1>تقرير التدريب · ${APP_NAME}</h1><p class="m">تاريخ التقرير ${dayKey(todayISO())} · ${esc(filterLabel())} · الأرقام من الإجابات المسجلة فقط</p>
   <h2>ملخص الحالة</h2><table><tr>${Object.values(STATUS).map(v=>`<th>${v}</th>`).join("")}</tr><tr>${Object.keys(STATUS).map(k=>`<td>${topics.filter(r=>r.s.status===k).length}</td>`).join("")}</tr></table>
   <h2>الدروس</h2><table><tr><th>الدرس</th><th>الوحدة</th><th>الحالة</th><th>المحاولات</th><th>الصحيحة</th><th>آخر نشاط</th><th>ملاحظاتي</th></tr>${topics.map(({t,s,p})=>tr([t.title,t.level,STATUS[s.status],s.attempts,s.correct,s.lastAct?dayKey(s.lastAct):"—",p.notes||"—"])).join("")}</table>
   <h2>الأخطاء المتكررة</h2>${errs.length?`<table><tr><th>نوع الخطأ</th><th>التكرار</th><th>الدروس</th><th>آخر مرة</th></tr>${errs.map(e=>tr([e.tag,e.n,[...e.topics].map(id=>TMAP[id].title).join("، "),dayKey(e.last)])).join("")}</table>`:'<p class="m">لا توجد أخطاء مسجلة</p>'}
   <h2>أسئلتي</h2>${qs.length?`<table><tr><th>الدرس</th><th>السؤال</th><th>الحالة</th><th>إجابتي</th></tr>${qs.map(q=>tr([TMAP[q.topic]?.title||"",q.text,q.status==="done"?"محلول":"مفتوح",q.answer||"—"])).join("")}</table>`:'<p class="m">لا توجد أسئلة</p>'}
   <h2>سجل المحاولات</h2>${att.length?`<table><tr><th>التاريخ</th><th>الدرس</th><th>السؤال</th><th>إجابتك</th><th>النتيجة</th><th>نوع الخطأ</th></tr>${att.map(a=>{const q=findQ(a.topic,a.q);return tr([dayKey(a.at),TMAP[a.topic].title,q?q.prompt:a.q,q&&q.type==="mcq"?q.options[+a.answer]?.[0]:a.answer,a.correct?"صحيحة":"خاطئة",a.tag||""])}).join("")}</table>`:'<p class="m">لا توجد محاولات</p>'}
-  <footer>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}، ${AUTHOR.title} · <span class="ltr">${AUTHOR.phone}</span> · <span class="ltr">${AUTHOR.email}</span></footer>
+  <footer>${APP_NAME} · إعداد ${AUTHOR.name}، ${AUTHOR.title} · <span class="ltr">${AUTHOR.phone}</span> · <span class="ltr">${AUTHOR.email}</span></footer>
   </body></html>`;
 }
 function ankiText(){
@@ -1259,7 +3514,7 @@ function ankiText(){
 }
 function notionMD(){
   const {topics,errs}=exportRows();
-  let md=`# تدريب SAP S/4HANA CO\n\nمنصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}\n\nتاريخ التصدير: ${dayKey(todayISO())} · ${filterLabel()}\n\n## التقدم\n\n| الدرس | الوحدة | الحالة | المحاولات | آخر نشاط |\n|---|---|---|---|---|\n`;
+  let md=`# تدريب SAP S/4HANA CO\n\n${APP_NAME} · إعداد ${AUTHOR.name}\n\nتاريخ التصدير: ${dayKey(todayISO())} · ${filterLabel()}\n\n## التقدم\n\n| الدرس | الوحدة | الحالة | المحاولات | آخر نشاط |\n|---|---|---|---|---|\n`;
   md+=topics.map(({t,s})=>`| ${t.title} | ${t.level} | ${STATUS[s.status]} | ${s.attempts} | ${s.lastAct?dayKey(s.lastAct):"—"} |`).join("\n");
   md+=`\n\n## ملاحظاتي\n\n`+(topics.filter(r=>r.p.notes).map(r=>`### ${r.t.title}\n\n${r.p.notes}\n`).join("\n")||"لا توجد ملاحظات\n");
   md+=`\n## الأخطاء المتكررة\n\n`+(errs.map(e=>`- ${e.tag} (${e.n})`).join("\n")||"لا توجد أخطاء مسجلة");
@@ -1290,6 +3545,7 @@ let toastT;function toast(msg){const t=document.getElementById("toast");t.textCo
 
 /* ============ EVENTS ============ */
 document.addEventListener("click",async e=>{
+  const tm=e.target.closest("[data-term]");if(tm){G.q=tm.dataset.term;G.topic="all";if(location.hash==="#glossary"){e.preventDefault();render(true)}return}
   const j=e.target.closest("[data-jump]");if(j){e.preventDefault();const el=document.getElementById(j.dataset.jump);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});return}
   const b=e.target.closest("[data-act]");if(!b)return;const act=b.dataset.act;
   if(act==="check"){
@@ -1358,6 +3614,7 @@ document.addEventListener("change",e=>{
 document.addEventListener("input",e=>{
   const el=e.target;
   if(el.id==="g-q"){G.q=el.value;const q=G.q.trim().toLowerCase();document.getElementById("g-list").innerHTML=glossList(GLOSSARY.filter(g=>(G.topic==="all"||g[4]===G.topic)&&(!q||g.slice(0,4).join(" ").toLowerCase().includes(q))));return}
+  if(el.dataset.docs){tp(el.dataset.docs).docs=el.value;saveProfile(900);return}
   if(el.dataset.notes){const p=tp(el.dataset.notes);p.notes=el.value;p.notesAt=todayISO();saveProfile(900)}
   else if(el.dataset.link){tp(el.dataset.t)[el.dataset.link]=el.value.trim();saveProfile(900)}
   else if(el.dataset.missing){(S.profile.missing[el.dataset.missing]=S.profile.missing[el.dataset.missing]||{}).note=el.value;saveProfile(900)}
