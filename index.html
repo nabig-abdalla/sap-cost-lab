@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</title>
+<meta name="description" content="مسار عربي مجاني من 8 دروس تفاعلية في تكاليف مصانع حقن البلاستيك على SAP S/4HANA مربوط بمنهج CMA: شاشات SAP، تمارين تُصحَّح فوراً، ومتابعة تقدم. إعداد نابغ عبدالله">
+<meta name="author" content="نابغ عبدالله">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA">
+<meta property="og:description" content="مسار عربي مجاني من 8 دروس تفاعلية في تكاليف مصانع حقن البلاستيك على SAP S/4HANA مربوط بمنهج CMA: شاشات SAP، تمارين تُصحَّح فوراً، ومتابعة تقدم. إعداد نابغ عبدالله">
+<meta property="og:url" content="https://nabig-abdalla.github.io/sap-cost-lab/">
+<meta property="og:image" content="https://nabig-abdalla.github.io/sap-cost-lab/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@500;600;700&display=swap">
+<style>
+/* Layout: RTL course shell — course hero on home, right sidebar on desktop, sticky top bar + bottom tabs on phones; lessons read as numbered lesson stages, SAP screens as LTR simulated windows */
+:root{
+  --bg:#EDF1F2; --surface:#FFFFFF; --surface-2:#F5F8F9; --ink:#13212B; --muted:#56676F; --line:#D3DCE0;
+  --accent:#0B6670; --accent-ink:#FFFFFF; --accent-soft:#DCEEEF;
+  --hero:#0A4F57; --hero-ink:#FFFFFF; --hero-muted:#B9D9DC; --gold:#E2B33C;
+  --ok:#24734A; --ok-soft:#DDF0E4; --prog:#2B5DA6; --prog-soft:#E0E9F7;
+  --rev:#9C5A08; --rev-soft:#FBEACF; --none:#6E7E87; --none-soft:#E6ECEE;
+  --bad:#B3261E; --bad-soft:#F8E0DD; --sample:#5F4598; --sample-soft:#ECE6F7; --note:#7A6000; --note-soft:#FFF3C4;
+  --sap-frame:#AFC0C9; --sap-bar:#D9E3E9; --sap-field:#FFFFFF; --sap-bg:#F2F5F7; --sap-key:#1D4E89;
+  --shadow:0 1px 2px rgba(19,33,43,.06),0 4px 14px rgba(19,33,43,.05);
+  --f-display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0C1317; --surface:#131D23; --surface-2:#18242B; --ink:#E1E9ED; --muted:#93A4AD; --line:#283841;
+  --accent:#4FB4BC; --accent-ink:#06171A; --accent-soft:#12333A;
+  --hero:#0F353B; --hero-ink:#EAF5F6; --hero-muted:#9CC4C8; --gold:#E9C25A;
+  --ok:#6BC98E; --ok-soft:#15301F; --prog:#83A9E8; --prog-soft:#172741; --rev:#E8A64A; --rev-soft:#382810;
+  --none:#8D9CA5; --none-soft:#1E2A30; --bad:#F08A82; --bad-soft:#3A1A18; --sample:#B8A2EA; --sample-soft:#251D37; --note:#E5C75B; --note-soft:#30290D;
+  --sap-frame:#3A4D57; --sap-bar:#1D2B33; --sap-field:#0E171C; --sap-bg:#152027; --sap-key:#8FB6EA;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1317; --surface:#131D23; --surface-2:#18242B; --ink:#E1E9ED; --muted:#93A4AD; --line:#283841;
+  --accent:#4FB4BC; --accent-ink:#06171A; --accent-soft:#12333A;
+  --hero:#0F353B; --hero-ink:#EAF5F6; --hero-muted:#9CC4C8; --gold:#E9C25A;
+  --ok:#6BC98E; --ok-soft:#15301F; --prog:#83A9E8; --prog-soft:#172741; --rev:#E8A64A; --rev-soft:#382810;
+  --none:#8D9CA5; --none-soft:#1E2A30; --bad:#F08A82; --bad-soft:#3A1A18; --sample:#B8A2EA; --sample-soft:#251D37; --note:#E5C75B; --note-soft:#30290D;
+  --sap-frame:#3A4D57; --sap-bar:#1D2B33; --sap-field:#0E171C; --sap-bg:#152027; --sap-key:#8FB6EA;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{direction:rtl}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.75;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+h1,h2,h3{font-family:var(--f-display);line-height:1.35;text-wrap:balance;margin:0}
+h1{font-size:1.6rem;font-weight:700}
+h2{font-size:1.15rem;font-weight:600}
+h3{font-size:1rem;font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.en{font-family:var(--f-mono);font-size:.82em;color:var(--muted);direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.num,td.n{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.tc{font-family:var(--f-mono);font-size:.82rem;direction:ltr;unicode-bidi:isolate;display:inline-flex;align-items:center;gap:2px;padding:1px 7px;border:1px solid var(--line);border-radius:4px;background:var(--surface-2);color:var(--ink);white-space:nowrap}
+.tc::before{content:"/n";color:var(--muted)}
+.tc.mv::before{content:"mvt ";}
+.tc.plain::before{content:none}
+
+/* shell */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line);
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1;text-decoration:none;color:var(--ink)}
+.mark{width:32px;height:32px;border-radius:8px;background:var(--hero);color:var(--gold);display:grid;place-items:center;font-family:var(--f-mono);font-size:.72rem;font-weight:500;flex:none}
+.brand b{font-family:var(--f-display);font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.brand small{display:block;color:var(--muted);font-size:.75rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.store{font-size:.75rem;padding:3px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.store.db{color:var(--ok);border-color:currentColor}
+.store.local{color:var(--rev);border-color:currentColor}
+.shell{display:grid;grid-template-columns:1fr;min-height:100%}
+.side{display:none}
+main{min-width:0;padding-block:20px 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:880px;margin-inline:auto;display:flex;flex-direction:column;gap:18px}
+.tabs{position:fixed;inset:auto 0 0 0;z-index:20;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+.tabs a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px 9px;text-decoration:none;color:var(--muted);font-size:.72rem}
+.tabs a svg{width:21px;height:21px}
+.tabs a.on{color:var(--accent);font-weight:600}
+@media (min-width:960px){
+  .shell{grid-template-columns:260px 1fr}
+  .side{display:block;position:sticky;top:calc(env(safe-area-inset-top,0px) + 53px);align-self:start;height:calc(100vh - 53px);overflow:auto;border-left:1px solid var(--line);background:var(--surface);padding:12px 12px 24px}
+  .tabs{display:none}
+  main{padding-bottom:48px}
+}
+.side .grp{font-size:.72rem;color:var(--muted);letter-spacing:.02em;margin:16px 10px 6px}
+.side a{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:7px;text-decoration:none;color:var(--ink);font-size:.9rem}
+.side a:hover{background:var(--surface-2)}
+.side a.on{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.side .ln{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);width:16px;text-align:center}
+.side .prog{margin:4px 10px 0;display:flex;flex-direction:column;gap:4px;font-size:.78rem;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--none);margin-inline-start:auto}
+.dot.ok{background:var(--ok)}.dot.prog{background:var(--prog)}.dot.rev{background:var(--rev)}
+
+/* blocks */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.lede{color:var(--muted);max-width:65ch}
+.eyebrow{font-size:.78rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:700px){.grid2{grid-template-columns:1fr 1fr}}
+.prose p+p{margin-top:8px}
+.prose{max-width:68ch}
+.muted{color:var(--muted)}
+.small{font-size:.82rem}
+
+/* course hero */
+.hero{background:var(--hero);color:var(--hero-ink);border-radius:14px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto auto -60px -60px;width:220px;height:220px;border-radius:50%;border:28px solid rgba(255,255,255,.05);pointer-events:none}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:clamp(1.6rem,4.6vw,2.3rem)}
+.hero .lede{color:var(--hero-muted);font-size:1rem}
+.hero .btn{background:transparent;color:var(--hero-ink);border-color:rgba(255,255,255,.35)}
+.hero .btn.gold{background:var(--gold);color:#1B1606;border-color:var(--gold)}
+.byline{display:flex;align-items:center;gap:10px}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--gold);color:#1B1606;display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:.95rem;flex:none}
+.byline b{display:block;font-family:var(--f-display);font-weight:600}
+.byline span{font-size:.82rem;color:var(--hero-muted)}
+.meter{display:flex;flex-direction:column;gap:6px;font-size:.82rem}
+.meter .track{height:8px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.meter .fill{height:100%;background:var(--gold);border-radius:99px}
+.modules{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:700px){.modules{grid-template-columns:1fr 1fr}}
+.module{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.module .mh{display:flex;align-items:center;gap:10px}
+.module .mn{font-family:var(--f-display);font-weight:700;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
+.module ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.module li a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-size:.92rem}
+.module li a:hover{color:var(--accent)}
+.flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;counter-reset:f}
+@media (min-width:700px){.flow{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.flow div{counter-increment:f;border-top:3px solid var(--accent);background:var(--surface);border-radius:0 0 8px 8px;padding:10px 12px;font-size:.85rem;min-width:0}
+.flow div::before{content:counter(f);font-family:var(--f-mono);color:var(--accent);font-size:.78rem;display:block}
+.flow div:last-child{grid-column:span 2}
+@media (min-width:700px){.flow div:last-child{grid-column:auto}}
+[id^="s-"],.q{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
+.flow b{display:block;font-family:var(--f-display);font-weight:600;font-size:.95rem}
+
+/* lesson header */
+.lhead{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px;border-top:4px solid var(--accent)}
+.lprog{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.lprog a{height:6px;border-radius:99px;background:var(--none-soft)}
+.lprog a.ok{background:var(--ok)}.lprog a.prog{background:var(--prog)}.lprog a.rev{background:var(--rev)}
+.lprog a.cur{outline:2px solid var(--accent);outline-offset:2px}
+.goals{background:var(--accent-soft);border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.goals ul{margin:0;padding-inline-start:18px}
+.jump{display:flex;gap:6px;flex-wrap:wrap}
+.jump a{font-size:.8rem;padding:4px 10px;border-radius:99px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--surface)}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
+.stg{display:flex;align-items:center;gap:10px}
+.stg i{font-style:normal;font-family:var(--f-mono);font-size:.78rem;width:26px;height:26px;border-radius:7px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+
+/* labels */
+.lab{font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:4px;white-space:nowrap;letter-spacing:.01em}
+.lab.ref{background:var(--accent-soft);color:var(--accent)}
+.lab.sample{background:var(--sample-soft);color:var(--sample)}
+.lab.mine{background:var(--note-soft);color:var(--note)}
+.lab.miss{background:transparent;color:var(--bad);border:1px dashed var(--bad)}
+.lab.sim{background:var(--sap-bar);color:var(--sap-key)}
+.lab.exp{background:var(--hero);color:var(--gold)}
+.card.exp{border-inline-start:3px solid var(--gold);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
+.card.mine{border-color:var(--note);background:linear-gradient(var(--note-soft),var(--note-soft)) top/100% 3px no-repeat,var(--surface)}
+.card.miss{border:1px dashed var(--bad)}
+
+/* SAP screen simulation */
+.sap{direction:ltr;text-align:left;border:1px solid var(--sap-frame);border-radius:8px;overflow:hidden;background:var(--sap-bg);font-size:.82rem;min-width:0}
+.sap .tb{background:var(--sap-bar);border-bottom:1px solid var(--sap-frame);padding:8px 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sap .tb b{font-weight:600;font-size:.88rem}
+.sap .cmd{display:flex;align-items:center;gap:6px;padding:6px 12px;border-bottom:1px solid var(--sap-frame);flex-wrap:wrap}
+.sap .cmd code{font-family:var(--f-mono);background:var(--sap-field);border:1px solid var(--sap-frame);border-radius:3px;padding:1px 8px;min-width:120px}
+.sap .cmd span{font-size:.75rem;color:var(--muted)}
+.sap .tabsr{display:flex;gap:2px;padding:6px 12px 0;flex-wrap:wrap;border-bottom:1px solid var(--sap-frame)}
+.sap .tabsr span{padding:4px 10px;border:1px solid var(--sap-frame);border-bottom:0;border-radius:4px 4px 0 0;font-size:.76rem;color:var(--muted);background:var(--sap-bar)}
+.sap .tabsr span.on{background:var(--sap-bg);color:var(--ink);font-weight:600}
+.sap .body{padding:12px;display:flex;flex-direction:column;gap:12px}
+.sap .grpb{border:1px solid var(--sap-frame);border-radius:4px;padding:10px;position:relative;display:flex;flex-direction:column;gap:6px}
+.sap .grpb > .gt{font-size:.74rem;color:var(--sap-key);font-weight:600}
+.sap .flds{display:grid;grid-template-columns:1fr;gap:6px 18px}
+@media (min-width:640px){.sap .flds{grid-template-columns:1fr 1fr}}
+.sap .fld{display:grid;grid-template-columns:minmax(110px,44%) 1fr;gap:8px;align-items:center;min-width:0}
+.sap .fld label{color:var(--muted);font-size:.78rem}
+.sap .v{background:var(--sap-field);border:1px solid var(--sap-frame);border-radius:3px;padding:2px 8px;min-height:26px;font-family:var(--f-mono);font-size:.78rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.sap .v.hl{border-color:var(--gold);box-shadow:0 0 0 2px color-mix(in srgb,var(--gold) 35%,transparent)}
+.sap .v small{color:var(--muted);font-family:var(--f-body)}
+.sap .tblw{overflow-x:auto;border:1px solid var(--sap-frame);border-radius:4px;background:var(--sap-field)}
+.sap table{font-size:.76rem;min-width:520px}
+.sap th{background:var(--sap-bar);color:var(--ink);text-align:left;font-weight:600;border-bottom:1px solid var(--sap-frame);white-space:nowrap}
+.sap td{text-align:left;font-family:var(--f-mono);border-bottom:1px solid var(--line);white-space:nowrap}
+.sap td.r{text-align:right}
+.sap tr.hl td{background:color-mix(in srgb,var(--gold) 18%,transparent)}
+.sap tr.tot td{font-weight:600;border-top:1px solid var(--sap-frame)}
+.sap .btns{display:flex;gap:6px;flex-wrap:wrap}
+.sap .btns span{border:1px solid var(--sap-frame);background:var(--sap-bar);border-radius:3px;padding:2px 10px;font-size:.75rem}
+.sap .radio{display:flex;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.sap .radio span::before{content:"○ ";color:var(--muted)}
+.sap .radio span.on::before{content:"● ";color:var(--sap-key)}
+.sapnote{display:flex;flex-direction:column;gap:6px;font-size:.86rem}
+.sapnote ul{margin:0;padding-inline-start:18px}
+
+/* status chips */
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:2px 10px;border-radius:99px;white-space:nowrap}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.prog{background:var(--prog-soft);color:var(--prog)}
+.chip.rev{background:var(--rev-soft);color:var(--rev)}
+.chip.none{background:var(--none-soft);color:var(--none)}
+
+/* buttons/forms */
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:500;display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:38px}
+.btn:hover{border-color:var(--accent)}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.warn{color:var(--bad);border-color:var(--bad)}
+.btn.sm{padding:4px 10px;min-height:32px;font-size:.8rem}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:.78rem;color:var(--muted)}
+input[type=text],input[type=url],input[type=date],input[type=search],select,textarea{border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:8px 10px;min-height:38px;width:100%;min-width:0}
+textarea{min-height:90px;resize:vertical;line-height:1.7}
+input.ltr{direction:ltr;text-align:left}
+.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.filters{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.filters .field.wide{grid-column:span 2}
+@media (min-width:760px){.filters .field.wide{grid-column:auto}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:700px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.stat{border-radius:var(--r);padding:12px 14px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:2px;border-top:3px solid var(--c)}
+.stat b{font-family:var(--f-display);font-size:1.7rem;font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+.stat.ok{--c:var(--ok)}.stat.prog{--c:var(--prog)}.stat.rev{--c:var(--rev)}.stat.none{--c:var(--none)}
+.bar{display:flex;height:10px;border-radius:99px;overflow:hidden;background:var(--none-soft)}
+.bar i{display:block;height:100%}
+.bar .ok{background:var(--ok)}.bar .prog{background:var(--prog)}.bar .rev{background:var(--rev)}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.87rem}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:.76rem;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.n{text-align:left;white-space:nowrap}
+.ex td:first-child{color:var(--muted);width:62%}
+.ex tr.total td{font-weight:600;border-top:2px solid var(--ink)}
+
+/* steps */
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+ol.steps li::before{content:counter(s);font-family:var(--f-mono);font-size:.8rem;width:26px;height:26px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;margin-top:1px}
+ol.steps li > div{min-width:0}
+
+/* questions */
+.q{border:1px solid var(--line);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--surface-2)}
+.q .qh{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);cursor:pointer}
+.opt input{accent-color:var(--accent);width:18px;height:18px;flex:none}
+.ans{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.ans input{flex:1 1 160px;direction:ltr;text-align:left;font-family:var(--f-mono)}
+.fb{border-radius:8px;padding:10px 12px;font-size:.9rem;display:flex;flex-direction:column;gap:6px}
+.fb.good{background:var(--ok-soft);border-inline-start:3px solid var(--ok)}
+.fb.badf{background:var(--bad-soft);border-inline-start:3px solid var(--bad)}
+.fb .t{font-weight:600}
+.fb.good .t{color:var(--ok)}.fb.badf .t{color:var(--bad)}
+details.sol{font-size:.9rem}
+details.sol summary{cursor:pointer;color:var(--accent);font-weight:500}
+details.sol > div{margin-top:6px;padding:10px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
+.mast{border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:6px;border:1px solid var(--line)}
+.mast.ok{background:var(--ok-soft)}.mast.rev{background:var(--rev-soft)}.mast.prog{background:var(--prog-soft)}.mast.none{background:var(--none-soft)}
+
+/* lists */
+.tlist{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:700px){.tlist{grid-template-columns:1fr 1fr}}
+.titem{display:flex;flex-direction:column;gap:6px;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);text-decoration:none;color:var(--ink);min-width:0}
+.titem:hover{border-color:var(--accent)}
+.titem .row{justify-content:space-between}
+.titem .meta{font-size:.78rem;color:var(--muted)}
+.stage{display:grid;grid-template-columns:40px 1fr;gap:12px}
+.stage .no{font-family:var(--f-display);font-weight:700;font-size:1.25rem;width:40px;height:40px;border-radius:9px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.stage > div{min-width:0;display:flex;flex-direction:column;gap:8px}
+.empty{padding:18px;border:1px dashed var(--line);border-radius:var(--r);color:var(--muted);font-size:.9rem;text-align:center}
+.errrow{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:start;padding:10px 0;border-bottom:1px solid var(--line)}
+.errrow:last-child{border-bottom:0}
+.errrow .cnt{font-family:var(--f-display);font-weight:600;font-size:1.05rem;width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:var(--bad-soft);color:var(--bad)}
+.errrow .cnt.once{background:var(--none-soft);color:var(--none)}
+.errrow > div{min-width:0}
+.confirm{border:2px solid var(--accent);border-radius:var(--r);padding:14px;background:var(--accent-soft);display:flex;flex-direction:column;gap:10px}
+.confirm pre{margin:0;max-height:220px;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;font-family:var(--f-mono);font-size:.75rem;direction:ltr;text-align:left;white-space:pre-wrap;word-break:break-word}
+.toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:.88rem;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+@media (min-width:960px){.toast{bottom:24px}}
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.82rem;color:var(--muted);align-items:center}
+.banner{border-radius:var(--r);padding:12px 14px;background:var(--rev-soft);border:1px solid var(--rev);font-size:.9rem;display:flex;flex-direction:column;gap:8px}
+
+/* glossary */
+.gl{display:flex;flex-direction:column}
+.gl .term{display:grid;grid-template-columns:1fr;gap:4px;padding:12px 0;border-bottom:1px solid var(--line)}
+.gl .term:last-child{border-bottom:0}
+.gl .term .th{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.gl .term .th b{font-family:var(--f-display);font-weight:600}
+.gl .term p{font-size:.9rem;max-width:70ch}
+
+/* guide */
+.guide-sec{display:grid;grid-template-columns:40px 1fr;gap:12px}
+.guide-sec .no{font-family:var(--f-display);font-weight:700;width:36px;height:36px;border-radius:9px;display:grid;place-items:center;background:var(--hero);color:var(--gold)}
+.guide-sec > div{min-width:0;display:flex;flex-direction:column;gap:8px}
+.guide-sec ul,.guide-sec ol{margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:4px}
+
+/* author */
+.author{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.author .avatar{width:56px;height:56px;font-size:1.15rem}
+.author > div{min-width:0;display:flex;flex-direction:column;gap:8px}
+.contact{display:flex;flex-direction:column;gap:6px}
+.contact .ci{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.contact .ci .k{font-size:.78rem;color:var(--muted);width:56px}
+.contact .ci .val{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;user-select:all;font-size:.9rem}
+footer.foot{max-width:880px;margin:28px auto 0;border-top:1px solid var(--line);padding-top:14px;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:space-between}
+footer.foot .val{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;user-select:all}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{.top,.side,.tabs,.noprint,.toast{display:none!important}main{padding:0}body{background:#fff;color:#000}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#home">
+    <div class="mark" aria-hidden="true">CO</div>
+    <div style="min-width:0"><b>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</b><small>إعداد نابغ عبدالله · خبير التكاليف الصناعية</small></div>
+  </a>
+  <span id="store" class="store" title="مكان حفظ بياناتك">جارٍ التحميل</span>
+</header>
+<div class="shell">
+  <nav class="side" id="side" aria-label="التنقل"></nav>
+  <main id="main"><div class="wrap"><p class="muted">جارٍ التحميل…</p></div></main>
+</div>
+<nav class="tabs" id="tabs" aria-label="التنقل السريع"></nav>
+<div id="toast" class="toast" hidden></div>
+
+<script>
+"use strict";
+/* ============ AUTHOR ============ */
+const AUTHOR={name:"نابغ عبدالله",title:"خبير التكاليف الصناعية",phone:"0502083782",phoneIntl:"+966 50 208 3782",wa:"https://wa.me/966502083782",email:"nabigabdalla@gmail.com"};
+
+/* ============ CONTENT ============ */
+const LEVELS={1:"الوحدة 1 · الأساس",2:"الوحدة 2 · التشغيل",3:"الوحدة 3 · التقييم",4:"الوحدة 4 · التحليل والتطبيق"};
+const LEVEL_NAME={1:"الأساس",2:"التشغيل",3:"التقييم",4:"التحليل والتطبيق"};
+const LEVEL_SHORT={1:"أساسي",2:"تشغيلي",3:"متوسط",4:"متقدم"};
+const T=(ar,en)=>`<b>${ar}</b> <span class="en">${en}</span>`;
+const C=c=>`<code class="tc">${c}</code>`;
+const M=c=>`<code class="tc mv">${c}</code>`;
+
+/* SAP screen simulation builders: f(label,value,hl) ; table(cols,rows) */
+const f=(l,v,hl)=>`<div class="fld"><label>${l}</label><div class="v${hl?" hl":""}">${v}</div></div>`;
+const grp=(title,inner)=>`<div class="grpb"><span class="gt">${title}</span>${inner}</div>`;
+const flds=(...x)=>`<div class="flds">${x.join("")}</div>`;
+const tbl=(cols,rows,cls=[])=>`<div class="tblw"><table><thead><tr>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${rows.map((r,i)=>`<tr class="${cls[i]||""}">${r.map((c,k)=>`<td class="${typeof c==="number"||/^-?[\d,]+\.\d+$|^-?[\d,]+$/.test(c)?"r":""}">${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+function screen(s){
+  return `<div class="sap" role="img" aria-label="محاكاة تعليمية لشاشة ${s.tcode}">
+   <div class="tb"><b>${s.title}</b></div>
+   <div class="cmd"><code>/n${s.tcode}</code><span>${s.menu||""}</span></div>
+   ${s.tabs?`<div class="tabsr">${s.tabs.map((t,i)=>`<span class="${i===(s.tabOn||0)?"on":""}">${t}</span>`).join("")}</div>`:""}
+   <div class="body">${s.body}</div></div>`;
+}
+
+const TOPICS=[
+{id:"intro",level:1,title:"خريطة دورة التكلفة",en:"Cost Flow Overview",
+ goals:["تتبع دورة التكلفة كاملة على منتج حقن واحد","تعرف أين تُسجَّل قيود المالية والتكاليف في S/4HANA","تميز حركات المخزون الأساسية على أمر الإنتاج"],
+ tcodes:["MM03","CS03","CA03","CR03","CK13N","CO03"],
+ explain:[
+  `في SAP S/4HANA تُسجَّل القيود المالية وقيود التكاليف في دفتر واحد هو ${T("دفتر اليومية الموحد","Universal Journal")} وجدوله ACDOCA، لذلك أصبحت ${T("عناصر التكلفة","Cost Elements")} حسابات أستاذ عام تُعرَّف في ${C("FS00")} مع تحديد ${T("فئة عنصر التكلفة","Cost Element Category")}`,
+  `دورة التكلفة في مصنع الحقن تمر بهذا التسلسل: بيانات أساسية (المادة، ${T("قائمة المواد","BOM")}، ${T("مسار التصنيع","Routing")}، ${T("مركز العمل","Work Center")} المربوط بمركز تكلفة) ثم ${T("تقدير التكلفة المعيارية","Standard Cost Estimate")} ثم أمر الإنتاج، فصرف الخام والتأكيد واستلام المنتج، ثم التحميل غير المباشر وحساب الانحرافات والتسوية`,
+  `كل درس يأخذ حلقة من هذه السلسلة ويطبقها على المنتج نفسه، فترتبط الأرقام من الدرس الأول إلى تحليل الانحرافات`
+ ],
+ example:{title:"المنتج المستخدم في كل الدروس",rows:[["المنتج","حاوية PP سعة 500 مل · FG-0500"],["القالب","4 تجاويف (4-cavity mold)"],["زمن الدورة","36 ثانية للطلقة"],["وزن القطعة الصافي","200 غرام"],["سعر كيلو الراتنج PP (معياري)","6.50 ر.س"],["ماكينة الحقن","مركز العمل INJ-01 · مركز التكلفة 4110"]]},
+ screen:{tcode:"MM03",title:"Display Material FG-0500 (Finished Product)",menu:"Logistics › Materials Management › Material Master › Material › Display",tabs:["MRP 1","Work Scheduling","Costing 1","Costing 2","Accounting 1"],tabOn:4,
+  body:flds(f("Material","FG-0500"),f("Plant","1000"))+grp("General Valuation Data",flds(f("Base Unit of Measure","PC"),f("Valuation Class","7920"),f("Currency","SAR"),f("Price Determ.","2 <small>Transaction-Based</small>")))+grp("Prices and values",flds(f("Price control","S",1),f("Price Unit","1,000"),f("Standard price","1,932.08",1),f("Moving price","0.00"),f("Total Stock","0 PC"),f("Total Value","0.00"))),
+  notes:["<b>Price control</b> = S يعني أن المخزون يُقيَّم بالسعر المعياري","<b>Price Unit</b> = 1,000 فالسعر المعروض لكل 1,000 حاوية","<b>Valuation Class</b> يحدد حسابات المخزون في المالية"]},
+ steps:[
+  [`اعرض بيانات المادة وتبويبات Costing وAccounting`,"MM03"],
+  [`اعرض قائمة المواد وتحقق من كمية الراتنج ونسبة هالك المكوّن`,"CS03"],
+  [`اعرض مسار التصنيع: زمن الماكينة وزمن العمالة لكل عملية`,"CA03"],
+  [`اعرض مركز العمل وتبويب Costing لمعرفة مركز التكلفة وأنواع الأنشطة`,"CR03"],
+  [`اعرض تقدير التكلفة المعيارية للمادة`,"CK13N"],
+  [`اعرض أمر إنتاج قائم وتتبع تكاليفه المخططة والفعلية`,"CO03"]
+ ],
+ stepsNote:"استخدم معاملات العرض فقط إن كنت على نظام تشغيلي، والتطبيق الكامل في نظام تدريب (Sandbox / IDES)",
+ questions:[
+  {id:"intro-q1",type:"mcq",prompt:"في SAP S/4HANA، أين تُسجَّل البنود الفعلية للمالية والتكاليف معاً؟",
+   options:[["ACDOCA (Universal Journal)",null],["COEP","COEP كان جدول بنود التكاليف الفعلية في ECC، وفي S/4HANA انتقلت هذه البنود إلى ACDOCA"],["BSEG","BSEG يحفظ بنود المستند المحاسبي، ولا يجمع بنود التكاليف"],["MSEG","MSEG خاص ببنود حركات المخزون"]],
+   correct:0,tags:[null,"خلط بين جداول ECC وS/4HANA","خلط بين جداول المالية والتكاليف","خلط بين جداول المخزون والتكاليف"],
+   solution:"في S/4HANA يحفظ ACDOCA كل بند قيد في سطر واحد يحمل حقول المالية والتكاليف والأصول والمخزون معاً، لذلك يتطابق الأستاذ العام مع تقارير التكاليف دون تسوية بينهما"},
+  {id:"intro-q2",type:"mcq",prompt:"أي حركة مخزنية تصرف الراتنج من المخزن إلى أمر الإنتاج؟",
+   options:[["261",null],["101","101 حركة استلام المنتج التام من الأمر إلى المخزن"],["201","201 صرف على مركز تكلفة، فلا تصل التكلفة إلى أمر الإنتاج"],["311","311 تحويل بين مواقع التخزين ولا تنشئ تكلفة على الأمر"]],
+   correct:0,tags:[null,"خلط بين حركات الصرف والاستلام","صرف على مركز تكلفة بدل الأمر","خلط بين التحويل والصرف"],
+   solution:"الحركة 261 تصرف المادة على أمر الإنتاج وتحمّله بقيمتها، وعكسها 262"}
+ ],
+ missing:["قراءة ACDOCA عملياً عبر تقارير Fiori مثل Trial Balance وCost Center Actuals"]
+},
+{id:"cost-centers",level:1,title:"مراكز التكلفة",en:"Cost Centers",
+ goals:["تحسب سعر النشاط المخطط لماكينة حقن","تفهم ربط مركز العمل بمركز التكلفة وأنواع الأنشطة","تقرأ رصيد التحميل الناقص أو الزائد"],
+ tcodes:["KS01","KL01","KP26","KSPI","CR03","KSB1","S_ALR_87013611"],
+ fiori:"Manage Cost Centers",
+ explain:[
+  `${T("مركز التكلفة","Cost Center")} وحدة مسؤولية تُجمَع عليها التكاليف، يُنشأ بـ ${C("KS01")} ويُربط بـ ${T("الهرمية القياسية","Standard Hierarchy")}. في مصنع الحقن غالباً يكون لكل خط أو مجموعة ماكينات مركز إنتاجي، ومراكز خدمية للصيانة والقوالب والجودة`,
+  `${T("نوع النشاط","Activity Type")} يقيس ما يقدمه المركز، مثل ساعة الماكينة وساعة العمالة، ويُنشأ بـ ${C("KL01")}. يُخطَّط ${T("سعر النشاط","Activity Price")} في ${C("KP26")}، وأبسط طريقة لفهمه: التكاليف المخططة للمركز مقسومة على الطاقة المخططة بالساعات، ويحسبه النظام بـ ${C("KSPI")}`,
+  `يربط ${T("مركز العمل","Work Center")} الماكينة بمركز التكلفة وأنواع الأنشطة في تبويب Costing، فعند تأكيد أمر الإنتاج تُحمَّل الساعات المؤكدة × سعر النشاط على الأمر وتُدائن المركز. الفرق بين التكاليف الفعلية للمركز وما حُمِّل منه هو ${T("التحميل الناقص أو الزائد","Under / Over Absorption")}`
+ ],
+ example:{title:"مركز 4110 · خط الحقن 1 · شهر واحد",rows:[["إهلاك الماكينة والقالب (مخطط)","30,000"],["كهرباء (مخطط)","42,000"],["صيانة (مخطط)","8,000"],["عمالة غير مباشرة (مخطط)","16,000"],["إجمالي التكاليف المخططة","96,000",1],["الطاقة المخططة","600 ساعة ماكينة"],["التكاليف الفعلية للشهر","101,500"],["الساعات المؤكدة فعلياً على الأوامر","580 ساعة"]],note:"المبالغ بالريال السعودي"},
+ screen:{tcode:"KP26",title:"Change Activity Type/Price Planning: Overview Screen",menu:"Accounting › Controlling › Cost Center Accounting › Planning › Activity Output/Prices › Change",
+  body:flds(f("Version","0 <small>Plan/Act - Version</small>"),f("From Period","1"),f("To Period","1"),f("Fiscal Year","2026"),f("Cost Center","4110 <small>Injection Line 1</small>"),f("Activity Type","*"))+
+   tbl(["Cost Ctr","ActTyp","Plan Activity","Unit","Capacity","Fixed Price","Variable Price","Price Unit","P","Alloc. Cost Elem"],[["4110","MACH","600","H","600","160.00","0.00","1","1","943000"],["4110","LAB","600","H","600","40.00","0.00","1","1","943100"]],["hl",""]),
+  notes:["<b>Version 0</b> هي نسخة الخطة المرتبطة بالفعلي","<b>P</b> مؤشر السعر: 1 يعني أن السعر يُحسب من التخطيط عبر KSPI","<b>Alloc. Cost Elem</b> عنصر تكلفة ثانوي فئة 43 يحمل التحميل على الأمر","أرقام عناصر التكلفة هنا للتوضيح، تختلف في نظامك"]},
+ steps:[
+  [`اعرض المركز وتحقق من فئته (Category) والهرمية التي ينتمي لها`,"KS03"],
+  [`اعرض نوع النشاط ووحدته (H) وفئة احتسابه`,"KL03"],
+  [`راجع السعر المخطط للنشاط في الفترة المطلوبة`,"KP26"],
+  [`افتح مركز العمل في تبويب Costing وتأكد من ربط مركز التكلفة وأنواع الأنشطة`,"CR03"],
+  [`استخرج بنود التكاليف الفعلية للمركز`,"KSB1"],
+  [`قارن المخطط بالفعلي وراجع رصيد المركز بعد التحميل`,"S_ALR_87013611"]
+ ],
+ questions:[
+  {id:"cc-q1",type:"num",prompt:"احسب سعر ساعة الماكينة المخطط لمركز 4110",unit:"ر.س / ساعة",answer:160,tol:0.5,
+   wrongs:[[165.52,0.5,"استخدام الساعات الفعلية بدل الطاقة المخططة","سعر النشاط المخطط يُحسب على الطاقة المخططة 600 ساعة، والساعات الفعلية تظهر لاحقاً عند التحميل"],
+           [169.17,0.5,"استخدام التكاليف الفعلية في السعر المخطط","السعر المخطط يُبنى على التكاليف المخططة 96,000، والتكاليف الفعلية تُقارن به بعد الإقفال"]],
+   solution:"96,000 ÷ 600 = 160 ر.س لكل ساعة ماكينة"},
+  {id:"cc-q2",type:"num",prompt:"بعد تحميل الساعات المؤكدة على الأوامر، كم رصيد المركز غير المحمَّل؟ أدخل المبلغ موجباً",unit:"ر.س",answer:8700,tol:1,
+   wrongs:[[5500,1,"مقارنة الفعلي بالمخطط بدل المحمَّل","5,500 فرق الإنفاق بين الفعلي والمخطط، والمطلوب الفرق بين الفعلي وما حُمِّل على الأوامر"],
+           [92800,1,"إدخال المبلغ المحمَّل بدل الرصيد","92,800 هو ما حُمِّل على الأوامر، والمطلوب ما بقي على المركز"]],
+   solution:"المحمَّل = 580 × 160 = 92,800 · الرصيد = 101,500 − 92,800 = 8,700 ر.س تحميل ناقص (Under-absorbed)"}
+ ],
+ missing:["توزيع تكاليف المراكز الخدمية (الصيانة، القوالب) على مراكز الإنتاج: Assessment وDistribution","حساب سعر النشاط الفعلي KSII"]
+},
+{id:"production-orders",level:2,title:"أوامر الإنتاج",en:"Production Orders",
+ goals:["تتبع حياة أمر الإنتاج من الإنشاء إلى التسوية","تقرأ شاشة التأكيد: الكمية السليمة والهالك والساعات","تميز الحركات 261 و262 و101 على الأمر"],
+ tcodes:["CO01","CO03","MIGO","CO11N","CO14","MB51","KKBC_ORD"],
+ fiori:"Manage Production Orders · Confirm Production Operation",
+ explain:[
+  `${T("أمر الإنتاج","Production Order")} هو ${T("مجمّع التكلفة","Cost Object")} لدفعة إنتاج واحدة. يُنشأ بـ ${C("CO01")} من المادة والكمية والتاريخ، فيقرأ قائمة المواد ومسار التصنيع ويحسب التكاليف المخططة`,
+  `بعد ${T("الإصدار","Release")} يُصرف الراتنج بالحركة ${M("261")} فيتحمّله الأمر، ويُسجَّل ${T("التأكيد","Confirmation")} بـ ${C("CO11N")} بالكمية السليمة <span class="en">Yield</span> والهالك <span class="en">Scrap</span> وساعات الماكينة والعمالة. استلام المنتج بالحركة ${M("101")} يدائن الأمر بالتكلفة المعيارية`,
+  `ما يبقى على الأمر في نهاية الفترة يُعامَل كإنتاج تحت التشغيل إن لم يكتمل، أو كانحراف إن وصل لحالة ${T("التسليم","DLV")} أو ${T("الإقفال الفني","TECO")}، ثم يُسوّى بـ ${C("KO88")}`
+ ],
+ example:{title:"أمر إنتاج للحاوية 500 مل",rows:[["رقم الأمر (مثال)","1000456"],["الكمية المخططة","1,000 قطعة"],["المعيار الصافي","200 غرام للقطعة"],["الراتنج المصروف بالحركة 261","210 كغ"],["الكمية السليمة المؤكدة","950 قطعة"],["الهالك المؤكد","50 قطعة"],["ساعات الماكينة والعمالة المؤكدة","2.6 ساعة لكل منهما"]]},
+ screen:{tcode:"CO11N",title:"Enter Time Ticket for Production Order",menu:"Logistics › Production › Shop Floor Control › Confirmation › Enter › For Operation › Time Ticket",
+  body:grp("Confirmation",flds(f("Order","1000456"),f("Oper./Activity","0010"),f("Sequence","0"),f("Plant","1000"),f("Work Center","INJ-01")))+
+   `<div class="radio"><span>Partial confirmation</span><span class="on">Final confirmation</span><span>Automatic final confirmation</span></div>`+
+   grp("Quantities",flds(f("Yield to Confirm","950 PC",1),f("Scrap","50 PC",1),f("Rework","0 PC"),f("Reason for Var.","")))+
+   grp("Activities",flds(f("Setup","0.00 H"),f("Machine","2.6 H",1),f("Labor","2.6 H",1)))+
+   grp("Dates",flds(f("Posting Date","15.11.2026")))+`<div class="btns"><span>Goods Movements</span><span>Actual Data</span><span>Save</span></div>`,
+  notes:["<b>Yield to Confirm</b> الكمية السليمة، وعليها تُحسب التكلفة المستهدفة","<b>Scrap</b> الهالك المؤكد للعملية","<b>Machine / Labor</b> الساعات التي تُضرب في سعر النشاط من KP26","<b>Goods Movements</b> يعرض حركات الصرف الآلي (Backflush) والاستلام المرتبطة بالتأكيد"]},
+ steps:[
+  [`اعرض الأمر وحالته (CRTD / REL / DLV / TECO)`,"CO03"],
+  [`من داخل الأمر: Goto ثم Costs ثم Analysis لمقارنة المخطط بالفعلي`,"CO03"],
+  [`راجع كل حركات المواد على رقم الأمر، وابحث عن 261 و262 و531`,"MB51"],
+  [`راجع التأكيدات: الكمية السليمة والهالك والساعات لكل عملية`,"CO14"],
+  [`تحقق من استلام المنتج بالحركة 101 وكميته`,"MB51"],
+  [`حلل تكاليف الأمر حسب عنصر التكلفة`,"KKBC_ORD"]
+ ],
+ questions:[
+  {id:"po-q1",type:"num",prompt:"كم الكمية المعيارية المسموح بها من الراتنج للإنتاج السليم الفعلي، على أساس الوزن الصافي فقط؟",unit:"كغ",answer:190,tol:0.05,
+   wrongs:[[200,0.05,"استخدام الكمية المخططة بدل الإنتاج الفعلي","الكمية المسموح بها تُحسب على الإنتاج السليم الفعلي 950 قطعة، والكمية المخططة 1,000 لا تصلح للمقارنة"],
+           [20,0.05,"إدخال الفرق بدل الكمية المسموح بها","20 كغ هو الفرق، والمطلوب الكمية المسموح بها"]],
+   solution:"950 × 0.200 كغ = 190 كغ · الفرق عن المصروف 210 − 190 = 20 كغ"},
+  {id:"po-q2",type:"mcq",prompt:"رجع 8 كغ راتنج سليم من الخط إلى المخزن. أي حركة تسجله على الأمر نفسه؟",
+   options:[["262",null],["102","102 تعكس استلام المنتج التام، وليس صرف الخام"],["202","202 تعكس صرفاً على مركز تكلفة"],["531","531 استلام منتج ثانوي من الأمر، مثل المطحون"]],
+   correct:0,tags:[null,"خلط بين عكس الاستلام وعكس الصرف","خلط بين الأمر ومركز التكلفة","خلط بين المرتجع والمنتج الثانوي"],
+   solution:"262 تعكس الحركة 261 وتخفض تكلفة الأمر. إذا لم تُسجَّل، تظهر الكمية الراجعة كانحراف كمية رغم أنها في المخزن"}
+ ],
+ missing:["أنواع الأوامر ومفاتيح التحكم (Control Key) والاستلام الآلي عند التأكيد","حساب الإنتاج تحت التشغيل KKAX في نهاية الفترة"]
+},
+{id:"product-costing",level:2,title:"حساب تكلفة المنتج",en:"Product Costing",
+ goals:["تبني تقدير تكلفة من BOM وRouting","تحسب زمن الماكينة للقطعة في الحقن","تقرأ تفصيل التقدير حسب فئات البنود"],
+ tcodes:["CK11N","CK13N","CK40N","CS03","CA03"],
+ explain:[
+  `${T("تقدير تكلفة المنتج","Product Cost Estimate")} يُبنى بـ ${C("CK11N")} من ${T("هيكل الكميات","Quantity Structure")}: قائمة المواد تعطي كمية الراتنج مع ${T("نسبة هالك المكوّن","Component Scrap")}، ومسار التصنيع يعطي زمن الماكينة والعمالة فيُضرب في سعر النشاط، ثم تُضاف التكاليف غير المباشرة عبر ${T("ورقة التكاليف","Costing Sheet")}`,
+  `${T("متغير التكاليف","Costing Variant")} مثل PPC1 يحدد مصدر الأسعار وتاريخ التقييم. النتيجة تُعرض حسب ${T("مكوّنات التكلفة","Cost Components")}: مواد، ماكينة، عمالة، غير مباشر. للمنتجات الكثيرة يُستخدم ${T("تشغيل التكاليف","Costing Run")} بـ ${C("CK40N")}`,
+  `في الحقن، زمن الماكينة لكل قطعة = زمن الدورة ÷ عدد التجاويف، لذلك أي تغيير في القالب أو الدورة يغيّر تكلفة القطعة مباشرة`
+ ],
+ example:{title:"مدخلات التقدير لكل 1,000 قطعة (بدون ماستر باتش وتغليف للتبسيط)",rows:[["الراتنج الصافي","200 كغ"],["هالك المكوّن في BOM","2%"],["سعر الراتنج المعياري","6.50 ر.س / كغ"],["زمن الدورة / التجاويف","36 ث / 4 تجاويف"],["سعر ساعة الماكينة","160 ر.س"],["سعر ساعة العمالة (عامل واحد للماكينة)","40 ر.س"],["التحميل غير المباشر","8% على تكلفة المواد"]]},
+ screen:{tcode:"CK11N",title:"Create Material Cost Estimate with Quantity Structure",menu:"Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Cost Estimate with Quantity Structure › Create",tabs:["Costing Data","Dates","Qty Struct."],tabOn:0,
+  body:flds(f("Material","FG-0500"),f("Plant","1000"),f("Costing Variant","PPC1 <small>Standard Cost Est. (Mat.)</small>"),f("Costing Version","1"),f("Costing Lot Size","1,000 PC",1),f("Transfer Control",""))+
+   `<div class="gt" style="font-size:.74rem;color:var(--sap-key);font-weight:600">Itemization</div>`+
+   tbl(["Item","I","Resource","Cost Element","Total Value","Quantity","Un"],[["1","M","1000 RES-PP","500100","1,326.00","204.000","KG"],["2","E","4110 MACH","943000","400.00","2.500","H"],["3","E","4110 LAB","943100","100.00","2.500","H"],["4","G","","655100","106.08","",""],["","","","","1,932.08","",""]],["hl","","","","tot"]),
+  notes:["<b>I</b> فئة البند: M مادة، E نشاط داخلي، G تحميل غير مباشر","<b>Quantity 204.000 KG</b> تشمل هالك المكوّن 2%","<b>Costing Lot Size</b> كمية التقدير، والتكلفة المستهدفة تُحسب نسبةً منها"]},
+ steps:[
+  [`احسب كمية الراتنج الإجمالية: الصافي × (1 + نسبة هالك المكوّن)`,null],
+  [`احسب عدد الطلقات: الكمية ÷ التجاويف، ثم الساعات: الطلقات × زمن الدورة ÷ 3600`,null],
+  [`اضرب الساعات في سعر الماكينة وسعر العمالة`,null],
+  [`أضف نسبة التحميل غير المباشر على تكلفة المواد`,null],
+  [`قارن نتيجتك بتقدير النظام في عرض التفصيل Itemization`,"CK13N"]
+ ],
+ questions:[
+  {id:"pc-q1",type:"num",prompt:"احسب التكلفة المعيارية لكل 1,000 حاوية",unit:"ر.س",answer:1932.08,tol:0.6,
+   wrongs:[[1904,0.6,"تجاهل نسبة هالك المكوّن","كمية الراتنج المعيارية 204 كغ بعد إضافة 2% هالك، وليست 200 كغ"],
+           [1826,0.6,"إغفال التكاليف غير المباشرة","أضف 8% من تكلفة المواد = 106.08"],
+           [1832.08,0.6,"إغفال تكلفة العمالة","زمن العمالة 2.5 ساعة × 40 = 100"]],
+   solution:"راتنج 204 × 6.50 = 1,326 · طلقات 250 × 36 ث = 2.5 ساعة · ماكينة 400 · عمالة 100 · غير مباشر 106.08 · الإجمالي 1,932.08 ر.س، أي 1.932 للقطعة"},
+  {id:"pc-q2",type:"mcq",prompt:"أي معاملة تنشئ تقدير تكلفة لمادة واحدة مع هيكل الكميات؟",
+   options:[["CK11N",null],["CK24","CK24 تعلّم التقدير وتحرره كسعر معياري، ولا تنشئه"],["KP26","KP26 لتخطيط أسعار الأنشطة"],["KKS2","KKS2 لحساب انحرافات أمر واحد"]],
+   correct:0,tags:[null,"خلط بين إنشاء التقدير وتحريره","خلط بين أسعار الأنشطة وتقدير المنتج","خلط بين التقدير وحساب الانحرافات"],
+   solution:"CK11N ينشئ التقدير، وCK13N يعرضه، وCK24 يحرره ليصبح السعر المعياري"}
+ ],
+ missing:["إعداد ورقة التكاليف KZS2 وهيكل مكوّنات التكلفة OKTZ","القوالب العائلية (Family Molds) والمنتجات المشتركة Co-products"]
+},
+{id:"standard-cost",level:3,title:"التكلفة المعيارية",en:"Standard Cost",
+ goals:["تفهم تعليم السعر المعياري وتحريره","تميز بين مؤشري السعر S وV","تحسب فرق سعر الشراء وأين يُرحَّل"],
+ tcodes:["CK24","MM03","MIGO","MIRO","CKM3N"],
+ explain:[
+  `تقدير التكلفة يصبح ${T("سعراً معيارياً","Standard Price")} بعد ${T("التعليم والتحرير","Mark & Release")} بـ ${C("CK24")}، فيُحفظ في تبويب Accounting 1 للمادة مع ${T("مؤشر التحكم في السعر","Price Control")} S. التعليم يضع السعر المستقبلي ولا يغيّر قيمة المخزون، والتحرير يجعله السعر الحالي ويعيد تقييم المخزون، ويُسمح به مرة واحدة لكل فترة. المنتجات المصنعة تكون عادةً S، والخامات المشتراة S أو V حسب سياسة الشركة`,
+  `مع S يُقيَّم المخزون بسعر ثابت، وأي فرق بين سعر الشراء والمعياري يذهب إلى ${T("حساب فروق الأسعار","Price Difference Account")}. أما مع V ${T("المتوسط المتحرك","Moving Average")} فيدخل الفرق في قيمة المخزون ما دامت الكمية متوفرة`,
+  `في S/4HANA يعمل ${T("دفتر المواد","Material Ledger")} للتقييم في كل نظام، ويمكن عرض أسعار المادة وفروقها في ${C("CKM3N")}`
+ ],
+ example:{title:"شراء راتنج PP بمؤشر سعر S",rows:[["السعر المعياري","6.50 ر.س / كغ"],["الكمية المشتراة","10,000 كغ"],["سعر الفاتورة","6.80 ر.س / كغ"]]},
+ screen:{tcode:"CK24",title:"Price Update",menu:"Accounting › Controlling › Product Cost Controlling › Product Cost Planning › Material Costing › Price Update",
+  body:grp("Price Update for Standard Price",`<div class="radio"><span class="on">Mark</span><span>Release</span></div>`+flds(f("Posting Period/Year","01 / 2027",1),f("Company Code","1000")))+
+   grp("Selection",flds(f("Plant","1000"),f("Material","FG-0500")))+grp("Processing Options",`<div class="radio"><span class="on">Test Run</span><span>Background Processing</span><span>Log</span></div>`)+
+   `<div class="btns"><span>Marking Allowance</span><span>Execute</span></div>`+
+   tbl(["Material","Plant","Cost Estimate","Current Std Price","Price Unit","Costing Status"],[["FG-0500","1000","1,932.08","1,904.00","1,000","KA"]],["hl"]),
+  notes:["<b>Marking Allowance</b> يسمح بتعليم الأسعار لفترة محددة قبل التحرير","<b>Mark</b> يضع التقدير كسعر مستقبلي، و<b>Release</b> يجعله السعر المعياري الحالي ويعيد تقييم المخزون","حالة التقدير: <b>KA</b> محسوب دون أخطاء، تصبح <b>VO</b> بعد التعليم ثم <b>FR</b> بعد التحرير","التحرير مرة واحدة لكل فترة، وفي فترة مفتوحة فقط","شغّل <b>Test Run</b> أولاً دائماً، والسعر الحالي في الجدول افتراضي للمقارنة"]},
+ steps:[
+  [`تحقق من مؤشر السعر والسعر المعياري في تبويب Accounting 1`,"MM03"],
+  [`راجع قيد الاستلام: المخزون بالمعياري والفرق إلى حساب فروق الأسعار`,"MIGO"],
+  [`راجع قيد الفاتورة وحساب فروق الأسعار`,"MIRO"],
+  [`اعرض تاريخ أسعار المادة وفروقها`,"CKM3N"],
+  [`راجع سجل التعليم والتحرير للفترة`,"CK24"]
+ ],
+ questions:[
+  {id:"sc-q1",type:"num",prompt:"كم فرق السعر المرحَّل لحساب فروق الأسعار؟ أدخل المبلغ موجباً",unit:"ر.س",answer:3000,tol:1,
+   wrongs:[[68000,1,"إدخال قيمة الفاتورة بدل الفرق","68,000 قيمة الفاتورة، والمطلوب الفرق عن المعياري"],
+           [0.3,0.01,"إدخال فرق الكيلو بدل الإجمالي","0.30 فرق الكيلو الواحد، اضربه في الكمية"]],
+   solution:"(6.80 − 6.50) × 10,000 = 3,000 ر.س فرق غير ملائم، والمخزون يبقى بقيمة 65,000"},
+  {id:"sc-q2",type:"mcq",prompt:"متى تتغير قيمة مخزون مادة بمؤشر سعر S؟",
+   options:[["عند تحرير سعر معياري جديد",null],["عند كل فاتورة شراء","فرق الفاتورة يذهب لحساب فروق الأسعار ولا يغيّر سعر المخزون"],["عند كل استلام من أمر إنتاج","الاستلام يتم بالسعر المعياري نفسه"],["عند التأكيد في CO11N","التأكيد يحمّل الأنشطة على الأمر ولا يقيّم المخزون"]],
+   correct:0,tags:[null,"خلط بين S وV","خلط بين الاستلام وإعادة التقييم","خلط بين التأكيد والتقييم"],
+   solution:"مع S يتغير تقييم المخزون عند تحرير معيار جديد (إعادة تقييم الرصيد) أو عند إعادة التقييم من Actual Costing إن كانت مفعلة"}
+ ],
+ missing:["سياسة تحرير المعيار السنوي والمعيار المعدّل خلال السنة","التكاليف المختلطة Mixed Costing"]
+},
+{id:"actual-cost",level:3,title:"التكلفة الفعلية",en:"Actual Cost",
+ goals:["تجمع التكلفة الفعلية على أمر الإنتاج","تفهم الفرق بين التحميل بالسعر المخطط والفعلي للنشاط","تقرأ تحليل تكاليف الأمر حسب عنصر التكلفة"],
+ tcodes:["KGI2","CO43","KSII","CON2","KKBC_ORD","CKMLCP"],
+ explain:[
+  `${T("التكلفة الفعلية","Actual Cost")} على أمر الإنتاج تتكون من: المواد المصروفة فعلاً × سعر المادة (المعياري إن كانت S)، والساعات المؤكدة × ${T("سعر النشاط المخطط","Plan Activity Price")}، والتحميل غير المباشر الذي يُرحَّل بـ ${C("KGI2")} لأمر واحد أو ${C("CO43")} جماعياً`,
+  `إن أردت تحميل الأنشطة بالسعر الفعلي، يُحسب السعر الفعلي بـ ${C("KSII")} ثم يُعاد تقييم الأوامر به بـ ${C("CON2")}، وهذا اختياري ويعتمد على إعداد النظام`,
+  `التكلفة الفعلية الكاملة للمخزون والمبيعات تأتي من ${T("التكاليف الفعلية في دفتر المواد","Actual Costing")} عبر ${C("CKMLCP")}، وهو موضوع ناقص في هذا المسار`
+ ],
+ example:{title:"فعليات الأمر 1000456 (950 قطعة سليمة)",rows:[["راتنج مصروف","210 كغ × 6.50"],["ساعات ماكينة مؤكدة","2.6 × 160"],["ساعات عمالة مؤكدة","2.6 × 40"],["تحميل غير مباشر","8% على المواد"]]},
+ screen:{tcode:"CO03",title:"Display Production Order: Cost Analysis",menu:"CO03 › Goto › Costs › Analysis",
+  body:flds(f("Order","1000456"),f("Material","FG-0500"),f("Plant","1000"),f("Status","REL CNF DLV PRC"))+
+   tbl(["Cost Elem.","Cost Element (Text)","Origin","Total plan","Total act.","P/A var","P/A var(%)"],
+    [["500100","Raw Material Consumption","1000/RES-PP","1,326.00","1,365.00","39.00","2.94"],["943000","Machine Hours","4110/MACH","400.00","416.00","16.00","4.00"],["943100","Labor Hours","4110/LAB","100.00","104.00","4.00","4.00"],["655100","Overhead Material","","106.08","109.20","3.12","2.94"],["895000","Factory Output Production","1000/FG-0500","-1,932.08","-1,835.48","96.60","-5.00"],["","Total","","0.00","158.72","158.72",""]],
+    ["hl","","","","","tot"]),
+  notes:["<b>Total plan</b> للكمية المخططة 1,000، و<b>Total act.</b> للفعلي","سطر <b>895000</b> هو دائن الاستلام بالسعر المعياري × 950","الرصيد 158.72 يبقى على الأمر حتى حساب الانحراف والتسوية","مقارنة المخطط بالفعلي هنا تختلف عن الانحراف المستهدف، لأن المخطط مبني على 1,000 قطعة","<b>CNF</b> مؤكد نهائياً، <b>DLV</b> مُسلَّم بالكامل، <b>PRC</b> محسوب التكلفة المسبقة"]},
+ steps:[
+  [`تحقق أن كل الصرف والتأكيدات مسجلة قبل الإقفال`,"MB51"],
+  [`رحّل التحميل غير المباشر على الأمر`,"KGI2"],
+  [`اعرض تكاليف الأمر الفعلية حسب عنصر التكلفة`,"KKBC_ORD"],
+  [`قارن الساعات الفعلية بالمخططة لكل عملية`,"CO03"],
+  [`إن كانت الشركة تحمّل بالسعر الفعلي: احسبه ثم أعد تقييم الأوامر`,"CON2"]
+ ],
+ questions:[
+  {id:"ac-q1",type:"num",prompt:"احسب إجمالي التكلفة الفعلية على الأمر قبل دائن الاستلام",unit:"ر.س",answer:1994.2,tol:0.6,
+   wrongs:[[1885,0.6,"إغفال التحميل غير المباشر","أضف 8% من المواد = 109.20"],
+           [1890.2,0.6,"إغفال تكلفة العمالة","العمالة 2.6 × 40 = 104"],[158.72,0.6,"إدخال رصيد الأمر بدل إجمالي التكلفة","158.72 هو الرصيد بعد دائن الاستلام، والمطلوب إجمالي المدين"]],
+   solution:"راتنج 1,365 + ماكينة 416 + عمالة 104 + غير مباشر 109.20 = 1,994.20 ر.س"},
+  {id:"ac-q2",type:"mcq",prompt:"بأي سعر تُحمَّل الساعات المؤكدة على الأمر في الإعداد الافتراضي؟",
+   options:[["السعر المخطط للنشاط",null],["السعر الفعلي المحسوب آلياً مع كل تأكيد","السعر الفعلي يُحسب في نهاية الفترة بـ KSII، ولا يُحسب مع كل تأكيد"],["سعر يُدخله المستخدم في شاشة التأكيد","شاشة التأكيد تسجل الكميات والساعات، والسعر يأتي من تخطيط النشاط"],["متوسط آخر ثلاثة أشهر","لا يوجد متوسط آلي بهذا الشكل"]],
+   correct:0,tags:[null,"خلط بين السعر المخطط والفعلي للنشاط","خلط بين الكمية والسعر في التأكيد","افتراض طريقة تسعير غير موجودة"],
+   solution:"التحميل الفوري يتم بالسعر المخطط من KP26، والفرق يبقى على مركز التكلفة كتحميل ناقص أو زائد"}
+ ],
+ missing:["Actual Costing في Material Ledger وتشغيل CKMLCP","ترحيل تكاليف الإنتاج حسب الحدث Event-Based Production Cost Posting"]
+},
+{id:"variance",level:4,title:"تحليل الانحرافات",en:"Variance Analysis",
+ goals:["تحسب التكلفة المستهدفة للإنتاج الفعلي","تحسب الانحراف الإجمالي وتقسمه لفئاته","تربط كل انحراف بالمستند المصدر في SAP"],
+ tcodes:["KKS2","KKS1","KKS1H","KKBC_ORD","KO88","CO88"],
+ fiori:"Production Cost Analysis",
+ explain:[
+  `${T("التكلفة المستهدفة","Target Cost")} = التكلفة المعيارية × الكمية السليمة المستلمة ÷ كمية التقدير. ${T("الانحراف الإجمالي","Total Variance")} = التكلفة الفعلية − المبلغ الذي دُوئن به الأمر عند الاستلام`,
+  `${C("KKS2")} يحسب الانحرافات لأمر واحد و${C("KKS1")} جماعياً، وفي أنظمة S/4HANA تتوفر أيضاً ${C("KKS1H")} لأوامر الإنتاج على ${T("نسخة التكلفة المستهدفة","Target Cost Version 0")}. جانب المدخلات يضم: ${T("فرق سعر المدخلات","Input Price")}، ${T("فرق استخدام الموارد","Resource-Usage")}، ${T("فرق كمية المدخلات","Input Quantity")}، و${T("المتبقي","Remaining Input")} الذي يجمع البنود بلا كميات مثل التحميل غير المباشر، ويُضاف إليها ${T("انحراف الهالك","Scrap Variance")} إذا فُعّل في إعدادات الانحراف. ولا تُحسب انحرافات لأمر ليس له ${T("مفتاح انحراف","Variance Key")}`,
+  `جانب المخرجات يضم ${T("فرق سعر المخرجات","Output Price")}، ${T("فرق حجم الدفعة","Lot Size")}، و${T("فرق السعر المختلط","Mixed-Price")}. بعد الحساب يُسوّى الأمر بـ ${C("KO88")} فتذهب الانحرافات إلى المالية وتحليل الربحية`
+ ],
+ example:{title:"الأمر 1000456: معيار مقابل فعلي",rows:[["التكلفة المعيارية لكل 1,000","1,932.08"],["الكمية السليمة المستلمة","950"],["التكلفة الفعلية على الأمر","1,994.20"],["كمية الراتنج في المعيار لكل 1,000","204 كغ (شاملة هالك 2%)"]],note:"المبالغ بالريال السعودي، مع افتراض أن مفتاح الانحراف لا يفصل انحراف الهالك"},
+ screen:{tcode:"KKS2",title:"Variance Calculation: Production/Process Orders",menu:"Accounting › Controlling › Product Cost Controlling › Cost Object Controlling › Product Cost by Order › Period-End Closing › Single Functions › Variances › Individual Processing",
+  body:flds(f("Order","1000456"),f("Period","11"),f("Fiscal Year","2026"))+
+   grp("Parameters",`<div class="radio"><span>All target cost versions</span><span class="on">Selected target cost versions: 0</span></div>`)+
+   grp("Processing Options",`<div class="radio"><span>Background Processing</span><span class="on">Test Run</span><span class="on">Detail List</span></div>`)+
+   tbl(["Order","Material","Target costs","Control costs","Allocated actual costs","Variance"],[["1000456","FG-0500","1,835.48","1,994.20","1,835.48","158.72"]],["hl"])+
+   tbl(["Variance category","Amount"],[["Input price variance","0.00"],["Resource-usage variance","0.00"],["Input quantity variance","150.30"],["Remaining input variance","8.42"],["Mixed-price variance","0.00"],["Output price variance","0.00"],["Lot size variance","0.00"],["Remaining variance","0.00"],["Total","158.72"]],["","","hl","hl","","","","","tot"]),
+  notes:["<b>Control costs</b> التكلفة الفعلية ناقص WIP والهالك، وهنا تساوي الفعلي لأن الأمر مكتمل","<b>Allocated actual costs</b> المبلغ الذي دُوئن به الأمر عند الاستلام","<b>Input quantity</b> 150.30 = راتنج 105.30 + ماكينة 36 + عمالة 9","<b>Remaining input</b> 8.42 فرق التحميل غير المباشر، لأنه مرحَّل بلا كمية","شغّل <b>Test Run</b> قبل الحفظ ثم سوِّ بـ KO88"]},
+ steps:[
+  [`تأكد أن الأمر في حالة DLV أو TECO، وإلا ستُحسب WIP بدل الانحراف`,"CO03"],
+  [`احسب الانحرافات للأمر في وضع الاختبار`,"KKS2"],
+  [`افتح تفصيل الانحراف حسب الفئة وعنصر التكلفة`,"KKS2"],
+  [`ارجع للمستندات المصدر: حركات المواد والتأكيدات لكل انحراف كبير`,"MB51"],
+  [`سوِّ الأمر بعد مراجعة الانحرافات`,"KO88"]
+ ],
+ questions:[
+  {id:"va-q1",type:"num",prompt:"احسب الانحراف الإجمالي على الأمر. أدخل المبلغ موجباً",unit:"ر.س",answer:158.72,tol:0.6,
+   wrongs:[[62.12,0.6,"المقارنة بتكلفة الكمية المخططة بدل المستهدفة","التكلفة المستهدفة تُحسب على 950 قطعة: 1,932.08 × 0.95 = 1,835.48"]],
+   solution:"المستهدف 1,932.08 × 950 ÷ 1,000 = 1,835.48 · الانحراف 1,994.20 − 1,835.48 = 158.72 ر.س غير ملائم"},
+  {id:"va-q2",type:"num",prompt:"احسب انحراف كمية الراتنج (Input Quantity Variance)",unit:"ر.س",answer:105.3,tol:0.3,
+   wrongs:[[130,0.3,"تجاهل نسبة هالك المكوّن في الكمية المستهدفة","الكمية المستهدفة 204 × 0.95 = 193.8 كغ، وليست 190"],
+           [65,0.3,"المقارنة بالكمية المخططة للأمر","المقارنة تكون بالكمية المستهدفة للإنتاج الفعلي، لا بالكمية المخططة 200 كغ"]],
+   solution:"(210 − 193.8) × 6.50 = 105.30 ر.س. لاحظ أن المعيار يسمح بهالك 2%، فالانحراف الحقيقي 16.2 كغ وليس 20"}
+ ],
+ missing:["إعداد مفتاح الانحرافات وفئاتها في Customizing","تسوية الانحرافات إلى تحليل الربحية Margin Analysis"]
+},
+{id:"factory",level:4,title:"تطبيقات عملية على المصنع",en:"Injection Molding Cases",
+ goals:["تحلل أثر التجويف المغلق على ساعات الماكينة","تعالج المطحون كمنتج ثانوي","تعرف أثر هالك بدء التشغيل على فرق حجم الدفعة"],
+ tcodes:["CS02","CS03","CO11N","MB51","KKS2"],
+ explain:[
+  `${T("المطحون","Regrind")}: إذا عُرّف في قائمة المواد كـ ${T("منتج ثانوي","By-product")} بكمية سالبة، يُستلم على الأمر بالحركة ${M("531")} فيخفض تكلفته. إن طُحن وأُعيد للخط دون تسجيل، يظهر الراتنج المصروف أكبر من الحقيقي`,
+  `${T("التجويف المغلق","Blocked Cavity")}: إغلاق تجويف في قالب 4 تجاويف يرفع زمن الماكينة للقطعة بنسبة الثلث، فيظهر في فرق كمية المدخلات للأنشطة دون أي خطأ في المواد`,
+  `${T("هالك بدء التشغيل وتغيير اللون","Start-up / Color-change Scrap")}: يمكن تعريفه في بند BOM كـ ${T("كمية ثابتة","Fixed Quantity")} لكل أمر مهما كان حجمه، فيولّد ${T("فرق حجم الدفعة","Lot Size Variance")} عندما يختلف حجم الأمر عن كمية التقدير`
+ ],
+ example:{title:"الأمر 1000456 مع تجويف مغلق طوال التشغيل",rows:[["الكمية السليمة","950 قطعة"],["التجاويف العاملة","3 من 4"],["زمن الدورة","36 ثانية"],["سعر ساعة الماكينة","160 ر.س"]]},
+ screen:{tcode:"CS03",title:"Display material BOM: General Item Overview",menu:"Logistics › Production › Master Data › Bills of Material › Bill of Material › Material BOM › Display",tabs:["Material","Document","General","All"],tabOn:3,
+  body:flds(f("Material","FG-0500"),f("Plant","1000"),f("BOM Usage","1 <small>Production</small>"),f("Base Quantity","1,000 PC"))+
+   tbl(["Item","ICt","Component","Component description","Quantity","Un","Fixed Qty","Comp. Scrap (%)"],[["0010","L","RES-PP","Polypropylene resin","200.000","KG","","2.00"],["0020","L","RES-PP","Start-up purge","1.500","KG","X",""],["0030","L","RGR-PP","PP regrind (by-product)","-3.000","KG","",""]],["","hl","hl"]),
+  notes:["<b>ICt = L</b> بند مخزني","<b>Fixed Qty</b> الكمية لا تتغير بحجم الأمر، مناسبة لهالك بدء التشغيل","<b>Quantity سالبة</b> تجعل البند منتجاً ثانوياً يُستلم بالحركة 531","<b>Comp. Scrap (%)</b> تظهر في تفاصيل البند؛ جُمعت هنا للتوضيح. هذا BOM توضيحي ويختلف عن مثال حساب التكلفة"]},
+ steps:[
+  [`راجع ملاحظات التأكيد وسجل توقف القالب للأمر`,"CO14"],
+  [`احسب عدد الطلقات بالتجاويف العاملة فعلاً`,null],
+  [`قارن ساعات الماكينة المستهدفة بالمؤكدة في تحليل الانحراف`,"KKS2"],
+  [`ابحث عن حركات 531 للمطحون في الفترة`,"MB51"],
+  [`إن تكرر هالك التشغيل، اقترح كمية ثابتة في BOM بعد موافقة الإنتاج`,"CS02"]
+ ],
+ stepsNote:"تعديل BOM يغيّر التكلفة المعيارية القادمة، فلا تنفذه إلا في نظام التدريب أو بعد اعتماد الإنتاج",
+ questions:[
+  {id:"fa-q1",type:"num",prompt:"كم ساعة ماكينة يحتاج الأمر لإنتاج 950 قطعة سليمة بثلاثة تجاويف؟ قرّب لرقمين عشريين",unit:"ساعة",answer:3.17,tol:0.011,
+   wrongs:[[2.38,0.011,"استخدام عدد التجاويف الأصلي","مع تجويف مغلق تنتج الطلقة 3 قطع فقط"]],
+   solution:"950 ÷ 3 = 316.67 أي 317 طلقة × 36 ث = 11,412 ث = 3.17 ساعة مقابل 2.375 ساعة مستهدفة، أي 0.795 ساعة × 160 = 127.20 ر.س انحراف ماكينة"},
+  {id:"fa-q2",type:"mcq",prompt:"أي حركة تستلم المطحون كمنتج ثانوي على الأمر؟",
+   options:[["531",null],["101","101 لاستلام المنتج الرئيسي"],["261","261 صرف وليست استلاماً"],["551","551 إتلاف من المخزن على مركز تكلفة"]],
+   correct:0,tags:[null,"خلط بين المنتج الرئيسي والثانوي","خلط بين الصرف والاستلام","خلط بين الإتلاف والمنتج الثانوي"],
+   solution:"531 تستلم المنتج الثانوي المعرَّف في BOM بكمية سالبة، فتُدائن الأمر بقيمته"}
+ ],
+ missing:["التصنيع المتكرر Repetitive Manufacturing ومجمّع تكلفة المنتج KKF6N","توزيع الكهرباء على الماكينات حسب kWh"]
+}
+];
+const TMAP=Object.fromEntries(TOPICS.map(t=>[t.id,t]));
+const PRACTICE={
+ "intro":["تأكد أن نسخة الإنتاج Production Version في الأمر هي نفسها المستخدمة في تقدير التكلفة، وإلا قارنت أمراً بمعيار مختلف","وحدة الشراء بالطن ووحدة الصرف بالكيلو مصدر شائع لأرقام غير منطقية، راجع معامل التحويل في بيانات المادة أولاً"],
+ "cost-centers":["الكهرباء أكبر بند في مراكز الحقن، وتوزيعها بالتساوي بين الماكينات يرفع تكلفة المنتجات الصغيرة ويخفض الكبيرة","راجع رصيد المراكز الإنتاجية كل شهر قبل الإقفال، فالرصيد الكبير المتكرر يعني أن سعر النشاط أو الطاقة المخططة غير واقعي"],
+ "production-orders":["أقفل الأوامر المنتهية فنياً TECO كل شهر، لأن الأمر المفتوح يحوّل الانحراف إلى WIP ويؤخر ظهوره","قارن الهالك المؤكد بالقطعة مع وزن الهالك الفعلي على الميزان، فالفرق بينهما فاقد تشغيل لا يظهر في التأكيد"],
+ "product-costing":["حدّث زمن الدورة في Routing عند تغيير القالب أو نقله لماكينة أخرى، فهو أكثر رقم يغيّر تكلفة القطعة","خذ وزن القطعة من قياس فعلي لعينة إنتاج، لا من رسم التصميم"],
+ "standard-cost":["سعر الراتنج يتقلب مع أسعار البتروكيماويات، فحلّل فرق سعر الشراء منفصلاً عن انحرافات الإنتاج حتى لا يختلط أداء المشتريات بأداء المصنع","وثّق تاريخ ومصدر كل سعر استُخدم في المعيار، لأن المراجعة تسأل عنه عند كل تحرير"],
+ "actual-cost":["رحّل التحميل غير المباشر قبل حساب الانحرافات، وإلا ظهر الانحراف أقل من حقيقته","راجع الأوامر التي عليها صرف مواد بلا تأكيد إنتاج، فهي غالباً صرف لأمر خاطئ"],
+ "variance":["ابدأ بأكبر انحراف بالقيمة لا بالنسبة المئوية، فالنسبة الكبيرة على مبلغ صغير لا تستحق الوقت نفسه","انحراف كمية الراتنج في الحقن له ثلاثة أسباب متكررة: مرتجع خام لم يُسجّل بالحركة 262، أو مطحون لم يُستلم بالحركة 531، أو صرف على أمر غير صحيح"],
+ "factory":["اطلب من الإنتاج تسجيل سبب الهالك ووقت تغيير القالب في التأكيد، فبدونها لا يمكن تفسير الانحراف","افصل هالك بدء التشغيل عن هالك الإنتاج المستمر، فالأول يعالجه التخطيط وحجم الدفعة والثاني تعالجه الجودة والصيانة"]
+};
+const CMA={
+ "intro":"Cost Management · Costing systems: أنظمة التكاليف وتدفق التكلفة",
+ "cost-centers":"Cost Management · Overhead costs: توزيع تكاليف أقسام الخدمة، والتحميل الناقص والزائد",
+ "production-orders":"Cost Management · Costing systems: نظام تكاليف الأوامر Job Order Costing",
+ "product-costing":"Cost Management · Overhead costs: معدلات التحميل المحددة مسبقاً",
+ "standard-cost":"Cost Management · Measurement concepts: التكلفة المعيارية Standard Costing",
+ "actual-cost":"Cost Management · Measurement concepts: التكلفة الفعلية والعادية Actual vs Normal Costing",
+ "variance":"Performance Management · Cost and variance measures: انحرافات السعر والكفاءة للمواد والعمالة والتكاليف غير المباشرة",
+ "factory":"Cost Management: الهالك العادي وغير العادي في تكاليف الأوامر، وتكاليف المنتجات الثانوية By-products"
+};
+const MISSING_GLOBAL=[
+ {id:"m-ml",title:"Material Ledger وActual Costing",en:"CKMLCP",why:"للوصول للتكلفة الفعلية الكاملة للمخزون والمبيعات"},
+ {id:"m-wip",title:"الإنتاج تحت التشغيل وترحيل التكاليف حسب الحدث",en:"KKAX · Event-Based Posting",why:"لأوامر الحقن الممتدة بين فترتين"},
+ {id:"m-rem",title:"التصنيع المتكرر ومجمّع تكلفة المنتج",en:"REM · KKF6N",why:"شائع في خطوط الحقن عالية التكرار"},
+ {id:"m-sheet",title:"إعداد ورقة التكاليف ومكوّنات التكلفة",en:"KZS2 · OKTZ",why:"تحدد طريقة تحميل غير المباشر وعرض التكلفة"},
+ {id:"m-copa",title:"تحليل الربحية",en:"Margin Analysis",why:"أين تنتهي الانحرافات بعد التسوية"},
+ {id:"m-family",title:"القوالب العائلية والمنتجات المشتركة",en:"Co-products",why:"قالب واحد ينتج قطعاً مختلفة في الطلقة نفسها"}
+];
+/* glossary: [arabic, english, sap code, definition, topic] */
+const GLOSSARY=[
+ ["دفتر اليومية الموحد","Universal Journal","ACDOCA","جدول واحد في S/4HANA يجمع بنود المالية والتكاليف والأصول والمخزون","intro"],
+ ["عنصر التكلفة","Cost Element","FS00","حساب أستاذ عام يحمل فئة عنصر تكلفة، فيظهر في محاسبة التكاليف","intro"],
+ ["عنصر تكلفة أولي","Primary Cost Element","Category 1","يمثل تكاليف قادمة من المالية مثل استهلاك الخام والكهرباء","intro"],
+ ["عنصر تكلفة ثانوي","Secondary Cost Element","Category 41 / 42 / 43","للتحميل الداخلي: 41 تحميل غير مباشر، 42 توزيع Assessment، 43 تحميل الأنشطة","intro"],
+ ["منطقة التحكم","Controlling Area","OKKP","الوحدة التنظيمية التي تُدار فيها محاسبة التكاليف","intro"],
+ ["مستوى التقييم","Valuation Area","Plant","المستوى الذي تُقيَّم عليه المادة، وهو المصنع في أغلب الأنظمة","intro"],
+ ["مركز التكلفة","Cost Center","KS01 · KS03","وحدة مسؤولية تُجمَع عليها التكاليف","cost-centers"],
+ ["فئة مركز التكلفة","Cost Center Category","KS01","تصنيف المركز، مثل F لمراكز الإنتاج","cost-centers"],
+ ["الهرمية القياسية","Standard Hierarchy","OKEON","الشجرة التي يجب أن ينتمي إليها كل مركز تكلفة","cost-centers"],
+ ["نوع النشاط","Activity Type","KL01","وحدة قياس مخرجات المركز، مثل ساعة الماكينة","cost-centers"],
+ ["تخطيط سعر النشاط","Activity Price Planning","KP26","إدخال الكمية المخططة وسعر النشاط لكل فترة","cost-centers"],
+ ["حساب سعر الخطة","Plan Price Calculation","KSPI","يحسب سعر النشاط من التكاليف المخططة ÷ الكمية المخططة","cost-centers"],
+ ["سعر النشاط الفعلي","Actual Price Calculation","KSII","يحسب السعر الفعلي للنشاط في نهاية الفترة","cost-centers"],
+ ["التوزيع","Assessment","KSU5","توزيع تكاليف مراكز الخدمة على مراكز أخرى بعنصر ثانوي فئة 42","cost-centers"],
+ ["التحميل الناقص / الزائد","Under / Over Absorption","S_ALR_87013611","الفرق بين تكاليف المركز الفعلية وما حُمِّل منه","cost-centers"],
+ ["مركز العمل","Work Center","CR01 · CR03","الماكينة أو الخط، ويربط العمليات بمركز التكلفة وأنواع الأنشطة","cost-centers"],
+ ["أمر الإنتاج","Production Order","CO01 · CO02 · CO03","مجمّع تكلفة لدفعة إنتاج واحدة","production-orders"],
+ ["الإصدار","Release (REL)","CO02","حالة تسمح بصرف المواد والتأكيد على الأمر","production-orders"],
+ ["التأكيد","Confirmation","CO11N · CO14","تسجيل الكمية السليمة والهالك والساعات لعملية","production-orders"],
+ ["الكمية السليمة","Yield","CO11N","الإنتاج المقبول، وعليه تُحسب التكلفة المستهدفة","production-orders"],
+ ["الهالك","Scrap","CO11N","الإنتاج المرفوض المسجل في التأكيد","production-orders"],
+ ["صرف على الأمر","Goods Issue to Order","MIGO · 261","يحمّل الأمر بقيمة المادة المصروفة، وعكسه 262","production-orders"],
+ ["استلام من الأمر","Goods Receipt from Order","MIGO · 101","يدائن الأمر بالتكلفة المعيارية للكمية المستلمة","production-orders"],
+ ["تقرير حركات المواد","Material Documents List","MB51","يعرض حركات المخزون حسب الأمر أو المادة أو التاريخ","production-orders"],
+ ["الإقفال الفني","Technically Completed (TECO)","CO02","إنهاء الأمر تشغيلياً، فتُحسب له انحرافات بدل WIP","production-orders"],
+ ["التسوية","Settlement","KO88 · CO88","نقل رصيد الأمر إلى المالية وتحليل الربحية","production-orders"],
+ ["تقدير التكلفة","Cost Estimate","CK11N · CK13N","حساب تكلفة المنتج من هيكل الكميات","product-costing"],
+ ["هيكل الكميات","Quantity Structure","BOM + Routing","كميات المواد وأوقات العمليات التي يُبنى عليها التقدير","product-costing"],
+ ["متغير التكاليف","Costing Variant","PPC1 · OKKN","يحدد مصدر الأسعار وتواريخ التقييم","product-costing"],
+ ["كمية التقدير","Costing Lot Size","MM03 · Costing 1","الكمية التي يُحسب عليها التقدير","product-costing"],
+ ["هالك المكوّن","Component Scrap","CS02","نسبة تُضاف لكمية المكوّن في BOM","product-costing"],
+ ["ورقة التكاليف","Costing Sheet","KZS2","قواعد حساب التحميل غير المباشر","product-costing"],
+ ["هيكل مكوّنات التكلفة","Cost Component Structure","OKTZ","تجميع التكلفة في مكوّنات: مواد، ماكينة، عمالة، غير مباشر","product-costing"],
+ ["تشغيل التكاليف","Costing Run","CK40N","حساب وتعليم وتحرير تقديرات منتجات كثيرة","product-costing"],
+ ["السعر المعياري","Standard Price","MM03 · Accounting 1","السعر الثابت الذي يُقيَّم به المخزون مع مؤشر S","standard-cost"],
+ ["مؤشر التحكم في السعر","Price Control","S / V","S سعر معياري، V متوسط متحرك","standard-cost"],
+ ["تحديث السعر","Price Update","CK24","تعليم التقدير ثم تحريره كسعر معياري","standard-cost"],
+ ["فروق الأسعار","Price Differences","OBYC · PRD","الحساب الذي يستقبل فرق الشراء أو الإنتاج لمواد S","standard-cost"],
+ ["دفتر المواد","Material Ledger","CKM3N","سجل تقييم المادة وفروقها في S/4HANA","standard-cost"],
+ ["التحميل غير المباشر","Overhead Calculation","KGI2 · CO43","ترحيل التكاليف غير المباشرة على الأمر حسب ورقة التكاليف","actual-cost"],
+ ["إعادة التقييم بالسعر الفعلي","Revaluation at Actual Prices","CON2","إعادة تسعير الأنشطة على الأوامر بالسعر الفعلي","actual-cost"],
+ ["تحليل تكاليف الأمر","Order Cost Analysis","KKBC_ORD","مقارنة المخطط والفعلي للأمر حسب عنصر التكلفة","actual-cost"],
+ ["الإنتاج تحت التشغيل","Work in Process (WIP)","KKAX · KKAO","قيمة الأوامر غير المكتملة في نهاية الفترة","actual-cost"],
+ ["التكاليف الفعلية","Actual Costing","CKMLCP","حساب السعر الفعلي الدوري للمواد في دفتر المواد","actual-cost"],
+ ["التكلفة المستهدفة","Target Costs","KKS2 · Version 0","التكلفة المعيارية للكمية السليمة الفعلية","variance"],
+ ["مفتاح الانحراف","Variance Key","OKV1","يحدد طريقة حساب الانحرافات للأمر","variance"],
+ ["فرق سعر المدخلات","Input Price Variance","KKS2","اختلاف سعر المدخلات الفعلي عن المعياري","variance"],
+ ["فرق كمية المدخلات","Input Quantity Variance","KKS2","اختلاف الكمية الفعلية للمواد والأنشطة عن المستهدفة","variance"],
+ ["فرق استخدام الموارد","Resource-Usage Variance","KKS2","استخدام مادة أو نشاط مختلف عن المخطط","variance"],
+ ["المتبقي من المدخلات","Remaining Input Variance","KKS2","ما لا يُصنف في فئة أخرى، مثل البنود بلا كمية","variance"],
+ ["فرق حجم الدفعة","Lot Size Variance","KKS2","أثر التكاليف الثابتة عند اختلاف حجم الأمر عن كمية التقدير","variance"],
+ ["فرق سعر المخرجات","Output Price Variance","KKS2","اختلاف تقييم الاستلام عن السعر المعياري","variance"],
+ ["المنتج الثانوي","By-product","531","مادة تُستلم من الأمر وتخفض تكلفته، مثل المطحون","factory"],
+ ["الكمية الثابتة","Fixed Quantity","CS02","كمية مكوّن لا تتغير بحجم الأمر","factory"],
+ ["التصنيع المتكرر","Repetitive Manufacturing","KKF6N","إنتاج متكرر بمجمّع تكلفة للمنتج بدل أمر لكل دفعة","factory"],
+ ["أداة الإنتاج","Production Resource/Tool (PRT)","CF01","قد يُعرَّف القالب كأداة إنتاج مرتبطة بالعملية","factory"],
+ ["زمن الدورة","Cycle Time","CA02 · Standard Values","زمن الطلقة الواحدة، ويُدخل كقيمة معيارية في العملية","factory"]
+];
+const SOURCES=[
+ ["SAP Learning · Cost Object Controlling in SAP S/4HANA: Performing Variance Calculation","https://learning.sap.com/courses/cost-object-controlling-in-sap-s-4hana/performing-variance-calculation","نسخ التكلفة المستهدفة، فئات الانحراف، مفتاح الانحراف"],
+ ["SAP Help Portal · Variance Categories","https://help.sap.com/saphelp_erp60_sp/helpdata/en/25/9142530fafff4fe10000000a44176d/content.htm","فئات الانحراف وانحراف الهالك"],
+ ["SAP Learning · Product Cost Planning in SAP S/4HANA: Understanding Mark and Release","https://learning.sap.com/courses/product-cost-planning-in-sap-s-4hana/understanding-mark-and-release","حالات التقدير KA وVO وFR، والتحرير مرة لكل فترة"],
+ ["SAP Help Portal · Input Side Variances","https://help.sap.com/doc/2e11d553088f4308e10000000a174cb4/3.6/en-US/280bf8516599a160e10000000a44176d.html","تعريف فرق المتبقي من المدخلات"],
+ ["SAP Help Portal · Variance Calculation with KKS1H","https://help.sap.com/saphelp_sfin100/helpdata/en/b7/518f53797b590de10000000a44176d/content.htm","حساب الانحرافات لأوامر الإنتاج في الأنظمة المبنية على HANA"],
+ ["IMA · CMA Certification","https://www.imanet.org/IMA-Certifications/CMA-Certification","أقسام منهج CMA Part 1 المستخدمة في ربط الدروس"]
+];
+const STATUS={ok:"متقن",prog:"قيد الدراسة",rev:"يحتاج مراجعة",none:"لم يبدأ"};
+
+/* ============ STATE & STORAGE ============ */
+const LS_KEY="sapco-lab:v1", LS_UI="sapco-lab:ui";
+const emptyState=()=>({profile:{topics:{},missing:{},plan:{}},attempts:[],questions:[]});
+let S=emptyState();
+const Store={mode:"none",uid:null,db:null,col:null,q:Promise.resolve(),timer:null,dbEmpty:false,loading:true};
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v);return true}catch(e){return false}}
+function loadLocal(){const raw=lsGet(LS_KEY);if(!raw)return null;try{const d=JSON.parse(raw);return {profile:Object.assign({topics:{},missing:{},plan:{}},d.profile||{}),attempts:d.attempts||[],questions:d.questions||[]}}catch(e){return null}}
+function saveLocal(){if(Store.mode==="db")return;lsSet(LS_KEY,JSON.stringify(S))}
+function uidGen(p){return p+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function dbFail(e){
+  const c=e&&e.code;
+  if(["not_granted","revoked","capability_disabled","capability_removed"].includes(c)){
+    Store.forcedLocal=true;Store.mode="local";saveLocal();setStoreChip("لا يمكن الحفظ في حسابك من هذا العرض، الحفظ في المتصفح");toast("الحفظ الآن في هذا المتصفح فقط");
+  }else toast("تعذر الحفظ في حسابك"+(c?" ("+c+")":""));
+}
+let profTimer=null;
+function saveProfile(delay=700){
+  clearTimeout(profTimer);
+  profTimer=setTimeout(()=>{
+    S.profile.updatedAt=new Date().toISOString();
+    if(Store.mode==="db"){const body=JSON.parse(JSON.stringify(S.profile));Store.q=Store.q.then(()=>Store.col.doc("profile").set(body)).catch(dbFail);}
+    else saveLocal();
+  },delay);
+}
+function saveDoc(id,body){
+  if(Store.mode==="db"){Store.q=Store.q.then(()=>Store.col.doc(id).set(body)).catch(dbFail);}
+  else saveLocal();
+}
+function deleteDoc(id){
+  if(Store.mode==="db"){Store.q=Store.q.then(()=>Store.col.doc(id).delete()).catch(()=>{});}
+  else saveLocal();
+}
+function tp(id){return S.profile.topics[id]||(S.profile.topics[id]={})}
+
+async function initStore(){
+  const local=loadLocal(); if(local)S=local;
+  Store.mode="local"; render(true);
+  const use=window.claude&&window.claude.use?window.claude.use.bind(window.claude):null;
+  if(!use){Store.loading=false;setStoreChip();return}
+  let db=null,user=null;
+  try{[db,user]=await Promise.all([use("db"),use("user")])}catch(e){}
+  if(!db||!user){Store.loading=false;setStoreChip();return}
+  let id=null; try{id=await user.id()}catch(e){}
+  let canW=null; try{canW=user.can?await user.can("data.write"):null}catch(e){}
+  if(!id||canW===false){Store.loading=false;setStoreChip();return}
+  Store.db=db;Store.uid=id;Store.col=db.collection("data/users/"+id);
+  Store.timer=setTimeout(()=>{if(Store.mode!=="db"){Store.loading=false;setStoreChip("تعذر الوصول لحسابك، الحفظ مؤقتاً في المتصفح")}},10000);
+  Store.col.onSnapshot(snap=>{
+    if(!snap.metadata.fromCache)clearTimeout(Store.timer);
+    if(Store.forcedLocal)return;
+    const next=emptyState();
+    snap.docs.forEach(d=>{const b=d.data();if(!b)return;
+      if(d.id==="profile")next.profile=Object.assign({topics:{},missing:{},plan:{}},JSON.parse(JSON.stringify(b)));
+      else if(b.kind==="attempt")next.attempts.push(Object.assign({id:d.id},b));
+      else if(b.kind==="question")next.questions.push(Object.assign({id:d.id},b));});
+    Store.dbEmpty=snap.empty; Store.mode="db"; Store.loading=false; S=next; setStoreChip(); render();
+  },err=>{clearTimeout(Store.timer);Store.loading=false;Store.mode="local";setStoreChip("تعذر الوصول لحسابك، الحفظ مؤقتاً في المتصفح")});
+}
+function setStoreChip(msg){
+  const el=document.getElementById("store");
+  if(Store.mode==="db"){el.className="store db";el.textContent="محفوظ في حسابك";el.title="تقدمك خاص بك ولا يراه غيرك"}
+  else{el.className="store local";el.textContent=Store.loading?"جارٍ الاتصال…":"محفوظ في هذا المتصفح";el.title=msg||"تقدمك محفوظ في هذا المتصفح فقط، صدّر نسخة احتياطية من التقارير"}
+}
+
+/* ============ LOGIC ============ */
+const todayISO=()=>new Date().toISOString();
+const dayKey=iso=>{const d=new Date(iso);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const fmtDate=iso=>iso?"⁦"+dayKey(iso)+"⁩":"—";
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function normNum(s){
+  s=String(s||"").replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d))
+   .replace(/٫/g,".").replace(/[٬,\s]/g,"").replace(/[^0-9.\-]/g,"");
+  if(!s||s==="."||s==="-")return NaN; return parseFloat(s);
+}
+function attemptsOf(tid){return S.attempts.filter(a=>a.topic===tid).sort((a,b)=>a.at<b.at?-1:1)}
+function qStats(tid,qid){
+  const list=S.attempts.filter(a=>a.topic===tid&&a.q===qid).sort((a,b)=>a.at<b.at?-1:1);
+  const wrong=list.filter(a=>!a.correct);
+  let streak=0;for(let i=list.length-1;i>=0&&list[i].correct;i--)streak++;
+  const last=list[list.length-1]||null, lastWrong=wrong[wrong.length-1]||null;
+  const spaced=last&&last.correct&&lastWrong?dayKey(last.at)>dayKey(lastWrong.at):false;
+  const mastered=!!(last&&last.correct&&(wrong.length===0||(streak>=2&&spaced)));
+  return {list,wrong,last,streak,mastered};
+}
+function topicStatus(tid){
+  const t=TMAP[tid], p=S.profile.topics[tid]||{};
+  const st=t.questions.map(q=>({q,s:qStats(tid,q.id)}));
+  const attempted=st.filter(x=>x.s.last);
+  const lastAct=[...attemptsOf(tid).map(a=>a.at),p.startedAt,p.notesAt].filter(Boolean).sort().pop()||null;
+  let status,reason;
+  if(!attempted.length&&!p.startedAt){status="none";reason="لم تُسجَّل أي محاولة أو بداية دراسة"}
+  else if(st.some(x=>x.s.last&&!x.s.last.correct)){status="rev";reason="آخر إجابة على سؤال واحد على الأقل خاطئة"}
+  else if(attempted.length<st.length){status="prog";reason=`أجبت عن ${attempted.length} من ${st.length} أسئلة`}
+  else if(st.every(x=>x.s.mastered)){status="ok";reason="كل الأسئلة صحيحة دون خطأ، أو صحيحة مرتين متتاليتين في يوم لاحق للخطأ"}
+  else{status="rev";reason="صحّحت بعد خطأ، أعد الحل في يوم لاحق لتأكيد الإتقان"}
+  if(p.review&&status!=="none"){status="rev";reason="حددته بنفسك للمراجعة"}
+  const all=attemptsOf(tid);
+  return {status,reason,attempts:all.length,correct:all.filter(a=>a.correct).length,lastAct,st};
+}
+function inRange(iso,f){if(!iso)return !(f.from||f.to);const d=dayKey(iso);if(f.from&&d<f.from)return false;if(f.to&&d>f.to)return false;return true}
+
+let F={topic:"all",level:"all",status:"all",from:"",to:""};
+try{const u=JSON.parse(lsGet(LS_UI)||"{}");if(u.F)F=Object.assign(F,u.F)}catch(e){}
+let G={q:"",topic:"all"};
+function saveUI(){lsSet(LS_UI,JSON.stringify({F}))}
+function topicPass(t,stat){
+  if(F.topic!=="all"&&t.id!==F.topic)return false;
+  if(F.level!=="all"&&String(t.level)!==F.level)return false;
+  if(F.status!=="all"&&stat.status!==F.status)return false;
+  if((F.from||F.to)&&!inRange(stat.lastAct,F))return false;
+  return true;
+}
+function attemptPass(a){const t=TMAP[a.topic];if(!t)return false;
+  if(F.topic!=="all"&&a.topic!==F.topic)return false;
+  if(F.level!=="all"&&String(t.level)!==F.level)return false;
+  return inRange(a.at,F)}
+function filtersHTML(){
+  return `<div class="card noprint"><div class="sec-h"><h3>الفلاتر</h3><button class="btn sm" data-act="clear-filters">مسح الفلاتر</button></div>
+  <div class="filters">
+   <div class="field"><label for="f-topic">الدرس</label><select id="f-topic" data-f="topic"><option value="all">كل الدروس</option>${TOPICS.map(t=>`<option value="${t.id}"${F.topic===t.id?" selected":""}>${t.title}</option>`).join("")}</select></div>
+   <div class="field"><label for="f-level">الوحدة</label><select id="f-level" data-f="level"><option value="all">كل الوحدات</option>${[1,2,3,4].map(l=>`<option value="${l}"${F.level==l?" selected":""}>${LEVELS[l]}</option>`).join("")}</select></div>
+   <div class="field wide"><label for="f-status">الحالة</label><select id="f-status" data-f="status"><option value="all">كل الحالات</option>${Object.entries(STATUS).map(([k,v])=>`<option value="${k}"${F.status===k?" selected":""}>${v}</option>`).join("")}</select></div>
+   <div class="field"><label for="f-from">من تاريخ</label><input type="date" id="f-from" data-f="from" value="${F.from}"></div>
+   <div class="field"><label for="f-to">إلى تاريخ</label><input type="date" id="f-to" data-f="to" value="${F.to}"></div>
+  </div><p class="small muted">الحالة تُحسب من كل محاولاتك. فلتر التاريخ يحدد الدروس التي نشطت فيها خلال الفترة، والمحاولات والأخطاء المسجلة فيها</p></div>`;
+}
+
+/* ============ ICONS & NAV ============ */
+const IC={
+ home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>',
+ dash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>',
+ book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7M8 11h7"/></svg>',
+ gloss:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h10M4 12h16M4 18h8"/><circle cx="18" cy="6" r="2"/></svg>',
+ guide:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17.5v.01"/></svg>'
+};
+const PAGES=["home","guide","glossary","dashboard","plan","lessons","log","reports","links"];
+function renderNav(route){
+  const st=Object.fromEntries(TOPICS.map(t=>[t.id,topicStatus(t.id).status]));
+  const done=Object.values(st).filter(s=>s==="ok").length;
+  const a=(h,label,pre="",post="")=>`<a href="#${h}" class="${route===h?"on":""}">${pre}<span>${label}</span>${post}</a>`;
+  document.getElementById("side").innerHTML=
+   `${a("home","الصفحة الرئيسية")}${a("guide","دليل الاستخدام")}${a("glossary","مصطلحات SAP")}
+    <div class="grp">الدروس</div>
+    <div class="prog"><span>${done} من 8 دروس متقنة</span><div class="bar" style="height:6px"><i class="ok" style="width:${done/8*100}%"></i></div></div>
+    ${TOPICS.map((t,i)=>a(t.id,t.title,`<span class="ln">${i+1}</span>`,`<span class="dot ${st[t.id]}"></span>`)).join("")}
+    <div class="grp">متابعتي</div>${a("dashboard","لوحة التقدم")}${a("plan","خطة التدريب")}${a("log","سجل الأسئلة والأخطاء")}${a("reports","التقارير والتصدير")}${a("links","الربط مع Notion وAnki")}`;
+  const isLesson=route==="lessons"||TMAP[route];
+  const tb=(h,l,i,on)=>`<a href="#${h}" class="${on?"on":""}">${IC[i]}<span>${l}</span></a>`;
+  document.getElementById("tabs").innerHTML=tb("home","الرئيسية","home",route==="home"||route==="plan")+tb("lessons","الدروس","book",isLesson)+tb("glossary","المصطلحات","gloss",route==="glossary")+tb("dashboard","تقدمي","dash",["dashboard","log","reports","links"].includes(route))+tb("guide","الدليل","guide",route==="guide");
+}
+
+/* ============ SHARED BITS ============ */
+const chip=s=>`<span class="chip ${s}">${STATUS[s]}</span>`;
+const lab={ref:'<span class="lab ref">مرجعي · سلوك SAP القياسي</span>',sample:'<span class="lab sample">أرقام مثال تدريبي</span>',mine:'<span class="lab mine">ملاحظتي الشخصية</span>',miss:'<span class="lab miss">ناقص</span>',sim:'<span class="lab sim">محاكاة تعليمية لشاشة SAP</span>'};
+function legend(){return `<div class="legend">${lab.ref}<span>مبني على السلوك القياسي، وقد يختلف حسب إعداد نظامك</span></div>
+ <div class="legend">${lab.sim}<span>أسماء الحقول كما في SAP GUI، والقيم من المثال</span></div>
+ <div class="legend">${lab.sample}<span>أرقام تعليمية، ليست بيانات مصنعك</span></div>
+ <div class="legend">${lab.mine}<span>ما تكتبه أنت فقط</span></div>
+ <div class="legend"><span class="lab exp">خبرة عملية</span><span>ملاحظات من التطبيق الفعلي في المصانع</span></div>
+ <div class="legend">${lab.miss}<span>موضوع لم يُكتب محتواه بعد</span></div>`}
+function contactHTML(){
+  return `<div class="contact">
+   <div class="ci"><span class="k">الجوال</span><span class="val" id="c-phone">${AUTHOR.phone}</span><button class="btn sm noprint" data-act="copy" data-v="${AUTHOR.phone}">نسخ</button><a class="btn sm noprint" href="${AUTHOR.wa}" target="_blank" rel="noopener">واتساب</a></div>
+   <div class="ci"><span class="k">الإيميل</span><span class="val" id="c-mail">${AUTHOR.email}</span><button class="btn sm noprint" data-act="copy" data-v="${AUTHOR.email}">نسخ</button></div></div>`;
+}
+function authorCard(){
+  return `<div class="card"><div class="author"><div class="avatar" aria-hidden="true">ن ع</div><div>
+   <div><span class="small muted">إعداد</span><h2>${AUTHOR.name}</h2><span class="muted">${AUTHOR.title}</span></div>
+   <p class="small">محاسب تكاليف في بيئة تصنيع البلاستيك، متخصص في التكلفة المعيارية وتحليل الانحرافات وتقارير التكاليف. بنى هذه المنصة لربط معادلات التكاليف ببيانات الإنتاج الفعلية في SAP</p>
+   ${contactHTML()}</div></div></div>`;
+}
+function sourcesHTML(){return `<p>أُعدّ المحتوى وفق خبرة عملية في مجال التكاليف الصناعية بمصانع البلاستيك، وروجعت النقاط الأساسية على هذه المصادر:</p><ul>${SOURCES.map(x=>`<li><a href="${x[1]}" target="_blank" rel="noopener">${x[0]}</a><span class="small muted"> · ${x[2]}</span></li>`).join("")}</ul><p class="small muted">المنصة محتوى تعليمي مستقل، ليست تدريباً رسمياً من SAP ولا منهجاً معتمداً من IMA. الشاشات محاكاة تعليمية، والأرقام مثال تدريبي، وإعدادات نظامك قد تختلف</p>`}
+function footHTML(){return `<footer class="foot"><span>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}، ${AUTHOR.title}</span><span><span class="val">${AUTHOR.phone}</span> · <span class="val">${AUTHOR.email}</span></span><span>وفق خبرة عملية في مجال التكاليف الصناعية · محتوى مستقل غير تابع لـ SAP أو IMA</span></footer>`}
+
+/* ============ VIEWS ============ */
+function vHome(){
+  const ss=TOPICS.map(t=>topicStatus(t.id));const done=ss.filter(s=>s.status==="ok").length;
+  const next=TOPICS[ss.findIndex(s=>s.status!=="ok")]||TOPICS[0];const started=ss.some(s=>s.status!=="none");
+  return `<div class="wrap">
+   <section class="hero">
+    <span class="eyebrow">مسار تدريبي عملي · SAP S/4HANA CO-PC · مربوط بمنهج CMA Part 1 · 4 وحدات · 8 دروس</span>
+    <h1>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</h1>
+    <p class="lede">تدريب تطبيقي على محاسبة تكاليف مصانع حقن البلاستيك داخل SAP: من مركز التكلفة وأمر الإنتاج إلى التكلفة المعيارية والفعلية وتحليل الانحرافات، على منتج واحد ترافقه أرقامه من أول درس إلى آخره</p>
+    <div class="byline"><div class="avatar" aria-hidden="true">ن ع</div><div><span>إعداد</span><b>${AUTHOR.name}</b><span>${AUTHOR.title} · وفق خبرة عملية في مجال التكاليف الصناعية</span></div></div>
+    <div class="meter"><span>${started?`تقدمك: ${done} من 8 دروس متقنة`:"لم تبدأ بعد، وتقدمك يُحسب من إجاباتك فقط"}</span><div class="track"><div class="fill" style="width:${done/8*100}%"></div></div></div>
+    <div class="row"><a class="btn gold" href="#${next.id}">${started?"تابع: "+next.title:"ابدأ الدرس الأول"}</a><a class="btn" href="#guide">دليل الاستخدام</a></div>
+   </section>
+   <div class="card"><h2>كيف يسير كل درس</h2>
+    <div class="flow"><div><b>الشرح</b>المفهوم بالعربية مع مصطلح SAP</div><div><b>المثال</b>أرقام من مصنع حقن</div><div><b>شاشة SAP</b>الحقول كما تراها في النظام</div><div><b>التطبيق</b>خطوات بالمعاملات</div><div><b>الاختبار</b>تصحيح فوري ونوع الخطأ</div></div></div>
+   <div><h2 style="margin-bottom:10px">محتوى المسار</h2><div class="modules">
+    ${[1,2,3,4].map(l=>`<div class="module"><div class="mh"><span class="mn">${l}</span><div><span class="small muted">الوحدة ${l}</span><h3>${LEVEL_NAME[l]}</h3></div></div>
+     <ul>${TOPICS.filter(t=>t.level===l).map(t=>`<li><a href="#${t.id}"><span class="dot ${topicStatus(t.id).status}" style="margin:0"></span>${t.title} <span class="en">${t.en}</span></a></li>`).join("")}</ul></div>`).join("")}
+   </div></div>
+   <div class="card"><div class="sec-h"><h2>لمن هذه المنصة</h2></div>
+    <p>طلاب المحاسبة، ومحاسبو التكاليف، والعاملون في المصانع، ودارسو CMA الذين يريدون رؤية معادلات التكاليف داخل بيانات الإنتاج الفعلية في SAP</p>
+    <div class="row"><a class="btn" href="#glossary">مصطلحات SAP (${GLOSSARY.length} مصطلحاً)</a><a class="btn" href="#plan">خطة التدريب</a><a class="btn" href="#dashboard">لوحة تقدمي</a></div></div>
+   <div class="card"><h2>منهجية الإعداد</h2>${sourcesHTML()}</div>
+   ${authorCard()}
+   ${footHTML()}
+  </div>`;
+}
+
+function vGuide(){
+  const sec=(n,title,body)=>`<div class="card"><div class="guide-sec"><div class="no">${n}</div><div><h2>${title}</h2>${body}</div></div></div>`;
+  return `<div class="wrap"><div><span class="eyebrow">ابدأ من هنا</span><h1>دليل الاستخدام</h1><p class="lede">كل ما تحتاجه لتستفيد من المنصة في عشر دقائق</p></div>
+  ${sec(1,"ابدأ بالترتيب",`<ol><li>افتح <a href="#plan">خطة التدريب</a> واختر الوحدة التي تناسبك. المبتدئ يبدأ من الوحدة 1</li><li>ادخل الدرس واضغط «بدأت دراسة هذا الدرس» ليظهر في تقدمك</li><li>اقرأ الشرح، ثم المثال، ثم شاشة SAP، ثم خطوات التطبيق</li><li>أجب عن سؤالي الاختبار، واقرأ التصحيح ونوع الخطأ</li><li>اكتب ملاحظاتك، وأضف أي سؤال تريد البحث عنه</li></ol>`)}
+  ${sec(2,"مكوّنات الدرس",`<ul><li><b>أهداف الدرس</b>: ما يجب أن تتقنه في نهايته</li><li><b>ربط CMA</b>: موضوع منهج CMA Part 1 الذي يطبقه الدرس</li><li><b>الشرح</b>: المفهوم بالعربية مع المصطلح الإنجليزي ورمز المعاملة</li><li><b>مثال صناعي</b>: أرقام حاوية PP من مصنع حقن، تتصل بين الدروس</li><li><b>شاشة SAP</b>: محاكاة للشاشة بأسماء الحقول الحقيقية، والحقول المهمة مظللة</li><li><b>خطوات التطبيق</b>: المعاملات بالترتيب، طبّقها في نظام تدريب أو بمعاملات العرض</li><li><b>من الواقع العملي</b>: ملاحظات من تطبيق التكاليف في مصانع الحقن</li><li><b>اختبر فهمك</b>: سؤال حسابي وسؤال اختيار، يُصححان فوراً</li></ul>`)}
+  ${sec(3,"الإجابة والتصحيح",`<ul><li>اكتب الرقم بدون فواصل أو بها، وتُقبل الأرقام العربية ٠١٢٣</li><li>عند الخطأ يظهر <b>نوع الخطأ</b>، مثل «تجاهل نسبة هالك المكوّن»، مع توجيه للتصحيح</li><li>كل محاولة تُسجل بتاريخها، والأخطاء تُجمع حسب النوع في <a href="#log">السجل</a></li><li>يمكنك إعادة المحاولة متى شئت</li></ul>`)}
+  ${sec(4,"معنى الحالات",`<div class="row">${chip("none")}<span class="small">لا محاولة ولا بداية دراسة</span></div><div class="row">${chip("prog")}<span class="small">بدأت أو أجبت عن بعض الأسئلة</span></div><div class="row">${chip("rev")}<span class="small">آخر إجابة خاطئة، أو صحّحت بعد خطأ ولم تُعد الحل في يوم لاحق، أو حددته بنفسك</span></div><div class="row">${chip("ok")}<span class="small">كل الأسئلة صحيحة من أول مرة، أو صحيحة مرتين متتاليتين في يوم لاحق لآخر خطأ</span></div>`)}
+  ${sec(5,"الشارات على المحتوى",legend())}
+  ${sec(6,"المتابعة والتقارير",`<ul><li><a href="#dashboard">لوحة التقدم</a>: عدد الدروس في كل حالة، مع فلاتر بالدرس والوحدة والحالة والتاريخ</li><li><a href="#log">السجل</a>: الأخطاء المتكررة، وكل المحاولات، وأسئلتك</li><li><a href="#reports">التقارير</a>: تصدير Excel، وتقرير HTML تفتحه وتطبعه، ونسخة احتياطية</li></ul>`)}
+  ${sec(7,"أين يُحفظ تقدمك",`<ul><li>تقدمك يُحفظ في متصفحك على هذا الجهاز فقط، ولا يصل لأي خادم ولا يراه معد المنصة</li><li>مسح بيانات المتصفح يمسح التقدم، فصدّر نسخة احتياطية بين فترة وأخرى</li><li>صدّر نسخة احتياطية من <a href="#reports">التقارير</a> لتنقل تقدمك لجهاز آخر</li></ul>`)}
+  ${sec(8,"Notion وAnki",`<p>المنصة لا تتصل بأي حساب لك. من صفحة <a href="#links">الربط</a> تجهز ملف بطاقات لـ Anki أو صفحة Markdown لـ Notion، تراجعه ثم تؤكد إنشاءه وتستورده بنفسك</p>`)}
+  ${sec(9,"منهجية الإعداد والمصادر",sourcesHTML())}
+  ${sec(10,"تواصل مع المعد",`<p>للاستفسار أو اقتراح درس جديد:</p><p><b>${AUTHOR.name}</b> · ${AUTHOR.title}</p>${contactHTML()}`)}
+  ${footHTML()}</div>`;
+}
+
+function vGlossary(){
+  const q=G.q.trim().toLowerCase();
+  const list=GLOSSARY.filter(g=>(G.topic==="all"||g[4]===G.topic)&&(!q||g.slice(0,4).join(" ").toLowerCase().includes(q)));
+  return `<div class="wrap"><div><span class="eyebrow">مرجع سريع</span><h1>مصطلحات SAP</h1><p class="lede">${GLOSSARY.length} مصطلحاً بالعربية والإنجليزية مع رمز المعاملة أو الجدول، مرتبة حسب الدروس</p></div>
+  <div class="card noprint"><div class="grid2"><div class="field"><label for="g-q">ابحث</label><input type="search" id="g-q" value="${esc(G.q)}" placeholder="مثال: Scrap أو الهالك أو KKS2"></div>
+   <div class="field"><label for="g-topic">الدرس</label><select id="g-topic"><option value="all">كل الدروس</option>${TOPICS.map(t=>`<option value="${t.id}"${G.topic===t.id?" selected":""}>${t.title}</option>`).join("")}</select></div></div></div>
+  <div id="g-list">${glossList(list)}</div>
+  ${footHTML()}</div>`;
+}
+function glossList(list){
+  if(!list.length)return `<div class="empty">لا يوجد مصطلح يطابق البحث</div>`;
+  return TOPICS.filter(t=>list.some(g=>g[4]===t.id)).map(t=>`<div class="card"><div class="sec-h"><h2>${t.title}</h2><a class="small" href="#${t.id}">افتح الدرس</a></div><div class="gl">
+   ${list.filter(g=>g[4]===t.id).map(g=>`<div class="term"><div class="th"><b>${g[0]}</b><span class="en">${g[1]}</span><code class="tc plain">${g[2]}</code></div><p>${g[3]}</p></div>`).join("")}</div></div>`).join("");
+}
+
+function vDashboard(){
+  const rows=TOPICS.map(t=>({t,s:topicStatus(t.id)}));
+  const cnt={ok:0,prog:0,rev:0,none:0}; rows.forEach(r=>cnt[r.s.status]++);
+  const shown=rows.filter(r=>topicPass(r.t,r.s));
+  const att=S.attempts.filter(attemptPass);
+  const errs=groupErrors(att);
+  const openQ=S.questions.filter(q=>q.status!=="done"&&(F.topic==="all"||q.topic===F.topic));
+  const noData=!S.attempts.length&&!Object.values(S.profile.topics).some(p=>p.startedAt);
+  return `<div class="wrap">
+   <div class="sec-h"><div><h1>لوحة التقدم</h1><p class="lede">ما أتقنته وما تدرسه وما يحتاج مراجعة، محسوباً من إجاباتك المسجلة فقط</p></div><div class="row noprint"><a class="btn" href="#log">السجل</a><a class="btn" href="#reports">التقارير</a></div></div>
+   ${migrateBanner()}
+   <div class="stats">
+    <div class="stat ok"><b>${cnt.ok}<small class="muted" style="font-size:.9rem"> من 8</small></b><span>${STATUS.ok}</span></div>
+    <div class="stat prog"><b>${cnt.prog}</b><span>${STATUS.prog}</span></div>
+    <div class="stat rev"><b>${cnt.rev}</b><span>${STATUS.rev}</span></div>
+    <div class="stat none"><b>${cnt.none}</b><span>${STATUS.none}</span></div>
+   </div>
+   <div class="bar" role="img" aria-label="توزيع الدروس حسب الحالة">${["ok","prog","rev"].map(k=>cnt[k]?`<i class="${k}" style="width:${cnt[k]/8*100}%"></i>`:"").join("")}</div>
+   ${noData?`<div class="empty">لا توجد بيانات بعد. لم يُفترض لك أي مستوى، وكل الدروس تبدأ «لم يبدأ». اقرأ <a href="#guide">دليل الاستخدام</a> أو ابدأ من <a href="#plan">خطة التدريب</a></div>`:""}
+   ${filtersHTML()}
+   <div class="card"><div class="sec-h"><h2>الدروس</h2><span class="small muted">${shown.length} من 8</span></div>
+   ${shown.length?`<div class="tbl"><table><thead><tr><th>الدرس</th><th>الوحدة</th><th>الحالة</th><th>المحاولات</th><th>الصحيحة</th><th>آخر نشاط</th></tr></thead><tbody>
+   ${shown.map(({t,s})=>`<tr><td><a href="#${t.id}">${t.title}</a><div class="small muted">${s.reason}</div></td><td>${t.level}</td><td>${chip(s.status)}</td><td class="n">${s.attempts}</td><td class="n">${s.attempts?Math.round(s.correct/s.attempts*100)+"%":"—"}</td><td class="n">${fmtDate(s.lastAct)}</td></tr>`).join("")}
+   </tbody></table></div>`:`<div class="empty">لا توجد دروس تطابق الفلاتر</div>`}</div>
+   <div class="grid2">
+    <div class="card"><div class="sec-h"><h2>الأخطاء المتكررة</h2><a class="small" href="#log">السجل الكامل</a></div>${errorsHTML(errs.slice(0,5))}</div>
+    <div class="card"><div class="sec-h"><h2>أسئلتي المفتوحة</h2><a class="small" href="#log">كل الأسئلة</a></div>
+    ${openQ.length?openQ.slice(0,5).map(q=>`<div class="small"><span class="lab mine">${esc(TMAP[q.topic]?.title||"عام")}</span> ${esc(q.text)}</div>`).join(""):`<div class="empty">لا توجد أسئلة مفتوحة. أضف سؤالك من صفحة أي درس</div>`}</div>
+   </div>
+   ${footHTML()}
+  </div>`;
+}
+function groupErrors(att){
+  const g={};att.filter(a=>!a.correct).forEach(a=>{const k=a.tag||"خطأ غير مصنف";(g[k]=g[k]||{tag:k,n:0,topics:new Set(),last:null});g[k].n++;g[k].topics.add(a.topic);if(!g[k].last||a.at>g[k].last)g[k].last=a.at});
+  return Object.values(g).sort((a,b)=>b.n-a.n||(a.last<b.last?1:-1));
+}
+function errorsHTML(list){
+  if(!list.length)return `<div class="empty">لا توجد أخطاء مسجلة في هذه الفترة</div>`;
+  return list.map(e=>`<div class="errrow"><div class="cnt ${e.n<2?"once":""}">${e.n}</div><div><b>${esc(e.tag)}</b>${e.n>=2?' <span class="chip rev">متكرر</span>':""}<div class="small muted">${[...e.topics].map(id=>`<a href="#${id}">${TMAP[id].title}</a>`).join("، ")} · آخر مرة ${fmtDate(e.last)}</div></div></div>`).join("");
+}
+function migrateBanner(){
+  if(Store.mode!=="db"||!Store.dbEmpty)return "";
+  const loc=loadLocal(); if(!loc||!(loc.attempts.length+loc.questions.length+Object.keys(loc.profile.topics).length))return "";
+  return `<div class="banner"><b>وُجد تقدم محفوظ في هذا المتصفح</b><span>${loc.attempts.length} محاولة و${loc.questions.length} سؤال. هل تنقله إلى حسابك؟</span><div class="row"><button class="btn pri sm" data-act="migrate">انقله إلى حسابي</button></div></div>`;
+}
+
+function vPlan(){
+  return `<div class="wrap"><div><h1>خطة التدريب</h1><p class="lede">أربع وحدات متدرجة. معيار الانتقال: إتقان دروس الوحدة. حدد تاريخ هدف لكل وحدة إن أردت، ولا يُفترض أي تاريخ أو مستوى بدلاً منك</p></div>
+  ${[1,2,3,4].map(l=>{const ts=TOPICS.filter(t=>t.level===l);const ss=ts.map(t=>topicStatus(t.id));const done=ss.filter(s=>s.status==="ok").length;const pl=S.profile.plan[l]||{};const late=pl.target&&pl.target<dayKey(todayISO())&&done<ts.length;
+   return `<div class="card"><div class="stage"><div class="no">${l}</div><div>
+    <div class="sec-h"><h2>${LEVEL_NAME[l]}</h2><span class="small muted">${done} من ${ts.length} متقن</span></div>
+    <div class="tlist">${ts.map((t,i)=>`<a class="titem" href="#${t.id}"><div class="row"><b>${t.title}</b>${chip(ss[i].status)}</div><span class="meta"><span class="en">${t.en}</span> · ${ss[i].reason}</span></a>`).join("")}</div>
+    <div class="row"><div class="field" style="flex:1 1 180px"><label for="plan-${l}">تاريخ الهدف <span class="lab mine">ملاحظتي</span></label><input type="date" id="plan-${l}" data-plan="${l}" value="${esc(pl.target||"")}"></div>
+    ${pl.target?`<span class="small" style="align-self:end;padding-bottom:8px;color:${late?"var(--rev)":"var(--muted)"}">${late?"تجاوزت تاريخ الهدف":"الهدف "+pl.target}</span>`:""}</div>
+   </div></div></div>`}).join("")}
+  <div class="card miss"><div class="sec-h"><h2>بعد المسار: موضوعات ناقصة</h2>${lab.miss}</div><p class="small muted">لم يُكتب محتواها في هذه المنصة. يمكنك ربط مصدرك الخاص بكل منها</p>${missingList()}</div>
+  ${footHTML()}</div>`;
+}
+function missingList(){
+  return MISSING_GLOBAL.map(m=>{const p=S.profile.missing[m.id]||{};return `<div class="errrow" style="grid-template-columns:1fr"><div><b>${m.title}</b> <span class="en">${m.en}</span><div class="small muted">${m.why}</div>
+   <div class="row" style="margin-top:6px"><div class="field" style="flex:1 1 220px"><label for="mm-${m.id}">مصدري لهذا الموضوع <span class="lab mine">ملاحظتي</span></label><input type="text" id="mm-${m.id}" data-missing="${m.id}" value="${esc(p.note||"")}" placeholder="رابط Notion أو اسم ملف أو كتاب"></div></div></div></div>`}).join("");
+}
+
+function vLessons(){
+  return `<div class="wrap"><div><h1>الدروس</h1><p class="lede">ثمانية دروس على منتج حقن واحد. كل درس فيه شرح ومثال وشاشة SAP وخطوات تطبيق وسؤالان يُصححان فوراً</p></div>
+  <div class="card">${legend()}</div>
+  ${[1,2,3,4].map(l=>`<div class="card"><h2>${LEVELS[l]}</h2><div class="tlist">${TOPICS.filter(t=>t.level===l).map(t=>{const s=topicStatus(t.id);return `<a class="titem" href="#${t.id}"><div class="row"><b>الدرس ${TOPICS.indexOf(t)+1}: ${t.title}</b>${chip(s.status)}</div><span class="meta"><span class="en">${t.en}</span></span><span class="row">${t.tcodes.slice(0,4).map(C).join("")}</span></a>`}).join("")}</div></div>`).join("")}
+  ${footHTML()}</div>`;
+}
+
+function vTopic(t){
+  const s=topicStatus(t.id), p=tp(t.id); const idx=TOPICS.indexOf(t); const prev=TOPICS[idx-1], next=TOPICS[idx+1];
+  const myQ=S.questions.filter(q=>q.topic===t.id);
+  const sts=TOPICS.map(x=>topicStatus(x.id).status);
+  const sh=(n,title,id,tag)=>`<div class="sec-h" id="${id}"><div class="stg"><i>${n}</i><h2>${title}</h2></div>${tag||""}</div>`;
+  return `<div class="wrap">
+  <div class="lhead">
+   <div class="eyebrow"><a href="#lessons">الدروس</a><span>·</span><span>${LEVELS[t.level]}</span><span>·</span><span>الدرس ${idx+1} من 8</span></div>
+   <div class="sec-h"><div><h1>${t.title}</h1><span class="en" style="font-size:.95rem">${t.en}</span></div><div class="row">${chip(s.status)}${p.startedAt?`<span class="small muted">بدأت ${fmtDate(p.startedAt)}</span>`:`<button class="btn sm pri" data-act="start" data-t="${t.id}">بدأت دراسة هذا الدرس</button>`}</div></div>
+   <div class="lprog" aria-label="تقدم المسار">${TOPICS.map((x,i)=>`<a href="#${x.id}" class="${sts[i]}${x.id===t.id?" cur":""}" title="${x.title}"></a>`).join("")}</div>
+   <div class="goals"><b class="small">أهداف الدرس</b><ul class="small">${t.goals.map(g=>`<li>${g}</li>`).join("")}</ul></div>
+   <div class="row">${t.tcodes.map(C).join("")}</div>
+   <div class="small"><span class="lab sample" style="background:var(--prog-soft);color:var(--prog)">ربط CMA Part 1</span> ${CMA[t.id]}</div>
+   ${t.fiori?`<span class="small muted">تطبيق Fiori المقابل: <span class="en" style="white-space:normal">${t.fiori}</span></span>`:""}
+   <nav class="jump noprint" aria-label="أقسام الدرس"><a href="#" data-jump="s-exp">الشرح</a><a href="#" data-jump="s-ex">المثال</a><a href="#" data-jump="s-sap">شاشة SAP</a><a href="#" data-jump="s-steps">التطبيق</a><a href="#" data-jump="s-quiz">الاختبار</a><a href="#" data-jump="s-notes">ملاحظاتي</a></nav>
+  </div>
+
+  <section class="card">${sh(1,"الشرح","s-exp",lab.ref)}<div class="prose">${t.explain.map(x=>`<p>${x}</p>`).join("")}</div></section>
+
+  <section class="card">${sh(2,"مثال صناعي","s-ex",lab.sample)}<h3 class="muted" style="font-weight:500">${t.example.title}</h3>
+   <div class="tbl"><table class="ex"><tbody>${t.example.rows.map(r=>`<tr class="${r[2]?"total":""}"><td>${r[0]}</td><td class="n">${r[1]}</td></tr>`).join("")}</tbody></table></div>${t.example.note?`<p class="small muted">${t.example.note}</p>`:""}</section>
+
+  <section class="card">${sh(3,"شاشة SAP",`s-sap`,lab.sim)}
+   ${screen(t.screen)}
+   <div class="sapnote"><b class="small">اقرأ الشاشة</b><ul class="small">${t.screen.notes.map(n=>`<li>${n}</li>`).join("")}</ul><span class="small muted">المسار في القائمة: <span class="en" style="white-space:normal">${t.screen.menu}</span></span></div></section>
+
+  <section class="card">${sh(4,"خطوات التطبيق","s-steps",lab.ref)}
+   <ol class="steps">${t.steps.map(([x,c])=>`<li><div>${x}${c?` <span style="white-space:nowrap">${C(c)}</span>`:""}</div></li>`).join("")}</ol>
+   ${t.stepsNote?`<p class="small" style="color:var(--rev)">${t.stepsNote}</p>`:`<p class="small muted">طبّق في نظام تدريب، أو بمعاملات العرض فقط على النظام التشغيلي</p>`}</section>
+
+  <section class="card exp"><div class="sec-h"><h2>من الواقع العملي</h2><span class="lab exp">خبرة عملية</span></div><ul class="small" style="margin:0;padding-inline-start:18px;display:flex;flex-direction:column;gap:6px">${PRACTICE[t.id].map(x=>`<li>${x}</li>`).join("")}</ul></section>
+
+  <section class="card">${sh(5,"اختبر فهمك","s-quiz",`<span class="small muted">كل إجابة تُسجَّل في سجلك</span>`)}
+   ${t.questions.map((q,i)=>questionHTML(t,q,i)).join("")}
+   <div class="mast ${s.status}"><div class="sec-h"><b>مستوى الإتقان</b>${chip(s.status)}</div><span class="small">${s.reason}</span>${masteryAdvice(t,s)}</div>
+  </section>
+
+  <section class="card mine"><div class="sec-h" id="s-notes"><h2>ملاحظاتي</h2>${lab.mine}</div>
+   <div class="field"><label for="notes-${t.id}">ما فهمته، وما يختلف في نظام مصنعك</label><textarea id="notes-${t.id}" data-notes="${t.id}" placeholder="لم تكتب ملاحظات بعد">${esc(p.notes||"")}</textarea></div>
+   <label class="row small"><input type="checkbox" id="rev-${t.id}" data-review="${t.id}" ${p.review?"checked":""}> أريد مراجعة هذا الدرس لاحقاً</label>
+   <div class="field"><label for="myq-${t.id}">سؤال أريد البحث عن إجابته</label><div class="ans"><input type="text" id="myq-${t.id}" style="direction:rtl;text-align:right;font-family:var(--f-body)" placeholder="مثال: كيف يظهر المطحون في تقرير الأمر عندنا؟"><button class="btn" data-act="addq" data-t="${t.id}">أضف للسجل</button></div></div>
+   ${myQ.length?`<div class="small">${myQ.map(q=>`<div>${q.status==="done"?"✓":"○"} ${esc(q.text)}</div>`).join("")}</div>`:""}
+  </section>
+
+  <section class="card mine"><div class="sec-h"><h2>مصادر مذاكرتي</h2>${lab.mine}</div>
+   <div class="grid2">
+    <div class="field"><label for="notion-${t.id}">رابط صفحة Notion</label><input type="url" class="ltr" id="notion-${t.id}" data-link="notion" data-t="${t.id}" value="${esc(p.notion||"")}" placeholder="https://www.notion.so/..."></div>
+    <div class="field"><label for="anki-${t.id}">اسم مجموعة Anki</label><input type="text" id="anki-${t.id}" data-link="anki" data-t="${t.id}" value="${esc(p.anki||"")}" placeholder="SAP::CO::${t.en.replace(/\s/g,"")}"></div>
+   </div>
+   <div class="field"><label for="files-${t.id}">ملفات المذاكرة</label><input type="text" id="files-${t.id}" data-link="files" data-t="${t.id}" value="${esc(p.files||"")}" placeholder="اسم الملف أو مكانه، مثال: CMA Part 1 · الفصل 4"></div>
+   ${/^https:\/\//.test(p.notion||"")?`<a class="btn sm" href="${esc(p.notion)}" target="_blank" rel="noopener">فتح صفحة Notion</a>`:""}
+  </section>
+
+  <section class="card miss"><div class="sec-h"><h2>ناقص في هذا الدرس</h2>${lab.miss}</div><ul class="small" style="margin:0;padding-inline-start:18px">${t.missing.map(m=>`<li>${m}</li>`).join("")}</ul></section>
+
+  <div class="pager noprint">${prev?`<a class="btn" href="#${prev.id}">→ ${prev.title}</a>`:"<span></span>"}${next?`<a class="btn pri" href="#${next.id}">الدرس التالي: ${next.title} ←</a>`:`<a class="btn pri" href="#dashboard">أنهيت المسار، اعرض تقدمك</a>`}</div>
+  ${footHTML()}
+  </div>`;
+}
+function questionHTML(t,q,i){
+  const qs=qStats(t.id,q.id); const last=qs.last;
+  let body;
+  if(q.type==="mcq"){
+    body=`<div class="opts" role="radiogroup">${q.options.map((o,k)=>`<label class="opt"><input type="radio" name="${q.id}" id="${q.id}-o${k}" value="${k}"><span class="en" style="color:var(--ink);font-size:.88rem;white-space:normal">${esc(o[0])}</span></label>`).join("")}</div>
+     <div class="row"><button class="btn pri" data-act="check" data-t="${t.id}" data-q="${q.id}">صحّح إجابتي</button></div>`;
+  }else{
+    body=`<div class="ans"><input type="text" inputmode="decimal" id="${q.id}-in" placeholder="0.00" aria-label="إجابتك"><span class="small muted" style="align-self:center">${q.unit}</span><button class="btn pri" data-act="check" data-t="${t.id}" data-q="${q.id}">صحّح إجابتي</button></div>`;
+  }
+  return `<div class="q" id="box-${q.id}"><div class="qh"><span>سؤال ${i+1} · ${q.type==="mcq"?"اختيار":"حساب"}</span><span>${qs.list.length?`${qs.list.length} محاولة · ${qs.wrong.length} خطأ`:"لم تُجب بعد"}</span></div>
+   <p><b>${q.prompt}</b></p>${body}<div id="fb-${q.id}">${last?fbHTML(q,last):""}</div></div>`;
+}
+function fbHTML(q,a){
+  const ans=q.type==="mcq"?esc(q.options[+a.answer]?.[0]):esc(a.answer);
+  if(a.correct)return `<div class="fb good"><span class="t">إجابة صحيحة</span><span class="small">آخر إجابة: <span class="num">${ans}</span> · ${fmtDate(a.at)}</span><span>${q.solution}</span></div>`;
+  return `<div class="fb badf"><span class="t">إجابة غير صحيحة</span><span class="small">آخر إجابة: <span class="num">${ans}</span> · ${fmtDate(a.at)}</span>${a.tag?`<span><b>نوع الخطأ:</b> ${esc(a.tag)}</span>`:""}${a.fb?`<span>${esc(a.fb)}</span>`:""}
+   <details class="sol"><summary>عرض الحل</summary><div>${q.solution}</div></details></div>`;
+}
+function masteryAdvice(t,s){
+  if(s.status==="ok")return `<span class="small">انتقل للدرس التالي، وارجع لهذا الدرس عند ظهور حالة مشابهة في مصنعك</span>`;
+  if(s.status==="none")return `<span class="small">ابدأ بالشرح ثم المثال وشاشة SAP، ثم أجب عن السؤالين</span>`;
+  const bad=s.st.filter(x=>x.s.last&&!x.s.last.correct).map(x=>x.s.last.tag).filter(Boolean);
+  if(bad.length)return `<span class="small">ركّز على: ${bad.map(esc).join("، ")}</span>`;
+  return "";
+}
+
+function vLog(){
+  const att=S.attempts.filter(attemptPass).sort((a,b)=>a.at<b.at?1:-1);
+  const errs=groupErrors(att);
+  const qs=S.questions.filter(q=>(F.topic==="all"||q.topic===F.topic)&&(F.level==="all"||String(TMAP[q.topic]?.level)===F.level)&&inRange(q.at,F)).sort((a,b)=>a.at<b.at?1:-1);
+  return `<div class="wrap"><div><h1>سجل الأسئلة والأخطاء</h1><p class="lede">كل محاولة وكل خطأ مصنف حسب نوعه، وأسئلتك الشخصية مع حالتها</p></div>
+  ${filtersHTML()}
+  <div class="card"><div class="sec-h"><h2>الأخطاء حسب النوع</h2><span class="small muted">${att.filter(a=>!a.correct).length} خطأ</span></div>${errorsHTML(errs)}</div>
+  <div class="card mine"><div class="sec-h"><h2>أسئلتي</h2>${lab.mine}</div>
+   <div class="grid2"><div class="field"><label for="lq-topic">الدرس</label><select id="lq-topic">${TOPICS.map(t=>`<option value="${t.id}">${t.title}</option>`).join("")}</select></div>
+   <div class="field"><label for="lq-text">السؤال</label><input type="text" id="lq-text" placeholder="اكتب سؤالك"></div></div>
+   <div class="row"><button class="btn pri" data-act="addq-log">أضف السؤال</button></div>
+   ${qs.length?qs.map(q=>`<div class="q" style="background:var(--surface)"><div class="qh"><span>${esc(TMAP[q.topic]?.title||"")} · ${fmtDate(q.at)}</span><span class="chip ${q.status==="done"?"ok":"rev"}">${q.status==="done"?"محلول":"مفتوح"}</span></div>
+     <p><b>${esc(q.text)}</b></p>
+     <div class="field"><label for="qa-${q.id}">إجابتي</label><textarea id="qa-${q.id}" data-qans="${q.id}" style="min-height:60px" placeholder="لم تكتب إجابة بعد">${esc(q.answer||"")}</textarea></div>
+     <div class="row"><button class="btn sm" data-act="toggleq" data-id="${q.id}">${q.status==="done"?"أعد فتحه":"علّمه محلولاً"}</button><button class="btn sm warn" data-act="delq" data-id="${q.id}">حذف</button></div></div>`).join(""):`<div class="empty">لا توجد أسئلة مسجلة</div>`}
+  </div>
+  <div class="card"><div class="sec-h"><h2>سجل المحاولات</h2><span class="small muted">${att.length} محاولة</span></div>
+   ${att.length?`<div class="tbl"><table><thead><tr><th>التاريخ</th><th>الدرس</th><th>السؤال</th><th>إجابتك</th><th>النتيجة</th><th>نوع الخطأ</th></tr></thead><tbody>${att.slice(0,200).map(a=>{const q=findQ(a.topic,a.q);return `<tr><td class="n">${fmtDate(a.at)}</td><td>${TMAP[a.topic].title}</td><td class="small">${q?q.prompt:a.q}</td><td class="n">${q&&q.type==="mcq"?esc(q.options[+a.answer]?.[0]):esc(a.answer)}</td><td>${a.correct?'<span class="chip ok">صحيحة</span>':'<span class="chip rev">خاطئة</span>'}</td><td class="small">${esc(a.tag||"")}</td></tr>`}).join("")}</tbody></table></div>`:`<div class="empty">لا توجد محاولات في هذه الفترة</div>`}
+  </div>${footHTML()}</div>`;
+}
+function findQ(tid,qid){return TMAP[tid]?.questions.find(q=>q.id===qid)}
+
+function vReports(){
+  const rows=TOPICS.map(t=>({t,s:topicStatus(t.id)})).filter(r=>topicPass(r.t,r.s));
+  const att=S.attempts.filter(attemptPass);
+  return `<div class="wrap"><div><h1>التقارير والتصدير</h1><p class="lede">تقرير تقدمك حسب الفلاتر، مع تصدير Excel وتقرير HTML جاهز للطباعة من جهازك</p></div>
+  ${filtersHTML()}
+  <div class="card noprint"><h2>تصدير</h2>
+   <div class="row"><button class="btn pri" data-act="xlsx">تصدير Excel</button><button class="btn" data-act="html">تقرير HTML للطباعة</button><button class="btn" data-act="json">نسخة احتياطية JSON</button>
+   <label class="btn" for="imp">استيراد نسخة احتياطية</label><input type="file" id="imp" accept=".json,application/json" hidden></div>
+   <p class="small muted">كل ملف يُنشأ على جهازك بعد موافقتك. افتح تقرير HTML في المتصفح ثم اطبعه أو احفظه PDF</p>
+   <div id="imp-confirm"></div></div>
+  <div class="card"><div class="sec-h"><h2>ملخص التقدم</h2><span class="small muted">${dayKey(todayISO())}</span></div>
+   <div class="tbl"><table><thead><tr><th>الدرس</th><th>الوحدة</th><th>الحالة</th><th>المحاولات</th><th>الصحيحة</th><th>آخر نشاط</th><th>ملاحظاتي</th></tr></thead><tbody>
+   ${rows.map(({t,s})=>`<tr><td>${t.title}</td><td>${t.level}</td><td>${chip(s.status)}</td><td class="n">${s.attempts}</td><td class="n">${s.correct}</td><td class="n">${fmtDate(s.lastAct)}</td><td class="small">${esc((S.profile.topics[t.id]?.notes||"").slice(0,80))||"—"}</td></tr>`).join("")||`<tr><td colspan="7" class="muted">لا توجد دروس تطابق الفلاتر</td></tr>`}
+   </tbody></table></div></div>
+  <div class="card"><h2>الأخطاء المتكررة</h2>${errorsHTML(groupErrors(att))}</div>
+  <div class="card noprint"><h2>مسح تقدمي</h2><p class="small muted">يمسح كل محاولاتك وأسئلتك وملاحظاتك من هذه المنصة</p><div id="wipe-box"><button class="btn warn" data-act="wipe-ask">مسح كل البيانات</button></div></div>
+  ${footHTML()}</div>`;
+}
+
+function vLinks(){
+  return `<div class="wrap"><div><h1>الربط مع Notion وAnki</h1><p class="lede">المنصة طبقة متابعة فوق أدواتك. لا تتصل بـ Notion أو Anki ولا ترسل أو تعدّل أي شيء فيهما، وتجهّز لك ملفات تستوردها بنفسك بعد مراجعتها</p></div>
+  <div class="card mine"><div class="sec-h"><h2>مصادري لكل درس</h2>${lab.mine}</div>
+   <div class="tbl"><table><thead><tr><th>الدرس</th><th>Notion</th><th>Anki</th><th>ملفات</th></tr></thead><tbody>
+   ${TOPICS.map(t=>{const p=S.profile.topics[t.id]||{};return `<tr><td><a href="#${t.id}">${t.title}</a></td><td class="small">${/^https:\/\//.test(p.notion||"")?`<a href="${esc(p.notion)}" target="_blank" rel="noopener">فتح</a>`:"—"}</td><td class="small">${esc(p.anki||"—")}</td><td class="small">${esc(p.files||"—")}</td></tr>`}).join("")}
+   </tbody></table></div><p class="small muted">تعدّل هذه الحقول من صفحة كل درس</p></div>
+  <div class="card"><h2>تجهيز ملف للاستيراد</h2>
+   <div class="grid2">
+    <div class="field"><span class="small muted">بطاقات Anki</span><p class="small">ملف نصي مفصول بـ Tab: السؤال، الحل، الوسوم. يضم أسئلة الدروس، وأسئلتك المحلولة التي كتبت لها إجابة</p><button class="btn" data-act="prep-anki">معاينة ملف Anki</button></div>
+    <div class="field"><span class="small muted">صفحة Notion</span><p class="small">ملف Markdown بتقدمك وملاحظاتك وأخطائك المتكررة، تستورده في Notion عبر Import ثم Markdown</p><button class="btn" data-act="prep-notion">معاينة ملف Notion</button></div>
+   </div>
+   <div id="prep"></div></div>
+  ${footHTML()}</div>`;
+}
+
+/* ============ EXPORT ============ */
+function exportRows(){
+  const topics=TOPICS.map(t=>({t,s:topicStatus(t.id),p:S.profile.topics[t.id]||{}})).filter(r=>topicPass(r.t,r.s));
+  const att=S.attempts.filter(attemptPass).sort((a,b)=>a.at<b.at?-1:1);
+  return {topics,att,errs:groupErrors(att),qs:S.questions.filter(q=>(F.topic==="all"||q.topic===F.topic)&&inRange(q.at,F))};
+}
+function filterLabel(){const p=[];if(F.topic!=="all")p.push("الدرس: "+TMAP[F.topic].title);if(F.level!=="all")p.push(LEVELS[F.level]);if(F.status!=="all")p.push("الحالة: "+STATUS[F.status]);if(F.from)p.push("من "+F.from);if(F.to)p.push("إلى "+F.to);return p.join(" · ")||"بدون فلاتر"}
+async function getDownloads(){try{return window.claude&&window.claude.use?await window.claude.use("downloads"):null}catch(e){return null}}
+async function offer(filename,data){
+  const dl=await getDownloads();
+  if(!dl){
+    try{const types={xlsx:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",html:"text/html;charset=utf-8",json:"application/json;charset=utf-8",txt:"text/plain;charset=utf-8",md:"text/markdown;charset=utf-8"};
+      const blob=data instanceof Blob?new Blob([data],{type:types[filename.split(".").pop()]||""}):new Blob([data],{type:types[filename.split(".").pop()]||"text/plain;charset=utf-8"});
+      const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);toast("نُزّل الملف إلى جهازك")}
+    catch(e){toast("تعذر تنزيل الملف")}
+    return}
+  try{await dl.save({filename,data});toast("أُرسل الملف إلى جهازك")}catch(e){const c=e&&e.code;toast(c==="declined"?"لم يُحفظ الملف":c==="rate_limited"?"نافذة حفظ مفتوحة بالفعل":"تعذر حفظ الملف ("+(c||"خطأ")+")")}
+}
+function loadXLSX(){return new Promise((res,rej)=>{if(window.XLSX)return res(window.XLSX);const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";s.onload=()=>res(window.XLSX);s.onerror=rej;document.head.appendChild(s)})}
+async function doXLSX(){
+  let X;try{X=await loadXLSX()}catch(e){toast("تعذر تحميل مكتبة Excel، حاول مرة أخرى");return}
+  const {topics,att,errs,qs}=exportRows();
+  const wb=X.utils.book_new();
+  const add=(name,aoa,cols)=>{const ws=X.utils.aoa_to_sheet(aoa);ws["!cols"]=cols.map(w=>({wch:w}));X.utils.book_append_sheet(wb,ws,name)};
+  add("ملخص",[["تقرير منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA"],["إعداد",AUTHOR.name+" · "+AUTHOR.title],["تاريخ التقرير",dayKey(todayISO())],["الفلاتر",filterLabel()],[],["الحالة","عدد الدروس"],...Object.entries(STATUS).map(([k,v])=>[v,topics.filter(r=>r.s.status===k).length]),[],["ملاحظة","الأرقام محسوبة من الإجابات المسجلة فقط"]],[28,44]);
+  add("الدروس",[["الدرس","Topic","الوحدة","الحالة","سبب الحالة","المحاولات","الصحيحة","نسبة الصحة","آخر نشاط","مراجعة يدوية","ملاحظاتي (شخصية)","Notion","Anki","ملفات"],
+    ...topics.map(({t,s,p})=>[t.title,t.en,LEVELS[t.level],STATUS[s.status],s.reason,s.attempts,s.correct,s.attempts?+(s.correct/s.attempts).toFixed(3):"",s.lastAct?dayKey(s.lastAct):"",p.review?"نعم":"",p.notes||"",p.notion||"",p.anki||"",p.files||""])],[26,22,22,14,40,10,10,10,12,10,40,30,20,24]);
+  add("المحاولات",[["التاريخ","الدرس","السؤال","نوع السؤال","إجابتك","النتيجة","نوع الخطأ"],...att.map(a=>{const q=findQ(a.topic,a.q);return [dayKey(a.at),TMAP[a.topic].title,q?q.prompt:a.q,q?.type==="mcq"?"اختيار":"حساب",q&&q.type==="mcq"?q.options[+a.answer]?.[0]:(isNaN(+a.answer)?a.answer:+a.answer),a.correct?"صحيحة":"خاطئة",a.tag||""]})],[12,24,50,10,20,10,36]);
+  add("الأخطاء المتكررة",[["نوع الخطأ","التكرار","الدروس","آخر مرة","متكرر"],...errs.map(e=>[e.tag,e.n,[...e.topics].map(id=>TMAP[id].title).join("، "),dayKey(e.last),e.n>=2?"نعم":""])],[40,10,40,12,8]);
+  add("أسئلتي",[["التاريخ","الدرس","السؤال","الحالة","إجابتي"],...qs.map(q=>[dayKey(q.at),TMAP[q.topic]?.title||"",q.text,q.status==="done"?"محلول":"مفتوح",q.answer||""])],[12,24,50,10,50]);
+  add("المصطلحات",[["المصطلح","Term","SAP","التعريف","الدرس"],...GLOSSARY.map(g=>[g[0],g[1],g[2],g[3],TMAP[g[4]].title])],[26,30,22,60,22]);
+  add("موضوعات ناقصة",[["الموضوع","Code","السبب","مصدري"],...MISSING_GLOBAL.map(m=>[m.title,m.en,m.why,S.profile.missing[m.id]?.note||""]),...TOPICS.flatMap(t=>t.missing.map(m=>[m,"",t.title,""]))],[40,22,40,30]);
+  wb.Workbook={Views:[{RTL:true}]};
+  const buf=X.write(wb,{bookType:"xlsx",type:"array"});
+  await offer(`SAP-Cost-Lab-${dayKey(todayISO())}.xlsx`,new Blob([buf]));
+}
+function reportHTML(){
+  const {topics,att,errs,qs}=exportRows();
+  const css=`body{font-family:Tahoma,Arial,sans-serif;direction:rtl;color:#13212B;margin:24px;font-size:12px}h1{font-size:20px;margin:0 0 4px}h2{font-size:14px;margin:22px 0 8px;border-bottom:2px solid #0B6670;padding-bottom:4px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #C9D3D8;padding:6px 8px;text-align:right;vertical-align:top}th{background:#EEF3F4}.m{color:#56676F}.ltr{direction:ltr;unicode-bidi:isolate}footer{margin-top:24px;border-top:1px solid #C9D3D8;padding-top:8px;color:#56676F;font-size:11px}@page{size:A4;margin:14mm}@media print{body{margin:0}h2{break-after:avoid}tr{break-inside:avoid}}`;
+  const tr=a=>"<tr>"+a.map(x=>`<td>${esc(x)}</td>`).join("")+"</tr>";
+  return `<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>تقرير منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</title><style>${css}</style></head><body>
+  <h1>تقرير التدريب · منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA</h1><p class="m">تاريخ التقرير ${dayKey(todayISO())} · ${esc(filterLabel())} · الأرقام من الإجابات المسجلة فقط</p>
+  <h2>ملخص الحالة</h2><table><tr>${Object.values(STATUS).map(v=>`<th>${v}</th>`).join("")}</tr><tr>${Object.keys(STATUS).map(k=>`<td>${topics.filter(r=>r.s.status===k).length}</td>`).join("")}</tr></table>
+  <h2>الدروس</h2><table><tr><th>الدرس</th><th>الوحدة</th><th>الحالة</th><th>المحاولات</th><th>الصحيحة</th><th>آخر نشاط</th><th>ملاحظاتي</th></tr>${topics.map(({t,s,p})=>tr([t.title,t.level,STATUS[s.status],s.attempts,s.correct,s.lastAct?dayKey(s.lastAct):"—",p.notes||"—"])).join("")}</table>
+  <h2>الأخطاء المتكررة</h2>${errs.length?`<table><tr><th>نوع الخطأ</th><th>التكرار</th><th>الدروس</th><th>آخر مرة</th></tr>${errs.map(e=>tr([e.tag,e.n,[...e.topics].map(id=>TMAP[id].title).join("، "),dayKey(e.last)])).join("")}</table>`:'<p class="m">لا توجد أخطاء مسجلة</p>'}
+  <h2>أسئلتي</h2>${qs.length?`<table><tr><th>الدرس</th><th>السؤال</th><th>الحالة</th><th>إجابتي</th></tr>${qs.map(q=>tr([TMAP[q.topic]?.title||"",q.text,q.status==="done"?"محلول":"مفتوح",q.answer||"—"])).join("")}</table>`:'<p class="m">لا توجد أسئلة</p>'}
+  <h2>سجل المحاولات</h2>${att.length?`<table><tr><th>التاريخ</th><th>الدرس</th><th>السؤال</th><th>إجابتك</th><th>النتيجة</th><th>نوع الخطأ</th></tr>${att.map(a=>{const q=findQ(a.topic,a.q);return tr([dayKey(a.at),TMAP[a.topic].title,q?q.prompt:a.q,q&&q.type==="mcq"?q.options[+a.answer]?.[0]:a.answer,a.correct?"صحيحة":"خاطئة",a.tag||""])}).join("")}</table>`:'<p class="m">لا توجد محاولات</p>'}
+  <footer>منصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}، ${AUTHOR.title} · <span class="ltr">${AUTHOR.phone}</span> · <span class="ltr">${AUTHOR.email}</span></footer>
+  </body></html>`;
+}
+function ankiText(){
+  const clean=s=>String(s).replace(/<[^>]+>/g,"").replace(/[\t\n\r]+/g," ").trim();
+  const lines=["#separator:tab","#html:false","#tags column:3"];
+  TOPICS.forEach(t=>t.questions.forEach(q=>{
+    const front=q.type==="mcq"?`${q.prompt} [${q.options.map(o=>o[0]).join(" | ")}]`:`${q.prompt} (${q.unit})`;
+    lines.push([clean(front),clean(q.solution),`SAP_CO ${t.id} lesson`].join("\t"));
+  }));
+  GLOSSARY.forEach(g=>lines.push([`${g[1]} (${g[2]})`,`${g[0]}: ${g[3]}`,`SAP_CO ${g[4]} glossary`].join("\t")));
+  S.questions.filter(q=>q.status==="done"&&q.answer).forEach(q=>lines.push([clean(q.text),clean(q.answer),`SAP_CO ${q.topic} my_question`].join("\t")));
+  return lines.join("\n");
+}
+function notionMD(){
+  const {topics,errs}=exportRows();
+  let md=`# تدريب SAP S/4HANA CO\n\nمنصة التطبيق العملي للتكاليف الصناعية وفق SAP وCMA · إعداد ${AUTHOR.name}\n\nتاريخ التصدير: ${dayKey(todayISO())} · ${filterLabel()}\n\n## التقدم\n\n| الدرس | الوحدة | الحالة | المحاولات | آخر نشاط |\n|---|---|---|---|---|\n`;
+  md+=topics.map(({t,s})=>`| ${t.title} | ${t.level} | ${STATUS[s.status]} | ${s.attempts} | ${s.lastAct?dayKey(s.lastAct):"—"} |`).join("\n");
+  md+=`\n\n## ملاحظاتي\n\n`+(topics.filter(r=>r.p.notes).map(r=>`### ${r.t.title}\n\n${r.p.notes}\n`).join("\n")||"لا توجد ملاحظات\n");
+  md+=`\n## الأخطاء المتكررة\n\n`+(errs.map(e=>`- ${e.tag} (${e.n})`).join("\n")||"لا توجد أخطاء مسجلة");
+  md+=`\n\n## أسئلة مفتوحة\n\n`+(S.questions.filter(q=>q.status!=="done").map(q=>`- [ ] ${q.text} (${TMAP[q.topic]?.title||""})`).join("\n")||"لا توجد");
+  return md+"\n";
+}
+
+/* ============ ROUTER & RENDER ============ */
+let pendingRender=false;
+function route(){const h=(location.hash||"").replace("#","");return (h&&(TMAP[h]||PAGES.includes(h)))?h:"home"}
+function render(force){
+  const ae=document.activeElement;
+  if(!force&&ae&&ae.closest&&ae.closest("#main")&&/^(TEXTAREA|INPUT)$/.test(ae.tagName)&&!["radio","checkbox","date","file"].includes(ae.type)){pendingRender=true;return}
+  pendingRender=false;
+  const r=route(); renderNav(r);
+  const m=document.getElementById("main");
+  const draft={};m.querySelectorAll("input[id$='-in'],input[id^='myq-'],#lq-text").forEach(i=>{if(i.value)draft[i.id]=i.value});
+  const V={home:vHome,guide:vGuide,glossary:vGlossary,dashboard:vDashboard,plan:vPlan,lessons:vLessons,log:vLog,reports:vReports,links:vLinks};
+  m.innerHTML=V[r]?V[r]():vTopic(TMAP[r]);
+  Object.entries(draft).forEach(([id,v])=>{const i=document.getElementById(id);if(i)i.value=v});
+}
+let lastRoute=null;
+function onRoute(){render(true);const r=route();if(r!==lastRoute){window.scrollTo(0,0);lastRoute=r}}
+window.addEventListener("hashchange",onRoute);
+document.addEventListener("focusout",()=>{setTimeout(()=>{if(pendingRender)render()},0)});
+
+let toastT;function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3200)}
+
+/* ============ EVENTS ============ */
+document.addEventListener("click",async e=>{
+  const j=e.target.closest("[data-jump]");if(j){e.preventDefault();const el=document.getElementById(j.dataset.jump);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});return}
+  const b=e.target.closest("[data-act]");if(!b)return;const act=b.dataset.act;
+  if(act==="check"){
+    const t=TMAP[b.dataset.t],q=findQ(b.dataset.t,b.dataset.q);let answer,correct,tag=null,fb=null;
+    if(q.type==="mcq"){const sel=document.querySelector(`input[name="${q.id}"]:checked`);if(!sel){toast("اختر إجابة أولاً");return}
+      answer=sel.value;correct=+answer===q.correct;if(!correct){tag=q.tags[+answer];fb=q.options[+answer][1]}}
+    else{const inp=document.getElementById(q.id+"-in");const x=normNum(inp.value);if(isNaN(x)){toast("أدخل رقماً");inp.focus();return}
+      answer=String(x);correct=Math.abs(Math.abs(x)-q.answer)<=q.tol;
+      if(!correct){const w=q.wrongs.find(w=>Math.abs(Math.abs(x)-w[0])<=w[1]);if(w){tag=w[2];fb=w[3]}else{tag="خطأ حسابي غير مصنف";fb="راجع خطوات الحساب في المثال، ثم أعد المحاولة"}}}
+    const a={id:uidGen("att_"),kind:"attempt",topic:t.id,q:q.id,type:q.type,answer,correct,tag,fb,at:todayISO()};
+    S.attempts.push(a);const {id,...body}=a;saveDoc(id,body);
+    render(true);const box=document.getElementById("box-"+q.id);if(box)box.scrollIntoView({block:"nearest"});
+    toast(correct?"إجابة صحيحة، سُجّلت":"سُجّلت المحاولة في سجل الأخطاء");
+  }
+  else if(act==="copy"){const v=b.dataset.v;try{await navigator.clipboard.writeText(v);toast("نُسخ: "+v)}catch(x){const el=[...document.querySelectorAll(".val")].find(n=>n.textContent===v);if(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}toast("حُدد النص، انسخه يدوياً")}}
+  else if(act==="start"){tp(b.dataset.t).startedAt=todayISO();saveProfile(0);render(true)}
+  else if(act==="addq"||act==="addq-log"){
+    const tid=act==="addq"?b.dataset.t:document.getElementById("lq-topic").value;
+    const inp=document.getElementById(act==="addq"?"myq-"+tid:"lq-text");const text=inp.value.trim();if(!text){toast("اكتب السؤال أولاً");return}
+    const q={id:uidGen("q_"),kind:"question",topic:tid,text,status:"open",answer:"",at:todayISO()};S.questions.push(q);inp.value="";
+    const {id,...body}=q;saveDoc(id,body);render(true);toast("أُضيف السؤال إلى سجلك");
+  }
+  else if(act==="toggleq"){const q=S.questions.find(x=>x.id===b.dataset.id);q.status=q.status==="done"?"open":"done";const {id,_t,...body}=q;saveDoc(id,body);render(true)}
+  else if(act==="delq"){S.questions=S.questions.filter(x=>x.id!==b.dataset.id);deleteDoc(b.dataset.id);render(true)}
+  else if(act==="clear-filters"){F={topic:"all",level:"all",status:"all",from:"",to:""};saveUI();render(true)}
+  else if(act==="xlsx")doXLSX();
+  else if(act==="html")offer(`SAP-Cost-Lab-Report-${dayKey(todayISO())}.html`,reportHTML());
+  else if(act==="json")offer(`SAP-Cost-Lab-Backup-${dayKey(todayISO())}.json`,JSON.stringify({app:"sapco-lab",v:1,exportedAt:todayISO(),data:S},null,1));
+  else if(act==="prep-anki"||act==="prep-notion"){
+    const anki=act==="prep-anki";const txt=anki?ankiText():notionMD();window.__prep={name:anki?`SAP-Cost-Lab-Anki-${dayKey(todayISO())}.txt`:`SAP-Cost-Lab-Notion-${dayKey(todayISO())}.md`,txt};
+    document.getElementById("prep").innerHTML=`<div class="confirm"><b>راجع المحتوى قبل إنشاء الملف</b><span class="small">${anki?`${txt.split("\n").length-3} بطاقة. استوردها في Anki من File ثم Import، واختر المجموعة بنفسك`:"استورده في Notion من Import ثم Markdown"}. لن يُرسل شيء إلى ${anki?"Anki":"Notion"}</span><pre>${esc(txt.slice(0,3000))}${txt.length>3000?"\n…":""}</pre><div class="row"><button class="btn pri" data-act="prep-save">تأكيد وإنشاء الملف</button><button class="btn" data-act="prep-cancel">إلغاء</button></div></div>`;
+  }
+  else if(act==="prep-save"){if(window.__prep)offer(window.__prep.name,window.__prep.txt);document.getElementById("prep").innerHTML=""}
+  else if(act==="prep-cancel"){document.getElementById("prep").innerHTML=""}
+  else if(act==="wipe-ask"){document.getElementById("wipe-box").innerHTML=`<div class="confirm" style="border-color:var(--bad);background:var(--bad-soft)"><b>تأكيد المسح</b><span class="small">سيُحذف ${S.attempts.length} محاولة و${S.questions.length} سؤال وكل ملاحظاتك. لا يمكن التراجع</span><div class="row"><button class="btn warn" data-act="wipe">نعم، امسح كل شيء</button><button class="btn" data-act="wipe-cancel">إلغاء</button></div></div>`}
+  else if(act==="wipe-cancel"){render(true)}
+  else if(act==="wipe"){const ids=[...S.attempts.map(a=>a.id),...S.questions.map(q=>q.id)];S=emptyState();
+    if(Store.mode==="db"){ids.forEach(deleteDoc);Store.q=Store.q.then(()=>Store.col.doc("profile").delete()).catch(()=>{})}else saveLocal();render(true);toast("مُسحت البيانات")}
+  else if(act==="migrate"||act==="import-ok"){
+    const src=act==="migrate"?loadLocal():window.__import;if(!src)return;
+    const have=new Set(S.attempts.map(a=>a.id).concat(S.questions.map(q=>q.id)));
+    src.attempts.forEach(a=>{if(!have.has(a.id)){S.attempts.push(a);const {id,...b}=a;saveDoc(id,Object.assign({kind:"attempt"},b))}});
+    src.questions.forEach(q=>{if(!have.has(q.id)){S.questions.push(q);const {id,...b}=q;saveDoc(id,Object.assign({kind:"question"},b))}});
+    S.profile=mergeProfile(S.profile,src.profile);saveProfile(0);
+    if(act==="migrate")Store.dbEmpty=false;
+    window.__import=null;render(true);toast(act==="migrate"?"نُقل تقدمك إلى حسابك":"استُوردت النسخة الاحتياطية");
+  }
+  else if(act==="import-cancel"){window.__import=null;document.getElementById("imp-confirm").innerHTML=""}
+});
+function mergeProfile(a,b){const out=JSON.parse(JSON.stringify(a||{topics:{},missing:{},plan:{}}));b=b||{};
+  ["topics","missing","plan"].forEach(k=>{out[k]=out[k]||{};Object.entries(b[k]||{}).forEach(([id,v])=>{out[k][id]=Object.assign({},v,out[k][id]||{})})});return out}
+
+document.addEventListener("change",e=>{
+  const el=e.target;
+  if(el.dataset.f){F[el.dataset.f]=el.value;saveUI();render(true);return}
+  if(el.id==="g-topic"){G.topic=el.value;render(true);return}
+  if(el.dataset.review){tp(el.dataset.review).review=el.checked;saveProfile(0);render(true);return}
+  if(el.dataset.plan){(S.profile.plan[el.dataset.plan]=S.profile.plan[el.dataset.plan]||{}).target=el.value;saveProfile(0);render(true);return}
+  if(el.id==="imp"&&el.files&&el.files[0]){
+    const fr=new FileReader();fr.onload=()=>{try{const d=JSON.parse(fr.result);if(d.app!=="sapco-lab"||!d.data)throw 0;
+      window.__import={profile:d.data.profile||{},attempts:d.data.attempts||[],questions:d.data.questions||[]};
+      document.getElementById("imp-confirm").innerHTML=`<div class="confirm"><b>استيراد نسخة ${esc(fmtDate(d.exportedAt))}</b><span class="small">${window.__import.attempts.length} محاولة و${window.__import.questions.length} سؤال. تُضاف إلى بياناتك الحالية دون حذف شيء</span><div class="row"><button class="btn pri" data-act="import-ok">تأكيد الاستيراد</button><button class="btn" data-act="import-cancel">إلغاء</button></div></div>`;
+    }catch(x){toast("الملف ليس نسخة احتياطية من هذه المنصة")}};fr.readAsText(el.files[0]);el.value="";
+  }
+});
+document.addEventListener("input",e=>{
+  const el=e.target;
+  if(el.id==="g-q"){G.q=el.value;const q=G.q.trim().toLowerCase();document.getElementById("g-list").innerHTML=glossList(GLOSSARY.filter(g=>(G.topic==="all"||g[4]===G.topic)&&(!q||g.slice(0,4).join(" ").toLowerCase().includes(q))));return}
+  if(el.dataset.notes){const p=tp(el.dataset.notes);p.notes=el.value;p.notesAt=todayISO();saveProfile(900)}
+  else if(el.dataset.link){tp(el.dataset.t)[el.dataset.link]=el.value.trim();saveProfile(900)}
+  else if(el.dataset.missing){(S.profile.missing[el.dataset.missing]=S.profile.missing[el.dataset.missing]||{}).note=el.value;saveProfile(900)}
+  else if(el.dataset.qans){const q=S.questions.find(x=>x.id===el.dataset.qans);if(q){q.answer=el.value;clearTimeout(q._t);q._t=setTimeout(()=>{const {id,_t,...body}=q;saveDoc(id,body)},900)}}
+});
+document.addEventListener("keydown",e=>{
+  if(e.key!=="Enter")return;const el=e.target;
+  if(el.id&&el.id.endsWith("-in")){const b=el.closest(".q")?.querySelector("[data-act=check]");if(b){e.preventDefault();b.click()}}
+  else if(el.id&&el.id.startsWith("myq-")){e.preventDefault();el.parentElement.querySelector("[data-act=addq]").click()}
+  else if(el.id==="lq-text"){e.preventDefault();document.querySelector("[data-act=addq-log]").click()}
+});
+
+setStoreChip();
+initStore();
+</script>
+
+</body>
+</html>
